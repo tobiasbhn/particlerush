@@ -27,8 +27,8 @@ public class ShakeScript : MonoBehaviour {
         var durationLeft = ConstantManager.CAMERA_SHAKE_DURATION;
         if (allowShake)
             PostProcessingScript.instance.Eskalate();
-        while (allowShake && durationLeft >= 0) {
-            var shake = Random.insideUnitSphere * ConstantManager.CAMERA_SHAKE_AMOUNT * durationLeft;
+        while (allowShake && durationLeft > 0) {
+            var shake = Random.insideUnitSphere * ConstantManager.CAMERA_SHAKE_AMOUNT * durationLeft * Time.deltaTime;
             transform.localPosition = originalCamPos + shake;
             durationLeft -= Time.deltaTime * ConstantManager.CAMERA_SHAKE_DECREASE;
             yield return null;

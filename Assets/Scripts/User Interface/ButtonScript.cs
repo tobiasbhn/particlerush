@@ -137,7 +137,17 @@ public class ButtonScript : MonoBehaviour {
         Application.OpenURL("https://www.instagram.com/tobias.bhn/");
     }
     public void ButtonSpecialAds() {
-        //Kommt noch
+        //Show Rewarded Ad
+        if (SaveDataManager.getValue.notificationAdsFinished)
+            AdsManager.instance.ShowRewardedAd();
+        else
+            SceneManager.callSceneAdsNotification();
+    }
+    public void ButtonSpecialAdsContinueNotification() {
+        SaveDataManager.getValue.notificationAdsFinished = true;
+        SaveDataManager.Save();
+        SceneManager.callSceneSettings();
+        ButtonSpecialAds();
     }
     public void ButtonRedirectPayPal() {
         //Link to Donation-Page

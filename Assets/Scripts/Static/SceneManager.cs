@@ -109,4 +109,20 @@ public static class SceneManager
         UiSceneScript.instance.SetupSettings();
         ShakeScript.instance.SetupDisabled();
     }
+
+    public static void callSceneAdsNotification() {
+        //Return if Scene already called
+        if (SaveDataManager.getValue.gameStatus == GameStatus.notification)
+            return;
+        Debug.Log(LogTime.Time() + ": Scene Manager - Loading Ads Notification...");
+        
+        //Setup specific Game Settings and Values
+        SaveDataManager.getValue.gameStatus = GameStatus.notification;
+        SaveDataManager.Save();
+        Time.timeScale = 1f;
+        PlayerSceneSetup.instance.SetupDisabled();
+        ParticleSceneSetup.instance.SetupDisabled();
+        UiSceneScript.instance.SetupNotificationAds();
+        ShakeScript.instance.SetupDisabled();
+    }
 }

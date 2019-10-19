@@ -75,7 +75,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_FontData.m_MaxSize
-    value: 300
+    value: 200
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_FontData.m_Alignment

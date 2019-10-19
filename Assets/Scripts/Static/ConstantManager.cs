@@ -4,6 +4,19 @@ using UnityEngine;
 
 public static class ConstantManager {
 
+    //TODO ON PUBLISHING:
+        // - ConstantManager.useLocalFile = true;
+        // - ConstantManager.localSaveFileName = Unique name with Verion included
+        // - PlayerSettings => Set right Version
+        // - PlayerSettings => Check right Game Spelling
+        // - PlayerSettings => Game Icons set?
+        // - PlayerSettings => Bundle Number correct?
+        // - PlayerSettings => App signed?
+        // - UnityServices => Ads disable "Development-Mode"
+        // - AdsManager => ID's for the Advertisments right?
+        // - SaveDataManager => All default Values set correctly? (e.g. Download-Language)
+
+
     //DEBUG
     public static readonly bool useLocalSaveFile = false;
     public static readonly string localSaveFileName = "particleRush_45trtefefgv002";

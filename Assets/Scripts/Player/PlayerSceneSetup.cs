@@ -23,7 +23,6 @@ public class PlayerSceneSetup : MonoBehaviour {
         PlayerScript.instance.playerRotationSpeed = ConstantManager.PLAYER_INGAME_ROTATION_SPEED;
         PlayerScript.instance.SetTargetMass(ConstantManager.PLAYER_INGAME_START_MASS, true);
         PlayerScript.instance.ShowPlayer();
-        Debug.Log(LogTime.Time() + ": Player Scene Script - Player ready to rock...");
     }
 
     public void SetupMenu() {
@@ -36,7 +35,6 @@ public class PlayerSceneSetup : MonoBehaviour {
         PlayerScript.instance.playerRotationSpeed = ConstantManager.PLAYER_MENU_ROTATION_SPEED;
         PlayerScript.instance.SetTargetMass(ConstantManager.PLAYER_MENU_START_MASS, true);
         PlayerScript.instance.ShowPlayer();
-        Debug.Log(LogTime.Time() + ": Player Scene Script - Player is set to Menu...");
     }
 
     public void SetupDisabled() {
@@ -49,7 +47,6 @@ public class PlayerSceneSetup : MonoBehaviour {
         PlayerScript.instance.playerRotationSpeed = 0;
         PlayerScript.instance.SetTargetMass(0, true);
         PlayerScript.instance.HidePlayer();
-        Debug.Log(LogTime.Time() + ": Player Scene Script - Player is set to Disabled...");
     }
 
     public void SetupPause() {

@@ -79,6 +79,12 @@ public class UiObjectReferrer : MonoBehaviour {
     public GameObject settingsItemPosTextDE;
     public GameObject settingsGooglePlayTextDE;
 
+    [Header("ADD NOTIFICATION")]
+    [Space(30)]
+    public GameObject notificationAdsMain;
+    public GameObject notificationAdsDE;
+    public GameObject notificationAdsEN;
+
     void Awake() {
         instance = this;
     }
@@ -94,14 +100,16 @@ public class UiObjectReferrer : MonoBehaviour {
             menuMainEN,
             pauseMainEN,
             settingsInterfaceEN,
-            settingsMainEN
+            settingsMainEN,
+            notificationAdsEN
         });
         objectsDE.AddRange(new List<GameObject>() {
             //MENU
             menuMainDE,
             pauseMainDE,
             settingsInterfaceDE,
-            settingsMainDE
+            settingsMainDE,
+            notificationAdsDE
         });
     }
 }

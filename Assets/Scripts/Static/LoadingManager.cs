@@ -22,7 +22,10 @@ public static class LoadingManager {
             ScreenSetupScript.instance != null &&
             UiSceneScript.instance != null &&
             UiObjectReferrer.instance != null &&
-            ButtonScript.instance != null) {
+            ButtonScript.instance != null &&
+            
+            //SERVICES
+            AdsManager.instance != null) {
 
             if (// PARTICLES
                 ParticleSpawnScript.instance.thisScriptLoaded &&
@@ -42,7 +45,10 @@ public static class LoadingManager {
                 ScreenSetupScript.instance.thisScriptLoaded &&
                 UiSceneScript.instance.thisScriptLoaded &&
                 UiObjectReferrer.instance.thisScriptLoaded &&
-                ButtonScript.instance.thisScriptLoaded) {
+                ButtonScript.instance.thisScriptLoaded &&
+                
+                //SERVICES
+                AdsManager.instance.thisScriptLoaded) {
                     return true;
             }
         }

@@ -36,10 +36,16 @@ public class UiSceneScript : MonoBehaviour {
         UiObjectReferrer.instance.settingsMain.SetActive(true);
     }
 
+    public void SetupNotificationAds() {
+        DisableAllMenus();
+        UiObjectReferrer.instance.notificationAdsMain.SetActive(true);
+    }
+
     private void DisableAllMenus() {
         UiObjectReferrer.instance.ingameMain.SetActive(false);
         UiObjectReferrer.instance.menuMain.SetActive(false);
         UiObjectReferrer.instance.pauseMain.SetActive(false);
         UiObjectReferrer.instance.settingsMain.SetActive(false);
+        UiObjectReferrer.instance.notificationAdsMain.SetActive(false);
     }
 }

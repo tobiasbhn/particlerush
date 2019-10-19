@@ -7,7 +7,7 @@ using System.IO;
 
 
 public static class SaveDataManager {
-    [HideInInspector] public static SaveData getValue;
+    public static SaveData getValue;
     [HideInInspector] public static bool firstDataLoaded = false;
 
     //Load Data from File ore create File if no File Exists
@@ -43,6 +43,10 @@ public static class SaveDataManager {
 public class SaveData {
     //STATS
     public GameStatus gameStatus = GameStatus.loading;
+
+    //PROCESSES
+    public bool tutorialFinished = false;
+    public bool notificationAdsFinished = false;
 
     //SETTINGS
     public SettingsLanguages settingsLanguage = SettingsLanguages.English;
