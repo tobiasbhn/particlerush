@@ -38,6 +38,12 @@ public class UiObjectReferrer : MonoBehaviour {
     public GameObject menuChallengeButtonDE;
     public GameObject menuSettingsButtonDE;
 
+    [Header("ENDGAME")]
+    [Space(30)]
+    public GameObject endgameMain;
+    public GameObject endgameMainEN;
+    public GameObject endgameMainDE;
+
     [Header("PAUSE MENU")]
     [Space(30)]
     public GameObject pauseMain;
@@ -101,7 +107,8 @@ public class UiObjectReferrer : MonoBehaviour {
             pauseMainEN,
             settingsInterfaceEN,
             settingsMainEN,
-            notificationAdsEN
+            notificationAdsEN,
+            endgameMainEN
         });
         objectsDE.AddRange(new List<GameObject>() {
             //MENU
@@ -109,7 +116,8 @@ public class UiObjectReferrer : MonoBehaviour {
             pauseMainDE,
             settingsInterfaceDE,
             settingsMainDE,
-            notificationAdsDE
+            notificationAdsDE,
+            endgameMainDE
         });
     }
 }

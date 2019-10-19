@@ -63,7 +63,10 @@ public static class SceneManager
         //Setup specific Game Settings and Values
         SaveDataManager.getValue.gameStatus = GameStatus.endgame;
         SaveDataManager.Save();
-        Time.timeScale = 0f;
+        ParticleSceneSetup.instance.SetupDisabled();
+        PlayerSceneSetup.instance.SetupEndgame();
+        UiSceneScript.instance.SetupEndgame();
+        ShakeScript.instance.SetupDisabled();
     }
 
     public static void callScenePause() {

@@ -40,10 +40,12 @@ public static class ConstantManager {
     public const float PLAYER_WAVES_OFFSET = 0.8f;
     public const int PLAYER_WAVES_DECREASE_WAVES_OUTSIDE = 4;
     //BEHAVIUR
+    //Ingame
     public const bool PLAYER_INGAME_ALLOW_GROW = true;
     public const bool PLAYER_INGAME_ALLOW_SHRINK = true;
     public const bool PLAYER_INGAME_ALLOW_ROTATION = true;
     public const bool PLAYER_INGAME_ALLOW_WAVES = true;
+    //Menu
     public const bool PLAYER_MENU_ALLOW_GROW = false;
     public const bool PLAYER_MENU_ALLOW_SHRINK = false;
     public const bool PLAYER_MENU_ALLOW_ROTATION = true;

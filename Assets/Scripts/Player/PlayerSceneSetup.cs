@@ -25,6 +25,17 @@ public class PlayerSceneSetup : MonoBehaviour {
         PlayerScript.instance.ShowPlayer();
     }
 
+    public void SetupEndgame() {
+        PlayerMovementScript.instance.allowSwipe = ConstantManager.INPUT_ALLOW_SWIPE_MENU;
+        PlayerMovementScript.instance.allowTab = ConstantManager.INPUT_ALLOW_TAP_MENU;
+        PlayerScript.instance.playerAllowGrow = ConstantManager.PLAYER_MENU_ALLOW_GROW;
+        PlayerScript.instance.playerAllowShrink = ConstantManager.PLAYER_MENU_ALLOW_SHRINK;
+        PlayerScript.instance.playerAllowRotate = ConstantManager.PLAYER_MENU_ALLOW_ROTATION;
+        PlayerScript.instance.playerAllowWaves = ConstantManager.PLAYER_MENU_ALLOW_WAVES;
+        PlayerScript.instance.playerRotationSpeed = ConstantManager.PLAYER_MENU_ROTATION_SPEED;
+        PlayerScript.instance.ShowPlayer();
+    }
+
     public void SetupMenu() {
         PlayerMovementScript.instance.allowSwipe = ConstantManager.INPUT_ALLOW_SWIPE_MENU;
         PlayerMovementScript.instance.allowTab = ConstantManager.INPUT_ALLOW_TAP_MENU;
