@@ -28,7 +28,7 @@ public static class LoadingManager {
             AdsManager.instance != null &&
             
             //GENERAL
-            GameHelper.instance != null) {
+            EndgameScript.instance != null) {
 
             if (// PARTICLES
                 ParticleSpawnScript.instance.thisScriptLoaded &&
@@ -54,7 +54,7 @@ public static class LoadingManager {
                 AdsManager.instance.thisScriptLoaded &&
                 
                 //GENERAL
-                GameHelper.instance.thisScriptLoaded) {
+                EndgameScript.instance.thisScriptLoaded) {
                     return true;
             }
         }

@@ -37,7 +37,7 @@ public static class SceneManager {
         ShakeScript.instance.SetupMenu();
     }
 
-    public static void callSceneIngame() {
+    public static void callSceneIngame() { // == absolute Restart, reset Points, reset Revive-Chance, reset Everything
         //Return if Scene already called
         if (SaveDataManager.getValue.gameStatus == GameStatus.ingame)
             return;
@@ -47,6 +47,7 @@ public static class SceneManager {
         SaveDataManager.getValue.gameStatus = GameStatus.ingame;
         SaveDataManager.Save();
         Time.timeScale = 1f;
+        EndgameScript.instance.SetupIngame();
         PlayerSceneSetup.instance.SetupIngame();
         ParticleSceneSetup.instance.SetupIngame();
         UiSceneScript.instance.SetupIngame();
@@ -62,21 +63,7 @@ public static class SceneManager {
         //Setup specific Game Settings and Values
         SaveDataManager.getValue.gameStatus = GameStatus.endgame;
         SaveDataManager.Save();
-        GameHelper.instance.StartCoroutineFromNonMonoBehaviour(animateEndgame());
-    }
-    public static IEnumerator animateEndgame() {
-        while (Time.timeScale > 0) {
-            Time.timeScale -= Time.deltaTime * 7.5f;
-            if (Time.timeScale < 0.5f) {
-                PlayerSceneSetup.instance.SetupPause();
-                ParticleSceneSetup.instance.SetupDisabled();
-            }
-            if (Time.timeScale < 0.001f)
-                break;
-            yield return null;
-        }
-        Time.timeScale = 0f;
-        UiSceneScript.instance.SetupEndgame();
+        EndgameScript.instance.SetupEndgame();
     }
 
     public static void callScenePause() {

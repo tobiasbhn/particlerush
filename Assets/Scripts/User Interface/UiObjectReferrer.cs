@@ -38,11 +38,34 @@ public class UiObjectReferrer : MonoBehaviour {
     public GameObject menuChallengeButtonDE;
     public GameObject menuSettingsButtonDE;
 
+
+
+
     [Header("ENDGAME")]
     [Space(30)]
     public GameObject endgameMain;
+    public GameObject endgameReviveMain;
+
+    [Header("ENDGAME EN")]
     public GameObject endgameMainEN;
+    public GameObject endgameReviveMainEN;
+
+    [Space(5)]
+    public GameObject endgameGameOverTextEN;
+    public GameObject endgameHighscoreTextEN;
+    public GameObject endgameScoreTextEN;
+
+    [Header("ENDGAME DE")]
     public GameObject endgameMainDE;
+    public GameObject endgameReviveMainDE;
+
+    [Space(5)]
+    public GameObject endgameGameOverTextDE;
+    public GameObject endgameHighscoreTextDE;
+    public GameObject endgameScoreTextDE;
+
+
+
 
     [Header("PAUSE MENU")]
     [Space(30)]
@@ -108,7 +131,8 @@ public class UiObjectReferrer : MonoBehaviour {
             settingsInterfaceEN,
             settingsMainEN,
             notificationAdsEN,
-            endgameMainEN
+            endgameMainEN,
+            endgameReviveMainEN
         });
         objectsDE.AddRange(new List<GameObject>() {
             //MENU
@@ -117,7 +141,8 @@ public class UiObjectReferrer : MonoBehaviour {
             settingsInterfaceDE,
             settingsMainDE,
             notificationAdsDE,
-            endgameMainDE
+            endgameMainDE,
+            endgameReviveMainDE
         });
     }
 }
