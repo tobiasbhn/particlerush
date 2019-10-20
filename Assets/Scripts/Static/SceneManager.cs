@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class SceneManager
-{
+public static class SceneManager {
     public static void startGame() {
         Debug.Log(LogTime.Time() + ": Scene Manager - Going to start Game...");
         callSceneMenu();
@@ -19,7 +18,7 @@ public static class SceneManager
         //Setup specific Game Settings and Values
         SaveDataManager.getValue.gameStatus = GameStatus.tutorial;
         SaveDataManager.Save();
-        
+
     }
 
     public static void callSceneMenu() {
@@ -43,7 +42,7 @@ public static class SceneManager
         if (SaveDataManager.getValue.gameStatus == GameStatus.ingame)
             return;
         Debug.Log(LogTime.Time() + ": Scene Manager - Loading Ingame...");
-        
+
         //Setup specific Game Settings and Values
         SaveDataManager.getValue.gameStatus = GameStatus.ingame;
         SaveDataManager.Save();
@@ -59,14 +58,25 @@ public static class SceneManager
         if (SaveDataManager.getValue.gameStatus == GameStatus.endgame)
             return;
         Debug.Log(LogTime.Time() + ": Scene Manager - Loading Endgame...");
-        
+
         //Setup specific Game Settings and Values
         SaveDataManager.getValue.gameStatus = GameStatus.endgame;
         SaveDataManager.Save();
-        ParticleSceneSetup.instance.SetupDisabled();
-        PlayerSceneSetup.instance.SetupEndgame();
+        GameHelper.instance.StartCoroutineFromNonMonoBehaviour(animateEndgame());
+    }
+    public static IEnumerator animateEndgame() {
+        while (Time.timeScale > 0) {
+            Time.timeScale -= Time.deltaTime * 7.5f;
+            if (Time.timeScale < 0.5f) {
+                PlayerSceneSetup.instance.SetupPause();
+                ParticleSceneSetup.instance.SetupDisabled();
+            }
+            if (Time.timeScale < 0.001f)
+                break;
+            yield return null;
+        }
+        Time.timeScale = 0f;
         UiSceneScript.instance.SetupEndgame();
-        ShakeScript.instance.SetupDisabled();
     }
 
     public static void callScenePause() {
@@ -74,7 +84,7 @@ public static class SceneManager
         if (SaveDataManager.getValue.gameStatus == GameStatus.paused)
             return;
         Debug.Log(LogTime.Time() + ": Scene Manager - Loading Pause...");
-        
+
         //Setup specific Game Settings and Values
         SaveDataManager.getValue.gameStatus = GameStatus.paused;
         SaveDataManager.Save();
@@ -88,7 +98,7 @@ public static class SceneManager
         if (SaveDataManager.getValue.gameStatus == GameStatus.ingame)
             return;
         Debug.Log(LogTime.Time() + ": Scene Manager - Loading Resume...");
-        
+
         //Setup specific Game Settings and Values
         SaveDataManager.getValue.gameStatus = GameStatus.ingame;
         SaveDataManager.Save();
@@ -102,7 +112,7 @@ public static class SceneManager
         if (SaveDataManager.getValue.gameStatus == GameStatus.settings)
             return;
         Debug.Log(LogTime.Time() + ": Scene Manager - Loading Settings...");
-        
+
         //Setup specific Game Settings and Values
         SaveDataManager.getValue.gameStatus = GameStatus.settings;
         SaveDataManager.Save();
@@ -118,7 +128,7 @@ public static class SceneManager
         if (SaveDataManager.getValue.gameStatus == GameStatus.notification)
             return;
         Debug.Log(LogTime.Time() + ": Scene Manager - Loading Ads Notification...");
-        
+
         //Setup specific Game Settings and Values
         SaveDataManager.getValue.gameStatus = GameStatus.notification;
         SaveDataManager.Save();
