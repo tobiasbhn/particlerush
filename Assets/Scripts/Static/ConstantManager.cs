@@ -108,5 +108,8 @@ public static class ConstantManager {
     public const bool INPUT_ALLOW_TAP_INGAME = true;
     public const bool INPUT_ALLOW_TAP_MENU = false;
 
+
+    //ADVERTS
+    public const float AD_TIME_TO_PASS_TO_SHOW_AD = 30f;
 }
 

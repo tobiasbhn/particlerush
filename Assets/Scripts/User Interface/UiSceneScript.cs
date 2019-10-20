@@ -48,6 +48,10 @@ public class UiSceneScript : MonoBehaviour {
             UiObjectReferrer.instance.endgameReviveMain.SetActive(true);
     }
 
+    public void DisableReviveScreen() {
+        UiObjectReferrer.instance.endgameReviveMain.SetActive(false);
+    }
+
     private void DisableAllMenus() {
         UiObjectReferrer.instance.ingameMain.SetActive(false);
         UiObjectReferrer.instance.menuMain.SetActive(false);

@@ -26,7 +26,7 @@ public class FPS : MonoBehaviour
         string text = " Particle Rush DEMO | " + frames;
         text += "\n (c) Tobias Bohn(Insta @tobias.bhn) - Restricted use only. ";
         if (SaveDataManager.getValue != null)
-            text += "\n GameStatus: " + SaveDataManager.getValue.gameStatus;
+            text += "\n GameStatus: " + SaveDataManager.getValue.gameStatus + "; Last Ad: " + (Time.realtimeSinceStartup - AdsManager.instance.lastAdShown);
         //text += "\n\nGoogle ID: " + Social.localUser.id + "\nGoogle Name: ";
         //text += Social.localUser.userName;
         GUI.Label(rect, text, style);

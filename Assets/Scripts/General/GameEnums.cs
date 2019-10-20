@@ -12,3 +12,7 @@ public enum SettingsLanguages {English, German};
 public enum SettingsSounds {Off, All, Sound};
 public enum SettingsVibration {Off, Short, Medium, Long};
 public enum SettingsItemPosition {Left, Right};
+
+//ADS
+public enum AdResult {Finished, Skipped, Failed, Private};
+public enum AdType {Normal, Rewarded};

@@ -139,7 +139,7 @@ public class ButtonScript : MonoBehaviour {
     public void ButtonSpecialAds() {
         //Show Rewarded Ad
         if (SaveDataManager.getValue.notificationAdsFinished)
-            AdsManager.instance.ShowRewardedAd();
+            StartCoroutine(AdsManager.instance.ShowAd(AdType.Rewarded));
         else
             SceneManager.callSceneAdsNotification();
     }
@@ -182,6 +182,18 @@ public class ButtonScript : MonoBehaviour {
     public void ButtonRedirectImprint() {
         //open Leagal Webpage
         Application.OpenURL("https://legal.tobiasbohn.com/");
+    }
+
+
+    // REVIVE
+    public void ButtonReviveCancel() {
+        UiSceneScript.instance.DisableReviveScreen();
+    }
+    public void ButtonReviveGold() {
+        EndgameScript.instance.reviveGold();
+    }
+    public void ButtonReviveAd() {
+        EndgameScript.instance.reviveAd();
     }
 
 

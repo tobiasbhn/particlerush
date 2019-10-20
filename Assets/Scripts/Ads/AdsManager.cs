@@ -14,36 +14,57 @@ public class AdsManager : MonoBehaviour {
     public string videoAdID;
     [HideInInspector] public float lastAdShown;
     private GameStatus statusBeforAd;
+    private AdResult resultToReturn;
 
     void Awake() {
         instance = this;
     }
     void Start() {
-        lastAdShown = Time.time;
+        lastAdShown = Time.realtimeSinceStartup;
         thisScriptLoaded = true;
     }
 
-    public void ShowRewardedAd() {
+    public IEnumerator ShowAd(AdType type) {
+        StartCoroutine(ShowAd(type, (AdResult res) => { }));
+        yield return null;
+    }
+
+    // Call: StartCoroutine(ShowRewardedAd( (AdResult result) => { Debug.Log(result); }));
+    public IEnumerator ShowAd(AdType type, System.Action<AdResult> callback) {
+        Debug.Log(LogTime.Time() + ": Ads Manager - Ad (Rewarded Video) requestet...");
+
         BeforeAdProcess();
-        if (Advertisement.isInitialized && Advertisement.IsReady(rewardedAdId)) {
+        bool isReady = false;
+        AdResult _return = AdResult.Failed;
+        string idToUse = type == AdType.Normal ? videoAdID : rewardedAdId;
+
+        if (Advertisement.isInitialized && Advertisement.IsReady(idToUse)) {
             //Show Unity Ad
             ShowOptions showOptions = new ShowOptions();
-            showOptions.resultCallback = RewaredAdResult;
-            Advertisement.Show(rewardedAdId, showOptions);
+            showOptions.resultCallback = (ShowResult result) => {
+                AfterAdProcess();
+                if (result == ShowResult.Finished) {
+                    _return = AdResult.Finished;
+                    isReady = true;
+                } else if (result == ShowResult.Skipped) {
+                    _return = AdResult.Skipped;
+                    isReady = true;
+                } else if (result == ShowResult.Failed) {
+                    _return = AdResult.Failed;
+                    isReady = true;
+                }
+            };
+            Advertisement.Show(idToUse, showOptions);
         } else {
             //Show own Ad
             Debug.Log("Would show own Ad.");
+            _return = AdResult.Private;
+            isReady = true;
         }
-    }
-    private void RewaredAdResult(ShowResult result) {
-        if (result == ShowResult.Finished) {
-            AfterAdProcess();
-            Debug.Log("Reward");
-        } else if (result == ShowResult.Skipped) {
-            AfterAdProcess();
-        } else if (result == ShowResult.Failed) {
-            AfterAdProcess();
-        }
+        while (!isReady)
+            yield return null;
+        Debug.Log(LogTime.Time() + ": Ads Manager - Shown Ad (Rewarded Video) Result: " + _return.ToString() + "...");
+        callback.Invoke(_return);
     }
 
     private void BeforeAdProcess() {
@@ -53,7 +74,7 @@ public class AdsManager : MonoBehaviour {
         Time.timeScale = 0;
     }
     private void AfterAdProcess() {
-        lastAdShown = Time.time;
+        lastAdShown = Time.realtimeSinceStartup;
         SaveDataManager.getValue.gameStatus = statusBeforAd;
         SaveDataManager.Save();
         Time.timeScale = 1f;

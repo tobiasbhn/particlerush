@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class LogTime {
     public static string Time() {
-        float time = UnityEngine.Time.time;
+        float time = UnityEngine.Time.realtimeSinceStartup;
         var hh = Mathf.FloorToInt(time / 3600).ToString("00");
         var mm = Mathf.FloorToInt((time % 3600) / 60).ToString("00");
         var ss = Mathf.FloorToInt((time % 3600) % 60).ToString("00");

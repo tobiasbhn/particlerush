@@ -18,6 +18,10 @@ public class EndgameScript : MonoBehaviour {
     }
 
     public void SetupEndgame() {
+        //Setup specific Game Settings and Values
+        SaveDataManager.getValue.gameStatus = GameStatus.endgame;
+        SaveDataManager.Save();
+        ShakeScript.instance.SetupIngame();
         StartCoroutine(animateEndgame());
     }
 
@@ -45,5 +49,22 @@ public class EndgameScript : MonoBehaviour {
 
         // Show UI
         UiSceneScript.instance.SetupEndgame(!alreadyRevived);
+    }
+
+    public void reviveAd() {
+        alreadyRevived = true;
+        StartCoroutine(AdsManager.instance.ShowAd(AdType.Rewarded, (AdResult result) => {
+            if (result == AdResult.Finished) {
+                SceneManager.callSceneRevive();
+            } else {
+                UiSceneScript.instance.DisableReviveScreen();
+            }
+        }));
+    }
+
+    public void reviveGold() {
+        alreadyRevived = true;
+        //SUBSTRACT GOLD
+        SceneManager.callSceneRevive();
     }
 }

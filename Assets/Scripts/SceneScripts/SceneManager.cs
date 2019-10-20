@@ -42,16 +42,7 @@ public static class SceneManager {
         if (SaveDataManager.getValue.gameStatus == GameStatus.ingame)
             return;
         Debug.Log(LogTime.Time() + ": Scene Manager - Loading Ingame...");
-
-        //Setup specific Game Settings and Values
-        SaveDataManager.getValue.gameStatus = GameStatus.ingame;
-        SaveDataManager.Save();
-        Time.timeScale = 1f;
-        EndgameScript.instance.SetupIngame();
-        PlayerSceneSetup.instance.SetupIngame();
-        ParticleSceneSetup.instance.SetupIngame();
-        UiSceneScript.instance.SetupIngame();
-        ShakeScript.instance.SetupIngame();
+        IngameScript.instance.setupIngame();
     }
 
     public static void callSceneEndgame() {
@@ -59,10 +50,6 @@ public static class SceneManager {
         if (SaveDataManager.getValue.gameStatus == GameStatus.endgame)
             return;
         Debug.Log(LogTime.Time() + ": Scene Manager - Loading Endgame...");
-
-        //Setup specific Game Settings and Values
-        SaveDataManager.getValue.gameStatus = GameStatus.endgame;
-        SaveDataManager.Save();
         EndgameScript.instance.SetupEndgame();
     }
 
@@ -78,6 +65,7 @@ public static class SceneManager {
         Time.timeScale = 0f;
         UiSceneScript.instance.SetupPause();
         PlayerSceneSetup.instance.SetupPause();
+        ShakeScript.instance.SetupIngame();
     }
 
     public static void callSceneResume() {
@@ -92,6 +80,23 @@ public static class SceneManager {
         Time.timeScale = 1f;
         UiSceneScript.instance.SetupIngame();
         PlayerSceneSetup.instance.SetupResume();
+        ShakeScript.instance.SetupIngame();
+    }
+
+    public static void callSceneRevive() {
+        //Return if Scene already called
+        if (SaveDataManager.getValue.gameStatus == GameStatus.ingame)
+            return;
+        Debug.Log(LogTime.Time() + ": Scene Manager - Loading Revive...");
+
+        //Setup specific Game Settings and Values
+        SaveDataManager.getValue.gameStatus = GameStatus.ingame;
+        SaveDataManager.Save();
+        Time.timeScale = 1f;
+        UiSceneScript.instance.SetupIngame();
+        PlayerSceneSetup.instance.SetupIngame();
+        ParticleSceneSetup.instance.SetupIngame();
+        ShakeScript.instance.SetupIngame();
     }
 
     public static void callSceneSettings() {

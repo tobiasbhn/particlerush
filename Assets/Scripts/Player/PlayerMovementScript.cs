@@ -47,6 +47,8 @@ public class PlayerMovementScript : MonoBehaviour {
         //Check Inputs
         if (allowSwipe || allowTab) {
             foreach (Touch touch in Input.touches) {
+                if (touch.fingerId >= newTouch.Length)
+                    return;
                 if (touch.phase == TouchPhase.Began) {
                     newTouch[touch.fingerId] = touch.position;
                 } else if (touch.phase == TouchPhase.Ended) {

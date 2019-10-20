@@ -24,11 +24,12 @@ public static class LoadingManager {
             UiObjectReferrer.instance != null &&
             ButtonScript.instance != null &&
             
-            //SERVICES
+            // SERVICES
             AdsManager.instance != null &&
             
-            //GENERAL
-            EndgameScript.instance != null) {
+            // SCENES
+            EndgameScript.instance != null &&
+            IngameScript.instance != null) {
 
             if (// PARTICLES
                 ParticleSpawnScript.instance.thisScriptLoaded &&
@@ -50,11 +51,12 @@ public static class LoadingManager {
                 UiObjectReferrer.instance.thisScriptLoaded &&
                 ButtonScript.instance.thisScriptLoaded &&
                 
-                //SERVICES
+                // SERVICES
                 AdsManager.instance.thisScriptLoaded &&
                 
-                //GENERAL
-                EndgameScript.instance.thisScriptLoaded) {
+                // SCENES
+                EndgameScript.instance.thisScriptLoaded &&
+                IngameScript.instance.thisScriptLoaded) {
                     return true;
             }
         }
