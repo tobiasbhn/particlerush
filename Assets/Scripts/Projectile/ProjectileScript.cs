@@ -10,6 +10,17 @@ public class ProjectileScript : MonoBehaviour {
     void Awake() {
         spawnTime = Time.time;
     }
+    void Start() {
+        DefineWidth();
+    }
+
+    private void DefineWidth() {
+        var maxWidth = ConstantManager.PROJECTILE_MAX_WIDTH - ConstantManager.PROJECTILE_MIN_WIDTH;
+        var useWidth = maxWidth / 100f * damageToDeal;
+        useWidth += ConstantManager.PROJECTILE_MIN_WIDTH;
+        Debug.Log(useWidth);
+        transform.localScale = new Vector3(transform.localScale.x, useWidth, transform.localScale.z);
+    }
 
     void Update() {
         // Destroy if Projectile lived for too long

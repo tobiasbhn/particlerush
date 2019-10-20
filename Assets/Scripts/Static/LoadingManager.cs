@@ -29,7 +29,10 @@ public static class LoadingManager {
             
             // SCENES
             EndgameScript.instance != null &&
-            IngameScript.instance != null) {
+            IngameScript.instance != null &&
+            
+            // DATA
+            RuntimeDataManager.instance != null) {
 
             if (// PARTICLES
                 ParticleSpawnScript.instance.thisScriptLoaded &&
@@ -56,7 +59,10 @@ public static class LoadingManager {
                 
                 // SCENES
                 EndgameScript.instance.thisScriptLoaded &&
-                IngameScript.instance.thisScriptLoaded) {
+                IngameScript.instance.thisScriptLoaded &&
+                
+                // DATA
+                RuntimeDataManager.instance.thisScriptLoaded) {
                     return true;
             }
         }

@@ -99,6 +99,8 @@ public static class ConstantManager {
     //PROJECTILE
     public const int PROJECTILE_MIN_DAMAGE_REDUCION_PER_PLAYER_MASS = 20;
     public const float PROJECTILE_MAX_LIFE_TIME = 1f; // Time in Seconds
+    public const float PROJECTILE_MAX_WIDTH = 0.3f;
+    public const float PROJECTILE_MIN_WIDTH = 0.03f;
 
 
 
