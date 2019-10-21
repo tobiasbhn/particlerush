@@ -97,6 +97,7 @@ public static class SceneManager {
         PlayerSceneSetup.instance.SetupIngame();
         ParticleSceneSetup.instance.SetupIngame();
         ShakeScript.instance.SetupIngame();
+        RuntimeDataManager.instance.SetupIngame();
     }
 
     public static void callSceneSettings() {

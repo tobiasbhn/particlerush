@@ -3603,6 +3603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisScriptLoaded: 0
+  alreadyRevived: 0
 --- !u!114 &400185533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6772,6 +6773,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 798530539}
   m_CullTransparentMesh: 0
+--- !u!1 &803788309
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 803788310}
+  - component: {fileID: 803788311}
+  m_Layer: 0
+  m_Name: Runtime Data
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &803788310
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803788309}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1234711736}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &803788311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803788309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 954cdfe16d8425049b5a75109646a3dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisScriptLoaded: 0
+  preRevive:
+    particlesSpawned: 0
+    normalParticlesSpawned: 0
+    normalParticlesDestroyed: 0
+    normalParticlesCollected: 0
+    gainedMass: 0
+    shrinkParticlesSpawned: 0
+    shrinkParticlesDestroyed: 0
+    shrinkParticlesCollected: 0
+    lossMass: 0
+    goldParticlesSpawned: 0
+    goldParticlesDestroyed: 0
+    goldParticlesCollected: 0
+    goldMassCollected: 0
+    projectilesFiredTotal: 0
+    projectilesHitTotal: 0
+    startTime: 0
+  postRevive:
+    particlesSpawned: 0
+    normalParticlesSpawned: 0
+    normalParticlesDestroyed: 0
+    normalParticlesCollected: 0
+    gainedMass: 0
+    shrinkParticlesSpawned: 0
+    shrinkParticlesDestroyed: 0
+    shrinkParticlesCollected: 0
+    lossMass: 0
+    goldParticlesSpawned: 0
+    goldParticlesDestroyed: 0
+    goldParticlesCollected: 0
+    goldMassCollected: 0
+    projectilesFiredTotal: 0
+    projectilesHitTotal: 0
+    startTime: 0
 --- !u!1 &805876984
 GameObject:
   m_ObjectHideFlags: 0
@@ -9400,6 +9479,7 @@ Transform:
   - {fileID: 2128465383}
   - {fileID: 1981272936}
   - {fileID: 400185531}
+  - {fileID: 803788310}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

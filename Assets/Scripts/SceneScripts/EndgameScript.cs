@@ -10,7 +10,7 @@ public class EndgameScript : MonoBehaviour {
     [HideInInspector] public bool thisScriptLoaded = false;
 
     //BEHAVIOUR
-    private bool alreadyRevived = false;
+    [HideInInspector] public bool alreadyRevived = false;
 
     void Awake() {
         instance = this;
@@ -20,7 +20,7 @@ public class EndgameScript : MonoBehaviour {
     public void SetupEndgame() {
         //Setup specific Game Settings and Values
         SaveDataManager.getValue.gameStatus = GameStatus.endgame;
-        SaveDataManager.Save();
+        RuntimeDataManager.instance.SaveRuntimeData();
         ShakeScript.instance.SetupIngame();
         StartCoroutine(animateEndgame());
     }

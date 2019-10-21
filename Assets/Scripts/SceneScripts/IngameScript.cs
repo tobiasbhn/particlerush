@@ -30,6 +30,7 @@ public class IngameScript : MonoBehaviour {
         SaveDataManager.Save();
         Time.timeScale = 1f;
         EndgameScript.instance.SetupIngame();
+        RuntimeDataManager.instance.SetupIngame(); // RuntimeDataManager need to be setup after Endgame Setup (so alreadyRevived is Reset)
         PlayerSceneSetup.instance.SetupIngame();
         ParticleSceneSetup.instance.SetupIngame();
         UiSceneScript.instance.SetupIngame();

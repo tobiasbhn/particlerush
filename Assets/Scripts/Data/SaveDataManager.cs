@@ -44,6 +44,30 @@ public class SaveData {
     //STATS
     public GameStatus gameStatus = GameStatus.loading;
 
+    //STATS
+    public int statsTotalParticles = 0;
+    // Normal Particles
+    public int statsTotalNormalParticlesSpawned = 0;
+    public int statsTotalNormalParticlesDestroyed = 0;
+    public int statsTotalNormalParticlesCollected = 0;
+    public float statsTotalGainedMass = 0;
+    // Shrink Particles
+    public int statsTotalShrinkParticlesSpawned = 0;
+    public int statsTotalShrinkParticlesDestroyed = 0;
+    public int statsTotalShrinkParticlesCollected = 0;
+    public float statsTotalLossMass = 0;
+    // Gold Particles
+    public int statsTotalGoldParticlesSpawned = 0;
+    public int statsTotalGoldParticlesDestroyed = 0;
+    public int statsTotalGoldParticlesCollected = 0;
+    public int statsTotalGainedGold = 0;
+    // Projectiles
+    public int statsTotalProjectilesFired = 0;
+    public int statsTotalProjectilesHit = 0;
+    // Time
+    public float totalTimeIngame = 0f;
+
+
     //PROCESSES
     public bool tutorialFinished = false;
     public bool notificationAdsFinished = false;
