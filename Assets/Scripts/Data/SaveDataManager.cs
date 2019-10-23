@@ -77,4 +77,13 @@ public class SaveData {
     public SettingsSounds settingsSound = SettingsSounds.All;
     public SettingsVibration settingsVibration = SettingsVibration.Medium;
     public SettingsItemPosition settingsItemPosition = SettingsItemPosition.Left;
+
+    //SHOP
+    public int shrinkItemLVL = 1; // 0 = Locked | 1 = LVL1 ...
+    public int shieldItemLVL = 1;
+    public int forceItemLVL = 0;
+    public int clearItmLVL = 0;
+    public int slowItemLVL = 0;
+    public int slideItemLVL = 0;
+    public int goldrushItemLVL = 0;
 }
