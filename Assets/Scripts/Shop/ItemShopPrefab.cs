@@ -9,20 +9,34 @@ public class ItemShopPrefab : MonoBehaviour {
     public Text itemPriceHolder;
     public RawImage itemIconHolder;
     public Text itemInfoHolder;
+    public GameObject lockedScreen;
+    public GameObject activeScreen;
 
-    void Awake() {
-        
+    // on select item in Shop-Menu (Button Press on Item)
+    public void ShowItemInfos() {
+        ShopScript.instance.DisableAllItems();
+        itemInfoHolder.gameObject.SetActive(true);
+        activeScreen.SetActive(true);
+
+        if (itemDefinition.getCurrendLVL() == 0)
+            ShopScript.instance.SetButtonTextUnlock(true);
+        else
+            ShopScript.instance.SetButtonTextBuy(true);
     }
-    void Start() {
-        
+    // on other Item gets Selected or No Item should be selected (e.g. coming to shop from menu)
+    public void HideItemInfos() {
+        itemInfoHolder.gameObject.SetActive(false);
+        activeScreen.SetActive(false);
     }
 
     void OnEnable() {
-        UpdateHoleShopPresence();
+        HideItemInfos();
+        UpdateStaticItemInfos();
+        UpdateLvlBasedItemInfos();
     }
 
-    void UpdateHoleShopPresence() {
-        UpdatePrice();
+    // Setup everything that is static, like Item Name and Item Description (newver Change, no matter which LVL)
+    void UpdateStaticItemInfos() {
         itemIconHolder.texture = itemDefinition.getIcon();
         if (SaveDataManager.getValue.settingsLanguage == SettingsLanguages.English) {
             itemInfoHolder.text = itemDefinition.getInfoEnglish();
@@ -30,7 +44,15 @@ public class ItemShopPrefab : MonoBehaviour {
             itemInfoHolder.text = itemDefinition.getInfoGerman();
         }
     }
-    void UpdatePrice() {
-        itemPriceHolder.text = itemDefinition.getCurrendPrice(0).ToString();
+
+    // Setup everythin that depends on the LVL, like Price, Locked-State etc.
+    void UpdateLvlBasedItemInfos() {
+        itemPriceHolder.text = itemDefinition.getCurrendPrice();
+
+        var LVL = itemDefinition.getCurrendLVL();
+        if (LVL == 0)
+            lockedScreen.SetActive(true);
+        else
+            lockedScreen.SetActive(false);
     }
 }

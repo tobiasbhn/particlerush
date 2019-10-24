@@ -12,6 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fadbb42e9829b14a95fe99b323a33df, type: 3}
   m_Name: Force Item
   m_EditorClassIdentifier: 
-  itemDescription: 
-  itemImage: {fileID: 0}
-  levelSpecification: []
+  english:
+    itemName: Force
+    itemDescription: This Items creates a Force, which attracts golden Particles
+  german:
+    itemName: Anziehungskraft
+    itemDescription: Dieses Item generiert eine Anziehungskraft, welche goldene Partikel
+      anzieht
+  itemTexture: {fileID: 2800000, guid: 5f98737b84cf5a746bf335a06e14d49d, type: 3}
+  itemLevels:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  itemPrices: 00000000010000000200000003000000040000000500000006000000070000000800000009000000

@@ -67,6 +67,27 @@ public class UiObjectReferrer : MonoBehaviour {
 
 
 
+    [Header("SHOP")]
+    [Space(30)]
+    public GameObject shopLowerMain;
+    public GameObject shopUpperMain;
+    [Header("SHOP EN")]
+    public GameObject shopInterfaceEN;
+    public GameObject shopWelcomeTextEN;
+    public GameObject shopBuyButtonEN;
+    public GameObject shopUnlockButtonEN;
+    [Header("SHOP DE")]
+    public GameObject shopInterfaceDE;
+    public GameObject shopWelcomeTextDE;
+    public GameObject shopBuyButtonDE;
+    public GameObject shopUnlockButtonDE;
+    [Header("SHOP ITEMS")]
+    public List<ItemShopPrefab> shopItems;
+
+
+
+
+
     [Header("PAUSE MENU")]
     [Space(30)]
     public GameObject pauseMain;
@@ -132,7 +153,8 @@ public class UiObjectReferrer : MonoBehaviour {
             settingsMainEN,
             notificationAdsEN,
             endgameMainEN,
-            endgameReviveMainEN
+            endgameReviveMainEN,
+            shopInterfaceEN
         });
         objectsDE.AddRange(new List<GameObject>() {
             //MENU
@@ -142,7 +164,8 @@ public class UiObjectReferrer : MonoBehaviour {
             settingsMainDE,
             notificationAdsDE,
             endgameMainDE,
-            endgameReviveMainDE
+            endgameReviveMainDE,
+            shopInterfaceDE
         });
     }
 }

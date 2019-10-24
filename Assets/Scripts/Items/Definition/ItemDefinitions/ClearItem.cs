@@ -2,21 +2,7 @@
 
 [CreateAssetMenu(menuName = "Items/Clear Item")]
 public class ClearItem : ItemDefinition {
-
-    public int GetCurrendLVL() {
+    public override int getCurrendLVL() {
         return SaveDataManager.getValue.clearItmLVL;
-    }
-
-    public void Setup() {
-        var currentLVL = SaveDataManager.getValue.clearItmLVL;
-    }
-
-    public void BuyItem() {
-        // var maxLVL = base.getMaxLVL;
-        // var currentLVL = SaveDataManager.getValue.clearItmLVL;
-        // if (currentLVL < maxLVL) {
-        //     SaveDataManager.getValue.clearItmLVL++;
-        //     SaveDataManager.Save();
-        // }
     }
 }

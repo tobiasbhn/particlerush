@@ -31,6 +31,12 @@ public class UiSceneScript : MonoBehaviour {
         UiObjectReferrer.instance.pauseMain.SetActive(true);
     }
 
+    public void SetupShop() {
+        DisableAllMenus();
+        UiObjectReferrer.instance.shopLowerMain.SetActive(true);
+        UiObjectReferrer.instance.shopUpperMain.SetActive(true);
+    }
+
     public void SetupSettings() {
         DisableAllMenus();
         UiObjectReferrer.instance.settingsMain.SetActive(true);
@@ -47,7 +53,6 @@ public class UiSceneScript : MonoBehaviour {
         if (withRevive)
             UiObjectReferrer.instance.endgameReviveMain.SetActive(true);
     }
-
     public void DisableReviveScreen() {
         UiObjectReferrer.instance.endgameReviveMain.SetActive(false);
     }
@@ -60,5 +65,7 @@ public class UiSceneScript : MonoBehaviour {
         UiObjectReferrer.instance.notificationAdsMain.SetActive(false);
         UiObjectReferrer.instance.endgameMain.SetActive(false);
         UiObjectReferrer.instance.endgameReviveMain.SetActive(false);
+        UiObjectReferrer.instance.shopLowerMain.SetActive(false);
+        UiObjectReferrer.instance.shopUpperMain.SetActive(false);
     }
 }

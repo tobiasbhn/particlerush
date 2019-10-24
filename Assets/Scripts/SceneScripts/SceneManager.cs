@@ -11,25 +11,19 @@ public static class SceneManager {
     //SCENE FUNCTIONS
     public static void callSceneTutorial() {
         //Return if Scene already called
-        if (SaveDataManager.getValue.gameStatus == GameStatus.tutorial)
+        if (!allowSceneSwitch(GameStatus.tutorial))
             return;
-        Debug.Log(LogTime.Time() + ": Scene Manager - Loading Tutorial...");
 
         //Setup specific Game Settings and Values
-        SaveDataManager.getValue.gameStatus = GameStatus.tutorial;
-        SaveDataManager.Save();
 
     }
 
     public static void callSceneMenu() {
         //Return if Scene already called
-        if (SaveDataManager.getValue.gameStatus == GameStatus.menu)
+        if (!allowSceneSwitch(GameStatus.menu))
             return;
-        Debug.Log(LogTime.Time() + ": Scene Manager - Loading Menu...");
 
         //Setup specific Game Settings and Values
-        SaveDataManager.getValue.gameStatus = GameStatus.menu;
-        SaveDataManager.Save();
         Time.timeScale = 1f;
         PlayerSceneSetup.instance.SetupMenu();
         ParticleSceneSetup.instance.SetupMenu();
@@ -37,31 +31,26 @@ public static class SceneManager {
         ShakeScript.instance.SetupMenu();
     }
 
-    public static void callSceneIngame() { // == absolute Restart, reset Points, reset Revive-Chance, reset Everything
+    public static void callSceneIngame() {
         //Return if Scene already called
-        if (SaveDataManager.getValue.gameStatus == GameStatus.ingame)
+        if (!allowSceneSwitch(GameStatus.ingame))
             return;
-        Debug.Log(LogTime.Time() + ": Scene Manager - Loading Ingame...");
         IngameScript.instance.setupIngame();
     }
 
     public static void callSceneEndgame() {
         //Return if Scene already called
-        if (SaveDataManager.getValue.gameStatus == GameStatus.endgame)
+        if (!allowSceneSwitch(GameStatus.endgame))
             return;
-        Debug.Log(LogTime.Time() + ": Scene Manager - Loading Endgame...");
         EndgameScript.instance.SetupEndgame();
     }
 
     public static void callScenePause() {
         //Return if Scene already called
-        if (SaveDataManager.getValue.gameStatus == GameStatus.paused)
+        if (!allowSceneSwitch(GameStatus.paused))
             return;
-        Debug.Log(LogTime.Time() + ": Scene Manager - Loading Pause...");
 
         //Setup specific Game Settings and Values
-        SaveDataManager.getValue.gameStatus = GameStatus.paused;
-        SaveDataManager.Save();
         Time.timeScale = 0f;
         UiSceneScript.instance.SetupPause();
         PlayerSceneSetup.instance.SetupPause();
@@ -70,13 +59,10 @@ public static class SceneManager {
 
     public static void callSceneResume() {
         //Return if Scene already called
-        if (SaveDataManager.getValue.gameStatus == GameStatus.ingame)
+        if (!allowSceneSwitch(GameStatus.ingame))
             return;
-        Debug.Log(LogTime.Time() + ": Scene Manager - Loading Resume...");
 
         //Setup specific Game Settings and Values
-        SaveDataManager.getValue.gameStatus = GameStatus.ingame;
-        SaveDataManager.Save();
         Time.timeScale = 1f;
         UiSceneScript.instance.SetupIngame();
         PlayerSceneSetup.instance.SetupResume();
@@ -85,13 +71,10 @@ public static class SceneManager {
 
     public static void callSceneRevive() {
         //Return if Scene already called
-        if (SaveDataManager.getValue.gameStatus == GameStatus.ingame)
+        if (!allowSceneSwitch(GameStatus.ingame))
             return;
-        Debug.Log(LogTime.Time() + ": Scene Manager - Loading Revive...");
 
         //Setup specific Game Settings and Values
-        SaveDataManager.getValue.gameStatus = GameStatus.ingame;
-        SaveDataManager.Save();
         Time.timeScale = 1f;
         UiSceneScript.instance.SetupIngame();
         PlayerSceneSetup.instance.SetupIngame();
@@ -102,13 +85,10 @@ public static class SceneManager {
 
     public static void callSceneSettings() {
         //Return if Scene already called
-        if (SaveDataManager.getValue.gameStatus == GameStatus.settings)
+        if (!allowSceneSwitch(GameStatus.settings))
             return;
-        Debug.Log(LogTime.Time() + ": Scene Manager - Loading Settings...");
 
         //Setup specific Game Settings and Values
-        SaveDataManager.getValue.gameStatus = GameStatus.settings;
-        SaveDataManager.Save();
         Time.timeScale = 1f;
         PlayerSceneSetup.instance.SetupDisabled();
         ParticleSceneSetup.instance.SetupDisabled();
@@ -118,17 +98,38 @@ public static class SceneManager {
 
     public static void callSceneAdsNotification() {
         //Return if Scene already called
-        if (SaveDataManager.getValue.gameStatus == GameStatus.notification)
+        if (!allowSceneSwitch(GameStatus.notification))
             return;
-        Debug.Log(LogTime.Time() + ": Scene Manager - Loading Ads Notification...");
 
         //Setup specific Game Settings and Values
-        SaveDataManager.getValue.gameStatus = GameStatus.notification;
-        SaveDataManager.Save();
         Time.timeScale = 1f;
         PlayerSceneSetup.instance.SetupDisabled();
         ParticleSceneSetup.instance.SetupDisabled();
         UiSceneScript.instance.SetupNotificationAds();
         ShakeScript.instance.SetupDisabled();
+    }
+
+    public static void callSceneShop() {
+        //Return if Scene already called
+        if (!allowSceneSwitch(GameStatus.shop))
+            return;
+        //Setup specific Game Settings and Values
+        Time.timeScale = 1f;
+        PlayerSceneSetup.instance.SetupMenu();
+        ParticleSceneSetup.instance.SetupDisabled();
+        UiSceneScript.instance.SetupShop();
+        ShakeScript.instance.SetupDisabled();
+    }
+
+    private static bool allowSceneSwitch(GameStatus status) {
+        //Return if Scene already called
+        if (SaveDataManager.getValue.gameStatus == status)
+            return false;
+        Debug.Log(LogTime.Time() + ": Scene Manager - Loading " + status.ToString() + "...");
+
+        //Setup specific Game Settings and Values
+        SaveDataManager.getValue.gameStatus = status;
+        SaveDataManager.Save();
+        return true;
     }
 }

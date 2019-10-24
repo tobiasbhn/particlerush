@@ -12,9 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 596c9a4476f52844e8f8f3cad7b76a42, type: 3}
   m_Name: Clear Item
   m_EditorClassIdentifier: 
-  itemName: 
-  itemDescription: 
-  itemImage: {fileID: 0}
-  levelSpecification: []
-  getValue: 0
-  getPrice: 0
+  english:
+    itemName: Clear
+    itemDescription: This Item Clears all Particles in a specific Radius
+  german:
+    itemName: Freiraum
+    itemDescription: "Dieses Item zerst\xF6rt alle Partikel in einem gewissen Radius"
+  itemTexture: {fileID: 2800000, guid: aa1fed59ef59f7549a51ecb31038e34d, type: 3}
+  itemLevels:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  itemPrices: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
