@@ -66,6 +66,9 @@ public class SaveData {
     public int statsTotalProjectilesHit = 0;
     // Time
     public float totalTimeIngame = 0f;
+    // Score
+    public float highscore = 0f;
+    public float scoreTotal = 0f;
 
 
     //PROCESSES

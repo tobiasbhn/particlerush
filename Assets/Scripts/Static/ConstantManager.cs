@@ -113,5 +113,10 @@ public static class ConstantManager {
 
     //ADVERTS
     public const float AD_TIME_TO_PASS_TO_SHOW_AD = 30f;
+
+
+    //SCORE
+    public const int SCORE_PER_SECOND = 100;
+    public const int SCORE_PER_PARTICLE = 500;
 }
 

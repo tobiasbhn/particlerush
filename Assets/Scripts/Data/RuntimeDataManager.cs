@@ -9,9 +9,9 @@ public class RuntimeDataManager : MonoBehaviour {
     public bool thisScriptLoaded = false;
 
     // RUNTIME DATE
-    public static RuntimeData setValue;
-    public RuntimeData preRevive;
-    public RuntimeData postRevive;
+    public static RuntimeData value;
+    public static RuntimeData preRevive;
+    public static RuntimeData postRevive;
 
     void Awake() {
         instance = this;
@@ -19,46 +19,49 @@ public class RuntimeDataManager : MonoBehaviour {
     void Start() {
         preRevive = new RuntimeData();
         postRevive = new RuntimeData();
-        setValue = preRevive;
+        value = preRevive;
         thisScriptLoaded = true;
     }
 
     public void SetupIngame() {
         if (EndgameScript.instance.alreadyRevived) {
             postRevive = new RuntimeData();
-            setValue = postRevive;
-            setValue.startTime = Time.realtimeSinceStartup;
+            value = postRevive;
+            value.startTime = Time.realtimeSinceStartup;
         } else {
             postRevive = new RuntimeData();
             preRevive = new RuntimeData();
-            setValue = preRevive;
-            setValue.startTime = Time.realtimeSinceStartup;
+            value = preRevive;
+            value.startTime = Time.realtimeSinceStartup;
         }
     }
 
     public void SaveRuntimeData() {
         // STATS
-        SaveDataManager.getValue.statsTotalParticles += setValue.particlesSpawned;
+        SaveDataManager.getValue.statsTotalParticles += value.particlesSpawned;
         // Normal Particles
-        SaveDataManager.getValue.statsTotalNormalParticlesSpawned += setValue.normalParticlesSpawned;
-        SaveDataManager.getValue.statsTotalNormalParticlesDestroyed += setValue.normalParticlesDestroyed;
-        SaveDataManager.getValue.statsTotalNormalParticlesCollected += setValue.normalParticlesCollected;
-        SaveDataManager.getValue.statsTotalGainedMass += setValue.gainedMass;
+        SaveDataManager.getValue.statsTotalNormalParticlesSpawned += value.normalParticlesSpawned;
+        SaveDataManager.getValue.statsTotalNormalParticlesDestroyed += value.normalParticlesDestroyed;
+        SaveDataManager.getValue.statsTotalNormalParticlesCollected += value.normalParticlesCollected;
+        SaveDataManager.getValue.statsTotalGainedMass += value.gainedMass;
         // Shrink Particles
-        SaveDataManager.getValue.statsTotalShrinkParticlesSpawned += setValue.shrinkParticlesSpawned;
-        SaveDataManager.getValue.statsTotalShrinkParticlesDestroyed += setValue.shrinkParticlesDestroyed;
-        SaveDataManager.getValue.statsTotalShrinkParticlesCollected += setValue.shrinkParticlesCollected;
-        SaveDataManager.getValue.statsTotalLossMass += setValue.lossMass;
+        SaveDataManager.getValue.statsTotalShrinkParticlesSpawned += value.shrinkParticlesSpawned;
+        SaveDataManager.getValue.statsTotalShrinkParticlesDestroyed += value.shrinkParticlesDestroyed;
+        SaveDataManager.getValue.statsTotalShrinkParticlesCollected += value.shrinkParticlesCollected;
+        SaveDataManager.getValue.statsTotalLossMass += value.lossMass;
         // Gold Particles
-        SaveDataManager.getValue.statsTotalGoldParticlesSpawned += setValue.goldParticlesSpawned;
-        SaveDataManager.getValue.statsTotalGoldParticlesDestroyed += setValue.goldParticlesDestroyed;
-        SaveDataManager.getValue.statsTotalGoldParticlesCollected += setValue.goldParticlesCollected;
-        SaveDataManager.getValue.statsTotalGainedGold += setValue.goldMassCollected;
+        SaveDataManager.getValue.statsTotalGoldParticlesSpawned += value.goldParticlesSpawned;
+        SaveDataManager.getValue.statsTotalGoldParticlesDestroyed += value.goldParticlesDestroyed;
+        SaveDataManager.getValue.statsTotalGoldParticlesCollected += value.goldParticlesCollected;
+        SaveDataManager.getValue.statsTotalGainedGold += value.goldMassCollected;
         // Projectiles
-        SaveDataManager.getValue.statsTotalProjectilesFired += setValue.projectilesFiredTotal;
-        SaveDataManager.getValue.statsTotalProjectilesHit += setValue.projectilesHitTotal;
+        SaveDataManager.getValue.statsTotalProjectilesFired += value.projectilesFiredTotal;
+        SaveDataManager.getValue.statsTotalProjectilesHit += value.projectilesHitTotal;
         // Time
-        SaveDataManager.getValue.totalTimeIngame += Time.realtimeSinceStartup - setValue.startTime;
+        SaveDataManager.getValue.totalTimeIngame += Time.realtimeSinceStartup - value.startTime;
+        // Score
+        SaveDataManager.getValue.highscore = value.highscore;
+        SaveDataManager.getValue.scoreTotal += value.score;
 
         SaveDataManager.Save();
     }
@@ -85,5 +88,8 @@ public class RuntimeData {
     public int projectilesFiredTotal = 0;
     public int projectilesHitTotal = 0;
     // Time
-    public float startTime = 0;
+    public float startTime = 0f;
+    // Score
+    public float score = 0f;
+    public float highscore = 0f;
 }

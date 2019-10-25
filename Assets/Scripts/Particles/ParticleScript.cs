@@ -104,12 +104,14 @@ public class ParticleScript : MonoBehaviour {
         if (particleMass <= 0) {
             Destroy(true);
 
-            if (particleType == ParticleType.grow)
-                RuntimeDataManager.setValue.normalParticlesDestroyed++;
-            else if (particleType == ParticleType.shrink)
-                RuntimeDataManager.setValue.shrinkParticlesDestroyed++;
-            else if (particleType == ParticleType.gold)
-                RuntimeDataManager.setValue.goldParticlesDestroyed++;
+            if (particleType == ParticleType.grow) {
+                RuntimeDataManager.value.normalParticlesDestroyed++;
+                ScoreScript.instance.IncreaseScoreParticle();
+            } else if (particleType == ParticleType.shrink) {
+                RuntimeDataManager.value.shrinkParticlesDestroyed++;
+            } else if (particleType == ParticleType.gold) {
+                RuntimeDataManager.value.goldParticlesDestroyed++;
+            }
                 
         } else {
             DefineMesh();

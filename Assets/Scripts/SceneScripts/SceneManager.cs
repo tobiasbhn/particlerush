@@ -29,13 +29,13 @@ public static class SceneManager {
         ParticleSceneSetup.instance.SetupMenu();
         UiSceneScript.instance.SetupMenu();
         ShakeScript.instance.SetupMenu();
+        ScoreScript.instance.SetupDisabled();
     }
 
-    public static void callSceneIngame() {
-        //Return if Scene already called
-        if (!allowSceneSwitch(GameStatus.ingame))
-            return;
-        IngameScript.instance.setupIngame();
+    public static void callSceneIngame(bool reset) {
+        //Setup Ingame if not already happend
+        if (SaveDataManager.getValue.gameStatus != GameStatus.ingame)
+            IngameScript.instance.setupIngame(reset);
     }
 
     public static void callSceneEndgame() {
@@ -55,6 +55,7 @@ public static class SceneManager {
         UiSceneScript.instance.SetupPause();
         PlayerSceneSetup.instance.SetupPause();
         ShakeScript.instance.SetupIngame();
+        ScoreScript.instance.SetupDisabled();
     }
 
     public static void callSceneResume() {
@@ -67,20 +68,7 @@ public static class SceneManager {
         UiSceneScript.instance.SetupIngame();
         PlayerSceneSetup.instance.SetupResume();
         ShakeScript.instance.SetupIngame();
-    }
-
-    public static void callSceneRevive() {
-        //Return if Scene already called
-        if (!allowSceneSwitch(GameStatus.ingame))
-            return;
-
-        //Setup specific Game Settings and Values
-        Time.timeScale = 1f;
-        UiSceneScript.instance.SetupIngame();
-        PlayerSceneSetup.instance.SetupIngame();
-        ParticleSceneSetup.instance.SetupIngame();
-        ShakeScript.instance.SetupIngame();
-        RuntimeDataManager.instance.SetupIngame();
+        ScoreScript.instance.SetupActive();
     }
 
     public static void callSceneSettings() {
@@ -94,6 +82,7 @@ public static class SceneManager {
         ParticleSceneSetup.instance.SetupDisabled();
         UiSceneScript.instance.SetupSettings();
         ShakeScript.instance.SetupDisabled();
+        ScoreScript.instance.SetupDisabled();
     }
 
     public static void callSceneAdsNotification() {
@@ -107,6 +96,7 @@ public static class SceneManager {
         ParticleSceneSetup.instance.SetupDisabled();
         UiSceneScript.instance.SetupNotificationAds();
         ShakeScript.instance.SetupDisabled();
+        ScoreScript.instance.SetupDisabled();
     }
 
     public static void callSceneShop() {
@@ -119,7 +109,13 @@ public static class SceneManager {
         ParticleSceneSetup.instance.SetupDisabled();
         UiSceneScript.instance.SetupShop();
         ShakeScript.instance.SetupDisabled();
+        ScoreScript.instance.SetupDisabled();
     }
+
+
+
+
+
 
     private static bool allowSceneSwitch(GameStatus status) {
         //Return if Scene already called

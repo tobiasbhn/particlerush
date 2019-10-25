@@ -52,7 +52,7 @@ public class ButtonScript : MonoBehaviour {
         SceneManager.callSceneMenu();
     }
     public void ButtonSceneCallIngame() {
-        SceneManager.callSceneIngame();
+        SceneManager.callSceneIngame(true);
     }
     public void ButtonSceneCallShop() {
         SceneManager.callSceneShop();

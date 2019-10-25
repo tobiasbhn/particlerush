@@ -4887,6 +4887,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 454396582}
+  - component: {fileID: 454396583}
   m_Layer: 5
   m_Name: Endgame DE
   m_TagString: Untagged
@@ -4920,6 +4921,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &454396583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454396581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 842b80c8970778544aee6dda55338eda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &456922142 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2153854770192723411, guid: c9cd3698b882d314a824466449634fcf,
@@ -5241,6 +5254,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 495525328}
+  - component: {fileID: 495525329}
   m_Layer: 5
   m_Name: Endgame EN
   m_TagString: Untagged
@@ -5274,6 +5288,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &495525329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495525327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 842b80c8970778544aee6dda55338eda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &503744513
 GameObject:
   m_ObjectHideFlags: 0
@@ -7958,7 +7984,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: +200
+  m_Text: 0
 --- !u!222 &735936405
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8436,6 +8462,7 @@ GameObject:
   m_Component:
   - component: {fileID: 803788310}
   - component: {fileID: 803788311}
+  - component: {fileID: 803788312}
   m_Layer: 0
   m_Name: Runtime Data
   m_TagString: Untagged
@@ -8470,40 +8497,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisScriptLoaded: 0
-  preRevive:
-    particlesSpawned: 0
-    normalParticlesSpawned: 0
-    normalParticlesDestroyed: 0
-    normalParticlesCollected: 0
-    gainedMass: 0
-    shrinkParticlesSpawned: 0
-    shrinkParticlesDestroyed: 0
-    shrinkParticlesCollected: 0
-    lossMass: 0
-    goldParticlesSpawned: 0
-    goldParticlesDestroyed: 0
-    goldParticlesCollected: 0
-    goldMassCollected: 0
-    projectilesFiredTotal: 0
-    projectilesHitTotal: 0
-    startTime: 0
-  postRevive:
-    particlesSpawned: 0
-    normalParticlesSpawned: 0
-    normalParticlesDestroyed: 0
-    normalParticlesCollected: 0
-    gainedMass: 0
-    shrinkParticlesSpawned: 0
-    shrinkParticlesDestroyed: 0
-    shrinkParticlesCollected: 0
-    lossMass: 0
-    goldParticlesSpawned: 0
-    goldParticlesDestroyed: 0
-    goldParticlesCollected: 0
-    goldMassCollected: 0
-    projectilesFiredTotal: 0
-    projectilesHitTotal: 0
-    startTime: 0
+--- !u!114 &803788312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803788309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc27210238539e84c9c95621c18601b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisScriptLoaded: 0
+  currentScore: 0
 --- !u!1 &805876984
 GameObject:
   m_ObjectHideFlags: 0
@@ -8945,7 +8952,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 854513141}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2227f0fe8146e4c46be164855a53990e, type: 3}
   m_Name: 
@@ -22573,7 +22580,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2078636182
 RectTransform:
   m_ObjectHideFlags: 0

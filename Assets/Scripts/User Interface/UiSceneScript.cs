@@ -47,11 +47,9 @@ public class UiSceneScript : MonoBehaviour {
         UiObjectReferrer.instance.notificationAdsMain.SetActive(true);
     }
 
-    public void SetupEndgame(bool withRevive) {
+    public void SetupEndgame() {
         DisableAllMenus();
         UiObjectReferrer.instance.endgameMain.SetActive(true);
-        if (withRevive)
-            UiObjectReferrer.instance.endgameReviveMain.SetActive(true);
     }
     public void DisableReviveScreen() {
         UiObjectReferrer.instance.endgameReviveMain.SetActive(false);

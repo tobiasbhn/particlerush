@@ -35,7 +35,7 @@ public class ItemShopPrefab : MonoBehaviour {
         UpdateLvlBasedItemInfos();
     }
 
-    // Setup everything that is static, like Item Name and Item Description (newver Change, no matter which LVL)
+    // Setup everything that is static, like Item Name and Item Description (never Change, no matter which LVL)
     void UpdateStaticItemInfos() {
         itemIconHolder.texture = itemDefinition.getIcon();
         if (SaveDataManager.getValue.settingsLanguage == SettingsLanguages.English) {

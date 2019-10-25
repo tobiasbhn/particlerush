@@ -118,15 +118,15 @@ public class PlayerScript : MonoBehaviour {
 
             if (particleType == ParticleType.grow) {
                 SetTargetMass(targetMass + particleMass);
-                RuntimeDataManager.setValue.normalParticlesCollected++;
-                RuntimeDataManager.setValue.gainedMass += particleMass;
+                RuntimeDataManager.value.normalParticlesCollected++;
+                RuntimeDataManager.value.gainedMass += particleMass;
             } else if (particleType == ParticleType.shrink) {
                 SetTargetMass(targetMass - particleMass);
-                RuntimeDataManager.setValue.shrinkParticlesCollected++;
-                RuntimeDataManager.setValue.lossMass += particleMass;
+                RuntimeDataManager.value.shrinkParticlesCollected++;
+                RuntimeDataManager.value.lossMass += particleMass;
             } else if (particleType == ParticleType.gold) {
-                RuntimeDataManager.setValue.goldParticlesCollected++;
-                RuntimeDataManager.setValue.goldMassCollected += (int)particleMass;
+                RuntimeDataManager.value.goldParticlesCollected++;
+                RuntimeDataManager.value.goldMassCollected += (int)particleMass;
             }
 
             particleScript.Destroy(true, true, false);

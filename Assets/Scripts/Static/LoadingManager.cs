@@ -32,7 +32,8 @@ public static class LoadingManager {
             IngameScript.instance != null &&
             
             // DATA
-            RuntimeDataManager.instance != null) {
+            RuntimeDataManager.instance != null &&
+            ScoreScript.instance != null) {
 
             if (// PARTICLES
                 ParticleSpawnScript.instance.thisScriptLoaded &&
@@ -62,7 +63,8 @@ public static class LoadingManager {
                 IngameScript.instance.thisScriptLoaded &&
                 
                 // DATA
-                RuntimeDataManager.instance.thisScriptLoaded) {
+                RuntimeDataManager.instance.thisScriptLoaded &&
+                ScoreScript.instance.thisScriptLoaded) {
                     return true;
             }
         }

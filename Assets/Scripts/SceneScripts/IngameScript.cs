@@ -13,27 +13,29 @@ public class IngameScript : MonoBehaviour {
         thisScriptLoaded = true;
     }
 
-    public void setupIngame() {
-        if (Time.realtimeSinceStartup - AdsManager.instance.lastAdShown > ConstantManager.AD_TIME_TO_PASS_TO_SHOW_AD) {
+    public void setupIngame(bool reset) {
+        if (Time.realtimeSinceStartup - AdsManager.instance.lastAdShown > ConstantManager.AD_TIME_TO_PASS_TO_SHOW_AD && reset) {
             StartCoroutine(AdsManager.instance.ShowAd(AdType.Normal, (AdResult result) => {
                 //Dont care about Result, but render Ingame Scene on Ad-Ended
-                setupIngameHelper();
+                setupIngameHelper(reset);
             }));
         } else {
-            setupIngameHelper();
+            setupIngameHelper(reset);
         }
     }
 
-    private void setupIngameHelper() {
+    private void setupIngameHelper(bool reset) {
         //Setup specific Game Settings and Values
         SaveDataManager.getValue.gameStatus = GameStatus.ingame;
         SaveDataManager.Save();
         Time.timeScale = 1f;
-        EndgameScript.instance.SetupIngame();
+        if (reset)
+            EndgameScript.instance.SetupIngame();
         RuntimeDataManager.instance.SetupIngame(); // RuntimeDataManager need to be setup after Endgame Setup (so alreadyRevived is Reset)
         PlayerSceneSetup.instance.SetupIngame();
         ParticleSceneSetup.instance.SetupIngame();
         UiSceneScript.instance.SetupIngame();
         ShakeScript.instance.SetupIngame();
+        ScoreScript.instance.SetupIngame();
     }
 }

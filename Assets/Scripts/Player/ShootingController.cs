@@ -22,7 +22,7 @@ public class ShootingController : MonoBehaviour {
     }
 
     public void NewInput(Vector3 _pos) {
-        RuntimeDataManager.setValue.projectilesFiredTotal++;
+        RuntimeDataManager.value.projectilesFiredTotal++;
 
         var currentPlayerRadius = PlayerScript.instance.currentMass * ConstantManager.PLAYER_AMOUNT_TO_GROW_PER_MASS_IN_WORLD_SPACE / 2;
         var targetPos = Camera.main.ScreenToWorldPoint(new Vector3(_pos.x, _pos.y, ConstantManager.CAMERA_DISTANCE_PLAYER));
