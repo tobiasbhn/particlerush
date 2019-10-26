@@ -38,6 +38,57 @@ public class UiObjectReferrer : MonoBehaviour {
     public GameObject menuChallengeButtonDE;
     public GameObject menuSettingsButtonDE;
 
+
+
+
+    [Header("ENDGAME")]
+    [Space(30)]
+    public GameObject endgameMain;
+
+    [Header("ENDGAME EN")]
+    public GameObject endgameMainEN;
+
+    [Space(5)]
+    public GameObject endgameGameOverTextEN;
+    public GameObject endgameHighscoreTextEN;
+    public GameObject endgameScoreTextEN;
+    public GameObject endgameReviveEN;
+    public GameObject endgameLevelEN;
+
+    [Header("ENDGAME DE")]
+    public GameObject endgameMainDE;
+
+    [Space(5)]
+    public GameObject endgameGameOverTextDE;
+    public GameObject endgameHighscoreTextDE;
+    public GameObject endgameScoreTextDE;
+    public GameObject endgameReviveDE;
+    public GameObject endgameLevelDE;
+
+
+
+
+    [Header("SHOP")]
+    [Space(30)]
+    public GameObject shopLowerMain;
+    public GameObject shopUpperMain;
+    [Header("SHOP EN")]
+    public GameObject shopInterfaceEN;
+    public GameObject shopWelcomeTextEN;
+    public GameObject shopBuyButtonEN;
+    public GameObject shopUnlockButtonEN;
+    [Header("SHOP DE")]
+    public GameObject shopInterfaceDE;
+    public GameObject shopWelcomeTextDE;
+    public GameObject shopBuyButtonDE;
+    public GameObject shopUnlockButtonDE;
+    [Header("SHOP ITEMS")]
+    public List<ItemShopPrefab> shopItems;
+
+
+
+
+
     [Header("PAUSE MENU")]
     [Space(30)]
     public GameObject pauseMain;
@@ -79,6 +130,12 @@ public class UiObjectReferrer : MonoBehaviour {
     public GameObject settingsItemPosTextDE;
     public GameObject settingsGooglePlayTextDE;
 
+    [Header("ADD NOTIFICATION")]
+    [Space(30)]
+    public GameObject notificationAdsMain;
+    public GameObject notificationAdsDE;
+    public GameObject notificationAdsEN;
+
     void Awake() {
         instance = this;
     }
@@ -94,14 +151,20 @@ public class UiObjectReferrer : MonoBehaviour {
             menuMainEN,
             pauseMainEN,
             settingsInterfaceEN,
-            settingsMainEN
+            settingsMainEN,
+            notificationAdsEN,
+            endgameMainEN,
+            shopInterfaceEN
         });
         objectsDE.AddRange(new List<GameObject>() {
             //MENU
             menuMainDE,
             pauseMainDE,
             settingsInterfaceDE,
-            settingsMainDE
+            settingsMainDE,
+            notificationAdsDE,
+            endgameMainDE,
+            shopInterfaceDE
         });
     }
 }

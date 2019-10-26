@@ -91,13 +91,14 @@ public class PlayerScript : MonoBehaviour {
 
     private void MassRoutine() {
         var sizeDifference = targetMass - currentMass; // positive when to small, negative when to big
-        if (sizeDifference >= ConstantManager.PLAYER_MAX_SIZE_DIFFERENCE_TO_END_ANIMATION || sizeDifference <= -ConstantManager.PLAYER_MAX_SIZE_DIFFERENCE_TO_END_ANIMATION) {
-            currentMass += sizeDifference / (float)ConstantManager.PLAYER_SIZE_ANIMATION_DURATION;
+        if (sizeDifference >= ConstantManager.PLAYER_MAX_SIZE_DIFFERENCE_TO_END_ANIMATION
+                || sizeDifference <= -ConstantManager.PLAYER_MAX_SIZE_DIFFERENCE_TO_END_ANIMATION) {
+            currentMass += sizeDifference / (float)ConstantManager.PLAYER_SIZE_ANIMATION_DURATION * Time.deltaTime * 60;
 
             playerMeshGenerator.CreateShape(currentMass);
             ResizeActualPlayerSizeInWorld();
 
-            if (targetMass >= ConstantManager.PLAYER_MAX_MESH_GENERATION_SIZE) // && canWin)
+            if (targetMass >= ConstantManager.PLAYER_MAX_MESH_GENERATION_SIZE && SaveDataManager.getValue.gameStatus == GameStatus.ingame)
                 SceneManager.callSceneEndgame();
         }
     }
@@ -117,8 +118,15 @@ public class PlayerScript : MonoBehaviour {
 
             if (particleType == ParticleType.grow) {
                 SetTargetMass(targetMass + particleMass);
+                RuntimeDataManager.value.normalParticlesCollected++;
+                RuntimeDataManager.value.gainedMass += particleMass;
             } else if (particleType == ParticleType.shrink) {
                 SetTargetMass(targetMass - particleMass);
+                RuntimeDataManager.value.shrinkParticlesCollected++;
+                RuntimeDataManager.value.lossMass += particleMass;
+            } else if (particleType == ParticleType.gold) {
+                RuntimeDataManager.value.goldParticlesCollected++;
+                RuntimeDataManager.value.goldMassCollected += (int)particleMass;
             }
 
             particleScript.Destroy(true, true, false);

@@ -12,12 +12,18 @@ public class ShootingController : MonoBehaviour {
     public GameObject projectilePrefab;
     public GameObject projectileParent;
 
+    //PROJECTILES
+    private List<GameObject> instantiatedProjectileList;
+
     void Awake() {
         instance = this;
+        instantiatedProjectileList = new List<GameObject>();
         thisScriptLoaded = true;
     }
 
     public void NewInput(Vector3 _pos) {
+        RuntimeDataManager.value.projectilesFiredTotal++;
+
         var currentPlayerRadius = PlayerScript.instance.currentMass * ConstantManager.PLAYER_AMOUNT_TO_GROW_PER_MASS_IN_WORLD_SPACE / 2;
         var targetPos = Camera.main.ScreenToWorldPoint(new Vector3(_pos.x, _pos.y, ConstantManager.CAMERA_DISTANCE_PLAYER));
         var originPos = Vector3.MoveTowards(PlayerScript.instance.playerHolder.transform.position, targetPos, currentPlayerRadius);
@@ -39,5 +45,12 @@ public class ShootingController : MonoBehaviour {
         instantiatedProjectile.transform.parent = projectileParent.transform;
         instantiatedProjectile.GetComponent<ProjectileScript>().damageToDeal = massInPercent;
         instantiatedProjectile.GetComponent<Rigidbody>().AddForce(addForce);
+        instantiatedProjectileList.Add(instantiatedProjectile);
+    }
+
+    public void DestroyAllProjectiles() {
+        foreach (GameObject projectile in instantiatedProjectileList) 
+            GameObject.Destroy(projectile.gameObject);
+        instantiatedProjectileList.Clear();
     }
 }

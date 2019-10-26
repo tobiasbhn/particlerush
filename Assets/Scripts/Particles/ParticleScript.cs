@@ -103,6 +103,16 @@ public class ParticleScript : MonoBehaviour {
         particleMass -= amount;
         if (particleMass <= 0) {
             Destroy(true);
+
+            if (particleType == ParticleType.grow) {
+                RuntimeDataManager.value.normalParticlesDestroyed++;
+                ScoreScript.instance.IncreaseScoreParticle();
+            } else if (particleType == ParticleType.shrink) {
+                RuntimeDataManager.value.shrinkParticlesDestroyed++;
+            } else if (particleType == ParticleType.gold) {
+                RuntimeDataManager.value.goldParticlesDestroyed++;
+            }
+                
         } else {
             DefineMesh();
             DefineSize();

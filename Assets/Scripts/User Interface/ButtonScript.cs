@@ -52,10 +52,10 @@ public class ButtonScript : MonoBehaviour {
         SceneManager.callSceneMenu();
     }
     public void ButtonSceneCallIngame() {
-        SceneManager.callSceneIngame();
+        SceneManager.callSceneIngame(true);
     }
     public void ButtonSceneCallShop() {
-        //
+        SceneManager.callSceneShop();
     }
     public void ButtonSceneCallTutorial() {
         //
@@ -137,7 +137,17 @@ public class ButtonScript : MonoBehaviour {
         Application.OpenURL("https://www.instagram.com/tobias.bhn/");
     }
     public void ButtonSpecialAds() {
-        //Kommt noch
+        //Show Rewarded Ad
+        if (SaveDataManager.getValue.notificationAdsFinished)
+            StartCoroutine(AdsManager.instance.ShowAd(AdType.Rewarded));
+        else
+            SceneManager.callSceneAdsNotification();
+    }
+    public void ButtonSpecialAdsContinueNotification() {
+        SaveDataManager.getValue.notificationAdsFinished = true;
+        SaveDataManager.Save();
+        SceneManager.callSceneSettings();
+        ButtonSpecialAds();
     }
     public void ButtonRedirectPayPal() {
         //Link to Donation-Page
@@ -175,6 +185,23 @@ public class ButtonScript : MonoBehaviour {
     }
 
 
+    // REVIVE
+    public void ButtonReviveCancel() {
+        EndgameScript.instance.SetupLevel();
+    }
+    public void ButtonReviveGold() {
+        EndgameScript.instance.reviveGold();
+    }
+    public void ButtonReviveAd() {
+        EndgameScript.instance.reviveAd();
+    }
+
+    // --------------------------------------------------------------------------------------------------------------------------------------------------------------
+    public void Cheat() {
+        PlayerScript.instance.SetTargetMass(PlayerScript.instance.targetMass + 5);
+    }
+    // --------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
 
     //HELPER
     public void UpdateButtonUI() {

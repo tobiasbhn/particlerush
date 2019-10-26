@@ -31,9 +31,25 @@ public class UiSceneScript : MonoBehaviour {
         UiObjectReferrer.instance.pauseMain.SetActive(true);
     }
 
+    public void SetupShop() {
+        DisableAllMenus();
+        UiObjectReferrer.instance.shopLowerMain.SetActive(true);
+        UiObjectReferrer.instance.shopUpperMain.SetActive(true);
+    }
+
     public void SetupSettings() {
         DisableAllMenus();
         UiObjectReferrer.instance.settingsMain.SetActive(true);
+    }
+
+    public void SetupNotificationAds() {
+        DisableAllMenus();
+        UiObjectReferrer.instance.notificationAdsMain.SetActive(true);
+    }
+
+    public void SetupEndgame() {
+        DisableAllMenus();
+        UiObjectReferrer.instance.endgameMain.SetActive(true);
     }
 
     private void DisableAllMenus() {
@@ -41,5 +57,9 @@ public class UiSceneScript : MonoBehaviour {
         UiObjectReferrer.instance.menuMain.SetActive(false);
         UiObjectReferrer.instance.pauseMain.SetActive(false);
         UiObjectReferrer.instance.settingsMain.SetActive(false);
+        UiObjectReferrer.instance.notificationAdsMain.SetActive(false);
+        UiObjectReferrer.instance.endgameMain.SetActive(false);
+        UiObjectReferrer.instance.shopLowerMain.SetActive(false);
+        UiObjectReferrer.instance.shopUpperMain.SetActive(false);
     }
 }

@@ -4,6 +4,19 @@ using UnityEngine;
 
 public static class ConstantManager {
 
+    //TODO ON PUBLISHING:
+        // - ConstantManager.useLocalFile = true;
+        // - ConstantManager.localSaveFileName = Unique name with Verion included
+        // - PlayerSettings => Set right Version
+        // - PlayerSettings => Check right Game Spelling
+        // - PlayerSettings => Game Icons set?
+        // - PlayerSettings => Bundle Number correct?
+        // - PlayerSettings => App signed?
+        // - UnityServices => Ads disable "Development-Mode"
+        // - AdsManager => ID's for the Advertisments right?
+        // - SaveDataManager => All default Values set correctly? (e.g. Download-Language)
+
+
     //DEBUG
     public static readonly bool useLocalSaveFile = false;
     public static readonly string localSaveFileName = "particleRush_45trtefefgv002";
@@ -27,10 +40,12 @@ public static class ConstantManager {
     public const float PLAYER_WAVES_OFFSET = 0.8f;
     public const int PLAYER_WAVES_DECREASE_WAVES_OUTSIDE = 4;
     //BEHAVIUR
+    //Ingame
     public const bool PLAYER_INGAME_ALLOW_GROW = true;
     public const bool PLAYER_INGAME_ALLOW_SHRINK = true;
     public const bool PLAYER_INGAME_ALLOW_ROTATION = true;
     public const bool PLAYER_INGAME_ALLOW_WAVES = true;
+    //Menu
     public const bool PLAYER_MENU_ALLOW_GROW = false;
     public const bool PLAYER_MENU_ALLOW_SHRINK = false;
     public const bool PLAYER_MENU_ALLOW_ROTATION = true;
@@ -84,6 +99,8 @@ public static class ConstantManager {
     //PROJECTILE
     public const int PROJECTILE_MIN_DAMAGE_REDUCION_PER_PLAYER_MASS = 20;
     public const float PROJECTILE_MAX_LIFE_TIME = 1f; // Time in Seconds
+    public const float PROJECTILE_MAX_WIDTH = 0.3f;
+    public const float PROJECTILE_MIN_WIDTH = 0.03f;
 
 
 
@@ -93,5 +110,13 @@ public static class ConstantManager {
     public const bool INPUT_ALLOW_TAP_INGAME = true;
     public const bool INPUT_ALLOW_TAP_MENU = false;
 
+
+    //ADVERTS
+    public const float AD_TIME_TO_PASS_TO_SHOW_AD = 30f;
+
+
+    //SCORE
+    public const int SCORE_PER_SECOND = 100;
+    public const int SCORE_PER_PARTICLE = 500;
 }
 

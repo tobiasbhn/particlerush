@@ -56,6 +56,7 @@ public class ParticleSpawnScript : MonoBehaviour {
         particleScript.particleSpeed = DefineSpeed();
         particleScript.allowSpeedIncrease = allowSpeedIncrease;
         instantiatedParticles.Add(spawnedParticle);
+        RuntimeDataManager.value.particlesSpawned++;
     }
 
     //DEFINE TYPE
@@ -64,16 +65,23 @@ public class ParticleSpawnScript : MonoBehaviour {
             case SpawnModi.all:
                 return DefineNormalType();
             case SpawnModi.onlyNorm:
+                RuntimeDataManager.value.normalParticlesSpawned++;
                 return ParticleType.grow;
             case SpawnModi.onlyShrink:
+                RuntimeDataManager.value.shrinkParticlesSpawned++;
                 return ParticleType.shrink;
             case SpawnModi.onlyGold:
+                RuntimeDataManager.value.goldParticlesSpawned++;
                 return ParticleType.gold;
             case SpawnModi.onlyMassRelative:
-                if (Random.Range(0, 100) < ConstantManager.PARTICLE_SHRINK_SPAWN_CHANCE)
+                if (Random.Range(0, 100) < ConstantManager.PARTICLE_SHRINK_SPAWN_CHANCE) {
+                    RuntimeDataManager.value.shrinkParticlesSpawned++;
                     return ParticleType.shrink;
-                else
+                }
+                else {
+                    RuntimeDataManager.value.normalParticlesSpawned++;
                     return ParticleType.grow;
+                }
             default:
                 spawnModi = SpawnModi.all;
                 return DefineNormalType();
@@ -82,10 +90,13 @@ public class ParticleSpawnScript : MonoBehaviour {
     private ParticleType DefineNormalType() {
         var random = Random.Range(0, 100);
         if (random < ConstantManager.PARTICLE_GOLD_SPAWN_CHANCE) {
+            RuntimeDataManager.value.goldParticlesSpawned++;
             return ParticleType.gold;
         } else if (random < ConstantManager.PARTICLE_GOLD_SPAWN_CHANCE + ConstantManager.PARTICLE_SHRINK_SPAWN_CHANCE) {
+            RuntimeDataManager.value.shrinkParticlesSpawned++;
             return ParticleType.shrink;
         } else {
+            RuntimeDataManager.value.normalParticlesSpawned++;
             return ParticleType.grow;
         }
     }
