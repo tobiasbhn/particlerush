@@ -58,6 +58,7 @@ public class AdsManager : MonoBehaviour {
         } else {
             //Show own Ad
             Debug.Log("Would show own Ad.");
+            AfterAdProcess();
             _return = AdResult.Private;
             isReady = true;
         }
@@ -71,7 +72,7 @@ public class AdsManager : MonoBehaviour {
         statusBeforAd = SaveDataManager.getValue.gameStatus;
         SaveDataManager.getValue.gameStatus = GameStatus.advert;
         SaveDataManager.Save();
-        Time.timeScale = 0;
+        Time.timeScale = 0f;
     }
     private void AfterAdProcess() {
         lastAdShown = Time.realtimeSinceStartup;

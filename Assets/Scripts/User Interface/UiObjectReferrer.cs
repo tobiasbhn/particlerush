@@ -44,25 +44,26 @@ public class UiObjectReferrer : MonoBehaviour {
     [Header("ENDGAME")]
     [Space(30)]
     public GameObject endgameMain;
-    public GameObject endgameReviveMain;
 
     [Header("ENDGAME EN")]
     public GameObject endgameMainEN;
-    public GameObject endgameReviveMainEN;
 
     [Space(5)]
     public GameObject endgameGameOverTextEN;
     public GameObject endgameHighscoreTextEN;
     public GameObject endgameScoreTextEN;
+    public GameObject endgameReviveEN;
+    public GameObject endgameLevelEN;
 
     [Header("ENDGAME DE")]
     public GameObject endgameMainDE;
-    public GameObject endgameReviveMainDE;
 
     [Space(5)]
     public GameObject endgameGameOverTextDE;
     public GameObject endgameHighscoreTextDE;
     public GameObject endgameScoreTextDE;
+    public GameObject endgameReviveDE;
+    public GameObject endgameLevelDE;
 
 
 
@@ -153,7 +154,6 @@ public class UiObjectReferrer : MonoBehaviour {
             settingsMainEN,
             notificationAdsEN,
             endgameMainEN,
-            endgameReviveMainEN,
             shopInterfaceEN
         });
         objectsDE.AddRange(new List<GameObject>() {
@@ -164,7 +164,6 @@ public class UiObjectReferrer : MonoBehaviour {
             settingsMainDE,
             notificationAdsDE,
             endgameMainDE,
-            endgameReviveMainDE,
             shopInterfaceDE
         });
     }

@@ -58,7 +58,7 @@ public class EndgameScript : MonoBehaviour {
             if (result == AdResult.Finished) {
                 SceneManager.callSceneIngame(false);
             } else {
-                UiSceneScript.instance.DisableReviveScreen();
+                SetupLevel();
             }
         }));
     }
@@ -67,5 +67,25 @@ public class EndgameScript : MonoBehaviour {
         alreadyRevived = true;
         //SUBSTRACT GOLD
         SceneManager.callSceneIngame(false);
+    }
+
+    
+    public void SetupRevive() {
+        StartCoroutine(ReviveCountdown());
+        UiObjectReferrer.instance.endgameReviveDE.SetActive(true);
+        UiObjectReferrer.instance.endgameReviveEN.SetActive(true);
+        UiObjectReferrer.instance.endgameLevelDE.SetActive(false);
+        UiObjectReferrer.instance.endgameLevelEN.SetActive(false);
+    }
+    public void SetupLevel() {
+        UiObjectReferrer.instance.endgameReviveDE.SetActive(false);
+        UiObjectReferrer.instance.endgameReviveEN.SetActive(false);
+        UiObjectReferrer.instance.endgameLevelDE.SetActive(true);
+        UiObjectReferrer.instance.endgameLevelEN.SetActive(true);
+    }
+
+    private IEnumerator ReviveCountdown() {
+        yield return new WaitForSecondsRealtime(5f);
+        SetupLevel();
     }
 }

@@ -187,7 +187,7 @@ public class ButtonScript : MonoBehaviour {
 
     // REVIVE
     public void ButtonReviveCancel() {
-        UiSceneScript.instance.DisableReviveScreen();
+        EndgameScript.instance.SetupLevel();
     }
     public void ButtonReviveGold() {
         EndgameScript.instance.reviveGold();
@@ -196,7 +196,12 @@ public class ButtonScript : MonoBehaviour {
         EndgameScript.instance.reviveAd();
     }
 
-
+    // --------------------------------------------------------------------------------------------------------------------------------------------------------------
+    public void Cheat() {
+        PlayerScript.instance.SetTargetMass(PlayerScript.instance.targetMass + 5);
+    }
+    // --------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
 
     //HELPER
     public void UpdateButtonUI() {

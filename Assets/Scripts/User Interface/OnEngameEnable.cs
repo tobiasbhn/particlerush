@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class OnEngameEnable : MonoBehaviour {
 
     void OnEnable() {
-        var score = ((int)RuntimeDataManager.preRevive.score + (int)RuntimeDataManager.postRevive.score).ToString("000000");
+        var score = "Score: " + ((int)RuntimeDataManager.preRevive.score + (int)RuntimeDataManager.postRevive.score).ToString("000000");
         UiObjectReferrer.instance.endgameScoreTextDE.GetComponent<Text>().text = score;
         UiObjectReferrer.instance.endgameScoreTextEN.GetComponent<Text>().text = score;
-        var highscore = ((int)RuntimeDataManager.value.highscore).ToString("000000");
+        var highscore = "Highscore: " + ((int)RuntimeDataManager.value.highscore).ToString("000000");
         UiObjectReferrer.instance.endgameHighscoreTextDE.GetComponent<Text>().text = highscore;
         UiObjectReferrer.instance.endgameHighscoreTextEN.GetComponent<Text>().text = highscore;
         if (score == highscore) {
@@ -21,7 +21,9 @@ public class OnEngameEnable : MonoBehaviour {
         }
 
         if (EndgameScript.instance.alreadyRevived == false) {
-            Debug.Log("WOULD SUGGEST REVIVE");
+            EndgameScript.instance.SetupRevive();
+        } else {
+            EndgameScript.instance.SetupLevel();
         }
     }
 }
