@@ -7,19 +7,15 @@ public class ScoreScript : MonoBehaviour {
 
     //INSTANCE
     [HideInInspector] public static ScoreScript instance;
-    [HideInInspector] public bool thisScriptLoaded = false;
 
     //BEHAVIOUR
     private bool countScore = false;
-    public float currentScore;
+    [HideInInspector] public float currentScore = 0;
 
     void Awake() {
         instance = this;
     }
-    void Start() {
-        thisScriptLoaded = true;
-        currentScore = 0;
-    }
+
     void Update() {
         if (countScore) {
             currentScore += ConstantManager.SCORE_PER_SECOND * Time.deltaTime;
@@ -37,7 +33,6 @@ public class ScoreScript : MonoBehaviour {
             currentScore += ConstantManager.SCORE_PER_PARTICLE;
         }
     }
-
 
     public void SetupIngame() {
         countScore = true;

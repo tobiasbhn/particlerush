@@ -12,6 +12,12 @@ public class ItemShopPrefab : MonoBehaviour {
     public GameObject lockedScreen;
     public GameObject activeScreen;
 
+    void OnEnable() {
+        HideItemInfos();
+        UpdateStaticItemInfos();
+        UpdateLvlBasedItemInfos();
+    }
+    
     // on select item in Shop-Menu (Button Press on Item)
     public void ShowItemInfos() {
         ShopScript.instance.DisableAllItems();
@@ -29,11 +35,6 @@ public class ItemShopPrefab : MonoBehaviour {
         activeScreen.SetActive(false);
     }
 
-    void OnEnable() {
-        HideItemInfos();
-        UpdateStaticItemInfos();
-        UpdateLvlBasedItemInfos();
-    }
 
     // Setup everything that is static, like Item Name and Item Description (never Change, no matter which LVL)
     void UpdateStaticItemInfos() {

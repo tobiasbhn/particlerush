@@ -53,7 +53,7 @@ public static class ConstantManager {
     
 
     //CAMERA, SCREEN AND WORLD SIZES
-    public static readonly float CAMERA_DISTANCE_PLAYER = Vector3.Distance(Camera.main.transform.position, PlayerScript.instance.playerHolder.transform.position);
+    public static readonly float CAMERA_DISTANCE_PLAYER = Vector3.Distance(Camera.main.transform.position, PLAYER_DEFAULT_POSITION_IN_WORLD);
     public static readonly Vector3 CAMERA_LOWER_LEFT_CORNER_IN_WORD_SPACE = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, CAMERA_DISTANCE_PLAYER));
     public static readonly Vector3 CAMERA_UPPER_RIGHT_CORNER_IN_WORLD_SPACE = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, CAMERA_DISTANCE_PLAYER));
     public static readonly float CAMERA_SCREEN_HEIGHT_IN_WORLD_SPACE = 2.0f * CAMERA_DISTANCE_PLAYER * Mathf.Tan(Camera.main.fieldOfView * 0.5f * Mathf.Deg2Rad);

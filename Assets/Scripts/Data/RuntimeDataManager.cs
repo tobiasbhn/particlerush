@@ -6,25 +6,24 @@ public class RuntimeDataManager : MonoBehaviour {
 
     //INSTANCE
     public static RuntimeDataManager instance;
-    public bool thisScriptLoaded = false;
 
     // RUNTIME DATE
-    public static RuntimeData value;
-    public static RuntimeData preRevive;
-    public static RuntimeData postRevive;
+    [HideInInspector] public static RuntimeData value;
+    [HideInInspector] public static RuntimeData preRevive;
+    [HideInInspector] public static RuntimeData postRevive;
 
     void Awake() {
         instance = this;
     }
+
     void Start() {
         preRevive = new RuntimeData();
         postRevive = new RuntimeData();
         value = preRevive;
-        thisScriptLoaded = true;
     }
 
     public void SetupIngame() {
-        if (EndgameScript.instance.alreadyRevived) {
+        if (ReviveScript.instance.alreadyRevived) {
             postRevive = new RuntimeData();
             value = postRevive;
             value.startTime = Time.realtimeSinceStartup;
@@ -36,7 +35,7 @@ public class RuntimeDataManager : MonoBehaviour {
         }
     }
 
-    public void SaveRuntimeData() {
+    public void SetupEndgame() {
         // STATS
         SaveDataManager.getValue.statsTotalParticles += value.particlesSpawned;
         // Normal Particles

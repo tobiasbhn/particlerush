@@ -91,38 +91,7 @@ public class PlayerMeshGenerator : MonoBehaviour {
             UpdateMesh();
         }
     }
-
-    // private Vector3 pointToDrawPoint1;
-    // private Vector3 pointToDrawPoint2;
-    // private Vector3 pointToDrawPoint3;
-
-    // //MOTION DISTORTION
-    // public void ApplayMotionDistortion(Vector3 _direction) {
-    //     Vector3 foremostPoint = (_direction.normalized * PlayerScript.instance.gameObject.transform.localScale.x) + PlayerScript.instance.playerHolder.transform.position;
-    //     Vector3 oppositePoint = (_direction.normalized * -10 * PlayerScript.instance.gameObject.transform.localScale.x) + PlayerScript.instance.playerHolder.transform.position;
-    //     pointToDrawPoint1 = foremostPoint;
-    //     pointToDrawPoint2 = oppositePoint;
-    //     pointToDrawPoint3 = _direction;
-    //     for (int i = 0; i < sphereCoords.Length; i++) {
-    //         float distanceNormalized = Vector3.Distance(sphereCoords[i], foremostPoint);
-    //         float movementFaktor = _direction.magnitude * distanceNormalized * ConstantManager.PLAYER_MOVEMENT_DISTORTION_FAKTOR;
-    //         if (i == 0) { Debug.Log(movementFaktor + ", " + _direction.magnitude + ", " + distanceNormalized + ", " + Time.deltaTime + ", " + ConstantManager.PLAYER_MOVEMENT_DISTORTION_FAKTOR); }
-    //         for (int x = 0; x < indexes[i].Count; x++) {
-    //             vectors[indexes[i][x]] = Vector3.MoveTowards(sphereCoords[i], oppositePoint, movementFaktor);
-    //         }
-    //     }
-    //     UpdateMesh();
-    // }
-
-    // void OnDrawGizmosSelected() {
-    //     // Draw a yellow sphere at the transform's position
-    //     Gizmos.color = Color.yellow;
-    //     Gizmos.DrawSphere(pointToDrawPoint1, .2f);
-    //     Gizmos.DrawSphere(pointToDrawPoint2, .2f);
-    //     Gizmos.color = Color.red;
-    //     Gizmos.DrawSphere(pointToDrawPoint3, .2f);
-    // }
-
+    
     private void UpdateMesh() {
         unityMesh.Clear();
         unityMesh.vertices = vectors;

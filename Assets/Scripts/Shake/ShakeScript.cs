@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ShakeScript : MonoBehaviour {
-    
+
     //INSTANCE
     [HideInInspector] public static ShakeScript instance;
-    [HideInInspector] public bool thisScriptLoaded = false;
 
     //SHAKE SETTINGS
     private bool allowShake = false;
@@ -15,9 +14,11 @@ public class ShakeScript : MonoBehaviour {
 
     void Awake() {
         instance = this;
-        originalCamPos = transform.localPosition;
-        thisScriptLoaded = true;
     }
+    void Start() {
+        originalCamPos = transform.localPosition;
+    }
+
 
     public void Shake() {
         StartCoroutine(ShakeHelper());

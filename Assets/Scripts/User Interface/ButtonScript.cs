@@ -7,69 +7,11 @@ public class ButtonScript : MonoBehaviour {
 
     //INSTANCE
     public static ButtonScript instance;
-    public bool thisScriptLoaded = false;
-
-    //VARS
-    private string[] buttonPrefixesDE;
-    private string[] buttonPrefixesEN;
-    private string[] settingsSoundDataDE;
-    private string[] settingsSoundDataEN;
-    private string[] settingsVibrationDataEN;
-    private string[] settingsVibrationDataDE;
-    private string[] settingsItemPosDataDE;
-    private string[] settingsItemPosDataEN;
-
 
     void Awake() {
         instance = this;
     }
-    void Start() {
-        DefineVars();
-        thisScriptLoaded = true;
-    }
-
-    private void DefineVars() {
-        buttonPrefixesDE = new string[3] {
-            UiObjectReferrer.instance.settingsSoundTextDE.GetComponent<Text>().text,
-            UiObjectReferrer.instance.settingsVibrationTextDE.GetComponent<Text>().text,
-            UiObjectReferrer.instance.settingsItemPosTextDE.GetComponent<Text>().text
-        };
-        buttonPrefixesEN = new string[3] {
-            UiObjectReferrer.instance.settingsSoundTextEN.GetComponent<Text>().text,
-            UiObjectReferrer.instance.settingsVibrationTextEN.GetComponent<Text>().text,
-            UiObjectReferrer.instance.settingsItemPosTextEN.GetComponent<Text>().text
-        };
-        settingsSoundDataDE = new string[3] { "Aus", "An", "Nur Töne" };
-        settingsSoundDataEN = new string[3] { "Off", "On", "Only Sounds" };
-        settingsVibrationDataDE = new string[4] { "Aus", "Kurz", "Mittel", "Lang" };
-        settingsVibrationDataEN = new string[4] { "Off", "Short", "Medium", "Long" };
-        settingsItemPosDataDE = new string[2] { "Rechts", "Links" };
-        settingsItemPosDataEN = new string[2] { "Right", "Left" };
-    }
-
-    //SCENES
-    public void ButtonSceneCallMenu() {
-        SceneManager.callSceneMenu();
-    }
-    public void ButtonSceneCallIngame() {
-        SceneManager.callSceneIngame(true);
-    }
-    public void ButtonSceneCallShop() {
-        SceneManager.callSceneShop();
-    }
-    public void ButtonSceneCallTutorial() {
-        //
-    }
-    public void ButtonSceneCallSettings() {
-        SceneManager.callSceneSettings();
-    }
-    public void ButtonSceneCallPause() {
-        SceneManager.callScenePause();
-    }
-    public void ButtonSceneCallResume() {
-        SceneManager.callSceneResume();
-    }
-
+    
     //SETTINGS
     public void ButtonSettingLanguage() {
         var lang = SaveDataManager.getValue.settingsLanguage;
@@ -93,7 +35,7 @@ public class ButtonScript : MonoBehaviour {
                 break;
         }
         SaveDataManager.Save();
-        UpdateButtonUISound();
+        OnSettingsEnable.instance.UpdateButtonUISound();
     }
     public void ButtonSettingsVibration() {
         switch(SaveDataManager.getValue.settingsVibration) {
@@ -114,7 +56,7 @@ public class ButtonScript : MonoBehaviour {
                 break;
         }
         SaveDataManager.Save();
-        UpdateButtonUIVibration();
+        OnSettingsEnable.instance.UpdateButtonUIVibration();
     }
     public void ButtonSettingsItemPos() {
         switch(SaveDataManager.getValue.settingsItemPosition) {
@@ -129,7 +71,7 @@ public class ButtonScript : MonoBehaviour {
                 break;
         }
         SaveDataManager.Save();
-        UpdateButtonUIItemPos();
+        OnSettingsEnable.instance.UpdateButtonUIItemPos();
     }
 
     public void ButtonRedirectInstagram() {
@@ -138,15 +80,15 @@ public class ButtonScript : MonoBehaviour {
     }
     public void ButtonSpecialAds() {
         //Show Rewarded Ad
-        if (SaveDataManager.getValue.notificationAdsFinished)
-            StartCoroutine(AdsManager.instance.ShowAd(AdType.Rewarded));
-        else
-            SceneManager.callSceneAdsNotification();
+        if (SaveDataManager.getValue.notificationAdsFinished) {}
+            // StartCoroutine(AdsManager.instance.ShowAdHelper(AdType.Rewarded));
+        else {}
+            // SceneManager.callSceneAdsNotification();
     }
     public void ButtonSpecialAdsContinueNotification() {
         SaveDataManager.getValue.notificationAdsFinished = true;
         SaveDataManager.Save();
-        SceneManager.callSceneSettings();
+        // SceneManager.callSceneSettings();
         ButtonSpecialAds();
     }
     public void ButtonRedirectPayPal() {
@@ -187,13 +129,13 @@ public class ButtonScript : MonoBehaviour {
 
     // REVIVE
     public void ButtonReviveCancel() {
-        EndgameScript.instance.SetupLevel();
+        ReviveScript.instance.SetupLevel();
     }
     public void ButtonReviveGold() {
-        EndgameScript.instance.reviveGold();
+        ReviveScript.instance.reviveGold();
     }
     public void ButtonReviveAd() {
-        EndgameScript.instance.reviveAd();
+        ReviveScript.instance.reviveAd();
     }
 
     // --------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -201,34 +143,4 @@ public class ButtonScript : MonoBehaviour {
         PlayerScript.instance.SetTargetMass(PlayerScript.instance.targetMass + 5);
     }
     // --------------------------------------------------------------------------------------------------------------------------------------------------------------
-    
-
-    //HELPER
-    public void UpdateButtonUI() {
-        UpdateButtonUISound();
-        UpdateButtonUIVibration();
-        UpdateButtonUIItemPos();
-    }
-    private void UpdateButtonUISound() {
-        var currendSoundSetting = (int)SaveDataManager.getValue.settingsSound;
-        var soundTextDE = buttonPrefixesDE[0] + settingsSoundDataDE[currendSoundSetting];
-        var soundTextEN = buttonPrefixesEN[0] + settingsSoundDataEN[currendSoundSetting];
-        UiObjectReferrer.instance.settingsSoundTextDE.GetComponent<Text>().text = soundTextDE;
-        UiObjectReferrer.instance.settingsSoundTextEN.GetComponent<Text>().text = soundTextEN;
-    }
-    private void UpdateButtonUIVibration() {
-        var currendVibrationSetting = (int)SaveDataManager.getValue.settingsVibration;
-        var vibrationTextDE = buttonPrefixesDE[1] + settingsVibrationDataDE[currendVibrationSetting];
-        var vibrationTextEN = buttonPrefixesEN[1] + settingsVibrationDataEN[currendVibrationSetting];
-        UiObjectReferrer.instance.settingsVibrationTextDE.GetComponent<Text>().text = vibrationTextDE;
-        UiObjectReferrer.instance.settingsVibrationTextEN.GetComponent<Text>().text = vibrationTextEN;
-    }
-    private void UpdateButtonUIItemPos() {
-        var currendItemPosSetting = (int)SaveDataManager.getValue.settingsItemPosition;
-        var itemPosTextDE = buttonPrefixesDE[2] + settingsItemPosDataDE[currendItemPosSetting];
-        var itemPosTextEN = buttonPrefixesEN[2] + settingsItemPosDataEN[currendItemPosSetting];
-        UiObjectReferrer.instance.settingsItemPosTextDE.GetComponent<Text>().text = itemPosTextDE;
-        UiObjectReferrer.instance.settingsItemPosTextEN.GetComponent<Text>().text = itemPosTextEN;
-    }
-
 }

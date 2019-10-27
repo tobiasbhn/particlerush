@@ -5,26 +5,26 @@ using UnityEngine;
 public class PlayerMovementScript : MonoBehaviour {
     //INSTANCE
     public static PlayerMovementScript instance;
-    public bool thisScriptLoaded = false;
 
     //OBJECT LINKS
     public GameObject playerHolder;
-    public GameObject slideBarContainer;
-    public GameObject slideBarContent;
 
     //MOVEMENT RELATED
     private Vector3 targetPlayerPosition;
     private Vector2[] newTouch;
     private Vector3[] playerPositions;
     private int currendPosIndex = 1;
-    public float lastSwipeTime;
+    [HideInInspector] public float lastSwipeTime;
 
     // BEHAVIOUR
-    public bool allowSwipe = false;
-    public bool allowTab = false;
+    [HideInInspector] public bool allowSwipe = false;
+    [HideInInspector] public bool allowTab = false;
+
+    void Awake() {
+        instance = this;
+    }
 
     void Start() {
-        instance = this;
         targetPlayerPosition = ConstantManager.PLAYER_DEFAULT_POSITION_IN_WORLD;
         newTouch = new Vector2[20];
         lastSwipeTime = Time.time;
@@ -34,16 +34,15 @@ public class PlayerMovementScript : MonoBehaviour {
         playerPositions[1] = ConstantManager.PLAYER_DEFAULT_POSITION_IN_WORLD;
         playerPositions[0] = new Vector3(playerPositions[1].x - quarterOfScreenWidth, playerPositions[1].y, playerPositions[1].z);
         playerPositions[2] = new Vector3(playerPositions[1].x + quarterOfScreenWidth, playerPositions[1].y, playerPositions[1].z);
-        PlayerScript.instance.playerHolder.transform.position = playerPositions[currendPosIndex];
-        thisScriptLoaded = true;
+        playerHolder.transform.position = playerPositions[currendPosIndex];
     }
 
     void Update() {
         //Show or Hide Swipe-Bar 
-        if (allowSwipe && slideBarContainer.gameObject.activeSelf == false)
-            slideBarContainer.gameObject.SetActive(true);
-        else if (!allowSwipe && slideBarContainer.gameObject.activeSelf == true)
-            slideBarContainer.gameObject.SetActive(false);
+        if (allowSwipe && UiObjectReferrer.instance.ingameSlideContainer.gameObject.activeSelf == false)
+            UiObjectReferrer.instance.ingameSlideContainer.gameObject.SetActive(true);
+        else if (!allowSwipe && UiObjectReferrer.instance.ingameSlideContainer.gameObject.activeSelf == true)
+            UiObjectReferrer.instance.ingameSlideContainer.gameObject.SetActive(false);
         //Check Inputs
         if (allowSwipe || allowTab) {
             foreach (Touch touch in Input.touches) {
@@ -101,9 +100,6 @@ public class PlayerMovementScript : MonoBehaviour {
                     newDistToMove = new Vector3(freeSpaceLeft, distToMove.y, distToMove.z);
                 }
 
-                //distToMove = distToMove.magnitude < ConstantManager.PLAYER_MOVEMENT_MIN_FAKTORT_TO_ABORT_MOVEMENT ? Vector3.zero : distToMove;
-                //GetComponent<PlayerMeshGenerator>().ApplayMotionDistortion(distToMove);
-
                 //Apply Movement
                 playerHolder.transform.position += newDistToMove;
             }
@@ -111,10 +107,10 @@ public class PlayerMovementScript : MonoBehaviour {
     }
 
     private void UpdateSlideBar() {
-        var fullWidth = slideBarContainer.GetComponent<RectTransform>().rect.width;
+        var fullWidth = UiObjectReferrer.instance.ingameSlideContainer.GetComponent<RectTransform>().rect.width;
         var timePassedInPercent = 100 * (Time.time - lastSwipeTime) / ConstantManager.PLAYER_MOVEMENT_SLIDE_TIME_COOLDOWN;
         timePassedInPercent = timePassedInPercent > 100 ? 100 : timePassedInPercent;
-        var contentRectTransform = slideBarContent.GetComponent<RectTransform>();
+        var contentRectTransform = UiObjectReferrer.instance.ingameSlideContent.GetComponent<RectTransform>();
         contentRectTransform.sizeDelta = new Vector2((fullWidth / 100 * timePassedInPercent), contentRectTransform.sizeDelta.y);
     }
 }

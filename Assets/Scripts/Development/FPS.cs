@@ -1,17 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FPS : MonoBehaviour
-{
+public class FPS : MonoBehaviour {
     float deltaTime = 0.0f;
 
-    void Update()
-    {
+    void Update() {
         deltaTime += (Time.unscaledDeltaTime - deltaTime) * 0.1f;
     }
 
-    void OnGUI()
-    {
+    void OnGUI() {
         int w = Screen.width, h = Screen.height;
 
         GUIStyle style = new GUIStyle();
@@ -27,7 +24,7 @@ public class FPS : MonoBehaviour
         text += "\n (c) Tobias Bohn(Insta @tobias.bhn) - Restricted use only. ";
         if (SaveDataManager.getValue != null)
             text += "\n GameStatus: " + SaveDataManager.getValue.gameStatus + "; Last Ad: " + (Time.realtimeSinceStartup - AdsManager.instance.lastAdShown);
-        text += "\n AlreadyRevived: " + EndgameScript.instance.alreadyRevived.ToString();
+        text += "\n AlreadyRevived: " + ReviveScript.instance.alreadyRevived.ToString();
         //text += "\n\nGoogle ID: " + Social.localUser.id + "\nGoogle Name: ";
         //text += Social.localUser.userName;
         GUI.Label(rect, text, style);

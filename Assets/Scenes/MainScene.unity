@@ -259,8 +259,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallIngame
+      - m_Target: {fileID: 11400000, guid: 3124a5aafb28dc142874b4f9c8fcac9c, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -285,6 +285,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 35842256}
+  - component: {fileID: 35842257}
   m_Layer: 5
   m_Name: Settings Menu
   m_TagString: Untagged
@@ -314,6 +315,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &35842257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35842255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ea397cd261aa541821fba31fbbf0ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &77950190
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,8 +408,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallShop
+      - m_Target: {fileID: 11400000, guid: 0cd655e86bbda7e4a8eedd3ab7c9fa95, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -778,8 +791,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallResume
+      - m_Target: {fileID: 11400000, guid: dd5cd05de13f5864fbe995717afb0364, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -910,8 +923,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallSettings
+      - m_Target: {fileID: 11400000, guid: 6518d3c62f9d81249ac67fbf0fb46299, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1346,8 +1359,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallMenu
+      - m_Target: {fileID: 11400000, guid: da01da250a4d9c748923638601841f39, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1746,8 +1759,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallMenu
+      - m_Target: {fileID: 11400000, guid: da01da250a4d9c748923638601841f39, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1915,8 +1928,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallSettings
+      - m_Target: {fileID: 11400000, guid: 6518d3c62f9d81249ac67fbf0fb46299, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2346,8 +2359,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallShop
+      - m_Target: {fileID: 11400000, guid: 0cd655e86bbda7e4a8eedd3ab7c9fa95, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2862,8 +2875,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallIngame
+      - m_Target: {fileID: 11400000, guid: 3124a5aafb28dc142874b4f9c8fcac9c, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3985,7 +3998,6 @@ GameObject:
   m_Component:
   - component: {fileID: 400185531}
   - component: {fileID: 400185532}
-  - component: {fileID: 400185533}
   m_Layer: 0
   m_Name: Scenes
   m_TagString: Untagged
@@ -4016,24 +4028,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 400185530}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 864a09f2e4b64de428852e99ea83ad6a, type: 3}
+  m_Script: {fileID: 11500000, guid: 5987f50b3e9c99e459f23dd94b88d826, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisScriptLoaded: 0
-  alreadyRevived: 0
---- !u!114 &400185533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 400185530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eedd021914ac2284dbe64a3cf4a1a0da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisScriptLoaded: 0
+  ingame: {fileID: 11400000, guid: 3124a5aafb28dc142874b4f9c8fcac9c, type: 2}
+  menu: {fileID: 11400000, guid: da01da250a4d9c748923638601841f39, type: 2}
+  endgame: {fileID: 11400000, guid: 45f41e210a7f45f4491480b2ce6ca1ed, type: 2}
+  pause: {fileID: 11400000, guid: 9b5baf980254ac843ab745f0abec0277, type: 2}
+  resume: {fileID: 11400000, guid: dd5cd05de13f5864fbe995717afb0364, type: 2}
+  revive: {fileID: 11400000, guid: 53507d136723315479737582c69ff84a, type: 2}
+  shop: {fileID: 11400000, guid: 0cd655e86bbda7e4a8eedd3ab7c9fa95, type: 2}
+  settings: {fileID: 11400000, guid: 6518d3c62f9d81249ac67fbf0fb46299, type: 2}
 --- !u!1 &401435840
 GameObject:
   m_ObjectHideFlags: 0
@@ -4070,7 +4075,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf001b4e0a8697d4b9daeded942c53fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisScriptLoaded: 0
   projectilePrefab: {fileID: 5335739335296410185, guid: cf093b6c3170c284ca19138c85f3c0d4,
     type: 3}
   projectileParent: {fileID: 1290391199}
@@ -4146,8 +4150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6185bf5882241104fa073e19adf0dd4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisScriptLoaded: 0
-  playerHolder: {fileID: 1297530743}
   playerAllowGrow: 0
   playerAllowShrink: 0
   playerAllowRotate: 0
@@ -4181,7 +4183,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d25882372aa114c9bb52180e4b2632, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisScriptLoaded: 0
 --- !u!114 &401435848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4207,10 +4208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aca151888a5416d4fa36e0e5446f547a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisScriptLoaded: 0
   playerHolder: {fileID: 1297530743}
-  slideBarContainer: {fileID: 1751325773}
-  slideBarContent: {fileID: 1173256564}
   lastSwipeTime: 0
   allowSwipe: 0
   allowTab: 0
@@ -4790,8 +4788,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallSettings
+      - m_Target: {fileID: 11400000, guid: 6518d3c62f9d81249ac67fbf0fb46299, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4979,8 +4977,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallMenu
+      - m_Target: {fileID: 11400000, guid: da01da250a4d9c748923638601841f39, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5417,8 +5415,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallSettings
+      - m_Target: {fileID: 11400000, guid: 6518d3c62f9d81249ac67fbf0fb46299, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5682,8 +5680,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallSettings
+      - m_Target: {fileID: 11400000, guid: 6518d3c62f9d81249ac67fbf0fb46299, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6364,8 +6362,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallIngame
+      - m_Target: {fileID: 11400000, guid: 3124a5aafb28dc142874b4f9c8fcac9c, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6806,8 +6804,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallMenu
+      - m_Target: {fileID: 11400000, guid: da01da250a4d9c748923638601841f39, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6978,8 +6976,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallMenu
+      - m_Target: {fileID: 11400000, guid: da01da250a4d9c748923638601841f39, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7882,6 +7880,7 @@ GameObject:
   - component: {fileID: 803788310}
   - component: {fileID: 803788311}
   - component: {fileID: 803788312}
+  - component: {fileID: 803788313}
   m_Layer: 0
   m_Name: Runtime Data
   m_TagString: Untagged
@@ -7915,7 +7914,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 954cdfe16d8425049b5a75109646a3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisScriptLoaded: 0
 --- !u!114 &803788312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7928,8 +7926,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc27210238539e84c9c95621c18601b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisScriptLoaded: 0
   currentScore: 0
+--- !u!114 &803788313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803788309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33724981c664e4a47a9c0d80ca0e90fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alreadyRevived: 0
 --- !u!1 &805876984
 GameObject:
   m_ObjectHideFlags: 0
@@ -8011,8 +8021,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallSettings
+      - m_Target: {fileID: 11400000, guid: 6518d3c62f9d81249ac67fbf0fb46299, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8377,8 +8387,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallMenu
+      - m_Target: {fileID: 11400000, guid: da01da250a4d9c748923638601841f39, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8654,8 +8664,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallShop
+      - m_Target: {fileID: 11400000, guid: 0cd655e86bbda7e4a8eedd3ab7c9fa95, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9309,8 +9319,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallIngame
+      - m_Target: {fileID: 11400000, guid: 3124a5aafb28dc142874b4f9c8fcac9c, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9441,8 +9451,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallSettings
+      - m_Target: {fileID: 11400000, guid: 6518d3c62f9d81249ac67fbf0fb46299, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9642,7 +9652,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 690a91ad7ac347544b5c4d35bd9e4400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisScriptLoaded: 0
 --- !u!1001 &1082495716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10525,8 +10534,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallMenu
+      - m_Target: {fileID: 11400000, guid: da01da250a4d9c748923638601841f39, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10657,8 +10666,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallResume
+      - m_Target: {fileID: 11400000, guid: dd5cd05de13f5864fbe995717afb0364, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11522,8 +11531,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallSettings
+      - m_Target: {fileID: 11400000, guid: 6518d3c62f9d81249ac67fbf0fb46299, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11592,7 +11601,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddeb87928c402b94da04d626820d214a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisScriptLoaded: 0
   canvasGameObject: {fileID: 1615732973}
   safeAreaGameObject: {fileID: 1302280934}
   largeScreenSpaceGameObject: {fileID: 2074791242}
@@ -11889,7 +11897,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1327710859
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12161,8 +12169,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallMenu
+      - m_Target: {fileID: 11400000, guid: da01da250a4d9c748923638601841f39, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13700,7 +13708,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a18c0bfcb7ff254c9c5d207d376a2e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisScriptLoaded: 0
 --- !u!114 &1615732976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13713,7 +13720,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 353651a8ef4bc444eba41a6208768db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisScriptLoaded: 0
 --- !u!114 &1615732977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13726,13 +13732,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfd5411ca5dbedb46b2a1d336685945c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisScriptLoaded: 0
   objectsEN: []
   objectsDE: []
   ingameMain: {fileID: 1752419270}
   ingameScoreText: {fileID: 1518931134}
   ingameGoldText: {fileID: 735936402}
   ingamePauseButton: {fileID: 1640297962}
+  ingameSlideContainer: {fileID: 1751325773}
+  ingameSlideContent: {fileID: 1173256564}
   menuMain: {fileID: 915116856}
   menuMainEN: {fileID: 623117518}
   menuPlayButtonEN: {fileID: 14854716}
@@ -13887,8 +13894,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallPause
+      - m_Target: {fileID: 11400000, guid: 9b5baf980254ac843ab745f0abec0277, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19075,8 +19082,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallShop
+      - m_Target: {fileID: 11400000, guid: 0cd655e86bbda7e4a8eedd3ab7c9fa95, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19167,8 +19174,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallShop
+      - m_Target: {fileID: 11400000, guid: 0cd655e86bbda7e4a8eedd3ab7c9fa95, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20490,8 +20497,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallIngame
+      - m_Target: {fileID: 11400000, guid: 3124a5aafb28dc142874b4f9c8fcac9c, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20867,8 +20874,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallIngame
+      - m_Target: {fileID: 11400000, guid: 3124a5aafb28dc142874b4f9c8fcac9c, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21362,8 +21369,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615732975}
-        m_MethodName: ButtonSceneCallShop
+      - m_Target: {fileID: 11400000, guid: 0cd655e86bbda7e4a8eedd3ab7c9fa95, type: 2}
+        m_MethodName: callScenario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21456,7 +21463,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e6c0255a5584d408751f63117f08cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisScriptLoaded: 0
   rewardedAdId: rewardedVideo
   videoAdID: video
   lastAdShown: 0
@@ -21952,7 +21958,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 397f62f84c165d149931fe70e9ecedd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisScriptLoaded: 0
 --- !u!224 &2046947474 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2153854769418609320, guid: c9cd3698b882d314a824466449634fcf,
@@ -22467,7 +22472,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03e8069bf74b7594892ae6ad2d1273aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisScriptLoaded: 0
 --- !u!114 &2128465385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22480,7 +22484,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c6f72df33c445a4e8c929efafaf44c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisScriptLoaded: 0
   particlePrefab: {fileID: 7698446500818657871, guid: 690351727891e80418e7959a21f8b5b9,
     type: 3}
   particleDirectory: {fileID: 1598653258}

@@ -7,10 +7,8 @@ public class ProjectileScript : MonoBehaviour {
     [HideInInspector] public float damageToDeal;
     private float spawnTime;
 
-    void Awake() {
-        spawnTime = Time.time;
-    }
     void Start() {
+        spawnTime = Time.time;
         DefineWidth();
     }
 

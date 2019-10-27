@@ -10,28 +10,26 @@ public class PlayerScript : MonoBehaviour {
 
     //INSTANCE
     [HideInInspector] public static PlayerScript instance;
-    [HideInInspector] public bool thisScriptLoaded = false;
 
     //OBJECT-LINKS
     private PlayerMeshGenerator playerMeshGenerator;
     private MeshFilter meshFilter;
     private MeshCollider meshCollider;
     private MeshRenderer meshRenderer;
-    public GameObject playerHolder;
 
     //MESH-RELATED
     private UnityEngine.Mesh mesh;
 
     //BEHAVIUR
-    public bool playerAllowGrow = false;
-    public bool playerAllowShrink = false;
-    public bool playerAllowRotate = false;
-    public bool playerAllowWaves = false;
-    public int playerRotationSpeed = 0;
+    [HideInInspector] public bool playerAllowGrow = false;
+    [HideInInspector] public bool playerAllowShrink = false;
+    [HideInInspector] public bool playerAllowRotate = false;
+    [HideInInspector] public bool playerAllowWaves = false;
+    [HideInInspector] public int playerRotationSpeed = 0;
 
     //MASS RELATIVE
-    public float targetMass = 0f;
-    public float currentMass = 0f;
+    [HideInInspector] public float targetMass = 0f;
+    [HideInInspector] public float currentMass = 0f;
 
 
 
@@ -50,7 +48,6 @@ public class PlayerScript : MonoBehaviour {
         meshCollider.sharedMesh = mesh;
         meshRenderer.enabled = false;
         this.transform.Rotate(90, 0, 0);
-        thisScriptLoaded = true;
     }
     void Update() {
         //ROTATION
@@ -98,8 +95,9 @@ public class PlayerScript : MonoBehaviour {
             playerMeshGenerator.CreateShape(currentMass);
             ResizeActualPlayerSizeInWorld();
 
-            if (targetMass >= ConstantManager.PLAYER_MAX_MESH_GENERATION_SIZE && SaveDataManager.getValue.gameStatus == GameStatus.ingame)
-                SceneManager.callSceneEndgame();
+            if (targetMass >= ConstantManager.PLAYER_MAX_MESH_GENERATION_SIZE && SaveDataManager.getValue.gameStatus == GameStatus.ingame) {
+                SceneManager.instance.callSceneEndgame();
+            }
         }
     }
     private void ResizeActualPlayerSizeInWorld() {
@@ -133,5 +131,4 @@ public class PlayerScript : MonoBehaviour {
             playerMeshGenerator.NewCollision(pos);
         }
     }
-
 }

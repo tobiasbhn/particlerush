@@ -6,7 +6,6 @@ public class ScreenSetupScript : MonoBehaviour {
 
     //INSTANCES
     [HideInInspector] public static ScreenSetupScript instance;
-    [HideInInspector] public bool thisScriptLoaded = false;
 
     //OBJECT-LINKS
     public Canvas canvasGameObject;
@@ -22,7 +21,6 @@ public class ScreenSetupScript : MonoBehaviour {
         ApplySaveArea();
         ApplyLargeScreenSpace();
         ApplySmallScreenSpace();
-        thisScriptLoaded = true;
     }
 
     void ApplySaveArea() {

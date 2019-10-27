@@ -6,7 +6,6 @@ using UnityEngine.Rendering.PostProcessing;
 public class PostProcessingScript : MonoBehaviour {
     //INSTANCE
     [HideInInspector] public static PostProcessingScript instance;
-    [HideInInspector] public bool thisScriptLoaded = false;
 
     //SETTINGS
     private ChromaticAberration chromaticAberration;
@@ -14,12 +13,13 @@ public class PostProcessingScript : MonoBehaviour {
 
     void Awake() {
         instance = this;
-
+    }
+    void Start() {
         PostProcessVolume volume = gameObject.GetComponent<PostProcessVolume>();
         volume.profile.TryGetSettings(out chromaticAberration);
         originalPPValue = chromaticAberration.intensity.value;
-        thisScriptLoaded = true;
     }
+    
     public void Eskalate() {
         StartCoroutine(EskalateHelper());
     }

@@ -19,13 +19,6 @@ public class GameStarter : MonoBehaviour {
 
     //Defined Start-Routine
     IEnumerator CheckPrestartConditions() {
-        //Check if all Scripts are Loaded
-        Debug.Log(LogTime.Time() + ": Game Starter Script - Waiting for all Script to be ready...");
-        while (!LoadingManager.isEverythingLoaded()) {
-            yield return new WaitForEndOfFrame();
-        }
-        Debug.Log(LogTime.Time() + ": Game Starter Script - All Scripts Loaded...");
-
         //Check if all Saved Data is collected
         Debug.Log(LogTime.Time() + ": Game Starter Script - Loading saved Data...");
         SaveDataManager.Load();
@@ -34,14 +27,13 @@ public class GameStarter : MonoBehaviour {
         }
         Debug.Log(LogTime.Time() + ": Game Starter Script - All saved Data loaded...");
 
-        //Set Language & Update Buttons
+        //Set Language
         Debug.Log(LogTime.Time() + ": Game Starter Script - Going to apply current Language...");
         LanguageScript.UpdateLanguage();
-        ButtonScript.instance.UpdateButtonUI();
         Debug.Log(LogTime.Time() + ": Game Starter Script - Language Set...");    
 
         //Call SceneManager to load whatever needs to be loaded
         Debug.Log(LogTime.Time() + ": Game Starter Script - Calling Scene Manager to load first Scene...");
-        SceneManager.startGame();
+        SceneManager.instance.startGame();
     }
 }

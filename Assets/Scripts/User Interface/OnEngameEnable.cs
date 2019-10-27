@@ -20,10 +20,10 @@ public class OnEngameEnable : MonoBehaviour {
             UiObjectReferrer.instance.endgameGameOverTextDE.GetComponent<Text>().text = "SPIELENDE";
         }
 
-        if (EndgameScript.instance.alreadyRevived == false) {
-            EndgameScript.instance.SetupRevive();
+        if (ReviveScript.instance.alreadyRevived == false) {
+            ReviveScript.instance.SetupRevive();
         } else {
-            EndgameScript.instance.SetupLevel();
+            ReviveScript.instance.SetupLevel();
         }
     }
 }

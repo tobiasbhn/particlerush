@@ -7,6 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(MeshRenderer))]
 [RequireComponent(typeof(MeshCollider))]
 public class ParticleScript : MonoBehaviour {
+    
     //OBJECT_LINKS
     private Rigidbody rb;
     private MeshFilter meshFilter;

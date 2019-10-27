@@ -5,7 +5,6 @@ using UnityEngine;
 public class ParticleSpawnScript : MonoBehaviour {
     //INSTANCE
     [HideInInspector] public static ParticleSpawnScript instance;
-    [HideInInspector] public bool thisScriptLoaded = false;
 
     //LINKS
     public GameObject particlePrefab;
@@ -17,7 +16,7 @@ public class ParticleSpawnScript : MonoBehaviour {
     //SPAWN
     private float lastParticleSpawnTime;
     [HideInInspector] public List<GameObject> instantiatedParticles = new List<GameObject>();
-    public SpawnModi spawnModi;
+    [HideInInspector] public SpawnModi spawnModi;
     [HideInInspector] public float spawnBaseDelay = 0;
     [HideInInspector] public float spawnBaseSpeed = 0;
 
@@ -25,7 +24,6 @@ public class ParticleSpawnScript : MonoBehaviour {
         instance = this;
         lastParticleSpawnTime = Time.time;
         spawnModi = SpawnModi.none;
-        thisScriptLoaded = true;
     }
 
 
@@ -77,8 +75,7 @@ public class ParticleSpawnScript : MonoBehaviour {
                 if (Random.Range(0, 100) < ConstantManager.PARTICLE_SHRINK_SPAWN_CHANCE) {
                     RuntimeDataManager.value.shrinkParticlesSpawned++;
                     return ParticleType.shrink;
-                }
-                else {
+                } else {
                     RuntimeDataManager.value.normalParticlesSpawned++;
                     return ParticleType.grow;
                 }

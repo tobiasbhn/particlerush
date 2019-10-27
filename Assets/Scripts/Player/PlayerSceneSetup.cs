@@ -5,10 +5,8 @@ using UnityEngine;
 public class PlayerSceneSetup : MonoBehaviour {
 
     [HideInInspector] public static PlayerSceneSetup instance;
-    [HideInInspector] public bool thisScriptLoaded = false;
     void Awake() {
         instance = this;
-        thisScriptLoaded = true;
     }
 
     public void SetupIngame() {
@@ -60,10 +58,14 @@ public class PlayerSceneSetup : MonoBehaviour {
     public void SetupPause() {
         PlayerMovementScript.instance.allowSwipe = false;
         PlayerMovementScript.instance.allowTab = false;
+        PlayerScript.instance.playerAllowGrow = false;
+        PlayerScript.instance.playerAllowShrink = false;
     }
 
     public void SetupResume() {
         PlayerMovementScript.instance.allowSwipe = true;
         PlayerMovementScript.instance.allowTab = true;
+        PlayerScript.instance.playerAllowGrow = true;
+        PlayerScript.instance.playerAllowShrink = true;
     }
 }

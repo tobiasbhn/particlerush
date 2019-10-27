@@ -6,15 +6,11 @@ public class UiSceneScript : MonoBehaviour {
 
     //INSTANCE
     [HideInInspector] public static UiSceneScript instance;
-    [HideInInspector] public bool thisScriptLoaded = false;
 
     void Awake() {
         instance = this;
     }
 
-    void Start() {
-        thisScriptLoaded = true;
-    }
 
     public void SetupIngame() {
         DisableAllMenus();
@@ -52,7 +48,7 @@ public class UiSceneScript : MonoBehaviour {
         UiObjectReferrer.instance.endgameMain.SetActive(true);
     }
 
-    private void DisableAllMenus() {
+    public void DisableAllMenus() {
         UiObjectReferrer.instance.ingameMain.SetActive(false);
         UiObjectReferrer.instance.menuMain.SetActive(false);
         UiObjectReferrer.instance.pauseMain.SetActive(false);

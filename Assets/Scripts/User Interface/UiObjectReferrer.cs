@@ -5,7 +5,6 @@ using UnityEngine;
 public class UiObjectReferrer : MonoBehaviour {
     //INSTANCE
     [HideInInspector] public static UiObjectReferrer instance;
-    [HideInInspector] public bool thisScriptLoaded = false;
 
     //LANGUAGES
     [HideInInspector] public List<GameObject> objectsEN;
@@ -17,6 +16,8 @@ public class UiObjectReferrer : MonoBehaviour {
     public GameObject ingameScoreText;
     public GameObject ingameGoldText;
     public GameObject ingamePauseButton;
+    public GameObject ingameSlideContainer;
+    public GameObject ingameSlideContent;
 
     [Header("MAIN MENU")]
     [Space(30)]
@@ -139,10 +140,8 @@ public class UiObjectReferrer : MonoBehaviour {
     void Awake() {
         instance = this;
     }
-
     void Start() {
         DefineLanguagesLists();
-        thisScriptLoaded = true;
     }
 
     private void DefineLanguagesLists() {

@@ -7,30 +7,40 @@ public class AdsManager : MonoBehaviour {
 
     //INSTANCE
     [HideInInspector] public static AdsManager instance;
-    [HideInInspector] public bool thisScriptLoaded = false;
 
     //ADS VARS
     public string rewardedAdId;
     public string videoAdID;
-    [HideInInspector] public float lastAdShown;
+    [HideInInspector] public float lastAdShown = 0f;
     private GameStatus statusBeforAd;
     private AdResult resultToReturn;
 
     void Awake() {
         instance = this;
     }
-    void Start() {
-        lastAdShown = Time.realtimeSinceStartup;
-        thisScriptLoaded = true;
+
+    // PUBLIC CALLER FUNCTIONS
+    public void ShowAd(AdType type) {
+        StartCoroutine(ShowAdHelper(type, (AdResult res) => { }));
+    }
+    public void ShowAd(AdType type, System.Action<AdResult> callback) {
+        StartCoroutine(ShowAdHelper(type, callback));
+    }
+    public void ShowAd(AdType type, System.Action callback) {
+        StartCoroutine(ShowAdHelper(type, callback));
     }
 
-    public IEnumerator ShowAd(AdType type) {
-        StartCoroutine(ShowAd(type, (AdResult res) => { }));
+
+
+
+    // PRIVATE HELPER FUNCTIONS
+    private IEnumerator ShowAdHelper(AdType type, System.Action callback) {
+        StartCoroutine(ShowAdHelper(type, (AdResult res) => {
+            callback.Invoke(); 
+        }));
         yield return null;
     }
-
-    // Call: StartCoroutine(ShowRewardedAd( (AdResult result) => { Debug.Log(result); }));
-    public IEnumerator ShowAd(AdType type, System.Action<AdResult> callback) {
+    private IEnumerator ShowAdHelper(AdType type, System.Action<AdResult> callback) {
         Debug.Log(LogTime.Time() + ": Ads Manager - Ad (Rewarded Video) requestet...");
 
         BeforeAdProcess();

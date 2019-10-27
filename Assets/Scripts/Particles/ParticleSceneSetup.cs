@@ -5,11 +5,9 @@ using UnityEngine;
 public class ParticleSceneSetup : MonoBehaviour {
     //INSTANCE
     [HideInInspector] public static ParticleSceneSetup instance;
-    [HideInInspector] public bool thisScriptLoaded = false;
 
     void Awake() {
         instance = this;
-        thisScriptLoaded = true;
     }
 
     public void SetupIngame() {
