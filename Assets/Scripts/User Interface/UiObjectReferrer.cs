@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UiObjectReferrer : MonoBehaviour {
     //INSTANCE
@@ -55,6 +56,14 @@ public class UiObjectReferrer : MonoBehaviour {
     public GameObject endgameScoreTextEN;
     public GameObject endgameReviveEN;
     public GameObject endgameLevelEN;
+    [Space(5)]
+    public Button endgameButtonRestartEN;
+    public Button endgameButtonShopEN;
+    public Button endgameButtonMenuEN;
+    public Button endgameButtonSettingsEN;
+    public Button endgameButtonReviveGoldEN;
+    public Button endgameButtonReviveAdsEN;
+    public Button endgameButtonReviveSkipEN;
 
     [Header("ENDGAME DE")]
     public GameObject endgameMainDE;
@@ -65,7 +74,14 @@ public class UiObjectReferrer : MonoBehaviour {
     public GameObject endgameScoreTextDE;
     public GameObject endgameReviveDE;
     public GameObject endgameLevelDE;
-
+    [Space(5)]
+    public Button endgameButtonRestartDE;
+    public Button endgameButtonShopDE;
+    public Button endgameButtonMenuDE;
+    public Button endgameButtonSettingsde;
+    public Button endgameButtonReviveGoldDE;
+    public Button endgameButtonReviveAdsDE;
+    public Button endgameButtonReviveSkipDE;
 
 
 
@@ -110,9 +126,14 @@ public class UiObjectReferrer : MonoBehaviour {
     public GameObject pauseSettingsButtonDE;
     public GameObject pauseRestartButtonDE;
 
+
+
+
+
     [Header("SETTINGS MENU")]
     [Space(30)]
     public GameObject settingsMain;
+    public GameObject openSourceMain;
     [Header("SETTINGS EN")]
     public GameObject settingsInterfaceEN;
     public GameObject settingsMainEN;

@@ -80,10 +80,12 @@ public class ButtonScript : MonoBehaviour {
     }
     public void ButtonSpecialAds() {
         //Show Rewarded Ad
-        if (SaveDataManager.getValue.notificationAdsFinished) {}
-            // StartCoroutine(AdsManager.instance.ShowAdHelper(AdType.Rewarded));
-        else {}
-            // SceneManager.callSceneAdsNotification();
+        if (SaveDataManager.getValue.notificationAdsFinished)
+            AdsManager.instance.ShowAd(AdType.Rewarded, (AdResult result) => {
+                SceneManager.instance.callSceneSettings();
+            });
+        else
+            SceneManager.instance.callSceneAdsNotification();
     }
     public void ButtonSpecialAdsContinueNotification() {
         SaveDataManager.getValue.notificationAdsFinished = true;
@@ -116,9 +118,6 @@ public class ButtonScript : MonoBehaviour {
             Application.OpenURL(mailto + "?subject=" + subject + "&body=" + bodyEN);
     }
     public void ButtonSpecialGooglePlaySignOff() {
-        //kommt noch
-    }
-    public void ButtonSpecialLibarys() {
         //kommt noch
     }
     public void ButtonRedirectImprint() {

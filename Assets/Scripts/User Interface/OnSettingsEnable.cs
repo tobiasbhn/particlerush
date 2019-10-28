@@ -29,16 +29,8 @@ public class OnSettingsEnable : MonoBehaviour {
     }
 
     private void DefineVars() {
-        buttonPrefixesDE = new string[3] {
-            UiObjectReferrer.instance.settingsSoundTextDE.GetComponent<Text>().text,
-            UiObjectReferrer.instance.settingsVibrationTextDE.GetComponent<Text>().text,
-            UiObjectReferrer.instance.settingsItemPosTextDE.GetComponent<Text>().text
-        };
-        buttonPrefixesEN = new string[3] {
-            UiObjectReferrer.instance.settingsSoundTextEN.GetComponent<Text>().text,
-            UiObjectReferrer.instance.settingsVibrationTextEN.GetComponent<Text>().text,
-            UiObjectReferrer.instance.settingsItemPosTextEN.GetComponent<Text>().text
-        };
+        buttonPrefixesDE = new string[3] { "Geräusche umschalten - ", "Vibrationen umschalten - ", "Item Position umschalten - " };
+        buttonPrefixesEN = new string[3] { "Toggle Sounds - ", "Toggle Vibrations - ", "Toggle Item Position - " };
         settingsSoundDataDE = new string[3] { "Aus", "An", "Nur Töne" };
         settingsSoundDataEN = new string[3] { "Off", "On", "Only Sounds" };
         settingsVibrationDataDE = new string[4] { "Aus", "Kurz", "Mittel", "Lang" };
@@ -54,6 +46,8 @@ public class OnSettingsEnable : MonoBehaviour {
         UpdateButtonUIItemPos();
     }
     public void UpdateButtonUISound() {
+        if (settingsSoundDataDE == null || settingsSoundDataEN == null)
+            DefineVars();
         var currendSoundSetting = (int)SaveDataManager.getValue.settingsSound;
         var soundTextDE = buttonPrefixesDE[0] + settingsSoundDataDE[currendSoundSetting];
         var soundTextEN = buttonPrefixesEN[0] + settingsSoundDataEN[currendSoundSetting];
@@ -61,6 +55,8 @@ public class OnSettingsEnable : MonoBehaviour {
         UiObjectReferrer.instance.settingsSoundTextEN.GetComponent<Text>().text = soundTextEN;
     }
     public void UpdateButtonUIVibration() {
+        if (settingsVibrationDataDE == null || settingsVibrationDataEN == null)
+            DefineVars();
         var currendVibrationSetting = (int)SaveDataManager.getValue.settingsVibration;
         var vibrationTextDE = buttonPrefixesDE[1] + settingsVibrationDataDE[currendVibrationSetting];
         var vibrationTextEN = buttonPrefixesEN[1] + settingsVibrationDataEN[currendVibrationSetting];
@@ -68,6 +64,8 @@ public class OnSettingsEnable : MonoBehaviour {
         UiObjectReferrer.instance.settingsVibrationTextEN.GetComponent<Text>().text = vibrationTextEN;
     }
     public void UpdateButtonUIItemPos() {
+        if (settingsItemPosDataDE == null || settingsItemPosDataEN == null)
+            DefineVars();
         var currendItemPosSetting = (int)SaveDataManager.getValue.settingsItemPosition;
         var itemPosTextDE = buttonPrefixesDE[2] + settingsItemPosDataDE[currendItemPosSetting];
         var itemPosTextEN = buttonPrefixesEN[2] + settingsItemPosDataEN[currendItemPosSetting];

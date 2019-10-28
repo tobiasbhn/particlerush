@@ -15,6 +15,8 @@ public class SceneManager : MonoBehaviour {
     public ScenariosDefault revive;
     public ScenariosDefault shop;
     public ScenariosDefault settings;
+    public ScenariosDefault adsNotification;
+    public ScenariosDefault openSource;
 
     void Awake() {
         instance = this;
@@ -50,5 +52,11 @@ public class SceneManager : MonoBehaviour {
     }
     public void callSceneSettings() {
         settings.callScenario();
+    }
+    public void callSceneAdsNotification() {
+        adsNotification.callScenario();
+    }
+    public void callSceneOpenSource() {
+        openSource.callScenario();
     }
 }

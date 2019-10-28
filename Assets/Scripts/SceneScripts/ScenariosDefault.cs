@@ -134,8 +134,11 @@ public class ScenariosDefault : ScriptableObject {
             case UiSceneModis.shop:
                 UiSceneScript.instance.SetupShop();
                 break;
-            case UiSceneModis.ad_notification:
+            case UiSceneModis.adNotification:
                 UiSceneScript.instance.SetupNotificationAds();
+                break;
+            case UiSceneModis.openSource:
+                UiSceneScript.instance.SetupOpenSource();
                 break;
         }
     }

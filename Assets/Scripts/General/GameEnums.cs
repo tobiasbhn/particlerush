@@ -21,7 +21,7 @@ public enum AdType {Normal, Rewarded};
 public enum PlayerSceneModis {keepCurrent, disabled, ingame, menu, pause, resume }
 public enum ParticleSceneModis {keepCurrent, disabled, ingame, menu }
 public enum TimeSceneModis {keepCurrent, normal, stop }
-public enum UiSceneModis {keepCurrent, disabled, ingame, menu, pause, shop, settings, ad_notification, endgame }
+public enum UiSceneModis {keepCurrent, disabled, ingame, menu, pause, shop, settings, adNotification, endgame, openSource }
 public enum ShakeSceneModis {keepCurrent, disabled, ingame, menu }
 public enum ScoreSceneModis {keepCurrent, disabled, activeReset, active }
 public enum RuntimeDataSceneModi {keepCurrent, ingame, endgame }

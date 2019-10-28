@@ -95,7 +95,8 @@ public class PlayerScript : MonoBehaviour {
             playerMeshGenerator.CreateShape(currentMass);
             ResizeActualPlayerSizeInWorld();
 
-            if (targetMass >= ConstantManager.PLAYER_MAX_MESH_GENERATION_SIZE && SaveDataManager.getValue.gameStatus == GameStatus.ingame) {
+            var sizeTrend = targetMass - currentMass;
+            if (currentMass >= ConstantManager.PLAYER_MAX_MESH_GENERATION_SIZE && SaveDataManager.getValue.gameStatus == GameStatus.ingame && sizeTrend >= 0) {
                 SceneManager.instance.callSceneEndgame();
             }
         }
