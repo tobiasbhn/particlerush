@@ -8,7 +8,7 @@ public class OnEngameEnable : MonoBehaviour {
     void OnEnable() {
         ButtonsNotInteractable();
         StartCoroutine(activateButtons());
-        var score = "Score: " + ((int)RuntimeDataManager.preRevive.score + (int)RuntimeDataManager.postRevive.score).ToString("000000");
+        var score = "Score: " + ((int)RuntimeDataManager.instance.preRevive.score + (int)RuntimeDataManager.instance.postRevive.score).ToString("000000");
         UiObjectReferrer.instance.endgameScoreTextDE.GetComponent<Text>().text = score;
         UiObjectReferrer.instance.endgameScoreTextEN.GetComponent<Text>().text = score;
         var highscore = "Highscore: " + ((int)RuntimeDataManager.value.highscore).ToString("000000");

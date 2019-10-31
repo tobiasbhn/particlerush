@@ -9,8 +9,8 @@ public class RuntimeDataManager : MonoBehaviour {
 
     // RUNTIME DATE
     [HideInInspector] public static RuntimeData value;
-    [HideInInspector] public static RuntimeData preRevive;
-    [HideInInspector] public static RuntimeData postRevive;
+    public RuntimeData preRevive;
+    public RuntimeData postRevive;
 
     void Awake() {
         instance = this;
@@ -30,12 +30,14 @@ public class RuntimeDataManager : MonoBehaviour {
         } else {
             postRevive = new RuntimeData();
             preRevive = new RuntimeData();
+            preRevive.totalGamesPlayed++;
             value = preRevive;
             value.startTime = Time.realtimeSinceStartup;
         }
     }
 
     public void SetupEndgame() {
+        SaveDataManager.getValue.statsTotalGamesPlayed += value.totalGamesPlayed;
         // STATS
         SaveDataManager.getValue.statsTotalParticles += value.particlesSpawned;
         // Normal Particles
@@ -56,6 +58,12 @@ public class RuntimeDataManager : MonoBehaviour {
         // Projectiles
         SaveDataManager.getValue.statsTotalProjectilesFired += value.projectilesFiredTotal;
         SaveDataManager.getValue.statsTotalProjectilesHit += value.projectilesHitTotal;
+        // Items
+        SaveDataManager.getValue.statsTotalItemsSpawned += value.itemsSpawned;
+        SaveDataManager.getValue.statsTotalItemsUsed += value.itemsUsed;
+        // Input
+        SaveDataManager.getValue.statsTotalInputSwipe += value.inputSwipeCount;
+        SaveDataManager.getValue.statsTotalInputTab += value.inputTabCount;
         // Time
         SaveDataManager.getValue.totalTimeIngame += Time.realtimeSinceStartup - value.startTime;
         // Score
@@ -69,6 +77,7 @@ public class RuntimeDataManager : MonoBehaviour {
 [System.Serializable]
 public class RuntimeData {
     // STATS
+    public int totalGamesPlayed = 0;
     // Particles
     public int particlesSpawned = 0;
     public int normalParticlesSpawned = 0;
@@ -86,6 +95,12 @@ public class RuntimeData {
     // Projectiles
     public int projectilesFiredTotal = 0;
     public int projectilesHitTotal = 0;
+    // Items
+    public int itemsSpawned = 0;
+    public int itemsUsed = 0;
+    // Input
+    public int inputSwipeCount = 0;
+    public int inputTabCount = 0;
     // Time
     public float startTime = 0f;
     // Score

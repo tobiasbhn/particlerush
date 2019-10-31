@@ -37,7 +37,7 @@ public class ShopScript : MonoBehaviour {
         UiObjectReferrer.instance.shopBuyButtonEN.GetComponent<Button>().interactable = interactable;
     }
 
-    public void SetupShop() {
+    public void OnEnable() {
         UiObjectReferrer.instance.shopWelcomeTextDE.SetActive(true);
         UiObjectReferrer.instance.shopWelcomeTextEN.SetActive(true);
         ShopScript.instance.SetButtonTextBuy(false);

@@ -18,7 +18,10 @@ MonoBehaviour:
   german:
     itemName: Freiraum
     itemDescription: "Dieses Item zerst\xF6rt alle Partikel in einem gewissen Radius"
-  itemTexture: {fileID: 2800000, guid: aa1fed59ef59f7549a51ecb31038e34d, type: 3}
+  itemIconAsSprite: {fileID: 21300000, guid: f56087cc3adc3e643911ccde611de9ad, type: 3}
+  itemIconAsTexture: {fileID: 2800000, guid: f56087cc3adc3e643911ccde611de9ad, type: 3}
+  shopScenarioOnActive: {fileID: 11400000, guid: c3a826888acf64840aaeba4d213caae1,
+    type: 2}
   itemLevels:
   - 1
   - 2

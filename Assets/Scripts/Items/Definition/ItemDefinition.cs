@@ -6,13 +6,18 @@ public abstract class ItemDefinition : ScriptableObject {
 
     [SerializeField] private ItemLanguageSet english;
     [SerializeField] private ItemLanguageSet german;
-    [SerializeField] private Texture itemTexture;
+    [SerializeField] private Sprite itemIconAsSprite;
+    [SerializeField] private Texture itemIconAsTexture;
+    [SerializeField] private ScenariosDefault shopScenarioOnActive;
     [SerializeField] private List<float> itemLevels = new List<float>();
     [SerializeField] private List<int> itemPrices = new List<int>();
 
 
-    public Texture getIcon() {
-        return itemTexture;
+    public Texture getIconAsTexture() {
+        return itemIconAsTexture;
+    }
+    public Sprite getIconAsSprite() {
+        return itemIconAsSprite;
     }
     public string getInfoEnglish() {
         var info = english.itemName.ToString() + ":\n\n" + english.itemDescription.ToString();
@@ -37,6 +42,9 @@ public abstract class ItemDefinition : ScriptableObject {
     }
     public virtual int getCurrendLVL() {
         return 0;
+    }
+    public ScenariosDefault GetScenario() {
+        return shopScenarioOnActive;
     }
 
 

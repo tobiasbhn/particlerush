@@ -14,11 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameStatus: 3
   playerModi: 2
-  particleModi: 2
-  timeModi: 1
+  playerInputModi: 0
+  particleBehaviourModi: 2
+  particleSpawnModi: 1
+  itemInputModi: 1
+  itemSpawnModi: 1
   uiModi: 2
-  reviveModi: 0
   shakeModi: 2
-  scoreModi: 2
-  runtimeDataModi: 1
+  reviveModi: 0
   adsModi: 0
+  timeModi: 1
+  runtimeDataModi: 1
+  scoreModi: 2

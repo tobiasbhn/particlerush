@@ -7,6 +7,8 @@ TagManager:
   - Particle
   - UI English
   - UI German
+  - Item
+  - Item Slots
   layers:
   - Default
   - TransparentFX

@@ -9,7 +9,9 @@ public class ItemPool : MonoBehaviour {
         instance = this;
     }
 
-    //ITEM POOLS AND SINGLETONS
+    // ITEM ARRAY
+    public ItemDefinition[] items;
+    // ITEM POOLS AND SINGLETONS
     public ShrinkItem shrinkItem;
     public ShieldItem shieldItem;
     public ForceItem forceItem;
@@ -17,4 +19,15 @@ public class ItemPool : MonoBehaviour {
     public SlowItem slowItem;
     public SlideItem slideItem;
     public GoldrushItem goldrushItem;
+
+    void Start() {
+        items = new ItemDefinition[7];
+        items[0] = shrinkItem;
+        items[1] = shieldItem;
+        items[2] = forceItem;
+        items[3] = clearItem;
+        items[4] = slowItem;
+        items[5] = slideItem;
+        items[6] = goldrushItem;
+    }
 }

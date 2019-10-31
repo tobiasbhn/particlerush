@@ -13,6 +13,7 @@ public class PlayerSceneSetup : MonoBehaviour {
         PlayerMovementScript.instance.allowSwipe = ConstantManager.INPUT_ALLOW_SWIPE_INGAME;
         PlayerMovementScript.instance.allowTab = ConstantManager.INPUT_ALLOW_TAP_INGAME;
         PlayerMovementScript.instance.lastSwipeTime = Time.time;
+        PlayerMovementScript.instance.forceCenterPosition = true;
 
         ShootingController.instance.DestroyAllProjectiles();
 
@@ -28,6 +29,7 @@ public class PlayerSceneSetup : MonoBehaviour {
     public void SetupMenu() {
         PlayerMovementScript.instance.allowSwipe = ConstantManager.INPUT_ALLOW_SWIPE_MENU;
         PlayerMovementScript.instance.allowTab = ConstantManager.INPUT_ALLOW_TAP_MENU;
+        PlayerMovementScript.instance.forceCenterPosition = true;
         
         ShootingController.instance.DestroyAllProjectiles();
 
@@ -43,6 +45,7 @@ public class PlayerSceneSetup : MonoBehaviour {
     public void SetupDisabled() {
         PlayerMovementScript.instance.allowSwipe = false;
         PlayerMovementScript.instance.allowTab = false;
+        PlayerMovementScript.instance.forceCenterPosition = true;
         
         ShootingController.instance.DestroyAllProjectiles();
         

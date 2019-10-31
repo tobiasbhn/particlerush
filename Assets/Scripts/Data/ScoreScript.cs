@@ -20,10 +20,10 @@ public class ScoreScript : MonoBehaviour {
         if (countScore) {
             currentScore += ConstantManager.SCORE_PER_SECOND * Time.deltaTime;
             RuntimeDataManager.value.score = currentScore;
-            var currentHighscore = Mathf.Max(SaveDataManager.getValue.highscore, RuntimeDataManager.preRevive.score + RuntimeDataManager.postRevive.score);
+            var currentHighscore = Mathf.Max(SaveDataManager.getValue.highscore, RuntimeDataManager.instance.preRevive.score + RuntimeDataManager.instance.postRevive.score);
             RuntimeDataManager.value.highscore = currentHighscore;
-            var gold = (RuntimeDataManager.postRevive.goldMassCollected + RuntimeDataManager.preRevive.goldMassCollected).ToString();
-            var score = ((int)RuntimeDataManager.postRevive.score + (int)RuntimeDataManager.preRevive.score).ToString("000000");
+            var gold = (RuntimeDataManager.instance.postRevive.goldMassCollected + RuntimeDataManager.instance.preRevive.goldMassCollected).ToString();
+            var score = ((int)RuntimeDataManager.instance.postRevive.score + (int)RuntimeDataManager.instance.preRevive.score).ToString("000000");
             UiObjectReferrer.instance.ingameScoreText.GetComponent<Text>().text = score;
             UiObjectReferrer.instance.ingameGoldText.GetComponent<Text>().text = gold;
         }

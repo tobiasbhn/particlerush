@@ -91,16 +91,21 @@ public static class ConstantManager {
     public const int PARTICLE_SHRINK_SPAWN_CHANCE = 15; // in Percent
     public const int PARTICLE_GOLD_SPAWN_CHANCE = 17; // in Percent
     //BEHAVIOUR
-    public const SpawnModi PARTICLE_SPAWNMODI_INGAME = SpawnModi.all;
-    public const SpawnModi PARTICLE_SPAWNMODI_MENU = SpawnModi.onlyNorm;
     public const bool PARTICLE_ALLOW_SPEED_INCREASE_INGAME = true;
     public const bool PARTICLE_ALLOW_SPEED_INCREASE_MENU = false;
 
     //PROJECTILE
-    public const int PROJECTILE_MIN_DAMAGE_REDUCION_PER_PLAYER_MASS = 20;
+    public const int PROJECTILE_MIN_DAMAGE_REDUCION_PER_PLAYER_MASS = 30; // In Percent, preserves that a projectiles deals at least x Percent damage
     public const float PROJECTILE_MAX_LIFE_TIME = 1f; // Time in Seconds
     public const float PROJECTILE_MAX_WIDTH = 0.3f;
     public const float PROJECTILE_MIN_WIDTH = 0.03f;
+
+    //ITEMS
+    public const float ITEM_SPAWN_DELAY = 60f / 10f; // 60 Sconds / Items per Minute
+    public const float ITEM_SPAWN_RANDOM_FACTOR = 0f; // Items could spawn X Seconds befor or after the normal time
+    public const float ITEM_ACTIVE_ANIMATION_SPEED = 2f;
+    public const float ITEM_ACTIVE_ANIMATION_CIRCE_SIZE = 0.3f;
+    public const float ITEM_TIME_SCALE_ON_DRAG_DROP = 0.5f;
 
 
 

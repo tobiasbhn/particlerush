@@ -15,7 +15,6 @@ public class ParticleSceneSetup : MonoBehaviour {
         ParticleSpawnScript.instance.spawnBaseDelay = ConstantManager.PARTICLE_SPAWN_BASE_DELAY_INGAME;
         ParticleSpawnScript.instance.spawnBaseSpeed = ConstantManager.PARTICLE_SPAWN_BASE_SPEED_INGAME;
         ParticleSpawnScript.instance.allowSpeedIncrease = ConstantManager.PARTICLE_ALLOW_SPEED_INCREASE_INGAME;
-        ParticleSpawnScript.instance.spawnModi = ConstantManager.PARTICLE_SPAWNMODI_INGAME;
     }
 
     public void SetupMenu() {
@@ -23,7 +22,6 @@ public class ParticleSceneSetup : MonoBehaviour {
         ParticleSpawnScript.instance.spawnBaseDelay = ConstantManager.PARTICLE_SPAWN_BASE_DELAY_MENU;
         ParticleSpawnScript.instance.spawnBaseSpeed = ConstantManager.PARTICLE_SPAWN_BASE_SPEED_MENU;
         ParticleSpawnScript.instance.allowSpeedIncrease = ConstantManager.PARTICLE_ALLOW_SPEED_INCREASE_MENU;
-        ParticleSpawnScript.instance.spawnModi = ConstantManager.PARTICLE_SPAWNMODI_MENU;
     }
 
     public void SetupDisabled() {
@@ -31,6 +29,24 @@ public class ParticleSceneSetup : MonoBehaviour {
         ParticleSpawnScript.instance.spawnBaseDelay = 0;
         ParticleSpawnScript.instance.spawnBaseSpeed = 0;
         ParticleSpawnScript.instance.allowSpeedIncrease = false;
-        ParticleSpawnScript.instance.spawnModi = SpawnModi.none;
+    }
+
+    public void SpawnModiNone() {
+        ParticleSpawnScript.instance.spawnModi = ParticleSpawnModi.none;
+    }
+    public void SpawnModiAll() {
+        ParticleSpawnScript.instance.spawnModi = ParticleSpawnModi.all;
+    }
+    public void SpawnModiGold() {
+        ParticleSpawnScript.instance.spawnModi = ParticleSpawnModi.onlyGold;
+    }
+    public void SpawnModiMass() {
+        ParticleSpawnScript.instance.spawnModi = ParticleSpawnModi.onlyMassRelative;
+    }
+    public void SpawnModiGrow() {
+        ParticleSpawnScript.instance.spawnModi = ParticleSpawnModi.onlyNorm;
+    }
+    public void SpawnModiShrink() {
+        ParticleSpawnScript.instance.spawnModi = ParticleSpawnModi.onlyShrink;
     }
 }

@@ -4,16 +4,27 @@ using UnityEngine;
 
 [CreateAssetMenu]
 public class ScenariosDefault : ScriptableObject {
+    [Header("GENERAL")]
     [SerializeField] private GameStatus gameStatus;
+    [Header("PLAYER")]
     [SerializeField] private PlayerSceneModis playerModi;
-    [SerializeField] private ParticleSceneModis particleModi;
-    [SerializeField] private TimeSceneModis timeModi;
+    [SerializeField] private PlayerInputSceneModis playerInputModi;
+    [Header("PARTICLES")]
+    [SerializeField] private ParticleBehaviourSceneModis particleBehaviourModi;
+    [SerializeField] private ParticleSpawnModi particleSpawnModi;
+    [Header("ITEMS")]
+    [SerializeField] private ItemInputSceneModis itemInputModi;
+    [SerializeField] private ItemSpawnSceneModi itemSpawnModi;
+    [Header("UI")]
     [SerializeField] private UiSceneModis uiModi;
-    [SerializeField] private ReviveSceneModis reviveModi;
     [SerializeField] private ShakeSceneModis shakeModi;
-    [SerializeField] private ScoreSceneModis scoreModi;
-    [SerializeField] private RuntimeDataSceneModi runtimeDataModi;
+    [Header("GAME LOOP")]
+    [SerializeField] private ReviveSceneModis reviveModi;
     [SerializeField] private AdsSceneModis adsModi;
+    [SerializeField] private TimeSceneModis timeModi;
+    [Header("DATA")]
+    [SerializeField] private RuntimeDataSceneModi runtimeDataModi;
+    [SerializeField] private ScoreSceneModis scoreModi;
 
     public virtual void callScenario() {
         //Set above Modis and call scripts
@@ -32,10 +43,14 @@ public class ScenariosDefault : ScriptableObject {
         SetupRevive();
         SetupRuntimeData();
         SetupPlayer();
-        SetupParticles();
+        SetupParticleBehaviour();
+        SetupParticleSpawnModi();
+        SetupItemSpawnModi();
         SetupUI();
         SetupShake();
         SetupScore();
+        SetupItemInput();
+        SetupPlayerInput();
         SaveDataManager.getValue.gameStatus = gameStatus;
         SaveDataManager.Save();
     }
@@ -94,18 +109,63 @@ public class ScenariosDefault : ScriptableObject {
                 break;
         }
     }
-    private void SetupParticles() {
-        switch (particleModi) {
-            case ParticleSceneModis.keepCurrent:
+    private void SetupPlayerInput() {
+
+    }
+    private void SetupParticleBehaviour() {
+        switch (particleBehaviourModi) {
+            case ParticleBehaviourSceneModis.keepCurrent:
                 break;
-            case ParticleSceneModis.disabled:
+            case ParticleBehaviourSceneModis.disabled:
                 ParticleSceneSetup.instance.SetupDisabled();
                 break;
-            case ParticleSceneModis.ingame:
+            case ParticleBehaviourSceneModis.ingame:
                 ParticleSceneSetup.instance.SetupIngame();
                 break;
-            case ParticleSceneModis.menu:
+            case ParticleBehaviourSceneModis.menu:
                 ParticleSceneSetup.instance.SetupMenu();
+                break;
+        }
+    }
+    private void SetupParticleSpawnModi() {
+        switch (particleSpawnModi) {
+            case ParticleSpawnModi.all:
+                ParticleSceneSetup.instance.SpawnModiAll();
+                break;
+            case ParticleSpawnModi.none:
+                ParticleSceneSetup.instance.SpawnModiNone();
+                break;
+            case ParticleSpawnModi.onlyGold:
+                ParticleSceneSetup.instance.SpawnModiGold();
+                break;
+            case ParticleSpawnModi.onlyMassRelative:
+                ParticleSceneSetup.instance.SpawnModiMass();
+                break;
+            case ParticleSpawnModi.onlyNorm:
+                ParticleSceneSetup.instance.SpawnModiGrow();
+                break;
+            case ParticleSpawnModi.onlyShrink:
+                ParticleSceneSetup.instance.SpawnModiShrink();
+                break;
+        }
+    }
+    private void SetupItemSpawnModi() {
+        switch (itemSpawnModi) {
+            case ItemSpawnSceneModi.refuse:
+                ItemSpawnScript.instance.SetupDisabled();
+                break;
+            case ItemSpawnSceneModi.allow:
+                ItemSpawnScript.instance.SetupEnabled();
+                break;
+        }
+    }
+    private void SetupItemInput() {
+        switch (itemInputModi) {
+            case ItemInputSceneModis.refuse:
+                ItemInputScript.instance.SetupDisable();
+                break;
+            case ItemInputSceneModis.allow:
+                ItemInputScript.instance.SetupEnable();
                 break;
         }
     }

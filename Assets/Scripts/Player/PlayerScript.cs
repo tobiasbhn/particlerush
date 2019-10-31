@@ -106,7 +106,7 @@ public class PlayerScript : MonoBehaviour {
         transform.localScale = new Vector3(size, size, size);
     }
 
-    //ON COLLISSION WITH FOOD
+    //ON COLLISSION WITH PARTICLE
     private void OnCollisionEnter(Collision other) {
         var pos = other.transform.position;
         var tag = other.gameObject.tag;
@@ -130,6 +130,14 @@ public class PlayerScript : MonoBehaviour {
 
             particleScript.Destroy(true, true, false);
             playerMeshGenerator.NewCollision(pos);
+        }
+    }
+
+    // ON TRIGGER
+    private void OnTriggerEnter(Collider other) {
+        var tag = other.gameObject.transform.tag;
+        if (tag == "Item" && other.GetType() == typeof(SphereCollider)) {
+            Debug.Log("COLLECT ITEM");
         }
     }
 }

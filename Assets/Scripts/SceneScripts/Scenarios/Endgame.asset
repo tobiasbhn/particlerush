@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameStatus: 4
   playerModi: 4
-  particleModi: 1
+  particleBehaviourModi: 1
+  particleSpawnModi: 0
   timeModi: 2
   uiModi: 8
   reviveModi: 0

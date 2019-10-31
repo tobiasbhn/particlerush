@@ -16,20 +16,20 @@ public class ParticleSpawnScript : MonoBehaviour {
     //SPAWN
     private float lastParticleSpawnTime;
     [HideInInspector] public List<GameObject> instantiatedParticles = new List<GameObject>();
-    [HideInInspector] public SpawnModi spawnModi;
+    [HideInInspector] public ParticleSpawnModi spawnModi;
     [HideInInspector] public float spawnBaseDelay = 0;
     [HideInInspector] public float spawnBaseSpeed = 0;
 
     void Awake() {
         instance = this;
         lastParticleSpawnTime = Time.time;
-        spawnModi = SpawnModi.none;
+        spawnModi = ParticleSpawnModi.none;
     }
 
 
     //SPAWN BEHAVIOUR
     void Update() {
-        if (spawnModi != SpawnModi.none) {
+        if (spawnModi != ParticleSpawnModi.none) {
             var difficultFactor = 0;
             var spawnDelay = allowSpeedIncrease ? spawnBaseDelay - difficultFactor : spawnBaseDelay;
 
@@ -51,8 +51,7 @@ public class ParticleSpawnScript : MonoBehaviour {
         spawnedParticle.transform.SetParent(particleDirectory.transform);
         var particleScript = spawnedParticle.GetComponent<ParticleScript>();
         particleScript.particleType = DefineType();
-        particleScript.particleSpeed = DefineSpeed();
-        particleScript.allowSpeedIncrease = allowSpeedIncrease;
+        particleScript.speed = DefineSpeed();
         instantiatedParticles.Add(spawnedParticle);
         RuntimeDataManager.value.particlesSpawned++;
     }
@@ -60,18 +59,18 @@ public class ParticleSpawnScript : MonoBehaviour {
     //DEFINE TYPE
     private ParticleType DefineType() {
         switch (spawnModi) {
-            case SpawnModi.all:
+            case ParticleSpawnModi.all:
                 return DefineNormalType();
-            case SpawnModi.onlyNorm:
+            case ParticleSpawnModi.onlyNorm:
                 RuntimeDataManager.value.normalParticlesSpawned++;
                 return ParticleType.grow;
-            case SpawnModi.onlyShrink:
+            case ParticleSpawnModi.onlyShrink:
                 RuntimeDataManager.value.shrinkParticlesSpawned++;
                 return ParticleType.shrink;
-            case SpawnModi.onlyGold:
+            case ParticleSpawnModi.onlyGold:
                 RuntimeDataManager.value.goldParticlesSpawned++;
                 return ParticleType.gold;
-            case SpawnModi.onlyMassRelative:
+            case ParticleSpawnModi.onlyMassRelative:
                 if (Random.Range(0, 100) < ConstantManager.PARTICLE_SHRINK_SPAWN_CHANCE) {
                     RuntimeDataManager.value.shrinkParticlesSpawned++;
                     return ParticleType.shrink;
@@ -80,7 +79,7 @@ public class ParticleSpawnScript : MonoBehaviour {
                     return ParticleType.grow;
                 }
             default:
-                spawnModi = SpawnModi.all;
+                spawnModi = ParticleSpawnModi.all;
                 return DefineNormalType();
         }
     }
@@ -99,7 +98,7 @@ public class ParticleSpawnScript : MonoBehaviour {
     }
 
     //DEFINE SPEED
-    private float DefineSpeed() {
+    public float DefineSpeed() {
         //random factor, so not all particles fly next to each other
         var randomFactor = Random.Range(
             -spawnBaseSpeed / ConstantManager.PARTICLE_SPEED_RANDOM_FACTOR,

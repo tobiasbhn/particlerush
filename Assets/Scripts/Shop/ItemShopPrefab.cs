@@ -23,6 +23,7 @@ public class ItemShopPrefab : MonoBehaviour {
         ShopScript.instance.DisableAllItems();
         itemInfoHolder.gameObject.SetActive(true);
         activeScreen.SetActive(true);
+        itemDefinition.GetScenario().callScenario();
 
         if (itemDefinition.getCurrendLVL() == 0)
             ShopScript.instance.SetButtonTextUnlock(true);
@@ -38,7 +39,7 @@ public class ItemShopPrefab : MonoBehaviour {
 
     // Setup everything that is static, like Item Name and Item Description (never Change, no matter which LVL)
     void UpdateStaticItemInfos() {
-        itemIconHolder.texture = itemDefinition.getIcon();
+        itemIconHolder.texture = itemDefinition.getIconAsTexture();
         if (SaveDataManager.getValue.settingsLanguage == SettingsLanguages.English) {
             itemInfoHolder.text = itemDefinition.getInfoEnglish();
         } else {
@@ -46,7 +47,7 @@ public class ItemShopPrefab : MonoBehaviour {
         }
     }
 
-    // Setup everythin that depends on the LVL, like Price, Locked-State etc.
+    // Setup everything that depends on the LVL, like Price, Locked-State etc.
     void UpdateLvlBasedItemInfos() {
         itemPriceHolder.text = itemDefinition.getCurrendPrice();
 

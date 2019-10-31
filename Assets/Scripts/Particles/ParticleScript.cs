@@ -17,8 +17,7 @@ public class ParticleScript : MonoBehaviour {
     private ParticleSystem particleSys;
 
     //BEHAVIOUR
-    [HideInInspector] public bool allowSpeedIncrease = false;
-    [HideInInspector] public float particleSpeed = 0;
+    [HideInInspector] public float speed = 0;
     private bool alreadyDestroyed = false;
 
     //PARTICLE OPTIONS
@@ -43,7 +42,7 @@ public class ParticleScript : MonoBehaviour {
         DefineSize();
         DefineColor();
 
-        rb.AddForce(0, particleSpeed, 0);
+        rb.AddForce(0, speed, 0);
         rb.AddTorque(
             Random.Range(-ConstantManager.PARTICLE_SPAWN_BASE_ROTATION, ConstantManager.PARTICLE_SPAWN_BASE_ROTATION),
             Random.Range(-ConstantManager.PARTICLE_SPAWN_BASE_ROTATION, ConstantManager.PARTICLE_SPAWN_BASE_ROTATION),
