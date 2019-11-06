@@ -108,7 +108,7 @@ public static class ConstantManager {
     public const float ITEM_SPAWN_RANDOM_FACTOR = 10f; // Items could spawn X Seconds befor or after the normal time
     public const float ITEM_ACTIVE_ANIMATION_SPEED = 2f;
     public const float ITEM_ACTIVE_ANIMATION_CIRCE_SIZE = 0.3f;
-    public const float ITEM_TIME_SCALE_ON_DRAG_DROP = 0.6f;
+    public const float ITEM_TIME_SCALE_ON_DRAG_DROP = 0.4f;
     public const float ITEM_INPUT_DELAY_TO_DRAG = 0.02f;
 
 
@@ -130,5 +130,6 @@ public static class ConstantManager {
     public const int SCORE_DIFFICULTY_MAX_LVL = 10; // Maxiamal Reachable Level
     public const int SCORE_DIFFICULTY_LVL_BUFFER = 2; // Buffer ontop max Level, so even if max lvl reached it gets harder
     public const int SCORE_DIFFICULTY_DESIRED_ROUND_TIME = 240; // Desired Time of 1 Round in Seconds
+    public const int SCORE_DIFFICULTY_TIME_TO_SOFT_INTRODUCE_AFTER_REVIVE = 60; // Seconds to get back on real speed;
 }
 

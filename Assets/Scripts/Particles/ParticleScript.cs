@@ -79,12 +79,16 @@ public class ParticleScript : MonoBehaviour {
     }
 
     private void DefineColor() {
+        var particleSysMat = particleSys.gameObject.GetComponent<ParticleSystemRenderer>().material;
         if (particleType == ParticleType.grow) {
             meshRenderer.material.SetColor("_BaseColor", growParticleColor);
+            particleSysMat.SetColor("_BaseColor", growParticleColor);
         } else if (particleType == ParticleType.shrink) {
             meshRenderer.material.SetColor("_BaseColor", shrinkParticleColor);
+            particleSysMat.SetColor("_BaseColor", shrinkParticleColor);
         } else if (particleType == ParticleType.gold) {
             meshRenderer.material.SetColor("_BaseColor", goldParticleColor);
+            particleSysMat.SetColor("_BaseColor", goldParticleColor);
         }
     }
 
@@ -130,8 +134,9 @@ public class ParticleScript : MonoBehaviour {
             //Play Destroy-Animation and shake Screen, if animations are allowed
             if (_withAnimation) {
                 ShakeScript.instance.Shake();
-                if (particleSys != null)
+                if (particleSys != null) {
                     particleSys.Play();
+                }
                 VibrationManager.Vibrate();
             }
             //Let Player Grow if an "shrink"-Particle gets Detroyed

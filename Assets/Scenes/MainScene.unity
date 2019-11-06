@@ -7241,6 +7241,41 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &631545392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 631545393}
+  m_Layer: 5
+  m_Name: Instantiated Gold Feedback
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &631545393
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631545392}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1752419271}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &640625635
 GameObject:
   m_ObjectHideFlags: 0
@@ -9341,6 +9376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentScore: 0
   difficultFactor: 0
+  gold: 0
 --- !u!114 &803788313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16465,6 +16501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsEN: []
   objectsDE: []
+  uiCanvas: {fileID: 1615732973}
   ingameMain: {fileID: 1752419270}
   ingameScoreText: {fileID: 1518931136}
   ingameGoldText: {fileID: 735936404}
@@ -22538,6 +22575,7 @@ RectTransform:
   - {fileID: 356187756}
   - {fileID: 1751325774}
   - {fileID: 1327710859}
+  - {fileID: 631545393}
   m_Father: {fileID: 2074791242}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26268,6 +26306,7 @@ GameObject:
   - component: {fileID: 2128465383}
   - component: {fileID: 2128465385}
   - component: {fileID: 2128465384}
+  - component: {fileID: 2128465386}
   m_Layer: 0
   m_Name: Particles
   m_TagString: Untagged
@@ -26320,6 +26359,21 @@ MonoBehaviour:
   spawnModi: 0
   spawnDelay: 0
   spawnSpeed: 0
+--- !u!114 &2128465386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128465382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4c97f6c97b96ae4482b2cb0ce490d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  feedbackPrefab: {fileID: 1848765514234898026, guid: 0a83d307a1fb9d940a0717020fbaa7bd,
+    type: 3}
+  feedbackDirectory: {fileID: 631545392}
 --- !u!1001 &673852648648533094
 PrefabInstance:
   m_ObjectHideFlags: 0

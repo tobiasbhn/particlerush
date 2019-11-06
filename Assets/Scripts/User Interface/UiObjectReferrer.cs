@@ -12,6 +12,8 @@ public class UiObjectReferrer : MonoBehaviour {
     [HideInInspector] public List<GameObject> objectsDE;
 
     //OBJECT-LINKS
+    public Canvas uiCanvas;
+
     [Header("INGAME")]
     public GameObject ingameMain;
     public Text ingameScoreText;

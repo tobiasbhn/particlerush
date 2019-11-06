@@ -121,7 +121,8 @@ public class PlayerScript : MonoBehaviour {
                 RuntimeDataManager.value.lossMass += particleMass;
             } else if (particleType == ParticleType.gold) {
                 RuntimeDataManager.value.goldParticlesCollected++;
-                RuntimeDataManager.value.goldMassCollected += (int)particleMass;
+                RuntimeDataManager.value.goldMassCollected += Mathf.CeilToInt(particleMass);
+                GoldFeedbackSpawn.instance.NewGoldFeedback(pos, Mathf.CeilToInt(particleMass));
             }
 
             particleScript.Destroy(true, true, false);

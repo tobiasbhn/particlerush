@@ -14,6 +14,11 @@ public class ScoreScript : MonoBehaviour {
     [HideInInspector] public float currentScore = 0;
     [HideInInspector] public float difficultFactor = 0;
 
+    // VARS
+    [HideInInspector] public int gold;
+    private float increaseDifficultiAfterRevive = 0;
+    private float previousDifficultiFactor = 0;
+
     void Awake() {
         instance = this;
     }
@@ -27,10 +32,10 @@ public class ScoreScript : MonoBehaviour {
             var currentHighscore = Mathf.Max(SaveDataManager.getValue.highscore, RuntimeDataManager.instance.preRevive.score + RuntimeDataManager.instance.postRevive.score);
             RuntimeDataManager.value.highscore = currentHighscore;
             // Update UI
-            var gold = (RuntimeDataManager.instance.postRevive.goldMassCollected + RuntimeDataManager.instance.preRevive.goldMassCollected).ToString();
+            var goldStr = gold.ToString();
             var score = ((int)RuntimeDataManager.instance.postRevive.score + (int)RuntimeDataManager.instance.preRevive.score).ToString("000000");
             UiObjectReferrer.instance.ingameScoreText.text = score;
-            UiObjectReferrer.instance.ingameGoldText.text = gold;
+            UiObjectReferrer.instance.ingameGoldText.text = goldStr;
 
             // Calculate Difficult Factor
             CalculateDifficultFactor();
@@ -53,7 +58,12 @@ public class ScoreScript : MonoBehaviour {
         float inPercent = 100f * shiftWithLVL / (float)absMax;
 
         RuntimeDataManager.value.difficultyFactor = inPercent / 100f;
-        difficultFactor = RuntimeDataManager.instance.preRevive.difficultyFactor + RuntimeDataManager.instance.postRevive.difficultyFactor;
+
+        if (previousDifficultiFactor != 0)
+            increaseDifficultiAfterRevive += previousDifficultiFactor / (ConstantManager.SCORE_DIFFICULTY_TIME_TO_SOFT_INTRODUCE_AFTER_REVIVE / Time.deltaTime);
+        else
+            increaseDifficultiAfterRevive = RuntimeDataManager.instance.preRevive.difficultyFactor;
+        difficultFactor = increaseDifficultiAfterRevive + RuntimeDataManager.instance.postRevive.difficultyFactor;
         difficultFactor = Mathf.Min(1f, difficultFactor);
         difficultFactor = Mathf.Max(0f, difficultFactor);
     }
@@ -82,6 +92,9 @@ public class ScoreScript : MonoBehaviour {
         countScore = true;
         startTime = Time.time;
         currentScore = 0;
+        increaseDifficultiAfterRevive = 0;
+        previousDifficultiFactor = RuntimeDataManager.instance.preRevive.difficultyFactor;
+        gold = RuntimeDataManager.instance.preRevive.goldMassCollected;
     }
 
     public void SetupDisabled() {
