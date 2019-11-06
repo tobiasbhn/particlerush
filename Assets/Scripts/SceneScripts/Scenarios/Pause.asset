@@ -17,7 +17,7 @@ MonoBehaviour:
   playerInputModi: 0
   particleBehaviourModi: 0
   particleSpawnModi: 1
-  itemInputModi: 1
+  itemInputModi: 0
   itemSpawnModi: 1
   uiModi: 4
   shakeModi: 3

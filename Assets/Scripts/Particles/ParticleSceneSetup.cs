@@ -12,23 +12,20 @@ public class ParticleSceneSetup : MonoBehaviour {
 
     public void SetupIngame() {
         ParticleSpawnScript.instance.DestroyAllParticles();
-        ParticleSpawnScript.instance.spawnBaseDelay = ConstantManager.PARTICLE_SPAWN_BASE_DELAY_INGAME;
-        ParticleSpawnScript.instance.spawnBaseSpeed = ConstantManager.PARTICLE_SPAWN_BASE_SPEED_INGAME;
-        ParticleSpawnScript.instance.allowSpeedIncrease = ConstantManager.PARTICLE_ALLOW_SPEED_INCREASE_INGAME;
+        ParticleSpawnScript.instance.spawnDelay = ConstantManager.PARTICLE_SPAWN_DELAY_INGAME_MIN;
+        ParticleSpawnScript.instance.spawnSpeed = ConstantManager.PARTICLE_SPAWN_SPEED_INGAME_MIN;
     }
 
     public void SetupMenu() {
         ParticleSpawnScript.instance.DestroyAllParticles();
-        ParticleSpawnScript.instance.spawnBaseDelay = ConstantManager.PARTICLE_SPAWN_BASE_DELAY_MENU;
-        ParticleSpawnScript.instance.spawnBaseSpeed = ConstantManager.PARTICLE_SPAWN_BASE_SPEED_MENU;
-        ParticleSpawnScript.instance.allowSpeedIncrease = ConstantManager.PARTICLE_ALLOW_SPEED_INCREASE_MENU;
+        ParticleSpawnScript.instance.spawnDelay = ConstantManager.PARTICLE_SPAWN_DELAY_MENU;
+        ParticleSpawnScript.instance.spawnSpeed = ConstantManager.PARTICLE_SPAWN_SPEED_MENU;
     }
 
     public void SetupDisabled() {
         ParticleSpawnScript.instance.DestroyAllParticles();
-        ParticleSpawnScript.instance.spawnBaseDelay = 0;
-        ParticleSpawnScript.instance.spawnBaseSpeed = 0;
-        ParticleSpawnScript.instance.allowSpeedIncrease = false;
+        ParticleSpawnScript.instance.spawnDelay = 0;
+        ParticleSpawnScript.instance.spawnSpeed = 0;
     }
 
     public void SpawnModiNone() {

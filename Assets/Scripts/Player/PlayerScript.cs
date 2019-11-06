@@ -12,10 +12,10 @@ public class PlayerScript : MonoBehaviour {
     [HideInInspector] public static PlayerScript instance;
 
     //OBJECT-LINKS
-    private PlayerMeshGenerator playerMeshGenerator;
-    private MeshFilter meshFilter;
-    private MeshCollider meshCollider;
-    private MeshRenderer meshRenderer;
+    [SerializeField] private PlayerMeshGenerator playerMeshGenerator;
+    [SerializeField] private MeshFilter meshFilter;
+    [SerializeField] private MeshCollider meshCollider;
+    [SerializeField] private MeshRenderer meshRenderer;
 
     //MESH-RELATED
     private UnityEngine.Mesh mesh;
@@ -38,10 +38,6 @@ public class PlayerScript : MonoBehaviour {
         instance = this;
     }
     void Start() {
-        playerMeshGenerator = GetComponent<PlayerMeshGenerator>();
-        meshFilter = GetComponent<MeshFilter>();
-        meshRenderer = GetComponent<MeshRenderer>();
-        meshCollider = GetComponent<MeshCollider>();
         playerMeshGenerator.unityMesh = new UnityEngine.Mesh();
         mesh = playerMeshGenerator.unityMesh;
         meshFilter.mesh = mesh;
@@ -130,14 +126,6 @@ public class PlayerScript : MonoBehaviour {
 
             particleScript.Destroy(true, true, false);
             playerMeshGenerator.NewCollision(pos);
-        }
-    }
-
-    // ON TRIGGER
-    private void OnTriggerEnter(Collider other) {
-        var tag = other.gameObject.transform.tag;
-        if (tag == "Item" && other.GetType() == typeof(SphereCollider)) {
-            Debug.Log("COLLECT ITEM");
         }
     }
 }

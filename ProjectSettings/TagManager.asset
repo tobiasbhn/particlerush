@@ -9,6 +9,9 @@ TagManager:
   - UI German
   - Item
   - Item Slots
+  - Slot 1
+  - Slot 2
+  - Slot 3
   layers:
   - Default
   - TransparentFX

@@ -9,12 +9,12 @@ using UnityEngine;
 public class ParticleScript : MonoBehaviour {
     
     //OBJECT_LINKS
-    private Rigidbody rb;
-    private MeshFilter meshFilter;
-    private MeshCollider meshCollider;
-    private MeshRenderer meshRenderer;
-    private SphereCollider sphereCollider;
-    private ParticleSystem particleSys;
+    [SerializeField] private Rigidbody rb;
+    [SerializeField] private MeshFilter meshFilter;
+    [SerializeField] private MeshCollider meshCollider;
+    [SerializeField] private MeshRenderer meshRenderer;
+    [SerializeField] private SphereCollider sphereCollider;
+    [SerializeField] private ParticleSystem particleSys;
 
     //BEHAVIOUR
     [HideInInspector] public float speed = 0;
@@ -30,13 +30,6 @@ public class ParticleScript : MonoBehaviour {
 
     //START
     void Start() {
-        rb = GetComponent<Rigidbody>();
-        meshFilter = GetComponent<MeshFilter>();
-        meshCollider = GetComponent<MeshCollider>();
-        meshRenderer = GetComponent<MeshRenderer>();
-        sphereCollider = GetComponent<SphereCollider>();
-        particleSys = GetComponentInChildren<ParticleSystem>();
-
         DefineMass();
         DefineMesh();
         DefineSize();
@@ -44,9 +37,9 @@ public class ParticleScript : MonoBehaviour {
 
         rb.AddForce(0, speed, 0);
         rb.AddTorque(
-            Random.Range(-ConstantManager.PARTICLE_SPAWN_BASE_ROTATION, ConstantManager.PARTICLE_SPAWN_BASE_ROTATION),
-            Random.Range(-ConstantManager.PARTICLE_SPAWN_BASE_ROTATION, ConstantManager.PARTICLE_SPAWN_BASE_ROTATION),
-            Random.Range(-ConstantManager.PARTICLE_SPAWN_BASE_ROTATION, ConstantManager.PARTICLE_SPAWN_BASE_ROTATION)
+            Random.Range(-ConstantManager.PARTICLE_ROTATION_SPEED, ConstantManager.PARTICLE_ROTATION_SPEED),
+            Random.Range(-ConstantManager.PARTICLE_ROTATION_SPEED, ConstantManager.PARTICLE_ROTATION_SPEED),
+            Random.Range(-ConstantManager.PARTICLE_ROTATION_SPEED, ConstantManager.PARTICLE_ROTATION_SPEED)
         );
     }
 
@@ -133,12 +126,13 @@ public class ParticleScript : MonoBehaviour {
             alreadyDestroyed = true;
             //Delete that one Particle from the Particles-Array - somtimes they already have been removed
             if (_deleteFromList)
-                ParticleSpawnScript.instance.instantiatedParticles.Remove(this.gameObject);
+                ParticleSpawnScript.instance.instantiatedParticles.Remove(this);
             //Play Destroy-Animation and shake Screen, if animations are allowed
             if (_withAnimation) {
                 ShakeScript.instance.Shake();
                 if (particleSys != null)
                     particleSys.Play();
+                VibrationManager.Vibrate();
             }
             //Let Player Grow if an "shrink"-Particle gets Detroyed
             if (_applyPlayerGrow && particleType == ParticleType.shrink) {
@@ -148,7 +142,7 @@ public class ParticleScript : MonoBehaviour {
             meshRenderer.enabled = false;
             meshCollider.enabled = false;
             sphereCollider.enabled = false;
-            GameObject.Destroy(this.gameObject, 2f);
+            GameObject.Destroy(this.gameObject, 1f);
         }
     }
 }

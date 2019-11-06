@@ -9,17 +9,17 @@ public class OnEngameEnable : MonoBehaviour {
         ButtonsNotInteractable();
         StartCoroutine(activateButtons());
         var score = "Score: " + ((int)RuntimeDataManager.instance.preRevive.score + (int)RuntimeDataManager.instance.postRevive.score).ToString("000000");
-        UiObjectReferrer.instance.endgameScoreTextDE.GetComponent<Text>().text = score;
-        UiObjectReferrer.instance.endgameScoreTextEN.GetComponent<Text>().text = score;
+        UiObjectReferrer.instance.endgameScoreTextDE.text = score;
+        UiObjectReferrer.instance.endgameScoreTextEN.text = score;
         var highscore = "Highscore: " + ((int)RuntimeDataManager.value.highscore).ToString("000000");
-        UiObjectReferrer.instance.endgameHighscoreTextDE.GetComponent<Text>().text = highscore;
-        UiObjectReferrer.instance.endgameHighscoreTextEN.GetComponent<Text>().text = highscore;
+        UiObjectReferrer.instance.endgameHighscoreTextDE.text = highscore;
+        UiObjectReferrer.instance.endgameHighscoreTextEN.text = highscore;
         if (score == highscore) {
-            UiObjectReferrer.instance.endgameGameOverTextEN.GetComponent<Text>().text = "NEW HIGHSCORE!";
-            UiObjectReferrer.instance.endgameGameOverTextDE.GetComponent<Text>().text = "NEUER HIGHSCORE!";
+            UiObjectReferrer.instance.endgameGameOverTextEN.text = "NEW HIGHSCORE!";
+            UiObjectReferrer.instance.endgameGameOverTextDE.text = "NEUER HIGHSCORE!";
         } else {
-            UiObjectReferrer.instance.endgameGameOverTextEN.GetComponent<Text>().text = "GAME OVER";
-            UiObjectReferrer.instance.endgameGameOverTextDE.GetComponent<Text>().text = "SPIELENDE";
+            UiObjectReferrer.instance.endgameGameOverTextEN.text = "GAME OVER";
+            UiObjectReferrer.instance.endgameGameOverTextDE.text = "SPIELENDE";
         }
 
         if (ReviveScript.instance.alreadyRevived == false) {

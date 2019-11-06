@@ -9,8 +9,8 @@ public class PlayerMeshGenerator : MonoBehaviour {
     private int mass;
 
     //MESHES
-    public TriangleNet.Mesh generatedMesh;
-    public UnityEngine.Mesh unityMesh;
+    private TriangleNet.Mesh generatedMesh;
+    [HideInInspector] public UnityEngine.Mesh unityMesh;
 
     //ARRAYs KEEPING MESH_RELATED INFO
     private Vector3[] sphereCoords;

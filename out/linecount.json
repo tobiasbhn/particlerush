@@ -1,0 +1,2305 @@
+{
+    "extension": "linecount",
+    "version": "0.1.7",
+    "workspace": "c:\\Eigener Bereich\\Studium\\Semester 4\\Gameenwicklung\\Particle Rush v2",
+    "linecount": [
+        {
+            "version": "0.1.7",
+            "counttime": "2019-11-05 19:33:40",
+            "filesum": 184,
+            "codesum": 20190,
+            "commentsum": 7066,
+            "blanksum": 3528,
+            "filelist": [
+                {
+                    "blank": 1,
+                    "code": 49,
+                    "comment": 0,
+                    "filename": ".gitattributes"
+                },
+                {
+                    "blank": 0,
+                    "code": 708,
+                    "comment": 0,
+                    "filename": "Assembly-CSharp-Editor.csproj"
+                },
+                {
+                    "blank": 0,
+                    "code": 788,
+                    "comment": 0,
+                    "filename": "Assembly-CSharp.csproj"
+                },
+                {
+                    "filename": "Assets\\Fonts\\MONTSERRAT-EXTRALIGHT.TTF",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 4,
+                    "code": 41,
+                    "comment": 1,
+                    "filename": "Assets\\Materials\\Shader\\Sprite Overlay.shader"
+                },
+                {
+                    "blank": 34,
+                    "code": 153,
+                    "comment": 62,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Behavior.cs"
+                },
+                {
+                    "blank": 6,
+                    "code": 25,
+                    "comment": 14,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Configuration.cs"
+                },
+                {
+                    "blank": 5,
+                    "code": 9,
+                    "comment": 33,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Enums.cs"
+                },
+                {
+                    "blank": 51,
+                    "code": 134,
+                    "comment": 63,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Geometry\\Contour.cs"
+                },
+                {
+                    "blank": 5,
+                    "code": 31,
+                    "comment": 23,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Geometry\\Edge.cs"
+                },
+                {
+                    "blank": 26,
+                    "code": 73,
+                    "comment": 44,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Geometry\\ExtensionMethods.cs"
+                },
+                {
+                    "blank": 3,
+                    "code": 10,
+                    "comment": 17,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Geometry\\IEdge.cs"
+                },
+                {
+                    "blank": 15,
+                    "code": 25,
+                    "comment": 54,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Geometry\\IPolygon.cs"
+                },
+                {
+                    "blank": 2,
+                    "code": 9,
+                    "comment": 16,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Geometry\\ISegment.cs"
+                },
+                {
+                    "blank": 9,
+                    "code": 16,
+                    "comment": 45,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Geometry\\ITriangle.cs"
+                },
+                {
+                    "blank": 30,
+                    "code": 118,
+                    "comment": 33,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Geometry\\Point.cs"
+                },
+                {
+                    "blank": 27,
+                    "code": 105,
+                    "comment": 52,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Geometry\\Polygon.cs"
+                },
+                {
+                    "blank": 20,
+                    "code": 103,
+                    "comment": 78,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Geometry\\Rectangle.cs"
+                },
+                {
+                    "blank": 5,
+                    "code": 34,
+                    "comment": 25,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Geometry\\RegionPointer.cs"
+                },
+                {
+                    "blank": 12,
+                    "code": 50,
+                    "comment": 31,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Geometry\\Segment.cs"
+                },
+                {
+                    "blank": 15,
+                    "code": 69,
+                    "comment": 42,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Geometry\\Vertex.cs"
+                },
+                {
+                    "blank": 49,
+                    "code": 167,
+                    "comment": 48,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\IO\\DebugWriter.cs"
+                },
+                {
+                    "blank": 19,
+                    "code": 82,
+                    "comment": 26,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\IO\\FileProcessor.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 8,
+                    "comment": 5,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\IO\\IFileFormat.cs"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 23,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\IO\\IMeshFormat.cs"
+                },
+                {
+                    "blank": 13,
+                    "code": 53,
+                    "comment": 21,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\IO\\InputTriangle.cs"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 23,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\IO\\IPolygonFormat.cs"
+                },
+                {
+                    "blank": 18,
+                    "code": 67,
+                    "comment": 8,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\IO\\TriangleFormat.cs"
+                },
+                {
+                    "blank": 130,
+                    "code": 494,
+                    "comment": 120,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\IO\\TriangleReader.cs"
+                },
+                {
+                    "blank": 69,
+                    "code": 285,
+                    "comment": 106,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\IO\\TriangleWriter.cs"
+                },
+                {
+                    "blank": 5,
+                    "code": 13,
+                    "comment": 5,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\IPredicates.cs"
+                },
+                {
+                    "blank": 17,
+                    "code": 52,
+                    "comment": 16,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Log.cs"
+                },
+                {
+                    "blank": 6,
+                    "code": 21,
+                    "comment": 8,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Logging\\ILog.cs"
+                },
+                {
+                    "blank": 2,
+                    "code": 12,
+                    "comment": 8,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Logging\\ILogItem.cs"
+                },
+                {
+                    "blank": 8,
+                    "code": 38,
+                    "comment": 8,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Logging\\LogItem.cs"
+                },
+                {
+                    "blank": 201,
+                    "code": 1064,
+                    "comment": 519,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Mesh.cs"
+                },
+                {
+                    "blank": 32,
+                    "code": 464,
+                    "comment": 196,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\Algorithm\\Dwyer.cs"
+                },
+                {
+                    "blank": 21,
+                    "code": 111,
+                    "comment": 61,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\Algorithm\\Incremental.cs"
+                },
+                {
+                    "blank": 76,
+                    "code": 669,
+                    "comment": 75,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\Algorithm\\SweepLine.cs"
+                },
+                {
+                    "blank": 89,
+                    "code": 749,
+                    "comment": 394,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\ConstraintMesher.cs"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 24,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\ConstraintOptions.cs"
+                },
+                {
+                    "blank": 96,
+                    "code": 314,
+                    "comment": 80,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\Converter.cs"
+                },
+                {
+                    "blank": 4,
+                    "code": 20,
+                    "comment": 15,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\Data\\BadSubseg.cs"
+                },
+                {
+                    "blank": 3,
+                    "code": 18,
+                    "comment": 18,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\Data\\BadTriangle.cs"
+                },
+                {
+                    "blank": 19,
+                    "code": 115,
+                    "comment": 61,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\Data\\BadTriQueue.cs"
+                },
+                {
+                    "blank": 52,
+                    "code": 141,
+                    "comment": 41,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\GenericMesher.cs"
+                },
+                {
+                    "blank": 2,
+                    "code": 10,
+                    "comment": 14,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\IConstraintMesher.cs"
+                },
+                {
+                    "blank": 8,
+                    "code": 18,
+                    "comment": 31,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\IMesh.cs"
+                },
+                {
+                    "blank": 2,
+                    "code": 10,
+                    "comment": 16,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\IQualityMesher.cs"
+                },
+                {
+                    "blank": 17,
+                    "code": 72,
+                    "comment": 13,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\Iterators\\EdgeIterator.cs"
+                },
+                {
+                    "blank": 16,
+                    "code": 68,
+                    "comment": 52,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\Iterators\\RegionIterator.cs"
+                },
+                {
+                    "blank": 18,
+                    "code": 68,
+                    "comment": 14,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\Iterators\\VertexCirculator.cs"
+                },
+                {
+                    "blank": 2,
+                    "code": 10,
+                    "comment": 14,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\ITriangulator.cs"
+                },
+                {
+                    "blank": 85,
+                    "code": 583,
+                    "comment": 233,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\QualityMesher.cs"
+                },
+                {
+                    "blank": 6,
+                    "code": 15,
+                    "comment": 34,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\QualityOptions.cs"
+                },
+                {
+                    "blank": 34,
+                    "code": 144,
+                    "comment": 38,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\MeshValidator.cs"
+                },
+                {
+                    "blank": 293,
+                    "code": 2701,
+                    "comment": 1297,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\NewLocation.cs"
+                },
+                {
+                    "blank": 4,
+                    "code": 1,
+                    "comment": 32,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Properties\\AssemblyInfo.cs"
+                },
+                {
+                    "blank": 5,
+                    "code": 12,
+                    "comment": 3,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\README.md"
+                },
+                {
+                    "blank": 134,
+                    "code": 988,
+                    "comment": 225,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\RobustPredicates.cs"
+                },
+                {
+                    "blank": 2,
+                    "code": 10,
+                    "comment": 8,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Smoothing\\ISmoother.cs"
+                },
+                {
+                    "blank": 37,
+                    "code": 100,
+                    "comment": 37,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Smoothing\\SimpleSmoother.cs"
+                },
+                {
+                    "blank": 47,
+                    "code": 148,
+                    "comment": 6,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Smoothing\\VoronoiFactory.cs"
+                },
+                {
+                    "blank": 55,
+                    "code": 162,
+                    "comment": 71,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Tools\\AdjacencyMatrix.cs"
+                },
+                {
+                    "blank": 106,
+                    "code": 340,
+                    "comment": 243,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Tools\\CuthillMcKee.cs"
+                },
+                {
+                    "blank": 16,
+                    "code": 57,
+                    "comment": 32,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Tools\\Interpolation.cs"
+                },
+                {
+                    "blank": 24,
+                    "code": 133,
+                    "comment": 75,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Tools\\IntersectionHelper.cs"
+                },
+                {
+                    "blank": 48,
+                    "code": 174,
+                    "comment": 28,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Tools\\PolygonValidator.cs"
+                },
+                {
+                    "blank": 64,
+                    "code": 290,
+                    "comment": 188,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Tools\\QualityMeasure.cs"
+                },
+                {
+                    "blank": 89,
+                    "code": 347,
+                    "comment": 96,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Tools\\Statistic.cs"
+                },
+                {
+                    "blank": 68,
+                    "code": 279,
+                    "comment": 81,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Tools\\TriangleQuadTree.cs"
+                },
+                {
+                    "blank": 47,
+                    "code": 233,
+                    "comment": 92,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Tools\\VertexSorter.cs"
+                },
+                {
+                    "blank": 40,
+                    "code": 178,
+                    "comment": 52,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Topology\\DCEL\\DcelMesh.cs"
+                },
+                {
+                    "blank": 18,
+                    "code": 65,
+                    "comment": 30,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Topology\\DCEL\\Face.cs"
+                },
+                {
+                    "blank": 12,
+                    "code": 60,
+                    "comment": 30,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Topology\\DCEL\\HalfEdge.cs"
+                },
+                {
+                    "blank": 9,
+                    "code": 37,
+                    "comment": 23,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Topology\\DCEL\\Vertex.cs"
+                },
+                {
+                    "blank": 30,
+                    "code": 110,
+                    "comment": 118,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Topology\\Osub.cs"
+                },
+                {
+                    "blank": 63,
+                    "code": 232,
+                    "comment": 188,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Topology\\Otri.cs"
+                },
+                {
+                    "blank": 16,
+                    "code": 51,
+                    "comment": 31,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Topology\\SubSegment.cs"
+                },
+                {
+                    "blank": 20,
+                    "code": 68,
+                    "comment": 42,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Topology\\Triangle.cs"
+                },
+                {
+                    "blank": 0,
+                    "code": 139,
+                    "comment": 0,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Triangle.csproj"
+                },
+                {
+                    "blank": 0,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Triangle.csproj.vspscc"
+                },
+                {
+                    "blank": 23,
+                    "code": 183,
+                    "comment": 159,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\TriangleLocator.cs"
+                },
+                {
+                    "blank": 69,
+                    "code": 205,
+                    "comment": 32,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\TrianglePool.cs"
+                },
+                {
+                    "blank": 14,
+                    "code": 50,
+                    "comment": 22,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\TriangleSampler.cs"
+                },
+                {
+                    "blank": 37,
+                    "code": 89,
+                    "comment": 57,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Voronoi\\BoundedVoronoi.cs"
+                },
+                {
+                    "blank": 5,
+                    "code": 27,
+                    "comment": 3,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Voronoi\\DefaultVoronoiFactory.cs"
+                },
+                {
+                    "blank": 5,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Voronoi\\IVoronoiFactory.cs"
+                },
+                {
+                    "blank": 124,
+                    "code": 428,
+                    "comment": 142,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Voronoi\\Legacy\\BoundedVoronoiLegacy.cs"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 17,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Voronoi\\Legacy\\IVoronoi.cs"
+                },
+                {
+                    "blank": 65,
+                    "code": 179,
+                    "comment": 63,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Voronoi\\Legacy\\SimpleVoronoi.cs"
+                },
+                {
+                    "blank": 16,
+                    "code": 66,
+                    "comment": 30,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Voronoi\\Legacy\\VoronoiRegion.cs"
+                },
+                {
+                    "blank": 8,
+                    "code": 40,
+                    "comment": 19,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Voronoi\\StandardVoronoi.cs"
+                },
+                {
+                    "blank": 58,
+                    "code": 166,
+                    "comment": 68,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Voronoi\\VoronoiBase.cs"
+                },
+                {
+                    "blank": 0,
+                    "code": 107,
+                    "comment": 0,
+                    "filename": "Assets\\Prefabs\\UI\\TextLarge.preset"
+                },
+                {
+                    "blank": 1,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "Assets\\RorationScript.cs"
+                },
+                {
+                    "blank": 13,
+                    "code": 75,
+                    "comment": 6,
+                    "filename": "Assets\\Scripts\\Ads\\AdsManager.cs"
+                },
+                {
+                    "blank": 9,
+                    "code": 83,
+                    "comment": 18,
+                    "filename": "Assets\\Scripts\\Data\\RuntimeDataManager.cs"
+                },
+                {
+                    "blank": 10,
+                    "code": 75,
+                    "comment": 18,
+                    "filename": "Assets\\Scripts\\Data\\SaveDataManager.cs"
+                },
+                {
+                    "blank": 14,
+                    "code": 72,
+                    "comment": 8,
+                    "filename": "Assets\\Scripts\\Data\\ScoreScript.cs"
+                },
+                {
+                    "blank": 2,
+                    "code": 10,
+                    "comment": 2,
+                    "filename": "Assets\\Scripts\\Development\\Console Clear.cs"
+                },
+                {
+                    "blank": 11,
+                    "code": 51,
+                    "comment": 3,
+                    "filename": "Assets\\Scripts\\Development\\FPS.cs"
+                },
+                {
+                    "blank": 2,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "Assets\\Scripts\\Development\\LogTime.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "Assets\\Scripts\\General\\FacingCamera.cs"
+                },
+                {
+                    "blank": 5,
+                    "code": 24,
+                    "comment": 5,
+                    "filename": "Assets\\Scripts\\General\\GameEnums.cs"
+                },
+                {
+                    "blank": 10,
+                    "code": 57,
+                    "comment": 10,
+                    "filename": "Assets\\Scripts\\Input\\ItemInputScript.cs"
+                },
+                {
+                    "blank": 9,
+                    "code": 58,
+                    "comment": 0,
+                    "filename": "Assets\\Scripts\\Items\\Definition\\ItemDefinition.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Assets\\Scripts\\Items\\Definition\\ItemDefinitions\\ClearItem.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Assets\\Scripts\\Items\\Definition\\ItemDefinitions\\ForceItem.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Assets\\Scripts\\Items\\Definition\\ItemDefinitions\\GoldrushItem.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Assets\\Scripts\\Items\\Definition\\ItemDefinitions\\ShieldItem.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Assets\\Scripts\\Items\\Definition\\ItemDefinitions\\ShrinkItem.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Assets\\Scripts\\Items\\Definition\\ItemDefinitions\\SlideItem.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Assets\\Scripts\\Items\\Definition\\ItemDefinitions\\SlowItem.cs"
+                },
+                {
+                    "blank": 28,
+                    "code": 173,
+                    "comment": 8,
+                    "filename": "Assets\\Scripts\\Items\\ItemScript.cs"
+                },
+                {
+                    "blank": 9,
+                    "code": 70,
+                    "comment": 4,
+                    "filename": "Assets\\Scripts\\Items\\ItemSpawnScript.cs"
+                },
+                {
+                    "blank": 9,
+                    "code": 246,
+                    "comment": 150,
+                    "filename": "Assets\\Scripts\\Particles\\ParticleMeshScript.cs"
+                },
+                {
+                    "blank": 6,
+                    "code": 42,
+                    "comment": 1,
+                    "filename": "Assets\\Scripts\\Particles\\ParticleSceneSetup.cs"
+                },
+                {
+                    "blank": 17,
+                    "code": 119,
+                    "comment": 12,
+                    "filename": "Assets\\Scripts\\Particles\\ParticleScript.cs"
+                },
+                {
+                    "blank": 12,
+                    "code": 91,
+                    "comment": 7,
+                    "filename": "Assets\\Scripts\\Particles\\ParticleSpawnScript.cs"
+                },
+                {
+                    "blank": 21,
+                    "code": 161,
+                    "comment": 14,
+                    "filename": "Assets\\Scripts\\Player\\PlayerMeshGenerator.cs"
+                },
+                {
+                    "blank": 18,
+                    "code": 110,
+                    "comment": 15,
+                    "filename": "Assets\\Scripts\\Player\\PlayerMovementScript.cs"
+                },
+                {
+                    "blank": 13,
+                    "code": 61,
+                    "comment": 0,
+                    "filename": "Assets\\Scripts\\Player\\PlayerSceneSetup.cs"
+                },
+                {
+                    "blank": 18,
+                    "code": 108,
+                    "comment": 17,
+                    "filename": "Assets\\Scripts\\Player\\PlayerScript.cs"
+                },
+                {
+                    "blank": 7,
+                    "code": 33,
+                    "comment": 2,
+                    "filename": "Assets\\Scripts\\Projectile\\ProjectileScript.cs"
+                },
+                {
+                    "blank": 12,
+                    "code": 40,
+                    "comment": 6,
+                    "filename": "Assets\\Scripts\\Projectile\\ShootingController.cs"
+                },
+                {
+                    "blank": 8,
+                    "code": 52,
+                    "comment": 6,
+                    "filename": "Assets\\Scripts\\SceneScripts\\ReviveScript.cs"
+                },
+                {
+                    "blank": 5,
+                    "code": 229,
+                    "comment": 2,
+                    "filename": "Assets\\Scripts\\SceneScripts\\ScenariosDefault.cs"
+                },
+                {
+                    "blank": 8,
+                    "code": 53,
+                    "comment": 1,
+                    "filename": "Assets\\Scripts\\SceneScripts\\SceneManager.cs"
+                },
+                {
+                    "blank": 6,
+                    "code": 30,
+                    "comment": 3,
+                    "filename": "Assets\\Scripts\\Shake\\PostProcessingScript.cs"
+                },
+                {
+                    "blank": 9,
+                    "code": 38,
+                    "comment": 2,
+                    "filename": "Assets\\Scripts\\Shake\\ShakeScript.cs"
+                },
+                {
+                    "blank": 4,
+                    "code": 26,
+                    "comment": 3,
+                    "filename": "Assets\\Scripts\\Shop\\ItemPool.cs"
+                },
+                {
+                    "blank": 9,
+                    "code": 44,
+                    "comment": 5,
+                    "filename": "Assets\\Scripts\\Shop\\ItemShopPrefab.cs"
+                },
+                {
+                    "blank": 6,
+                    "code": 38,
+                    "comment": 1,
+                    "filename": "Assets\\Scripts\\Shop\\ShopScript.cs"
+                },
+                {
+                    "blank": 4,
+                    "code": 14,
+                    "comment": 2,
+                    "filename": "Assets\\Scripts\\Sound\\SoundScript.cs"
+                },
+                {
+                    "blank": 22,
+                    "code": 78,
+                    "comment": 59,
+                    "filename": "Assets\\Scripts\\Static\\ConstantManager.cs"
+                },
+                {
+                    "blank": 7,
+                    "code": 28,
+                    "comment": 7,
+                    "filename": "Assets\\Scripts\\Static\\GameStarter.cs"
+                },
+                {
+                    "blank": 7,
+                    "code": 37,
+                    "comment": 5,
+                    "filename": "Assets\\Scripts\\Static\\VibrationManager.cs"
+                },
+                {
+                    "blank": 9,
+                    "code": 141,
+                    "comment": 11,
+                    "filename": "Assets\\Scripts\\User Interface\\ButtonScript.cs"
+                },
+                {
+                    "blank": 4,
+                    "code": 32,
+                    "comment": 0,
+                    "filename": "Assets\\Scripts\\User Interface\\LanguageScript.cs"
+                },
+                {
+                    "blank": 5,
+                    "code": 64,
+                    "comment": 0,
+                    "filename": "Assets\\Scripts\\User Interface\\OnEngameEnable.cs"
+                },
+                {
+                    "blank": 2,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "Assets\\Scripts\\User Interface\\OnIngameEnable.cs"
+                },
+                {
+                    "blank": 8,
+                    "code": 82,
+                    "comment": 2,
+                    "filename": "Assets\\Scripts\\User Interface\\OnSettingsEnable.cs"
+                },
+                {
+                    "blank": 18,
+                    "code": 60,
+                    "comment": 4,
+                    "filename": "Assets\\Scripts\\User Interface\\ScreenSetupScript.cs"
+                },
+                {
+                    "blank": 29,
+                    "code": 132,
+                    "comment": 5,
+                    "filename": "Assets\\Scripts\\User Interface\\UiObjectReferrer.cs"
+                },
+                {
+                    "blank": 13,
+                    "code": 53,
+                    "comment": 1,
+                    "filename": "Assets\\Scripts\\User Interface\\UiSceneScript.cs"
+                },
+                {
+                    "filename": "Expos\\1.1.001.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.002.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.003.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.004.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.005.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.006.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.007.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.008.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.009.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.010s.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.011.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.012.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.013.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.014.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.015.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.016.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.017.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.018.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.019.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.020.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.021.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.022.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.023.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.024.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.025.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.026.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.027.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.028ks.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\GP\\1.1.028ks-1.1.028-v18.symbols.zip",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\GP\\1.1.028ks.aab",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\GP\\1.1.029ks-1.1.029-v19.symbols.zip",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\GP\\1.1.029ks.aab",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\GP\\1.1.030ks-1.1.030-v20.symbols.zip",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\GP\\1.1.030ks.aab",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 3,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "Logs\\Packages-Update.log"
+                },
+                {
+                    "blank": 0,
+                    "code": 48,
+                    "comment": 0,
+                    "filename": "Packages\\manifest.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "Particle Rush v2.sln"
+                },
+                {
+                    "blank": 1,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "README.md"
+                }
+            ]
+        },
+        {
+            "version": "0.1.7",
+            "counttime": "2019-11-05 19:34:19",
+            "filesum": 184,
+            "codesum": 20190,
+            "commentsum": 7066,
+            "blanksum": 3528,
+            "filelist": [
+                {
+                    "blank": 1,
+                    "code": 49,
+                    "comment": 0,
+                    "filename": ".gitattributes"
+                },
+                {
+                    "blank": 0,
+                    "code": 708,
+                    "comment": 0,
+                    "filename": "Assembly-CSharp-Editor.csproj"
+                },
+                {
+                    "blank": 0,
+                    "code": 788,
+                    "comment": 0,
+                    "filename": "Assembly-CSharp.csproj"
+                },
+                {
+                    "filename": "Assets\\Fonts\\MONTSERRAT-EXTRALIGHT.TTF",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 4,
+                    "code": 41,
+                    "comment": 1,
+                    "filename": "Assets\\Materials\\Shader\\Sprite Overlay.shader"
+                },
+                {
+                    "blank": 34,
+                    "code": 153,
+                    "comment": 62,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Behavior.cs"
+                },
+                {
+                    "blank": 6,
+                    "code": 25,
+                    "comment": 14,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Configuration.cs"
+                },
+                {
+                    "blank": 5,
+                    "code": 9,
+                    "comment": 33,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Enums.cs"
+                },
+                {
+                    "blank": 51,
+                    "code": 134,
+                    "comment": 63,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Geometry\\Contour.cs"
+                },
+                {
+                    "blank": 5,
+                    "code": 31,
+                    "comment": 23,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Geometry\\Edge.cs"
+                },
+                {
+                    "blank": 26,
+                    "code": 73,
+                    "comment": 44,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Geometry\\ExtensionMethods.cs"
+                },
+                {
+                    "blank": 3,
+                    "code": 10,
+                    "comment": 17,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Geometry\\IEdge.cs"
+                },
+                {
+                    "blank": 15,
+                    "code": 25,
+                    "comment": 54,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Geometry\\IPolygon.cs"
+                },
+                {
+                    "blank": 2,
+                    "code": 9,
+                    "comment": 16,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Geometry\\ISegment.cs"
+                },
+                {
+                    "blank": 9,
+                    "code": 16,
+                    "comment": 45,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Geometry\\ITriangle.cs"
+                },
+                {
+                    "blank": 30,
+                    "code": 118,
+                    "comment": 33,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Geometry\\Point.cs"
+                },
+                {
+                    "blank": 27,
+                    "code": 105,
+                    "comment": 52,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Geometry\\Polygon.cs"
+                },
+                {
+                    "blank": 20,
+                    "code": 103,
+                    "comment": 78,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Geometry\\Rectangle.cs"
+                },
+                {
+                    "blank": 5,
+                    "code": 34,
+                    "comment": 25,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Geometry\\RegionPointer.cs"
+                },
+                {
+                    "blank": 12,
+                    "code": 50,
+                    "comment": 31,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Geometry\\Segment.cs"
+                },
+                {
+                    "blank": 15,
+                    "code": 69,
+                    "comment": 42,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Geometry\\Vertex.cs"
+                },
+                {
+                    "blank": 49,
+                    "code": 167,
+                    "comment": 48,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\IO\\DebugWriter.cs"
+                },
+                {
+                    "blank": 19,
+                    "code": 82,
+                    "comment": 26,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\IO\\FileProcessor.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 8,
+                    "comment": 5,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\IO\\IFileFormat.cs"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 23,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\IO\\IMeshFormat.cs"
+                },
+                {
+                    "blank": 13,
+                    "code": 53,
+                    "comment": 21,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\IO\\InputTriangle.cs"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 23,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\IO\\IPolygonFormat.cs"
+                },
+                {
+                    "blank": 18,
+                    "code": 67,
+                    "comment": 8,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\IO\\TriangleFormat.cs"
+                },
+                {
+                    "blank": 130,
+                    "code": 494,
+                    "comment": 120,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\IO\\TriangleReader.cs"
+                },
+                {
+                    "blank": 69,
+                    "code": 285,
+                    "comment": 106,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\IO\\TriangleWriter.cs"
+                },
+                {
+                    "blank": 5,
+                    "code": 13,
+                    "comment": 5,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\IPredicates.cs"
+                },
+                {
+                    "blank": 17,
+                    "code": 52,
+                    "comment": 16,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Log.cs"
+                },
+                {
+                    "blank": 6,
+                    "code": 21,
+                    "comment": 8,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Logging\\ILog.cs"
+                },
+                {
+                    "blank": 2,
+                    "code": 12,
+                    "comment": 8,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Logging\\ILogItem.cs"
+                },
+                {
+                    "blank": 8,
+                    "code": 38,
+                    "comment": 8,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Logging\\LogItem.cs"
+                },
+                {
+                    "blank": 201,
+                    "code": 1064,
+                    "comment": 519,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Mesh.cs"
+                },
+                {
+                    "blank": 32,
+                    "code": 464,
+                    "comment": 196,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\Algorithm\\Dwyer.cs"
+                },
+                {
+                    "blank": 21,
+                    "code": 111,
+                    "comment": 61,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\Algorithm\\Incremental.cs"
+                },
+                {
+                    "blank": 76,
+                    "code": 669,
+                    "comment": 75,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\Algorithm\\SweepLine.cs"
+                },
+                {
+                    "blank": 89,
+                    "code": 749,
+                    "comment": 394,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\ConstraintMesher.cs"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 24,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\ConstraintOptions.cs"
+                },
+                {
+                    "blank": 96,
+                    "code": 314,
+                    "comment": 80,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\Converter.cs"
+                },
+                {
+                    "blank": 4,
+                    "code": 20,
+                    "comment": 15,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\Data\\BadSubseg.cs"
+                },
+                {
+                    "blank": 3,
+                    "code": 18,
+                    "comment": 18,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\Data\\BadTriangle.cs"
+                },
+                {
+                    "blank": 19,
+                    "code": 115,
+                    "comment": 61,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\Data\\BadTriQueue.cs"
+                },
+                {
+                    "blank": 52,
+                    "code": 141,
+                    "comment": 41,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\GenericMesher.cs"
+                },
+                {
+                    "blank": 2,
+                    "code": 10,
+                    "comment": 14,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\IConstraintMesher.cs"
+                },
+                {
+                    "blank": 8,
+                    "code": 18,
+                    "comment": 31,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\IMesh.cs"
+                },
+                {
+                    "blank": 2,
+                    "code": 10,
+                    "comment": 16,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\IQualityMesher.cs"
+                },
+                {
+                    "blank": 17,
+                    "code": 72,
+                    "comment": 13,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\Iterators\\EdgeIterator.cs"
+                },
+                {
+                    "blank": 16,
+                    "code": 68,
+                    "comment": 52,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\Iterators\\RegionIterator.cs"
+                },
+                {
+                    "blank": 18,
+                    "code": 68,
+                    "comment": 14,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\Iterators\\VertexCirculator.cs"
+                },
+                {
+                    "blank": 2,
+                    "code": 10,
+                    "comment": 14,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\ITriangulator.cs"
+                },
+                {
+                    "blank": 85,
+                    "code": 583,
+                    "comment": 233,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\QualityMesher.cs"
+                },
+                {
+                    "blank": 6,
+                    "code": 15,
+                    "comment": 34,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Meshing\\QualityOptions.cs"
+                },
+                {
+                    "blank": 34,
+                    "code": 144,
+                    "comment": 38,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\MeshValidator.cs"
+                },
+                {
+                    "blank": 293,
+                    "code": 2701,
+                    "comment": 1297,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\NewLocation.cs"
+                },
+                {
+                    "blank": 4,
+                    "code": 1,
+                    "comment": 32,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Properties\\AssemblyInfo.cs"
+                },
+                {
+                    "blank": 5,
+                    "code": 12,
+                    "comment": 3,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\README.md"
+                },
+                {
+                    "blank": 134,
+                    "code": 988,
+                    "comment": 225,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\RobustPredicates.cs"
+                },
+                {
+                    "blank": 2,
+                    "code": 10,
+                    "comment": 8,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Smoothing\\ISmoother.cs"
+                },
+                {
+                    "blank": 37,
+                    "code": 100,
+                    "comment": 37,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Smoothing\\SimpleSmoother.cs"
+                },
+                {
+                    "blank": 47,
+                    "code": 148,
+                    "comment": 6,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Smoothing\\VoronoiFactory.cs"
+                },
+                {
+                    "blank": 55,
+                    "code": 162,
+                    "comment": 71,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Tools\\AdjacencyMatrix.cs"
+                },
+                {
+                    "blank": 106,
+                    "code": 340,
+                    "comment": 243,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Tools\\CuthillMcKee.cs"
+                },
+                {
+                    "blank": 16,
+                    "code": 57,
+                    "comment": 32,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Tools\\Interpolation.cs"
+                },
+                {
+                    "blank": 24,
+                    "code": 133,
+                    "comment": 75,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Tools\\IntersectionHelper.cs"
+                },
+                {
+                    "blank": 48,
+                    "code": 174,
+                    "comment": 28,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Tools\\PolygonValidator.cs"
+                },
+                {
+                    "blank": 64,
+                    "code": 290,
+                    "comment": 188,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Tools\\QualityMeasure.cs"
+                },
+                {
+                    "blank": 89,
+                    "code": 347,
+                    "comment": 96,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Tools\\Statistic.cs"
+                },
+                {
+                    "blank": 68,
+                    "code": 279,
+                    "comment": 81,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Tools\\TriangleQuadTree.cs"
+                },
+                {
+                    "blank": 47,
+                    "code": 233,
+                    "comment": 92,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Tools\\VertexSorter.cs"
+                },
+                {
+                    "blank": 40,
+                    "code": 178,
+                    "comment": 52,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Topology\\DCEL\\DcelMesh.cs"
+                },
+                {
+                    "blank": 18,
+                    "code": 65,
+                    "comment": 30,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Topology\\DCEL\\Face.cs"
+                },
+                {
+                    "blank": 12,
+                    "code": 60,
+                    "comment": 30,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Topology\\DCEL\\HalfEdge.cs"
+                },
+                {
+                    "blank": 9,
+                    "code": 37,
+                    "comment": 23,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Topology\\DCEL\\Vertex.cs"
+                },
+                {
+                    "blank": 30,
+                    "code": 110,
+                    "comment": 118,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Topology\\Osub.cs"
+                },
+                {
+                    "blank": 63,
+                    "code": 232,
+                    "comment": 188,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Topology\\Otri.cs"
+                },
+                {
+                    "blank": 16,
+                    "code": 51,
+                    "comment": 31,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Topology\\SubSegment.cs"
+                },
+                {
+                    "blank": 20,
+                    "code": 68,
+                    "comment": 42,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Topology\\Triangle.cs"
+                },
+                {
+                    "blank": 0,
+                    "code": 139,
+                    "comment": 0,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Triangle.csproj"
+                },
+                {
+                    "blank": 0,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Triangle.csproj.vspscc"
+                },
+                {
+                    "blank": 23,
+                    "code": 183,
+                    "comment": 159,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\TriangleLocator.cs"
+                },
+                {
+                    "blank": 69,
+                    "code": 205,
+                    "comment": 32,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\TrianglePool.cs"
+                },
+                {
+                    "blank": 14,
+                    "code": 50,
+                    "comment": 22,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\TriangleSampler.cs"
+                },
+                {
+                    "blank": 37,
+                    "code": 89,
+                    "comment": 57,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Voronoi\\BoundedVoronoi.cs"
+                },
+                {
+                    "blank": 5,
+                    "code": 27,
+                    "comment": 3,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Voronoi\\DefaultVoronoiFactory.cs"
+                },
+                {
+                    "blank": 5,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Voronoi\\IVoronoiFactory.cs"
+                },
+                {
+                    "blank": 124,
+                    "code": 428,
+                    "comment": 142,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Voronoi\\Legacy\\BoundedVoronoiLegacy.cs"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 17,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Voronoi\\Legacy\\IVoronoi.cs"
+                },
+                {
+                    "blank": 65,
+                    "code": 179,
+                    "comment": 63,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Voronoi\\Legacy\\SimpleVoronoi.cs"
+                },
+                {
+                    "blank": 16,
+                    "code": 66,
+                    "comment": 30,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Voronoi\\Legacy\\VoronoiRegion.cs"
+                },
+                {
+                    "blank": 8,
+                    "code": 40,
+                    "comment": 19,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Voronoi\\StandardVoronoi.cs"
+                },
+                {
+                    "blank": 58,
+                    "code": 166,
+                    "comment": 68,
+                    "filename": "Assets\\Packages\\TriangleNET\\Triangle-NET-Unity-Port-master\\Voronoi\\VoronoiBase.cs"
+                },
+                {
+                    "blank": 0,
+                    "code": 107,
+                    "comment": 0,
+                    "filename": "Assets\\Prefabs\\UI\\TextLarge.preset"
+                },
+                {
+                    "blank": 1,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "Assets\\RorationScript.cs"
+                },
+                {
+                    "blank": 13,
+                    "code": 75,
+                    "comment": 6,
+                    "filename": "Assets\\Scripts\\Ads\\AdsManager.cs"
+                },
+                {
+                    "blank": 9,
+                    "code": 83,
+                    "comment": 18,
+                    "filename": "Assets\\Scripts\\Data\\RuntimeDataManager.cs"
+                },
+                {
+                    "blank": 10,
+                    "code": 75,
+                    "comment": 18,
+                    "filename": "Assets\\Scripts\\Data\\SaveDataManager.cs"
+                },
+                {
+                    "blank": 14,
+                    "code": 72,
+                    "comment": 8,
+                    "filename": "Assets\\Scripts\\Data\\ScoreScript.cs"
+                },
+                {
+                    "blank": 2,
+                    "code": 10,
+                    "comment": 2,
+                    "filename": "Assets\\Scripts\\Development\\Console Clear.cs"
+                },
+                {
+                    "blank": 11,
+                    "code": 51,
+                    "comment": 3,
+                    "filename": "Assets\\Scripts\\Development\\FPS.cs"
+                },
+                {
+                    "blank": 2,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "Assets\\Scripts\\Development\\LogTime.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "Assets\\Scripts\\General\\FacingCamera.cs"
+                },
+                {
+                    "blank": 5,
+                    "code": 24,
+                    "comment": 5,
+                    "filename": "Assets\\Scripts\\General\\GameEnums.cs"
+                },
+                {
+                    "blank": 10,
+                    "code": 57,
+                    "comment": 10,
+                    "filename": "Assets\\Scripts\\Input\\ItemInputScript.cs"
+                },
+                {
+                    "blank": 9,
+                    "code": 58,
+                    "comment": 0,
+                    "filename": "Assets\\Scripts\\Items\\Definition\\ItemDefinition.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Assets\\Scripts\\Items\\Definition\\ItemDefinitions\\ClearItem.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Assets\\Scripts\\Items\\Definition\\ItemDefinitions\\ForceItem.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Assets\\Scripts\\Items\\Definition\\ItemDefinitions\\GoldrushItem.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Assets\\Scripts\\Items\\Definition\\ItemDefinitions\\ShieldItem.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Assets\\Scripts\\Items\\Definition\\ItemDefinitions\\ShrinkItem.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Assets\\Scripts\\Items\\Definition\\ItemDefinitions\\SlideItem.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Assets\\Scripts\\Items\\Definition\\ItemDefinitions\\SlowItem.cs"
+                },
+                {
+                    "blank": 28,
+                    "code": 173,
+                    "comment": 8,
+                    "filename": "Assets\\Scripts\\Items\\ItemScript.cs"
+                },
+                {
+                    "blank": 9,
+                    "code": 70,
+                    "comment": 4,
+                    "filename": "Assets\\Scripts\\Items\\ItemSpawnScript.cs"
+                },
+                {
+                    "blank": 9,
+                    "code": 246,
+                    "comment": 150,
+                    "filename": "Assets\\Scripts\\Particles\\ParticleMeshScript.cs"
+                },
+                {
+                    "blank": 6,
+                    "code": 42,
+                    "comment": 1,
+                    "filename": "Assets\\Scripts\\Particles\\ParticleSceneSetup.cs"
+                },
+                {
+                    "blank": 17,
+                    "code": 119,
+                    "comment": 12,
+                    "filename": "Assets\\Scripts\\Particles\\ParticleScript.cs"
+                },
+                {
+                    "blank": 12,
+                    "code": 91,
+                    "comment": 7,
+                    "filename": "Assets\\Scripts\\Particles\\ParticleSpawnScript.cs"
+                },
+                {
+                    "blank": 21,
+                    "code": 161,
+                    "comment": 14,
+                    "filename": "Assets\\Scripts\\Player\\PlayerMeshGenerator.cs"
+                },
+                {
+                    "blank": 18,
+                    "code": 110,
+                    "comment": 15,
+                    "filename": "Assets\\Scripts\\Player\\PlayerMovementScript.cs"
+                },
+                {
+                    "blank": 13,
+                    "code": 61,
+                    "comment": 0,
+                    "filename": "Assets\\Scripts\\Player\\PlayerSceneSetup.cs"
+                },
+                {
+                    "blank": 18,
+                    "code": 108,
+                    "comment": 17,
+                    "filename": "Assets\\Scripts\\Player\\PlayerScript.cs"
+                },
+                {
+                    "blank": 7,
+                    "code": 33,
+                    "comment": 2,
+                    "filename": "Assets\\Scripts\\Projectile\\ProjectileScript.cs"
+                },
+                {
+                    "blank": 12,
+                    "code": 40,
+                    "comment": 6,
+                    "filename": "Assets\\Scripts\\Projectile\\ShootingController.cs"
+                },
+                {
+                    "blank": 8,
+                    "code": 52,
+                    "comment": 6,
+                    "filename": "Assets\\Scripts\\SceneScripts\\ReviveScript.cs"
+                },
+                {
+                    "blank": 5,
+                    "code": 229,
+                    "comment": 2,
+                    "filename": "Assets\\Scripts\\SceneScripts\\ScenariosDefault.cs"
+                },
+                {
+                    "blank": 8,
+                    "code": 53,
+                    "comment": 1,
+                    "filename": "Assets\\Scripts\\SceneScripts\\SceneManager.cs"
+                },
+                {
+                    "blank": 6,
+                    "code": 30,
+                    "comment": 3,
+                    "filename": "Assets\\Scripts\\Shake\\PostProcessingScript.cs"
+                },
+                {
+                    "blank": 9,
+                    "code": 38,
+                    "comment": 2,
+                    "filename": "Assets\\Scripts\\Shake\\ShakeScript.cs"
+                },
+                {
+                    "blank": 4,
+                    "code": 26,
+                    "comment": 3,
+                    "filename": "Assets\\Scripts\\Shop\\ItemPool.cs"
+                },
+                {
+                    "blank": 9,
+                    "code": 44,
+                    "comment": 5,
+                    "filename": "Assets\\Scripts\\Shop\\ItemShopPrefab.cs"
+                },
+                {
+                    "blank": 6,
+                    "code": 38,
+                    "comment": 1,
+                    "filename": "Assets\\Scripts\\Shop\\ShopScript.cs"
+                },
+                {
+                    "blank": 4,
+                    "code": 14,
+                    "comment": 2,
+                    "filename": "Assets\\Scripts\\Sound\\SoundScript.cs"
+                },
+                {
+                    "blank": 22,
+                    "code": 78,
+                    "comment": 59,
+                    "filename": "Assets\\Scripts\\Static\\ConstantManager.cs"
+                },
+                {
+                    "blank": 7,
+                    "code": 28,
+                    "comment": 7,
+                    "filename": "Assets\\Scripts\\Static\\GameStarter.cs"
+                },
+                {
+                    "blank": 7,
+                    "code": 37,
+                    "comment": 5,
+                    "filename": "Assets\\Scripts\\Static\\VibrationManager.cs"
+                },
+                {
+                    "blank": 9,
+                    "code": 141,
+                    "comment": 11,
+                    "filename": "Assets\\Scripts\\User Interface\\ButtonScript.cs"
+                },
+                {
+                    "blank": 4,
+                    "code": 32,
+                    "comment": 0,
+                    "filename": "Assets\\Scripts\\User Interface\\LanguageScript.cs"
+                },
+                {
+                    "blank": 5,
+                    "code": 64,
+                    "comment": 0,
+                    "filename": "Assets\\Scripts\\User Interface\\OnEngameEnable.cs"
+                },
+                {
+                    "blank": 2,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "Assets\\Scripts\\User Interface\\OnIngameEnable.cs"
+                },
+                {
+                    "blank": 8,
+                    "code": 82,
+                    "comment": 2,
+                    "filename": "Assets\\Scripts\\User Interface\\OnSettingsEnable.cs"
+                },
+                {
+                    "blank": 18,
+                    "code": 60,
+                    "comment": 4,
+                    "filename": "Assets\\Scripts\\User Interface\\ScreenSetupScript.cs"
+                },
+                {
+                    "blank": 29,
+                    "code": 132,
+                    "comment": 5,
+                    "filename": "Assets\\Scripts\\User Interface\\UiObjectReferrer.cs"
+                },
+                {
+                    "blank": 13,
+                    "code": 53,
+                    "comment": 1,
+                    "filename": "Assets\\Scripts\\User Interface\\UiSceneScript.cs"
+                },
+                {
+                    "filename": "Expos\\1.1.001.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.002.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.003.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.004.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.005.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.006.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.007.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.008.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.009.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.010s.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.011.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.012.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.013.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.014.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.015.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.016.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.017.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.018.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.019.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.020.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.021.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.022.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.023.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.024.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.025.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.026.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.027.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\1.1.028ks.apk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\GP\\1.1.028ks-1.1.028-v18.symbols.zip",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\GP\\1.1.028ks.aab",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\GP\\1.1.029ks-1.1.029-v19.symbols.zip",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\GP\\1.1.029ks.aab",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\GP\\1.1.030ks-1.1.030-v20.symbols.zip",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Expos\\GP\\1.1.030ks.aab",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 3,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "Logs\\Packages-Update.log"
+                },
+                {
+                    "blank": 0,
+                    "code": 48,
+                    "comment": 0,
+                    "filename": "Packages\\manifest.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "Particle Rush v2.sln"
+                },
+                {
+                    "blank": 1,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "README.md"
+                }
+            ]
+        }
+    ]
+}

@@ -7,6 +7,9 @@ public class PostProcessingScript : MonoBehaviour {
     //INSTANCE
     [HideInInspector] public static PostProcessingScript instance;
 
+    // OBJECT-LINKS
+    [SerializeField] private PostProcessVolume volume;
+
     //SETTINGS
     private ChromaticAberration chromaticAberration;
     private float originalPPValue;
@@ -15,7 +18,6 @@ public class PostProcessingScript : MonoBehaviour {
         instance = this;
     }
     void Start() {
-        PostProcessVolume volume = gameObject.GetComponent<PostProcessVolume>();
         volume.profile.TryGetSettings(out chromaticAberration);
         originalPPValue = chromaticAberration.intensity.value;
     }

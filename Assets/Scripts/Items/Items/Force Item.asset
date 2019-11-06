@@ -23,6 +23,7 @@ MonoBehaviour:
   itemIconAsTexture: {fileID: 2800000, guid: a16daeb90aabff24db99d92f0c34324a, type: 3}
   shopScenarioOnActive: {fileID: 11400000, guid: 465afaacc9ad6d74890bfa2315eb187f,
     type: 2}
+  itemAnimation: 2
   itemLevels:
   - 1
   - 2

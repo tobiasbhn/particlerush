@@ -46,6 +46,7 @@ public class SaveData {
 
     //STATS
     public int statsTotalGamesPlayed = 0;
+    public int statsTotleCountRevive = 0;
     // Particles
     public int statsTotalParticles = 0;
     // Normal Particles
@@ -62,7 +63,7 @@ public class SaveData {
     public int statsTotalGoldParticlesSpawned = 0;
     public int statsTotalGoldParticlesDestroyed = 0;
     public int statsTotalGoldParticlesCollected = 0;
-    public int statsTotalGainedGold = 0;
+    public int statsTotalGainedGold = 0; //-------------------------
     // Projectiles
     public int statsTotalProjectilesFired = 0;
     public int statsTotalProjectilesHit = 0;
@@ -77,6 +78,7 @@ public class SaveData {
     // Score
     public float highscore = 0f;
     public float scoreTotal = 0f;
+    public int currentLevel = 0;
 
 
     //PROCESSES
@@ -85,16 +87,18 @@ public class SaveData {
 
     //SETTINGS
     public SettingsLanguages settingsLanguage = SettingsLanguages.English;
-    public SettingsSounds settingsSound = SettingsSounds.All;
-    public SettingsVibration settingsVibration = SettingsVibration.Medium;
-    public SettingsItemPosition settingsItemPosition = SettingsItemPosition.Left;
+    public SettingsSounds settingsSound = SettingsSounds.Off;
+    public SettingsVibration settingsVibration = SettingsVibration.Short;
+    public SettingsItemPosition settingsItemPosition = SettingsItemPosition.Right;
+    public SettingsDebug settingsDebug = SettingsDebug.off;
 
     //SHOP
-    public int shrinkItemLVL = 1; // 0 = Locked | 1 = LVL1 ...
+    public int statsTotalGoldSpend = 0;
+    public int shrinkItemLVL = 0; // 0 = Locked | 1 = LVL1 ...
     public int shieldItemLVL = 1;
-    public int forceItemLVL = 1;
+    public int forceItemLVL = 0;
     public int clearItmLVL = 1;
-    public int slowItemLVL = 1;
-    public int slideItemLVL = 1;
-    public int goldrushItemLVL = 1;
+    public int slowItemLVL = 0;
+    public int slideItemLVL = 0;
+    public int goldrushItemLVL = 0;
 }

@@ -1,0 +1,392 @@
+===============================================================================
+EXTENSION NAME : linecount
+EXTENSION VERSION : 0.1.7
+-------------------------------------------------------------------------------
+count time : 2019-11-05 19:33:40
+count workspace : c:\Eigener Bereich\Studium\Semester 4\Gameenwicklung\Particle Rush v2
+total files : 184
+total code lines : 20190
+total comment lines : 7066
+total blank lines : 3528
+
+.gitattributes, code is 49, comment is 0, blank is 1.
+Assembly-CSharp-Editor.csproj, code is 708, comment is 0, blank is 0.
+Assembly-CSharp.csproj, code is 788, comment is 0, blank is 0.
+Assets\Fonts\MONTSERRAT-EXTRALIGHT.TTF, it is a binary file.
+Assets\Materials\Shader\Sprite Overlay.shader, code is 41, comment is 1, blank is 4.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Behavior.cs, code is 153, comment is 62, blank is 34.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Configuration.cs, code is 25, comment is 14, blank is 6.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Enums.cs, code is 9, comment is 33, blank is 5.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Geometry\Contour.cs, code is 134, comment is 63, blank is 51.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Geometry\Edge.cs, code is 31, comment is 23, blank is 5.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Geometry\ExtensionMethods.cs, code is 73, comment is 44, blank is 26.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Geometry\IEdge.cs, code is 10, comment is 17, blank is 3.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Geometry\IPolygon.cs, code is 25, comment is 54, blank is 15.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Geometry\ISegment.cs, code is 9, comment is 16, blank is 2.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Geometry\ITriangle.cs, code is 16, comment is 45, blank is 9.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Geometry\Point.cs, code is 118, comment is 33, blank is 30.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Geometry\Polygon.cs, code is 105, comment is 52, blank is 27.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Geometry\Rectangle.cs, code is 103, comment is 78, blank is 20.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Geometry\RegionPointer.cs, code is 34, comment is 25, blank is 5.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Geometry\Segment.cs, code is 50, comment is 31, blank is 12.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Geometry\Vertex.cs, code is 69, comment is 42, blank is 15.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\IO\DebugWriter.cs, code is 167, comment is 48, blank is 49.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\IO\FileProcessor.cs, code is 82, comment is 26, blank is 19.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\IO\IFileFormat.cs, code is 8, comment is 5, blank is 1.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\IO\IMeshFormat.cs, code is 12, comment is 23, blank is 4.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\IO\InputTriangle.cs, code is 53, comment is 21, blank is 13.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\IO\IPolygonFormat.cs, code is 12, comment is 23, blank is 4.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\IO\TriangleFormat.cs, code is 67, comment is 8, blank is 18.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\IO\TriangleReader.cs, code is 494, comment is 120, blank is 130.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\IO\TriangleWriter.cs, code is 285, comment is 106, blank is 69.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\IPredicates.cs, code is 13, comment is 5, blank is 5.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Log.cs, code is 52, comment is 16, blank is 17.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Logging\ILog.cs, code is 21, comment is 8, blank is 6.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Logging\ILogItem.cs, code is 12, comment is 8, blank is 2.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Logging\LogItem.cs, code is 38, comment is 8, blank is 8.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Mesh.cs, code is 1064, comment is 519, blank is 201.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\Algorithm\Dwyer.cs, code is 464, comment is 196, blank is 32.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\Algorithm\Incremental.cs, code is 111, comment is 61, blank is 21.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\Algorithm\SweepLine.cs, code is 669, comment is 75, blank is 76.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\ConstraintMesher.cs, code is 749, comment is 394, blank is 89.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\ConstraintOptions.cs, code is 12, comment is 24, blank is 4.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\Converter.cs, code is 314, comment is 80, blank is 96.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\Data\BadSubseg.cs, code is 20, comment is 15, blank is 4.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\Data\BadTriangle.cs, code is 18, comment is 18, blank is 3.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\Data\BadTriQueue.cs, code is 115, comment is 61, blank is 19.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\GenericMesher.cs, code is 141, comment is 41, blank is 52.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\IConstraintMesher.cs, code is 10, comment is 14, blank is 2.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\IMesh.cs, code is 18, comment is 31, blank is 8.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\IQualityMesher.cs, code is 10, comment is 16, blank is 2.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\Iterators\EdgeIterator.cs, code is 72, comment is 13, blank is 17.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\Iterators\RegionIterator.cs, code is 68, comment is 52, blank is 16.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\Iterators\VertexCirculator.cs, code is 68, comment is 14, blank is 18.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\ITriangulator.cs, code is 10, comment is 14, blank is 2.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\QualityMesher.cs, code is 583, comment is 233, blank is 85.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\QualityOptions.cs, code is 15, comment is 34, blank is 6.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\MeshValidator.cs, code is 144, comment is 38, blank is 34.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\NewLocation.cs, code is 2701, comment is 1297, blank is 293.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Properties\AssemblyInfo.cs, code is 1, comment is 32, blank is 4.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\README.md, code is 12, comment is 3, blank is 5.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\RobustPredicates.cs, code is 988, comment is 225, blank is 134.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Smoothing\ISmoother.cs, code is 10, comment is 8, blank is 2.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Smoothing\SimpleSmoother.cs, code is 100, comment is 37, blank is 37.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Smoothing\VoronoiFactory.cs, code is 148, comment is 6, blank is 47.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Tools\AdjacencyMatrix.cs, code is 162, comment is 71, blank is 55.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Tools\CuthillMcKee.cs, code is 340, comment is 243, blank is 106.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Tools\Interpolation.cs, code is 57, comment is 32, blank is 16.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Tools\IntersectionHelper.cs, code is 133, comment is 75, blank is 24.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Tools\PolygonValidator.cs, code is 174, comment is 28, blank is 48.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Tools\QualityMeasure.cs, code is 290, comment is 188, blank is 64.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Tools\Statistic.cs, code is 347, comment is 96, blank is 89.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Tools\TriangleQuadTree.cs, code is 279, comment is 81, blank is 68.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Tools\VertexSorter.cs, code is 233, comment is 92, blank is 47.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Topology\DCEL\DcelMesh.cs, code is 178, comment is 52, blank is 40.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Topology\DCEL\Face.cs, code is 65, comment is 30, blank is 18.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Topology\DCEL\HalfEdge.cs, code is 60, comment is 30, blank is 12.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Topology\DCEL\Vertex.cs, code is 37, comment is 23, blank is 9.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Topology\Osub.cs, code is 110, comment is 118, blank is 30.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Topology\Otri.cs, code is 232, comment is 188, blank is 63.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Topology\SubSegment.cs, code is 51, comment is 31, blank is 16.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Topology\Triangle.cs, code is 68, comment is 42, blank is 20.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Triangle.csproj, code is 139, comment is 0, blank is 0.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Triangle.csproj.vspscc, code is 10, comment is 0, blank is 0.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\TriangleLocator.cs, code is 183, comment is 159, blank is 23.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\TrianglePool.cs, code is 205, comment is 32, blank is 69.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\TriangleSampler.cs, code is 50, comment is 22, blank is 14.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Voronoi\BoundedVoronoi.cs, code is 89, comment is 57, blank is 37.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Voronoi\DefaultVoronoiFactory.cs, code is 27, comment is 3, blank is 5.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Voronoi\IVoronoiFactory.cs, code is 13, comment is 0, blank is 5.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Voronoi\Legacy\BoundedVoronoiLegacy.cs, code is 428, comment is 142, blank is 124.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Voronoi\Legacy\IVoronoi.cs, code is 12, comment is 17, blank is 4.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Voronoi\Legacy\SimpleVoronoi.cs, code is 179, comment is 63, blank is 65.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Voronoi\Legacy\VoronoiRegion.cs, code is 66, comment is 30, blank is 16.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Voronoi\StandardVoronoi.cs, code is 40, comment is 19, blank is 8.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Voronoi\VoronoiBase.cs, code is 166, comment is 68, blank is 58.
+Assets\Prefabs\UI\TextLarge.preset, code is 107, comment is 0, blank is 0.
+Assets\RorationScript.cs, code is 8, comment is 0, blank is 1.
+Assets\Scripts\Ads\AdsManager.cs, code is 75, comment is 6, blank is 13.
+Assets\Scripts\Data\RuntimeDataManager.cs, code is 83, comment is 18, blank is 9.
+Assets\Scripts\Data\SaveDataManager.cs, code is 75, comment is 18, blank is 10.
+Assets\Scripts\Data\ScoreScript.cs, code is 72, comment is 8, blank is 14.
+Assets\Scripts\Development\Console Clear.cs, code is 10, comment is 2, blank is 2.
+Assets\Scripts\Development\FPS.cs, code is 51, comment is 3, blank is 11.
+Assets\Scripts\Development\LogTime.cs, code is 14, comment is 0, blank is 2.
+Assets\Scripts\General\FacingCamera.cs, code is 6, comment is 0, blank is 1.
+Assets\Scripts\General\GameEnums.cs, code is 24, comment is 5, blank is 5.
+Assets\Scripts\Input\ItemInputScript.cs, code is 57, comment is 10, blank is 10.
+Assets\Scripts\Items\Definition\ItemDefinition.cs, code is 58, comment is 0, blank is 9.
+Assets\Scripts\Items\Definition\ItemDefinitions\ClearItem.cs, code is 7, comment is 0, blank is 1.
+Assets\Scripts\Items\Definition\ItemDefinitions\ForceItem.cs, code is 7, comment is 0, blank is 1.
+Assets\Scripts\Items\Definition\ItemDefinitions\GoldrushItem.cs, code is 7, comment is 0, blank is 1.
+Assets\Scripts\Items\Definition\ItemDefinitions\ShieldItem.cs, code is 7, comment is 0, blank is 1.
+Assets\Scripts\Items\Definition\ItemDefinitions\ShrinkItem.cs, code is 7, comment is 0, blank is 1.
+Assets\Scripts\Items\Definition\ItemDefinitions\SlideItem.cs, code is 7, comment is 0, blank is 1.
+Assets\Scripts\Items\Definition\ItemDefinitions\SlowItem.cs, code is 7, comment is 0, blank is 1.
+Assets\Scripts\Items\ItemScript.cs, code is 173, comment is 8, blank is 28.
+Assets\Scripts\Items\ItemSpawnScript.cs, code is 70, comment is 4, blank is 9.
+Assets\Scripts\Particles\ParticleMeshScript.cs, code is 246, comment is 150, blank is 9.
+Assets\Scripts\Particles\ParticleSceneSetup.cs, code is 42, comment is 1, blank is 6.
+Assets\Scripts\Particles\ParticleScript.cs, code is 119, comment is 12, blank is 17.
+Assets\Scripts\Particles\ParticleSpawnScript.cs, code is 91, comment is 7, blank is 12.
+Assets\Scripts\Player\PlayerMeshGenerator.cs, code is 161, comment is 14, blank is 21.
+Assets\Scripts\Player\PlayerMovementScript.cs, code is 110, comment is 15, blank is 18.
+Assets\Scripts\Player\PlayerSceneSetup.cs, code is 61, comment is 0, blank is 13.
+Assets\Scripts\Player\PlayerScript.cs, code is 108, comment is 17, blank is 18.
+Assets\Scripts\Projectile\ProjectileScript.cs, code is 33, comment is 2, blank is 7.
+Assets\Scripts\Projectile\ShootingController.cs, code is 40, comment is 6, blank is 12.
+Assets\Scripts\SceneScripts\ReviveScript.cs, code is 52, comment is 6, blank is 8.
+Assets\Scripts\SceneScripts\ScenariosDefault.cs, code is 229, comment is 2, blank is 5.
+Assets\Scripts\SceneScripts\SceneManager.cs, code is 53, comment is 1, blank is 8.
+Assets\Scripts\Shake\PostProcessingScript.cs, code is 30, comment is 3, blank is 6.
+Assets\Scripts\Shake\ShakeScript.cs, code is 38, comment is 2, blank is 9.
+Assets\Scripts\Shop\ItemPool.cs, code is 26, comment is 3, blank is 4.
+Assets\Scripts\Shop\ItemShopPrefab.cs, code is 44, comment is 5, blank is 9.
+Assets\Scripts\Shop\ShopScript.cs, code is 38, comment is 1, blank is 6.
+Assets\Scripts\Sound\SoundScript.cs, code is 14, comment is 2, blank is 4.
+Assets\Scripts\Static\ConstantManager.cs, code is 78, comment is 59, blank is 22.
+Assets\Scripts\Static\GameStarter.cs, code is 28, comment is 7, blank is 7.
+Assets\Scripts\Static\VibrationManager.cs, code is 37, comment is 5, blank is 7.
+Assets\Scripts\User Interface\ButtonScript.cs, code is 141, comment is 11, blank is 9.
+Assets\Scripts\User Interface\LanguageScript.cs, code is 32, comment is 0, blank is 4.
+Assets\Scripts\User Interface\OnEngameEnable.cs, code is 64, comment is 0, blank is 5.
+Assets\Scripts\User Interface\OnIngameEnable.cs, code is 17, comment is 0, blank is 2.
+Assets\Scripts\User Interface\OnSettingsEnable.cs, code is 82, comment is 2, blank is 8.
+Assets\Scripts\User Interface\ScreenSetupScript.cs, code is 60, comment is 4, blank is 18.
+Assets\Scripts\User Interface\UiObjectReferrer.cs, code is 132, comment is 5, blank is 29.
+Assets\Scripts\User Interface\UiSceneScript.cs, code is 53, comment is 1, blank is 13.
+Expos\1.1.001.apk, it is a binary file.
+Expos\1.1.002.apk, it is a binary file.
+Expos\1.1.003.apk, it is a binary file.
+Expos\1.1.004.apk, it is a binary file.
+Expos\1.1.005.apk, it is a binary file.
+Expos\1.1.006.apk, it is a binary file.
+Expos\1.1.007.apk, it is a binary file.
+Expos\1.1.008.apk, it is a binary file.
+Expos\1.1.009.apk, it is a binary file.
+Expos\1.1.010s.apk, it is a binary file.
+Expos\1.1.011.apk, it is a binary file.
+Expos\1.1.012.apk, it is a binary file.
+Expos\1.1.013.apk, it is a binary file.
+Expos\1.1.014.apk, it is a binary file.
+Expos\1.1.015.apk, it is a binary file.
+Expos\1.1.016.apk, it is a binary file.
+Expos\1.1.017.apk, it is a binary file.
+Expos\1.1.018.apk, it is a binary file.
+Expos\1.1.019.apk, it is a binary file.
+Expos\1.1.020.apk, it is a binary file.
+Expos\1.1.021.apk, it is a binary file.
+Expos\1.1.022.apk, it is a binary file.
+Expos\1.1.023.apk, it is a binary file.
+Expos\1.1.024.apk, it is a binary file.
+Expos\1.1.025.apk, it is a binary file.
+Expos\1.1.026.apk, it is a binary file.
+Expos\1.1.027.apk, it is a binary file.
+Expos\1.1.028ks.apk, it is a binary file.
+Expos\GP\1.1.028ks-1.1.028-v18.symbols.zip, it is a binary file.
+Expos\GP\1.1.028ks.aab, it is a binary file.
+Expos\GP\1.1.029ks-1.1.029-v19.symbols.zip, it is a binary file.
+Expos\GP\1.1.029ks.aab, it is a binary file.
+Expos\GP\1.1.030ks-1.1.030-v20.symbols.zip, it is a binary file.
+Expos\GP\1.1.030ks.aab, it is a binary file.
+Logs\Packages-Update.log, code is 6, comment is 0, blank is 3.
+Packages\manifest.json, code is 48, comment is 0, blank is 0.
+Particle Rush v2.sln, code is 20, comment is 0, blank is 0.
+README.md, code is 1, comment is 0, blank is 1.
+===============================================================================
+===============================================================================
+EXTENSION NAME : linecount
+EXTENSION VERSION : 0.1.7
+-------------------------------------------------------------------------------
+count time : 2019-11-05 19:34:19
+count workspace : c:\Eigener Bereich\Studium\Semester 4\Gameenwicklung\Particle Rush v2
+total files : 184
+total code lines : 20190
+total comment lines : 7066
+total blank lines : 3528
+
+.gitattributes, code is 49, comment is 0, blank is 1.
+Assembly-CSharp-Editor.csproj, code is 708, comment is 0, blank is 0.
+Assembly-CSharp.csproj, code is 788, comment is 0, blank is 0.
+Assets\Fonts\MONTSERRAT-EXTRALIGHT.TTF, it is a binary file.
+Assets\Materials\Shader\Sprite Overlay.shader, code is 41, comment is 1, blank is 4.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Behavior.cs, code is 153, comment is 62, blank is 34.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Configuration.cs, code is 25, comment is 14, blank is 6.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Enums.cs, code is 9, comment is 33, blank is 5.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Geometry\Contour.cs, code is 134, comment is 63, blank is 51.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Geometry\Edge.cs, code is 31, comment is 23, blank is 5.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Geometry\ExtensionMethods.cs, code is 73, comment is 44, blank is 26.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Geometry\IEdge.cs, code is 10, comment is 17, blank is 3.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Geometry\IPolygon.cs, code is 25, comment is 54, blank is 15.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Geometry\ISegment.cs, code is 9, comment is 16, blank is 2.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Geometry\ITriangle.cs, code is 16, comment is 45, blank is 9.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Geometry\Point.cs, code is 118, comment is 33, blank is 30.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Geometry\Polygon.cs, code is 105, comment is 52, blank is 27.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Geometry\Rectangle.cs, code is 103, comment is 78, blank is 20.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Geometry\RegionPointer.cs, code is 34, comment is 25, blank is 5.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Geometry\Segment.cs, code is 50, comment is 31, blank is 12.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Geometry\Vertex.cs, code is 69, comment is 42, blank is 15.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\IO\DebugWriter.cs, code is 167, comment is 48, blank is 49.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\IO\FileProcessor.cs, code is 82, comment is 26, blank is 19.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\IO\IFileFormat.cs, code is 8, comment is 5, blank is 1.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\IO\IMeshFormat.cs, code is 12, comment is 23, blank is 4.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\IO\InputTriangle.cs, code is 53, comment is 21, blank is 13.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\IO\IPolygonFormat.cs, code is 12, comment is 23, blank is 4.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\IO\TriangleFormat.cs, code is 67, comment is 8, blank is 18.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\IO\TriangleReader.cs, code is 494, comment is 120, blank is 130.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\IO\TriangleWriter.cs, code is 285, comment is 106, blank is 69.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\IPredicates.cs, code is 13, comment is 5, blank is 5.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Log.cs, code is 52, comment is 16, blank is 17.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Logging\ILog.cs, code is 21, comment is 8, blank is 6.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Logging\ILogItem.cs, code is 12, comment is 8, blank is 2.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Logging\LogItem.cs, code is 38, comment is 8, blank is 8.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Mesh.cs, code is 1064, comment is 519, blank is 201.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\Algorithm\Dwyer.cs, code is 464, comment is 196, blank is 32.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\Algorithm\Incremental.cs, code is 111, comment is 61, blank is 21.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\Algorithm\SweepLine.cs, code is 669, comment is 75, blank is 76.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\ConstraintMesher.cs, code is 749, comment is 394, blank is 89.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\ConstraintOptions.cs, code is 12, comment is 24, blank is 4.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\Converter.cs, code is 314, comment is 80, blank is 96.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\Data\BadSubseg.cs, code is 20, comment is 15, blank is 4.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\Data\BadTriangle.cs, code is 18, comment is 18, blank is 3.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\Data\BadTriQueue.cs, code is 115, comment is 61, blank is 19.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\GenericMesher.cs, code is 141, comment is 41, blank is 52.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\IConstraintMesher.cs, code is 10, comment is 14, blank is 2.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\IMesh.cs, code is 18, comment is 31, blank is 8.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\IQualityMesher.cs, code is 10, comment is 16, blank is 2.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\Iterators\EdgeIterator.cs, code is 72, comment is 13, blank is 17.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\Iterators\RegionIterator.cs, code is 68, comment is 52, blank is 16.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\Iterators\VertexCirculator.cs, code is 68, comment is 14, blank is 18.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\ITriangulator.cs, code is 10, comment is 14, blank is 2.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\QualityMesher.cs, code is 583, comment is 233, blank is 85.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Meshing\QualityOptions.cs, code is 15, comment is 34, blank is 6.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\MeshValidator.cs, code is 144, comment is 38, blank is 34.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\NewLocation.cs, code is 2701, comment is 1297, blank is 293.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Properties\AssemblyInfo.cs, code is 1, comment is 32, blank is 4.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\README.md, code is 12, comment is 3, blank is 5.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\RobustPredicates.cs, code is 988, comment is 225, blank is 134.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Smoothing\ISmoother.cs, code is 10, comment is 8, blank is 2.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Smoothing\SimpleSmoother.cs, code is 100, comment is 37, blank is 37.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Smoothing\VoronoiFactory.cs, code is 148, comment is 6, blank is 47.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Tools\AdjacencyMatrix.cs, code is 162, comment is 71, blank is 55.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Tools\CuthillMcKee.cs, code is 340, comment is 243, blank is 106.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Tools\Interpolation.cs, code is 57, comment is 32, blank is 16.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Tools\IntersectionHelper.cs, code is 133, comment is 75, blank is 24.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Tools\PolygonValidator.cs, code is 174, comment is 28, blank is 48.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Tools\QualityMeasure.cs, code is 290, comment is 188, blank is 64.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Tools\Statistic.cs, code is 347, comment is 96, blank is 89.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Tools\TriangleQuadTree.cs, code is 279, comment is 81, blank is 68.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Tools\VertexSorter.cs, code is 233, comment is 92, blank is 47.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Topology\DCEL\DcelMesh.cs, code is 178, comment is 52, blank is 40.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Topology\DCEL\Face.cs, code is 65, comment is 30, blank is 18.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Topology\DCEL\HalfEdge.cs, code is 60, comment is 30, blank is 12.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Topology\DCEL\Vertex.cs, code is 37, comment is 23, blank is 9.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Topology\Osub.cs, code is 110, comment is 118, blank is 30.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Topology\Otri.cs, code is 232, comment is 188, blank is 63.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Topology\SubSegment.cs, code is 51, comment is 31, blank is 16.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Topology\Triangle.cs, code is 68, comment is 42, blank is 20.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Triangle.csproj, code is 139, comment is 0, blank is 0.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Triangle.csproj.vspscc, code is 10, comment is 0, blank is 0.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\TriangleLocator.cs, code is 183, comment is 159, blank is 23.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\TrianglePool.cs, code is 205, comment is 32, blank is 69.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\TriangleSampler.cs, code is 50, comment is 22, blank is 14.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Voronoi\BoundedVoronoi.cs, code is 89, comment is 57, blank is 37.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Voronoi\DefaultVoronoiFactory.cs, code is 27, comment is 3, blank is 5.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Voronoi\IVoronoiFactory.cs, code is 13, comment is 0, blank is 5.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Voronoi\Legacy\BoundedVoronoiLegacy.cs, code is 428, comment is 142, blank is 124.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Voronoi\Legacy\IVoronoi.cs, code is 12, comment is 17, blank is 4.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Voronoi\Legacy\SimpleVoronoi.cs, code is 179, comment is 63, blank is 65.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Voronoi\Legacy\VoronoiRegion.cs, code is 66, comment is 30, blank is 16.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Voronoi\StandardVoronoi.cs, code is 40, comment is 19, blank is 8.
+Assets\Packages\TriangleNET\Triangle-NET-Unity-Port-master\Voronoi\VoronoiBase.cs, code is 166, comment is 68, blank is 58.
+Assets\Prefabs\UI\TextLarge.preset, code is 107, comment is 0, blank is 0.
+Assets\RorationScript.cs, code is 8, comment is 0, blank is 1.
+Assets\Scripts\Ads\AdsManager.cs, code is 75, comment is 6, blank is 13.
+Assets\Scripts\Data\RuntimeDataManager.cs, code is 83, comment is 18, blank is 9.
+Assets\Scripts\Data\SaveDataManager.cs, code is 75, comment is 18, blank is 10.
+Assets\Scripts\Data\ScoreScript.cs, code is 72, comment is 8, blank is 14.
+Assets\Scripts\Development\Console Clear.cs, code is 10, comment is 2, blank is 2.
+Assets\Scripts\Development\FPS.cs, code is 51, comment is 3, blank is 11.
+Assets\Scripts\Development\LogTime.cs, code is 14, comment is 0, blank is 2.
+Assets\Scripts\General\FacingCamera.cs, code is 6, comment is 0, blank is 1.
+Assets\Scripts\General\GameEnums.cs, code is 24, comment is 5, blank is 5.
+Assets\Scripts\Input\ItemInputScript.cs, code is 57, comment is 10, blank is 10.
+Assets\Scripts\Items\Definition\ItemDefinition.cs, code is 58, comment is 0, blank is 9.
+Assets\Scripts\Items\Definition\ItemDefinitions\ClearItem.cs, code is 7, comment is 0, blank is 1.
+Assets\Scripts\Items\Definition\ItemDefinitions\ForceItem.cs, code is 7, comment is 0, blank is 1.
+Assets\Scripts\Items\Definition\ItemDefinitions\GoldrushItem.cs, code is 7, comment is 0, blank is 1.
+Assets\Scripts\Items\Definition\ItemDefinitions\ShieldItem.cs, code is 7, comment is 0, blank is 1.
+Assets\Scripts\Items\Definition\ItemDefinitions\ShrinkItem.cs, code is 7, comment is 0, blank is 1.
+Assets\Scripts\Items\Definition\ItemDefinitions\SlideItem.cs, code is 7, comment is 0, blank is 1.
+Assets\Scripts\Items\Definition\ItemDefinitions\SlowItem.cs, code is 7, comment is 0, blank is 1.
+Assets\Scripts\Items\ItemScript.cs, code is 173, comment is 8, blank is 28.
+Assets\Scripts\Items\ItemSpawnScript.cs, code is 70, comment is 4, blank is 9.
+Assets\Scripts\Particles\ParticleMeshScript.cs, code is 246, comment is 150, blank is 9.
+Assets\Scripts\Particles\ParticleSceneSetup.cs, code is 42, comment is 1, blank is 6.
+Assets\Scripts\Particles\ParticleScript.cs, code is 119, comment is 12, blank is 17.
+Assets\Scripts\Particles\ParticleSpawnScript.cs, code is 91, comment is 7, blank is 12.
+Assets\Scripts\Player\PlayerMeshGenerator.cs, code is 161, comment is 14, blank is 21.
+Assets\Scripts\Player\PlayerMovementScript.cs, code is 110, comment is 15, blank is 18.
+Assets\Scripts\Player\PlayerSceneSetup.cs, code is 61, comment is 0, blank is 13.
+Assets\Scripts\Player\PlayerScript.cs, code is 108, comment is 17, blank is 18.
+Assets\Scripts\Projectile\ProjectileScript.cs, code is 33, comment is 2, blank is 7.
+Assets\Scripts\Projectile\ShootingController.cs, code is 40, comment is 6, blank is 12.
+Assets\Scripts\SceneScripts\ReviveScript.cs, code is 52, comment is 6, blank is 8.
+Assets\Scripts\SceneScripts\ScenariosDefault.cs, code is 229, comment is 2, blank is 5.
+Assets\Scripts\SceneScripts\SceneManager.cs, code is 53, comment is 1, blank is 8.
+Assets\Scripts\Shake\PostProcessingScript.cs, code is 30, comment is 3, blank is 6.
+Assets\Scripts\Shake\ShakeScript.cs, code is 38, comment is 2, blank is 9.
+Assets\Scripts\Shop\ItemPool.cs, code is 26, comment is 3, blank is 4.
+Assets\Scripts\Shop\ItemShopPrefab.cs, code is 44, comment is 5, blank is 9.
+Assets\Scripts\Shop\ShopScript.cs, code is 38, comment is 1, blank is 6.
+Assets\Scripts\Sound\SoundScript.cs, code is 14, comment is 2, blank is 4.
+Assets\Scripts\Static\ConstantManager.cs, code is 78, comment is 59, blank is 22.
+Assets\Scripts\Static\GameStarter.cs, code is 28, comment is 7, blank is 7.
+Assets\Scripts\Static\VibrationManager.cs, code is 37, comment is 5, blank is 7.
+Assets\Scripts\User Interface\ButtonScript.cs, code is 141, comment is 11, blank is 9.
+Assets\Scripts\User Interface\LanguageScript.cs, code is 32, comment is 0, blank is 4.
+Assets\Scripts\User Interface\OnEngameEnable.cs, code is 64, comment is 0, blank is 5.
+Assets\Scripts\User Interface\OnIngameEnable.cs, code is 17, comment is 0, blank is 2.
+Assets\Scripts\User Interface\OnSettingsEnable.cs, code is 82, comment is 2, blank is 8.
+Assets\Scripts\User Interface\ScreenSetupScript.cs, code is 60, comment is 4, blank is 18.
+Assets\Scripts\User Interface\UiObjectReferrer.cs, code is 132, comment is 5, blank is 29.
+Assets\Scripts\User Interface\UiSceneScript.cs, code is 53, comment is 1, blank is 13.
+Expos\1.1.001.apk, it is a binary file.
+Expos\1.1.002.apk, it is a binary file.
+Expos\1.1.003.apk, it is a binary file.
+Expos\1.1.004.apk, it is a binary file.
+Expos\1.1.005.apk, it is a binary file.
+Expos\1.1.006.apk, it is a binary file.
+Expos\1.1.007.apk, it is a binary file.
+Expos\1.1.008.apk, it is a binary file.
+Expos\1.1.009.apk, it is a binary file.
+Expos\1.1.010s.apk, it is a binary file.
+Expos\1.1.011.apk, it is a binary file.
+Expos\1.1.012.apk, it is a binary file.
+Expos\1.1.013.apk, it is a binary file.
+Expos\1.1.014.apk, it is a binary file.
+Expos\1.1.015.apk, it is a binary file.
+Expos\1.1.016.apk, it is a binary file.
+Expos\1.1.017.apk, it is a binary file.
+Expos\1.1.018.apk, it is a binary file.
+Expos\1.1.019.apk, it is a binary file.
+Expos\1.1.020.apk, it is a binary file.
+Expos\1.1.021.apk, it is a binary file.
+Expos\1.1.022.apk, it is a binary file.
+Expos\1.1.023.apk, it is a binary file.
+Expos\1.1.024.apk, it is a binary file.
+Expos\1.1.025.apk, it is a binary file.
+Expos\1.1.026.apk, it is a binary file.
+Expos\1.1.027.apk, it is a binary file.
+Expos\1.1.028ks.apk, it is a binary file.
+Expos\GP\1.1.028ks-1.1.028-v18.symbols.zip, it is a binary file.
+Expos\GP\1.1.028ks.aab, it is a binary file.
+Expos\GP\1.1.029ks-1.1.029-v19.symbols.zip, it is a binary file.
+Expos\GP\1.1.029ks.aab, it is a binary file.
+Expos\GP\1.1.030ks-1.1.030-v20.symbols.zip, it is a binary file.
+Expos\GP\1.1.030ks.aab, it is a binary file.
+Logs\Packages-Update.log, code is 6, comment is 0, blank is 3.
+Packages\manifest.json, code is 48, comment is 0, blank is 0.
+Particle Rush v2.sln, code is 20, comment is 0, blank is 0.
+README.md, code is 1, comment is 0, blank is 1.
+===============================================================================

@@ -11,7 +11,7 @@ public class ItemInputScript : MonoBehaviour {
     private ItemInputSceneModis modi;
 
     // VARS
-    private ItemScript item = null;
+    private ItemIngamePrefab item = null;
     private float touchStart = 0f;
 
     void Awake() {
@@ -33,7 +33,7 @@ public class ItemInputScript : MonoBehaviour {
                 } else if (touch.phase == TouchPhase.Ended) {
                     // Touch Ended before Min-Drag-Time passed - maybe accidently tapped
                     touchStart = Time.realtimeSinceStartup;
-                } else if (tempItem != null && tempItem.dragable && Time.realtimeSinceStartup - touchStart > .1f) {
+                } else if (tempItem != null && tempItem.dragable && Time.realtimeSinceStartup - touchStart > ConstantManager.ITEM_INPUT_DELAY_TO_DRAG) {
                     // Any other Touch on Item bevor Item deklaration, that is a real Drag-Wish and not only accidently tapped
                     item = tempItem;
                     Time.timeScale = ConstantManager.ITEM_TIME_SCALE_ON_DRAG_DROP;
@@ -48,7 +48,7 @@ public class ItemInputScript : MonoBehaviour {
                 // Drop Item
                 } else if (touch.phase == TouchPhase.Ended && item.activeDragDrop) {
                     Time.timeScale = 1f;
-                    item.DropItem(touch.position);
+                    item.DropItem();
                     item.activeDragDrop = false;
                     item = null;
                 }
@@ -56,14 +56,14 @@ public class ItemInputScript : MonoBehaviour {
         }
     }
 
-    private ItemScript TouchIsOnItem(Vector2 pos) {
+    private ItemIngamePrefab TouchIsOnItem(Vector2 pos) {
         RaycastHit[] hits;
         var ray = Camera.main.ScreenPointToRay(new Vector3(pos.x, pos.y, 0));
         hits = Physics.RaycastAll(ray.origin, ray.direction);
 
         foreach (RaycastHit hit in hits)
             if (hit.collider != null && hit.collider.gameObject.tag == "Item" && hit.collider.GetType() == typeof(SphereCollider))
-                return hit.collider.gameObject.GetComponent<ItemScript>();
+                return hit.collider.gameObject.GetComponent<ItemIngamePrefab>();
         return null;
     }
 

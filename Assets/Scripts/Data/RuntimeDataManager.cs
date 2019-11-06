@@ -7,7 +7,7 @@ public class RuntimeDataManager : MonoBehaviour {
     //INSTANCE
     public static RuntimeDataManager instance;
 
-    // RUNTIME DATE
+    // RUNTIME DATA
     [HideInInspector] public static RuntimeData value;
     public RuntimeData preRevive;
     public RuntimeData postRevive;
@@ -25,6 +25,7 @@ public class RuntimeDataManager : MonoBehaviour {
     public void SetupIngame() {
         if (ReviveScript.instance.alreadyRevived) {
             postRevive = new RuntimeData();
+            postRevive.totalCountRevive++;
             value = postRevive;
             value.startTime = Time.realtimeSinceStartup;
         } else {
@@ -37,7 +38,8 @@ public class RuntimeDataManager : MonoBehaviour {
     }
 
     public void SetupEndgame() {
-        SaveDataManager.getValue.statsTotalGamesPlayed += value.totalGamesPlayed;
+        SaveDataManager.getValue.statsTotalGamesPlayed += preRevive.totalGamesPlayed + postRevive.totalGamesPlayed;
+        SaveDataManager.getValue.statsTotleCountRevive += preRevive.totalCountRevive + postRevive.totalCountRevive;
         // STATS
         SaveDataManager.getValue.statsTotalParticles += value.particlesSpawned;
         // Normal Particles
@@ -78,6 +80,7 @@ public class RuntimeDataManager : MonoBehaviour {
 public class RuntimeData {
     // STATS
     public int totalGamesPlayed = 0;
+    public int totalCountRevive = 0;
     // Particles
     public int particlesSpawned = 0;
     public int normalParticlesSpawned = 0;
@@ -106,4 +109,5 @@ public class RuntimeData {
     // Score
     public float score = 0f;
     public float highscore = 0f;
+    public float difficultyFactor = 0f;
 }

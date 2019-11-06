@@ -30,7 +30,10 @@ public class GameStarter : MonoBehaviour {
         //Set Language
         Debug.Log(LogTime.Time() + ": Game Starter Script - Going to apply current Language...");
         LanguageScript.UpdateLanguage();
-        Debug.Log(LogTime.Time() + ": Game Starter Script - Language Set...");    
+        Debug.Log(LogTime.Time() + ": Game Starter Script - Language Set...");
+
+        //Set Vibration
+        VibrationManager.Setup();
 
         //Call SceneManager to load whatever needs to be loaded
         Debug.Log(LogTime.Time() + ": Game Starter Script - Calling Scene Manager to load first Scene...");

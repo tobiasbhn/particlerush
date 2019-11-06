@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   english:
     itemName: Shield
-    itemDescription: This Item spawns a Shield arround to player, which blocks some
+    itemDescription: This Item spawns a Shield arround the player, which blocks some
       Particles
   german:
     itemName: Schild
@@ -24,6 +24,7 @@ MonoBehaviour:
   itemIconAsTexture: {fileID: 2800000, guid: 9f5d4dd0727f6f149a86d81712b85331, type: 3}
   shopScenarioOnActive: {fileID: 11400000, guid: f94e1aab2fa99994d84c3687626bd84c,
     type: 2}
+  itemAnimation: 2
   itemLevels:
   - 1
   - 2

@@ -9,6 +9,7 @@ public abstract class ItemDefinition : ScriptableObject {
     [SerializeField] private Sprite itemIconAsSprite;
     [SerializeField] private Texture itemIconAsTexture;
     [SerializeField] private ScenariosDefault shopScenarioOnActive;
+    [SerializeField] private ItemAnimationType itemAnimation;
     [SerializeField] private List<float> itemLevels = new List<float>();
     [SerializeField] private List<int> itemPrices = new List<int>();
 
@@ -19,14 +20,23 @@ public abstract class ItemDefinition : ScriptableObject {
     public Sprite getIconAsSprite() {
         return itemIconAsSprite;
     }
-    public string getInfoEnglish() {
-        var info = english.itemName.ToString() + ":\n\n" + english.itemDescription.ToString();
+    public string getDescription() {
+        var info = "";
+        if (SaveDataManager.getValue.settingsLanguage == SettingsLanguages.English)
+            info = english.itemDescription;
+        else if (SaveDataManager.getValue.settingsLanguage == SettingsLanguages.German)
+            info = german.itemDescription;
         return info;
     }
-    public string getInfoGerman() {
-        var info = german.itemName.ToString() + ":\n\n" + german.itemDescription.ToString();
+    public string getName() {
+        var info = "";
+        if (SaveDataManager.getValue.settingsLanguage == SettingsLanguages.English)
+            info = english.itemName;
+        else if (SaveDataManager.getValue.settingsLanguage == SettingsLanguages.German)
+            info = german.itemName;
         return info;
     }
+
     public string getCurrendPrice() {
         var LVL = getCurrendLVL();
         var price = itemPrices[LVL].ToString();
@@ -45,6 +55,9 @@ public abstract class ItemDefinition : ScriptableObject {
     }
     public ScenariosDefault GetScenario() {
         return shopScenarioOnActive;
+    }
+    public ItemAnimationType GetAnimationType() {
+        return itemAnimation;
     }
 
 

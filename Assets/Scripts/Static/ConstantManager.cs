@@ -6,25 +6,25 @@ public static class ConstantManager {
 
     //TODO ON PUBLISHING:
         // - ConstantManager.useLocalFile = true;
-        // - ConstantManager.localSaveFileName = Unique name with Verion included
         // - PlayerSettings => Set right Version
         // - PlayerSettings => Check right Game Spelling
         // - PlayerSettings => Game Icons set?
         // - PlayerSettings => Bundle Number correct?
         // - PlayerSettings => App signed?
         // - UnityServices => Ads disable "Development-Mode"
+        // - Constant.Manager => Ads check Ad Time
         // - AdsManager => ID's for the Advertisments right?
         // - SaveDataManager => All default Values set correctly? (e.g. Download-Language)
 
 
     //DEBUG
-    public static readonly bool useLocalSaveFile = false;
-    public static readonly string localSaveFileName = "particleRush_45trtefefgv003";
+    public static readonly bool useLocalSaveFile = true;
+    public static readonly string localSaveFileName = "particleRush_" + Application.version.ToString();
 
     //PLAYER && MESH GENERATION
     //MASS
     public const int PLAYER_MAX_MESH_GENERATION_SIZE = 70;
-    public const int PLAYER_MIN_MESH_GENERATION_SIZE = 12;
+    public const int PLAYER_MIN_MESH_GENERATION_SIZE = 16;
     public const int PLAYER_INGAME_START_MASS = 20;
     public const int PLAYER_MENU_START_MASS = 40;
     public const float PLAYER_MAX_SIZE_DIFFERENCE_TO_END_ANIMATION = 0.3f; //if (sizeDifference >= X) {grow || shrink}
@@ -62,8 +62,8 @@ public static class ConstantManager {
     public static readonly Vector3 PLAYER_DEFAULT_POSITION_IN_WORLD = Camera.main.ScreenToWorldPoint(new Vector3((Screen.width / 2), Screen.height - (Screen.width / 2), Vector3.Distance(Camera.main.gameObject.transform.position, Vector3.zero)));
     //CAMERA SHAKE
     public const float CAMERA_SHAKE_DURATION = 0.5f; //How long should Shake take
-    public const float CAMERA_SHAKE_AMOUNT = 0.5f; //How strong should it shake
-    public const float CAMERA_SHAKE_DECREASE = 1.5f; //How fast should it decrease
+    public const float CAMERA_SHAKE_AMOUNT = 15f; //How strong should it shake
+    public const float CAMERA_SHAKE_DECREASE = 0.8f; //How fast should it decrease
     public const float PP_CHROMATIC_ABBERATION_ESKALATION = 5f;
     public const bool CAMERA_SHAKE_ALLOW_INGAME = true;
     public const bool CAMERA_SHAKE_ALLOW_MENU = true;
@@ -79,20 +79,22 @@ public static class ConstantManager {
     public const float PLAYER_MOVEMENT_SLIDE_TIME_COOLDOWN = 3f;
 
 
-    //PARTICLE SETTINGS
-    public static readonly float PARTICLE_SPAWN_BASE_DELAY_INGAME = 60f / 130; // 60 Seconds / Particle Spawn Count per Minute
-    public static readonly float PARTICLE_SPAWN_BASE_DELAY_MENU = 60f / 20; // 60 Seconds / Particle Spawn Count per Minute
-    public const float PARTICLE_SPAWN_BASE_ROTATION = 5f; // AddTorque(Random.Range(-x, x))
-    public static readonly float PARTICLE_SPAWN_BASE_SPEED_INGAME = CAMERA_SCREEN_HEIGHT_IN_WORLD_SPACE * 7f;
-    public static readonly float PARTICLE_SPAWN_BASE_SPEED_MENU = CAMERA_SCREEN_HEIGHT_IN_WORLD_SPACE * 4f;
-    public const int PARTICLE_SPEED_RANDOM_FACTOR = 20; // speed = PARTICLE_BASE_SPEED / X
+    //PARTICLE SETTINGS    
+    public const float PARTICLE_ROTATION_SPEED = 5f; // AddTorque(Random.Range(-x, x))
     public const int PARTICLE_MASS_TO_ADD_ON_DESTROY_WRONG_PARTICLE = 7;
-    //CHANCES
-    public const int PARTICLE_SHRINK_SPAWN_CHANCE = 15; // in Percent
-    public const int PARTICLE_GOLD_SPAWN_CHANCE = 17; // in Percent
-    //BEHAVIOUR
-    public const bool PARTICLE_ALLOW_SPEED_INCREASE_INGAME = true;
-    public const bool PARTICLE_ALLOW_SPEED_INCREASE_MENU = false;
+    //SPEED
+    public static readonly float PARTICLE_SPAWN_SPEED_MENU = CAMERA_SCREEN_HEIGHT_IN_WORLD_SPACE * 4f; // Particle Speed in Menu
+    public static readonly float PARTICLE_SPAWN_SPEED_INGAME_MIN = CAMERA_SCREEN_HEIGHT_IN_WORLD_SPACE * 5.5f; // Speed will be set between min and max depending on lvl and ingame-progress
+    public static readonly float PARTICLE_SPAWN_SPEED_INGAME_MAX = CAMERA_SCREEN_HEIGHT_IN_WORLD_SPACE * 15f; // Speed will be set between min and max depending on lvl and ingame-progress
+    public const int PARTICLE_SPEED_RANDOM_FACTOR = 20; // speed = PARTICLE_BASE_SPEED / X
+    //SPAWN
+    public static readonly float PARTICLE_SPAWN_DELAY_MENU = 60f / 20; // 60 Seconds / Particle Spawn Count per Minute
+    public static readonly float PARTICLE_SPAWN_DELAY_INGAME_MIN = 60f / 70; // Spawn Delay will be set between min and max depending on lvl and ingame-progress
+    public static readonly float PARTICLE_SPAWN_DELAY_INGAME_MAX = 60f / 500; // Spawn Delay will be set between min and max depending on lvl and ingame-progress
+    //SPAWN-TYPE-CHANCES
+    public const int PARTICLE_SHRINK_SPAWN_CHANCE = 12; // in Percent
+    public const int PARTICLE_GOLD_SPAWN_CHANCE = 12; // in Percent
+
 
     //PROJECTILE
     public const int PROJECTILE_MIN_DAMAGE_REDUCION_PER_PLAYER_MASS = 30; // In Percent, preserves that a projectiles deals at least x Percent damage
@@ -100,13 +102,14 @@ public static class ConstantManager {
     public const float PROJECTILE_MAX_WIDTH = 0.3f;
     public const float PROJECTILE_MIN_WIDTH = 0.03f;
 
+
     //ITEMS
-    public const float ITEM_SPAWN_DELAY = 60f / 10f; // 60 Sconds / Items per Minute
-    public const float ITEM_SPAWN_RANDOM_FACTOR = 0f; // Items could spawn X Seconds befor or after the normal time
+    public const float ITEM_SPAWN_DELAY = 60f / 2.5f; // 60 Sconds / Items per Minute
+    public const float ITEM_SPAWN_RANDOM_FACTOR = 10f; // Items could spawn X Seconds befor or after the normal time
     public const float ITEM_ACTIVE_ANIMATION_SPEED = 2f;
     public const float ITEM_ACTIVE_ANIMATION_CIRCE_SIZE = 0.3f;
-    public const float ITEM_TIME_SCALE_ON_DRAG_DROP = 0.5f;
-
+    public const float ITEM_TIME_SCALE_ON_DRAG_DROP = 0.6f;
+    public const float ITEM_INPUT_DELAY_TO_DRAG = 0.02f;
 
 
     //INPUTS
@@ -117,11 +120,15 @@ public static class ConstantManager {
 
 
     //ADVERTS
-    public const float AD_TIME_TO_PASS_TO_SHOW_AD = 30f;
+    public const float AD_TIME_TO_PASS_TO_SHOW_AD = 300f;
 
 
     //SCORE
     public const int SCORE_PER_SECOND = 100;
     public const int SCORE_PER_PARTICLE = 500;
+    //DIFFICULTY
+    public const int SCORE_DIFFICULTY_MAX_LVL = 10; // Maxiamal Reachable Level
+    public const int SCORE_DIFFICULTY_LVL_BUFFER = 2; // Buffer ontop max Level, so even if max lvl reached it gets harder
+    public const int SCORE_DIFFICULTY_DESIRED_ROUND_TIME = 240; // Desired Time of 1 Round in Seconds
 }
 

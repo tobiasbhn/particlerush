@@ -138,12 +138,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc7f25be32bbfdb46a3d6c2300c359c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allowSpeedIncrease: 0
+  rb: {fileID: 7698446500818657874}
+  meshFilter: {fileID: 7698446500818657873}
+  meshCollider: {fileID: 4952637962547366892}
+  meshRenderer: {fileID: 7698446500818657872}
+  sphereCollider: {fileID: 7698446500818657875}
+  particleSys: {fileID: 4690802698527867698}
+  goldSpecific: {fileID: 0}
+  speed: 0
   particleMass: 0
   particleMesh: {fileID: 0}
   growParticleColor: {r: 0.8584906, g: 0.376602, b: 0.376602, a: 1}
   shrinkParticleColor: {r: 0.3244037, g: 0.8490566, b: 0.69044065, a: 1}
-  diamonParticleColor: {r: 0.5137255, g: 0.75824904, b: 0.91764706, a: 0.4745098}
   goldParticleColor: {r: 0.8962264, g: 0.8270207, b: 0.080322154, a: 1}
   particleType: 0
 --- !u!1001 &2818889087049484879
@@ -218,6 +224,12 @@ PrefabInstance:
 --- !u!4 &4690802698527867701 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7352021401407965562, guid: d7888b86516ced34c9176bb50bf8ef2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2818889087049484879}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4690802698527867698 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7352021401407965565, guid: d7888b86516ced34c9176bb50bf8ef2c,
     type: 3}
   m_PrefabInstance: {fileID: 2818889087049484879}
   m_PrefabAsset: {fileID: 0}

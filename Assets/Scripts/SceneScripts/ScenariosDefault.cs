@@ -53,6 +53,7 @@ public class ScenariosDefault : ScriptableObject {
         SetupPlayerInput();
         SaveDataManager.getValue.gameStatus = gameStatus;
         SaveDataManager.Save();
+        FPS.instance.UpdateShow();
     }
 
     private void SetupTime() {
@@ -199,6 +200,9 @@ public class ScenariosDefault : ScriptableObject {
                 break;
             case UiSceneModis.openSource:
                 UiSceneScript.instance.SetupOpenSource();
+                break;
+            case UiSceneModis.statistics:
+                UiSceneScript.instance.SetupStats();
                 break;
         }
     }

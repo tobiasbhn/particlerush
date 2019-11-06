@@ -53,6 +53,11 @@ public class UiSceneScript : MonoBehaviour {
         UiObjectReferrer.instance.openSourceMain.SetActive(true);
     }
 
+    public void SetupStats() {
+        DisableAllMenus();
+        UiObjectReferrer.instance.statisticsMain.SetActive(true);
+    }
+
     public void DisableAllMenus() {
         UiObjectReferrer.instance.ingameMain.SetActive(false);
         UiObjectReferrer.instance.menuMain.SetActive(false);
@@ -63,5 +68,6 @@ public class UiSceneScript : MonoBehaviour {
         UiObjectReferrer.instance.shopLowerMain.SetActive(false);
         UiObjectReferrer.instance.shopUpperMain.SetActive(false);
         UiObjectReferrer.instance.openSourceMain.SetActive(false);
+        UiObjectReferrer.instance.statisticsMain.SetActive(false);
     }
 }

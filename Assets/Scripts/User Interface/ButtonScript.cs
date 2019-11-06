@@ -56,7 +56,9 @@ public class ButtonScript : MonoBehaviour {
                 break;
         }
         SaveDataManager.Save();
+        VibrationManager.Setup();
         OnSettingsEnable.instance.UpdateButtonUIVibration();
+        VibrationManager.Vibrate();
     }
     public void ButtonSettingsItemPos() {
         switch(SaveDataManager.getValue.settingsItemPosition) {
@@ -66,12 +68,26 @@ public class ButtonScript : MonoBehaviour {
             case SettingsItemPosition.Right:
                 SaveDataManager.getValue.settingsItemPosition = SettingsItemPosition.Left;
                 break;
-            default:
-                SaveDataManager.getValue.settingsItemPosition = SettingsItemPosition.Left;
-                break;
         }
         SaveDataManager.Save();
         OnSettingsEnable.instance.UpdateButtonUIItemPos();
+    }
+    
+    public void ButtonSettingsDebug() {
+        switch(SaveDataManager.getValue.settingsDebug) {
+            case SettingsDebug.off:
+                SaveDataManager.getValue.settingsDebug = SettingsDebug.ingame;
+                break;
+            case SettingsDebug.ingame:
+                SaveDataManager.getValue.settingsDebug = SettingsDebug.everywhere;
+                break;
+            case SettingsDebug.everywhere:
+                SaveDataManager.getValue.settingsDebug = SettingsDebug.off;
+                break;
+        }
+        SaveDataManager.Save();
+        FPS.instance.UpdateShow();
+        OnSettingsEnable.instance.UpdateButtonUIDebug();
     }
 
     public void ButtonRedirectInstagram() {

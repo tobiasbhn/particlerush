@@ -14,31 +14,24 @@ public class UiObjectReferrer : MonoBehaviour {
     //OBJECT-LINKS
     [Header("INGAME")]
     public GameObject ingameMain;
-    public GameObject ingameScoreText;
-    public GameObject ingameGoldText;
-    public GameObject ingamePauseButton;
-    public GameObject ingameSlideContainer;
-    public GameObject ingameSlideContent;
+    public Text ingameScoreText;
+    public Text ingameGoldText;
+    public RectTransform ingameSlideContainer;
+    public RectTransform ingameSlideContent;
+    public GameObject ingameItemSlotsLeft;
+    public GameObject ingameItemSlotsLeft1;
+    public GameObject ingameItemSlotsLeft2;
+    public GameObject ingameItemSlotsLeft3;
+    public GameObject ingameItemSlotsRight;
+    public GameObject ingameItemSlotsRight1;
+    public GameObject ingameItemSlotsRight2;
+    public GameObject ingameItemSlotsRight3;
 
     [Header("MAIN MENU")]
     [Space(30)]
     public GameObject menuMain;
-    [Header("MENU EN")]
     public GameObject menuMainEN;
-    [Space(5)]
-    public GameObject menuPlayButtonEN;
-    public GameObject menuShopButtonEN;
-    public GameObject menuLeaderboardButtonEN;
-    public GameObject menuChallengeButtonEN;
-    public GameObject menuSettingsButtonEN;
-    [Header("MENU DE")]
     public GameObject menuMainDE;
-    [Space(5)]
-    public GameObject menuPlayButtonDE;
-    public GameObject menuShopButtonDE;
-    public GameObject menuLeaderboardButtonDE;
-    public GameObject menuChallengeButtonDE;
-    public GameObject menuSettingsButtonDE;
 
 
 
@@ -51,9 +44,9 @@ public class UiObjectReferrer : MonoBehaviour {
     public GameObject endgameMainEN;
 
     [Space(5)]
-    public GameObject endgameGameOverTextEN;
-    public GameObject endgameHighscoreTextEN;
-    public GameObject endgameScoreTextEN;
+    public Text endgameGameOverTextEN;
+    public Text endgameHighscoreTextEN;
+    public Text endgameScoreTextEN;
     public GameObject endgameReviveEN;
     public GameObject endgameLevelEN;
     [Space(5)]
@@ -69,9 +62,9 @@ public class UiObjectReferrer : MonoBehaviour {
     public GameObject endgameMainDE;
 
     [Space(5)]
-    public GameObject endgameGameOverTextDE;
-    public GameObject endgameHighscoreTextDE;
-    public GameObject endgameScoreTextDE;
+    public Text endgameGameOverTextDE;
+    public Text endgameHighscoreTextDE;
+    public Text endgameScoreTextDE;
     public GameObject endgameReviveDE;
     public GameObject endgameLevelDE;
     [Space(5)]
@@ -91,14 +84,14 @@ public class UiObjectReferrer : MonoBehaviour {
     public GameObject shopUpperMain;
     [Header("SHOP EN")]
     public GameObject shopInterfaceEN;
-    public GameObject shopWelcomeTextEN;
-    public GameObject shopBuyButtonEN;
-    public GameObject shopUnlockButtonEN;
+    public Text shopWelcomeTextEN;
+    public Button shopBuyButtonEN;
+    public Button shopUnlockButtonEN;
     [Header("SHOP DE")]
     public GameObject shopInterfaceDE;
-    public GameObject shopWelcomeTextDE;
-    public GameObject shopBuyButtonDE;
-    public GameObject shopUnlockButtonDE;
+    public Text shopWelcomeTextDE;
+    public Button shopBuyButtonDE;
+    public Button shopUnlockButtonDE;
     [Header("SHOP ITEMS")]
     public List<ItemShopPrefab> shopItems;
 
@@ -109,22 +102,8 @@ public class UiObjectReferrer : MonoBehaviour {
     [Header("PAUSE MENU")]
     [Space(30)]
     public GameObject pauseMain;
-    [Header("PAUSE EN")]
     public GameObject pauseMainEN;
-    [Space(5)]
-    public GameObject pauseResumeButtonEN;
-    public GameObject pauseMenuButtonEN;
-    public GameObject pauseShopButtonEN;
-    public GameObject pauseSettingsButtonEN;
-    public GameObject pauseRestartButtonEN;
-    [Header("PAUSE DE")]
     public GameObject pauseMainDE;
-    [Space(5)]
-    public GameObject pauseResumeButtonDE;
-    public GameObject pauseMenuButtonDE;
-    public GameObject pauseShopButtonDE;
-    public GameObject pauseSettingsButtonDE;
-    public GameObject pauseRestartButtonDE;
 
 
 
@@ -134,29 +113,39 @@ public class UiObjectReferrer : MonoBehaviour {
     [Space(30)]
     public GameObject settingsMain;
     public GameObject openSourceMain;
+    public ScrollRect settingsScrollcontainer;
     [Header("SETTINGS EN")]
     public GameObject settingsInterfaceEN;
     public GameObject settingsMainEN;
     [Space(5)]
-    public GameObject settingsSoundTextEN;
-    public GameObject settingsVibrationTextEN;
-    public GameObject settingsItemPosTextEN;
-    public GameObject settingsGooglePlayTextEN;
+    public Text settingsSoundTextEN;
+    public Text settingsVibrationTextEN;
+    public Text settingsItemPosTextEN;
+    public Text settingsGooglePlayTextEN;
+    public Text settingsDebugTextEN;
 
     [Header("SETTINGS DE")]
     public GameObject settingsInterfaceDE;
     public GameObject settingsMainDE;
     [Space(5)]
-    public GameObject settingsSoundTextDE;
-    public GameObject settingsVibrationTextDE;
-    public GameObject settingsItemPosTextDE;
-    public GameObject settingsGooglePlayTextDE;
+    public Text settingsSoundTextDE;
+    public Text settingsVibrationTextDE;
+    public Text settingsItemPosTextDE;
+    public Text settingsGooglePlayTextDE;
+    public Text settingsDebugTextDE;
 
     [Header("ADD NOTIFICATION")]
     [Space(30)]
     public GameObject notificationAdsMain;
     public GameObject notificationAdsDE;
     public GameObject notificationAdsEN;
+
+    [Header("STATISTICS")]
+    [Space(30)]
+    public GameObject statisticsMain;
+    public Text statisticsTextMain;
+    public GameObject staticsInterfaceDE;
+    public GameObject staticsInterfaceEN;
 
     void Awake() {
         instance = this;
@@ -174,7 +163,8 @@ public class UiObjectReferrer : MonoBehaviour {
             settingsMainEN,
             notificationAdsEN,
             endgameMainEN,
-            shopInterfaceEN
+            shopInterfaceEN,
+            staticsInterfaceEN
         });
         objectsDE.AddRange(new List<GameObject>() {
             //MENU
@@ -184,7 +174,8 @@ public class UiObjectReferrer : MonoBehaviour {
             settingsMainDE,
             notificationAdsDE,
             endgameMainDE,
-            shopInterfaceDE
+            shopInterfaceDE,
+            staticsInterfaceDE
         });
     }
 }

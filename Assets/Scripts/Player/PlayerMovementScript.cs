@@ -17,8 +17,8 @@ public class PlayerMovementScript : MonoBehaviour {
     [HideInInspector] public float lastSwipeTime;
 
     // BEHAVIOUR
-    public bool allowSwipe = false;
-    public bool allowTab = false;
+    [HideInInspector] public bool allowSwipe = false;
+    [HideInInspector] public bool allowTab = false;
     [HideInInspector] public bool forceCenterPosition = false;
 
     void Awake() {
@@ -133,10 +133,10 @@ public class PlayerMovementScript : MonoBehaviour {
 
     private void UpdateSlideBar() {
         if (allowSwipe) {
-            var fullWidth = UiObjectReferrer.instance.ingameSlideContainer.GetComponent<RectTransform>().rect.width;
+            var fullWidth = UiObjectReferrer.instance.ingameSlideContainer.rect.width;
             var timePassedInPercent = 100 * (Time.time - lastSwipeTime) / ConstantManager.PLAYER_MOVEMENT_SLIDE_TIME_COOLDOWN;
             timePassedInPercent = timePassedInPercent > 100 ? 100 : timePassedInPercent;
-            var contentRectTransform = UiObjectReferrer.instance.ingameSlideContent.GetComponent<RectTransform>();
+            var contentRectTransform = UiObjectReferrer.instance.ingameSlideContent;
             contentRectTransform.sizeDelta = new Vector2((fullWidth / 100 * timePassedInPercent), contentRectTransform.sizeDelta.y);
         }
     }

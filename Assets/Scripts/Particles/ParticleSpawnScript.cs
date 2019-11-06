@@ -10,15 +10,12 @@ public class ParticleSpawnScript : MonoBehaviour {
     public GameObject particlePrefab;
     public GameObject particleDirectory;
 
-    //BEHAVIOUR
-    [HideInInspector] public bool allowSpeedIncrease = false;
-
     //SPAWN
     private float lastParticleSpawnTime;
-    [HideInInspector] public List<GameObject> instantiatedParticles = new List<GameObject>();
+    [HideInInspector] public List<ParticleScript> instantiatedParticles = new List<ParticleScript>();
     [HideInInspector] public ParticleSpawnModi spawnModi;
-    [HideInInspector] public float spawnBaseDelay = 0;
-    [HideInInspector] public float spawnBaseSpeed = 0;
+    [HideInInspector] public float spawnDelay = 0;
+    [HideInInspector] public float spawnSpeed = 0;
 
     void Awake() {
         instance = this;
@@ -30,10 +27,9 @@ public class ParticleSpawnScript : MonoBehaviour {
     //SPAWN BEHAVIOUR
     void Update() {
         if (spawnModi != ParticleSpawnModi.none) {
-            var difficultFactor = 0;
-            var spawnDelay = allowSpeedIncrease ? spawnBaseDelay - difficultFactor : spawnBaseDelay;
+            var delay = spawnDelay + ScoreScript.instance.GetParticleSpawnFactor();
 
-            if (lastParticleSpawnTime + spawnDelay < Time.time) {
+            if (lastParticleSpawnTime + delay < Time.time) {
                 lastParticleSpawnTime = Time.time;
                 SpawnParticle();
             }
@@ -52,7 +48,7 @@ public class ParticleSpawnScript : MonoBehaviour {
         var particleScript = spawnedParticle.GetComponent<ParticleScript>();
         particleScript.particleType = DefineType();
         particleScript.speed = DefineSpeed();
-        instantiatedParticles.Add(spawnedParticle);
+        instantiatedParticles.Add(particleScript);
         RuntimeDataManager.value.particlesSpawned++;
     }
 
@@ -99,25 +95,15 @@ public class ParticleSpawnScript : MonoBehaviour {
 
     //DEFINE SPEED
     public float DefineSpeed() {
-        //random factor, so not all particles fly next to each other
-        var randomFactor = Random.Range(
-            -spawnBaseSpeed / ConstantManager.PARTICLE_SPEED_RANDOM_FACTOR,
-            spawnBaseSpeed / ConstantManager.PARTICLE_SPEED_RANDOM_FACTOR
-        );
-        //difficult factor, so that the Particles gets faster according to level
-        var difficultFactor = 0f;
-
-        //add everything together
-        var returnSpeed = spawnBaseSpeed + randomFactor;
-        returnSpeed = allowSpeedIncrease ? returnSpeed + difficultFactor : returnSpeed;
-
-        return returnSpeed;
+        var speed = spawnSpeed + ScoreScript.instance.GetParticleSpeedFactor();
+        speed += Random.Range(-speed / ConstantManager.PARTICLE_SPEED_RANDOM_FACTOR, speed / ConstantManager.PARTICLE_SPEED_RANDOM_FACTOR); 
+        return speed;
     }
 
     //DESTROY BEHAVIOUR
     public void DestroyAllParticles() {
-        foreach (GameObject particle in instantiatedParticles) {
-            particle.GetComponent<ParticleScript>().Destroy(true, false, false);
+        foreach (ParticleScript particle in instantiatedParticles) {
+            particle.Destroy(true, false, false);
         }
         instantiatedParticles.Clear();
     }
