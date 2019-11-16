@@ -19,7 +19,7 @@ public static class ConstantManager {
 
     //DEBUG
     public static readonly bool useLocalSaveFile = true;
-    public static readonly string localSaveFileName = "particleRush_" + Application.version.ToString();
+    public static readonly string localSaveFileName = "particleRush"; //_" + Application.version.ToString();
 
     //PLAYER && MESH GENERATION
     //MASS
@@ -59,12 +59,12 @@ public static class ConstantManager {
     public static readonly float CAMERA_SCREEN_HEIGHT_IN_WORLD_SPACE = 2.0f * CAMERA_DISTANCE_PLAYER * Mathf.Tan(Camera.main.fieldOfView * 0.5f * Mathf.Deg2Rad);
     public static readonly float CAMERA_SCREEN_WIDTH_IN_WORD_SPACE = CAMERA_SCREEN_HEIGHT_IN_WORLD_SPACE * Camera.main.aspect;
     public static readonly float PLAYER_AMOUNT_TO_GROW_PER_MASS_IN_WORLD_SPACE = CAMERA_SCREEN_WIDTH_IN_WORD_SPACE / PLAYER_MAX_MESH_GENERATION_SIZE;
-    public static readonly Vector3 PLAYER_DEFAULT_POSITION_IN_WORLD = Camera.main.ScreenToWorldPoint(new Vector3((Screen.width / 2), Screen.height - (Screen.width / 2), Vector3.Distance(Camera.main.gameObject.transform.position, Vector3.zero)));
+    public static readonly Vector3 PLAYER_DEFAULT_POSITION_IN_WORLD = Camera.main.ScreenToWorldPoint(new Vector3((Screen.width / 2), Screen.height - (Screen.width * .5f), Vector3.Distance(Camera.main.gameObject.transform.position, Vector3.zero)));
     //CAMERA SHAKE
     public const float CAMERA_SHAKE_DURATION = 0.5f; //How long should Shake take
     public const float CAMERA_SHAKE_AMOUNT = 15f; //How strong should it shake
     public const float CAMERA_SHAKE_DECREASE = 0.8f; //How fast should it decrease
-    public const float PP_CHROMATIC_ABBERATION_ESKALATION = 5f;
+    public const float PP_CHROMATIC_ABBERATION_ESKALATION = 1.8f;
     public const bool CAMERA_SHAKE_ALLOW_INGAME = true;
     public const bool CAMERA_SHAKE_ALLOW_MENU = true;
     //UI
@@ -97,7 +97,8 @@ public static class ConstantManager {
 
 
     //PROJECTILE
-    public const int PROJECTILE_MIN_DAMAGE_REDUCION_PER_PLAYER_MASS = 30; // In Percent, preserves that a projectiles deals at least x Percent damage
+    public const int PROJECTILE_MIN_DAMAGE_REDUCION_PER_PLAYER_MASS = 20; // In Percent, preserves that a projectiles deals at least x Percent damage
+    public const float PROJECTILE_DAMAGE_FACTOR = 1.8f;
     public const float PROJECTILE_MAX_LIFE_TIME = 1f; // Time in Seconds
     public const float PROJECTILE_MAX_WIDTH = 0.3f;
     public const float PROJECTILE_MIN_WIDTH = 0.03f;
@@ -117,19 +118,36 @@ public static class ConstantManager {
     public const bool INPUT_ALLOW_SWIPE_MENU = false;
     public const bool INPUT_ALLOW_TAP_INGAME = true;
     public const bool INPUT_ALLOW_TAP_MENU = false;
+    public const float REVIVE_TIME = 5f;
 
 
     //ADVERTS
-    public const float AD_TIME_TO_PASS_TO_SHOW_AD = 300f;
+    public const float AD_TIME_TO_PASS_TO_SHOW_AD = 200f;
 
 
     //SCORE
     public const int SCORE_PER_SECOND = 100;
     public const int SCORE_PER_PARTICLE = 500;
+    public const float SCORE_MULTIPLY_PER_LEVEL = 0.0002f; // score *= 1 + lvl * X (Example X = 1: lvl 1 - multiply 1.1; lvl 2 - multiply 1.2; ....)
+    // USE ABOVE CAREFULLY BECAUSE THE SCORE GETS MULTIPLYED EACH FRAME EXPONETIALLY
+
+    //LEVEL
+    public const int LEVEL_MAX_LEVEL = 10;
+    public static readonly int[] LEVEL_POINTS = new int[LEVEL_MAX_LEVEL] {
+        100, 250, 500, 1000, 2000, 3500, 5000, 7500, 10000, 15000
+    };
+
+
+    
     //DIFFICULTY
-    public const int SCORE_DIFFICULTY_MAX_LVL = 10; // Maxiamal Reachable Level
     public const int SCORE_DIFFICULTY_LVL_BUFFER = 2; // Buffer ontop max Level, so even if max lvl reached it gets harder
-    public const int SCORE_DIFFICULTY_DESIRED_ROUND_TIME = 240; // Desired Time of 1 Round in Seconds
+    public const int SCORE_DIFFICULTY_DESIRED_ROUND_TIME = 150; // Desired Time of 1 Round in Seconds
     public const int SCORE_DIFFICULTY_TIME_TO_SOFT_INTRODUCE_AFTER_REVIVE = 60; // Seconds to get back on real speed;
+
+
+    // AUDIO
+    public const int AUDIO_LOW_PASS_MIN_VALUE = 250;
+    public const int AUDIO_LOW_PASS_MAX_VALUE = 5000;
+    public const float AUDIO_LOW_PASS_CHANGE_DURATION = .3f;
 }
 

@@ -18,6 +18,7 @@ public class ScoreScript : MonoBehaviour {
     [HideInInspector] public int gold;
     private float increaseDifficultiAfterRevive = 0;
     private float previousDifficultiFactor = 0;
+    [HideInInspector] public bool newHighscore = false;
 
     void Awake() {
         instance = this;
@@ -27,14 +28,21 @@ public class ScoreScript : MonoBehaviour {
         if (countScore) {
             // Calculate Score
             currentScore += ConstantManager.SCORE_PER_SECOND * Time.deltaTime;
+            var factor = 1 + SaveDataManager.getValue.currentLevel * ConstantManager.SCORE_MULTIPLY_PER_LEVEL * difficultFactor;
+            currentScore = currentScore * factor;
             RuntimeDataManager.value.score = currentScore;
             // Calculate Highscore
-            var currentHighscore = Mathf.Max(SaveDataManager.getValue.highscore, RuntimeDataManager.instance.preRevive.score + RuntimeDataManager.instance.postRevive.score);
-            RuntimeDataManager.value.highscore = currentHighscore;
+            var score = RuntimeDataManager.instance.preRevive.score + RuntimeDataManager.instance.postRevive.score;
+            var _highscore = SaveDataManager.getValue.highscore;
+            if (_highscore < score) {
+                _highscore = score;
+                newHighscore = true;
+            }
+            RuntimeDataManager.value.highscore = _highscore;
             // Update UI
             var goldStr = gold.ToString();
-            var score = ((int)RuntimeDataManager.instance.postRevive.score + (int)RuntimeDataManager.instance.preRevive.score).ToString("000000");
-            UiObjectReferrer.instance.ingameScoreText.text = score;
+            var scoreStr = ((int)score).ToString("000000");
+            UiObjectReferrer.instance.ingameScoreText.text = scoreStr;
             UiObjectReferrer.instance.ingameGoldText.text = goldStr;
 
             // Calculate Difficult Factor
@@ -51,7 +59,7 @@ public class ScoreScript : MonoBehaviour {
     private void CalculateDifficultFactor() {
         // Some Function From Excel
         // (100 * ((((MAX_LVL + LVL_BUFFER) - CURR_LVL) / DES_TIME * CURR_TIME) + CURR_LVL) / (MAX_LVL + LVL_BUFFER)) / 100
-        int absMax = ConstantManager.SCORE_DIFFICULTY_MAX_LVL + ConstantManager.SCORE_DIFFICULTY_LVL_BUFFER;
+        int absMax = ConstantManager.LEVEL_MAX_LEVEL + ConstantManager.SCORE_DIFFICULTY_LVL_BUFFER;
         int lvlTillAbsMax = absMax - SaveDataManager.getValue.currentLevel;
         float dependOnTime = (float)lvlTillAbsMax / (float)ConstantManager.SCORE_DIFFICULTY_DESIRED_ROUND_TIME * (Time.time - startTime);
         float shiftWithLVL = dependOnTime + SaveDataManager.getValue.currentLevel;
@@ -92,6 +100,7 @@ public class ScoreScript : MonoBehaviour {
         countScore = true;
         startTime = Time.time;
         currentScore = 0;
+        newHighscore = false;
         increaseDifficultiAfterRevive = 0;
         previousDifficultiFactor = RuntimeDataManager.instance.preRevive.difficultyFactor;
         gold = RuntimeDataManager.instance.preRevive.goldMassCollected;

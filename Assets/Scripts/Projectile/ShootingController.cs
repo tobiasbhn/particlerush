@@ -37,7 +37,7 @@ public class ShootingController : MonoBehaviour {
         var addForce = direction * 800;
 
         //Get Damage
-        var oneHundretOfMass = (100f / ((float)ConstantManager.PLAYER_MAX_MESH_GENERATION_SIZE - (float)ConstantManager.PLAYER_MIN_MESH_GENERATION_SIZE));
+        var oneHundretOfMass = (100f / ((float)ConstantManager.PLAYER_MAX_MESH_GENERATION_SIZE - (float)ConstantManager.PLAYER_MIN_MESH_GENERATION_SIZE)); // 100 Percent dividet to the Mass that is possible to gain
         var massInPercent = oneHundretOfMass * (PlayerScript.instance.currentMass - ConstantManager.PLAYER_MIN_MESH_GENERATION_SIZE);
         massInPercent = massInPercent <= ConstantManager.PROJECTILE_MIN_DAMAGE_REDUCION_PER_PLAYER_MASS ? ConstantManager.PROJECTILE_MIN_DAMAGE_REDUCION_PER_PLAYER_MASS : massInPercent;
 

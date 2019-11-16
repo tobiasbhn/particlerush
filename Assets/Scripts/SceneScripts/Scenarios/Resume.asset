@@ -21,8 +21,11 @@ MonoBehaviour:
   itemSpawnModi: 1
   uiModi: 2
   shakeModi: 2
+  accountInfo: 0
+  levelInfo: 0
   reviveModi: 0
   adsModi: 0
   timeModi: 1
   runtimeDataModi: 0
   scoreModi: 3
+  lowPassModi: 1

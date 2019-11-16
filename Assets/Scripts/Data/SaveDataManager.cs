@@ -35,6 +35,10 @@ public static class SaveDataManager {
             file.Close();
         }
         firstDataLoaded = true;
+        if (OEAccountInfo.instance != null)
+            OEAccountInfo.instance.UpdateAccountInfo();
+        if (OELevelInfo.instance != null)
+            OELevelInfo.instance.UpdateInfos();
     }
 }
 
@@ -63,7 +67,7 @@ public class SaveData {
     public int statsTotalGoldParticlesSpawned = 0;
     public int statsTotalGoldParticlesDestroyed = 0;
     public int statsTotalGoldParticlesCollected = 0;
-    public int statsTotalGainedGold = 0; //-------------------------
+    public int statsTotalGainedGold = 0;
     // Projectiles
     public int statsTotalProjectilesFired = 0;
     public int statsTotalProjectilesHit = 0;
@@ -78,16 +82,20 @@ public class SaveData {
     // Score
     public float highscore = 0f;
     public float scoreTotal = 0f;
+    public int currentGold = 0;
     public int currentLevel = 0;
+    public int currentLevelPoints = 0;
+    public int currentRemainingLevelPoints = 0;
 
 
     //PROCESSES
     public bool tutorialFinished = false;
     public bool notificationAdsFinished = false;
+    public bool languageManualySet = false;
 
     //SETTINGS
     public SettingsLanguages settingsLanguage = SettingsLanguages.English;
-    public SettingsSounds settingsSound = SettingsSounds.Off;
+    public SettingsSounds settingsSound = SettingsSounds.All;
     public SettingsVibration settingsVibration = SettingsVibration.Short;
     public SettingsItemPosition settingsItemPosition = SettingsItemPosition.Right;
     public SettingsDebug settingsDebug = SettingsDebug.off;

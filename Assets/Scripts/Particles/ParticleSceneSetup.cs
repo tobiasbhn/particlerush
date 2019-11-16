@@ -27,23 +27,4 @@ public class ParticleSceneSetup : MonoBehaviour {
         ParticleSpawnScript.instance.spawnDelay = 0;
         ParticleSpawnScript.instance.spawnSpeed = 0;
     }
-
-    public void SpawnModiNone() {
-        ParticleSpawnScript.instance.spawnModi = ParticleSpawnModi.none;
-    }
-    public void SpawnModiAll() {
-        ParticleSpawnScript.instance.spawnModi = ParticleSpawnModi.all;
-    }
-    public void SpawnModiGold() {
-        ParticleSpawnScript.instance.spawnModi = ParticleSpawnModi.onlyGold;
-    }
-    public void SpawnModiMass() {
-        ParticleSpawnScript.instance.spawnModi = ParticleSpawnModi.onlyMassRelative;
-    }
-    public void SpawnModiGrow() {
-        ParticleSpawnScript.instance.spawnModi = ParticleSpawnModi.onlyNorm;
-    }
-    public void SpawnModiShrink() {
-        ParticleSpawnScript.instance.spawnModi = ParticleSpawnModi.onlyShrink;
-    }
 }

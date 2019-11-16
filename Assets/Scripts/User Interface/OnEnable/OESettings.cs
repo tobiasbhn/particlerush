@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OnSettingsEnable : MonoBehaviour {
+public class OESettings : MonoBehaviour {
 
     //INSTANCE
-    public static OnSettingsEnable instance;
+    public static OESettings instance;
 
     //VARS
     private string[] buttonPrefixesDE;

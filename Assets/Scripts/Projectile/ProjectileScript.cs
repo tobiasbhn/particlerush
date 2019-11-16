@@ -7,6 +7,10 @@ public class ProjectileScript : MonoBehaviour {
     [HideInInspector] public float damageToDeal;
     private float spawnTime;
 
+    void Awake() {
+        SoundScript.Shoot();
+    }
+
     void Start() {
         spawnTime = Time.time;
         DefineWidth();
@@ -35,7 +39,7 @@ public class ProjectileScript : MonoBehaviour {
         if (tag == "Particle" && other.GetType() == typeof(SphereCollider)) {
             RuntimeDataManager.value.projectilesHitTotal++;
             //Deal 100% Damage if Players Mass is Huge, deal less Damage if Players Mass is not that big
-            other.gameObject.GetComponent<ParticleScript>().ShrinkParticle(1f * damageToDeal / 100);
+            other.gameObject.GetComponent<ParticleScript>().ShrinkParticle(ConstantManager.PROJECTILE_DAMAGE_FACTOR * damageToDeal / 100);
             GameObject.Destroy(this.transform.gameObject);
         }
     }

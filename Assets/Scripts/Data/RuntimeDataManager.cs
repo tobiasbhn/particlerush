@@ -67,12 +67,35 @@ public class RuntimeDataManager : MonoBehaviour {
         SaveDataManager.getValue.statsTotalInputSwipe += value.inputSwipeCount;
         SaveDataManager.getValue.statsTotalInputTab += value.inputTabCount;
         // Time
-        SaveDataManager.getValue.totalTimeIngame += Time.realtimeSinceStartup - value.startTime;
+        value.roundTime = Time.realtimeSinceStartup - value.startTime;
+        SaveDataManager.getValue.totalTimeIngame += value.roundTime;
         // Score
         SaveDataManager.getValue.highscore = value.highscore;
         SaveDataManager.getValue.scoreTotal += value.score;
+        SaveDataManager.getValue.currentGold += value.goldMassCollected;
+        value.levelPointsForDestroy = value.normalParticlesDestroyed + value.goldParticlesCollected + value.shrinkParticlesCollected;
+        value.levelPointsForDistance = (int)value.roundTime;
+        SaveDataManager.getValue.currentLevelPoints += value.levelPointsForDestroy + value.levelPointsForDistance;
+        var lvlCalculation = GetCurrentLevel();
+        SaveDataManager.getValue.currentLevel = lvlCalculation[0];
+        SaveDataManager.getValue.currentRemainingLevelPoints = lvlCalculation[1];
 
         SaveDataManager.Save();
+        Debug.Log("LVL: " + SaveDataManager.getValue.currentLevel.ToString() + "; Points: " + SaveDataManager.getValue.currentLevelPoints.ToString() + "; Remaining: " + SaveDataManager.getValue.currentRemainingLevelPoints.ToString());
+    }
+
+    private int[] GetCurrentLevel() {
+        var totalPoints = SaveDataManager.getValue.currentLevelPoints;
+        int level = 0;
+        int remainingPoints = totalPoints;
+        foreach (int i in ConstantManager.LEVEL_POINTS) {
+            totalPoints -= i;
+            if (totalPoints >= 0) {
+                level++;
+                remainingPoints = totalPoints;
+            } else {break;}
+        }
+        return new int[] {level, remainingPoints};
     }
 }
 
@@ -106,8 +129,11 @@ public class RuntimeData {
     public int inputTabCount = 0;
     // Time
     public float startTime = 0f;
+    public float roundTime = 0f;
     // Score
     public float score = 0f;
     public float highscore = 0f;
     public float difficultyFactor = 0f;
+    public int levelPointsForDestroy = 0;
+    public int levelPointsForDistance = 0;
 }

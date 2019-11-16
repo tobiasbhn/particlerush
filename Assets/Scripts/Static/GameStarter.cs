@@ -29,6 +29,11 @@ public class GameStarter : MonoBehaviour {
 
         //Set Language
         Debug.Log(LogTime.Time() + ": Game Starter Script - Going to apply current Language...");
+        if (SaveDataManager.getValue.languageManualySet == false) {
+            var autoLanguage = Application.systemLanguage == SystemLanguage.German ? SettingsLanguages.German : SettingsLanguages.English;
+            SaveDataManager.getValue.settingsLanguage = autoLanguage;
+            SaveDataManager.Save();
+        }
         LanguageScript.UpdateLanguage();
         Debug.Log(LogTime.Time() + ": Game Starter Script - Language Set...");
 

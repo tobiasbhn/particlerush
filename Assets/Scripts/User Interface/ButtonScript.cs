@@ -16,6 +16,7 @@ public class ButtonScript : MonoBehaviour {
     public void ButtonSettingLanguage() {
         var lang = SaveDataManager.getValue.settingsLanguage;
         SaveDataManager.getValue.settingsLanguage = lang == SettingsLanguages.English ? SettingsLanguages.German : SettingsLanguages.English;
+        SaveDataManager.getValue.languageManualySet = true;
         SaveDataManager.Save();
         LanguageScript.UpdateLanguage();
     }
@@ -23,19 +24,23 @@ public class ButtonScript : MonoBehaviour {
         switch(SaveDataManager.getValue.settingsSound) {
             case SettingsSounds.All:
                 SaveDataManager.getValue.settingsSound = SettingsSounds.Sound;
+                SoundScript.instance.SoundOnlySound();
                 break;
             case SettingsSounds.Sound:
                 SaveDataManager.getValue.settingsSound = SettingsSounds.Off;
+                SoundScript.instance.SoundOff();
                 break;
             case SettingsSounds.Off:
                 SaveDataManager.getValue.settingsSound = SettingsSounds.All;
+                SoundScript.instance.SoundOn();
                 break;
             default:
                 SaveDataManager.getValue.settingsSound = SettingsSounds.All;
+                SoundScript.instance.SoundOn();
                 break;
         }
         SaveDataManager.Save();
-        OnSettingsEnable.instance.UpdateButtonUISound();
+        OESettings.instance.UpdateButtonUISound();
     }
     public void ButtonSettingsVibration() {
         switch(SaveDataManager.getValue.settingsVibration) {
@@ -57,7 +62,7 @@ public class ButtonScript : MonoBehaviour {
         }
         SaveDataManager.Save();
         VibrationManager.Setup();
-        OnSettingsEnable.instance.UpdateButtonUIVibration();
+        OESettings.instance.UpdateButtonUIVibration();
         VibrationManager.Vibrate();
     }
     public void ButtonSettingsItemPos() {
@@ -70,7 +75,7 @@ public class ButtonScript : MonoBehaviour {
                 break;
         }
         SaveDataManager.Save();
-        OnSettingsEnable.instance.UpdateButtonUIItemPos();
+        OESettings.instance.UpdateButtonUIItemPos();
     }
     
     public void ButtonSettingsDebug() {
@@ -87,12 +92,16 @@ public class ButtonScript : MonoBehaviour {
         }
         SaveDataManager.Save();
         FPS.instance.UpdateShow();
-        OnSettingsEnable.instance.UpdateButtonUIDebug();
+        OESettings.instance.UpdateButtonUIDebug();
     }
 
     public void ButtonRedirectInstagram() {
         //open Instagram on Device
         Application.OpenURL("https://www.instagram.com/tobias.bhn/");
+    }
+    public void ButtonRedirectTwitter() {
+        // open Twitter on Device
+        Application.OpenURL("https://twitter.com/tobias_bhn");
     }
     public void ButtonSpecialAds() {
         //Show Rewarded Ad

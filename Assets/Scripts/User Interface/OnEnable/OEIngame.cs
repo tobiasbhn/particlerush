@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OnIngameEnable : MonoBehaviour {
+public class OEIngame : MonoBehaviour {
     void OnEnable() {
         SetupItemSlots();
     }
@@ -15,5 +15,8 @@ public class OnIngameEnable : MonoBehaviour {
             UiObjectReferrer.instance.ingameItemSlotsLeft.SetActive(true);
             UiObjectReferrer.instance.ingameItemSlotsRight.SetActive(false);
         }
+        UiObjectReferrer.instance.ingameGoldText.gameObject.SetActive(true);
+        UiObjectReferrer.instance.ingameScoreText.gameObject.SetActive(true);
+        UiObjectReferrer.instance.ingamePauseButton.SetActive(true);
     }
 }

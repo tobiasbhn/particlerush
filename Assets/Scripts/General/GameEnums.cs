@@ -5,7 +5,7 @@ public enum GameStatus {loading, tutorial, menu, ingame, endgame, shop, leaderbo
 
 //PARTICLES / ITEMS & SPAWN
 public enum ParticleType {grow, shrink, gold};
-public enum ParticleSpawnModi {none, all, onlyNorm, onlyShrink, onlyGold, onlyMassRelative};
+public enum ParticleSpawnModi {none, all, onlyNorm, onlyShrink, onlyGold, onlyMassRelative, onlySpecial};
 public enum ItemActionOnDrop {slot1, slot2, slot3, inactive, activate, blocked};
 public enum ItemAnimationType {none, circle, line};
 
@@ -27,9 +27,13 @@ public enum ItemSpawnSceneModi {refuse, allow };
 public enum PlayerInputSceneModis {refuse, allow, onlyShoot, onlyMove };
 public enum ItemInputSceneModis {refuse, allow };
 public enum TimeSceneModis {keepCurrent, normal, stop };
-public enum UiSceneModis {keepCurrent, disabled, ingame, menu, pause, shop, settings, adNotification, endgame, openSource, statistics };
+public enum UiSceneModis {keepCurrent, disabled, ingame, menu, pause, shop, settings, adNotification, endgame, openSource, statistics, tutorial };
+public enum UiShowAccountInfo {disabled, show};
+public enum UiShowLevelInfo {disabled, show};
 public enum ShakeSceneModis {keepCurrent, disabled, ingame, menu };
 public enum ScoreSceneModis {keepCurrent, disabled, activeReset, active };
 public enum RuntimeDataSceneModi {keepCurrent, ingame, endgame };
 public enum AdsSceneModis {refuse, allow };
 public enum ReviveSceneModis {keepCurrent, reset };
+public enum AudioLowPassModi {lowPass, normal };
+public enum TutorialActionModie {disabled, start};

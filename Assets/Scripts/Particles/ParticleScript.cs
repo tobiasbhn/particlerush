@@ -118,14 +118,14 @@ public class ParticleScript : MonoBehaviour {
 
     //DESTROY ON INVISIBLE
     private void OnBecameInvisible() {
-        Destroy(false, true, false);
+        Destroy(false, true, false, false);
     }
 
     //DESTROY DEKLARATION
     public void Destroy(bool _withAnimation) {
-        Destroy(_withAnimation, true, true);
+        Destroy(_withAnimation, true, true, true);
     }
-    public void Destroy(bool _withAnimation, bool _deleteFromList, bool _applyPlayerGrow) {
+    public void Destroy(bool _withAnimation, bool _deleteFromList, bool _applyPlayerGrow, bool _withSound) {
         if (!alreadyDestroyed) {
             alreadyDestroyed = true;
             //Delete that one Particle from the Particles-Array - somtimes they already have been removed
@@ -137,7 +137,12 @@ public class ParticleScript : MonoBehaviour {
                 if (particleSys != null) {
                     particleSys.Play();
                 }
-                VibrationManager.Vibrate();
+                if (particleType == ParticleType.grow) {
+                    StartCoroutine(delayedVibration());
+                }
+            }
+            if (_withSound) {
+                SoundScript.ExplosionSmall();
             }
             //Let Player Grow if an "shrink"-Particle gets Detroyed
             if (_applyPlayerGrow && particleType == ParticleType.shrink) {
@@ -149,5 +154,10 @@ public class ParticleScript : MonoBehaviour {
             sphereCollider.enabled = false;
             GameObject.Destroy(this.gameObject, 1f);
         }
+    }
+
+    private IEnumerator delayedVibration() {
+        yield return new WaitForSecondsRealtime(.17f);
+        VibrationManager.Vibrate();
     }
 }

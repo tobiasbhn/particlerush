@@ -74,6 +74,15 @@ public class ParticleSpawnScript : MonoBehaviour {
                     RuntimeDataManager.value.normalParticlesSpawned++;
                     return ParticleType.grow;
                 }
+            case ParticleSpawnModi.onlySpecial:
+                var totalPercent = ConstantManager.PARTICLE_GOLD_SPAWN_CHANCE + ConstantManager.PARTICLE_SHRINK_SPAWN_CHANCE;
+                if (Random.Range(0, totalPercent) < ConstantManager.PARTICLE_GOLD_SPAWN_CHANCE) {
+                    RuntimeDataManager.value.goldParticlesSpawned++;
+                    return ParticleType.gold;
+                } else {
+                    RuntimeDataManager.value.shrinkParticlesSpawned++;
+                    return ParticleType.shrink;
+                }
             default:
                 spawnModi = ParticleSpawnModi.all;
                 return DefineNormalType();
@@ -103,7 +112,7 @@ public class ParticleSpawnScript : MonoBehaviour {
     //DESTROY BEHAVIOUR
     public void DestroyAllParticles() {
         foreach (ParticleScript particle in instantiatedParticles) {
-            particle.Destroy(true, false, false);
+            particle.Destroy(true, false, false, true);
         }
         instantiatedParticles.Clear();
     }

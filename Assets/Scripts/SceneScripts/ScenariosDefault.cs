@@ -18,6 +18,8 @@ public class ScenariosDefault : ScriptableObject {
     [Header("UI")]
     [SerializeField] private UiSceneModis uiModi;
     [SerializeField] private ShakeSceneModis shakeModi;
+    [SerializeField] private UiShowAccountInfo accountInfo;
+    [SerializeField] private UiShowLevelInfo levelInfo;
     [Header("GAME LOOP")]
     [SerializeField] private ReviveSceneModis reviveModi;
     [SerializeField] private AdsSceneModis adsModi;
@@ -25,6 +27,10 @@ public class ScenariosDefault : ScriptableObject {
     [Header("DATA")]
     [SerializeField] private RuntimeDataSceneModi runtimeDataModi;
     [SerializeField] private ScoreSceneModis scoreModi;
+    [Header("AUDIO")]
+    [SerializeField] private AudioLowPassModi lowPassModi;
+    [Header("TUTORIAL")]
+    [SerializeField] private TutorialActionModie tutorialMode;
 
     public virtual void callScenario() {
         //Set above Modis and call scripts
@@ -47,10 +53,15 @@ public class ScenariosDefault : ScriptableObject {
         SetupParticleSpawnModi();
         SetupItemSpawnModi();
         SetupUI();
+        SetupAccountInfo();
+        SetupLevelInfo();
         SetupShake();
         SetupScore();
         SetupItemInput();
         SetupPlayerInput();
+        SetupLowPassModi();
+        SetupSound();
+        SetupTutorial();
         SaveDataManager.getValue.gameStatus = gameStatus;
         SaveDataManager.Save();
         FPS.instance.UpdateShow();
@@ -129,26 +140,7 @@ public class ScenariosDefault : ScriptableObject {
         }
     }
     private void SetupParticleSpawnModi() {
-        switch (particleSpawnModi) {
-            case ParticleSpawnModi.all:
-                ParticleSceneSetup.instance.SpawnModiAll();
-                break;
-            case ParticleSpawnModi.none:
-                ParticleSceneSetup.instance.SpawnModiNone();
-                break;
-            case ParticleSpawnModi.onlyGold:
-                ParticleSceneSetup.instance.SpawnModiGold();
-                break;
-            case ParticleSpawnModi.onlyMassRelative:
-                ParticleSceneSetup.instance.SpawnModiMass();
-                break;
-            case ParticleSpawnModi.onlyNorm:
-                ParticleSceneSetup.instance.SpawnModiGrow();
-                break;
-            case ParticleSpawnModi.onlyShrink:
-                ParticleSceneSetup.instance.SpawnModiShrink();
-                break;
-        }
+        ParticleSpawnScript.instance.spawnModi = particleSpawnModi;
     }
     private void SetupItemSpawnModi() {
         switch (itemSpawnModi) {
@@ -204,6 +196,29 @@ public class ScenariosDefault : ScriptableObject {
             case UiSceneModis.statistics:
                 UiSceneScript.instance.SetupStats();
                 break;
+            case UiSceneModis.tutorial:
+                UiSceneScript.instance.SetupTutorial();
+                break;
+        }
+    }
+    private void SetupAccountInfo() {
+        switch (accountInfo) {
+            case UiShowAccountInfo.disabled:
+                UiObjectReferrer.instance.accountInfoMain.SetActive(false);
+                break;
+            case UiShowAccountInfo.show:
+                UiObjectReferrer.instance.accountInfoMain.SetActive(true);
+                break;
+        }
+    }
+    public void SetupLevelInfo() {
+        switch (levelInfo) {
+            case UiShowLevelInfo.disabled:
+                UiObjectReferrer.instance.levelInfoMain.SetActive(false);
+                break;
+            case UiShowLevelInfo.show:
+                UiObjectReferrer.instance.levelInfoMain.SetActive(true);
+                break;
         }
     }
     private void SetupShake() {
@@ -235,5 +250,32 @@ public class ScenariosDefault : ScriptableObject {
                 ScoreScript.instance.SetupIngame();
                 break;
         }
+    }
+    private void SetupLowPassModi() {
+        switch (lowPassModi) {
+            case AudioLowPassModi.lowPass:
+                SoundScript.instance.EnableLowPass();
+                break;
+            case AudioLowPassModi.normal:
+                SoundScript.instance.DisableLowPass();
+                break;
+        }
+    }
+    private void SetupSound() {
+        switch (SaveDataManager.getValue.settingsSound) {
+            case SettingsSounds.Off:
+                SoundScript.instance.SoundOff();
+                break;
+            case SettingsSounds.All:
+                SoundScript.instance.SoundOn();
+                break;
+            case SettingsSounds.Sound:
+                SoundScript.instance.SoundOnlySound();
+                break;
+        }
+    }
+    private void SetupTutorial() {
+        if (tutorialMode == TutorialActionModie.start)
+            TutorialScript.instance.StartTutorial();
     }
 }

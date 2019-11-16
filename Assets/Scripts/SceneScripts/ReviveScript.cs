@@ -60,7 +60,16 @@ public class ReviveScript : MonoBehaviour {
         UiObjectReferrer.instance.endgameLevelEN.SetActive(true);
     }
     private IEnumerator ReviveCountdown() {
-        yield return new WaitForSecondsRealtime(5f);
+        var time = Time.realtimeSinceStartup;
+        var maxBarWidth = UiObjectReferrer.instance.endgameReviveDE.GetComponent<RectTransform>().rect.width;
+        while (time + 5f > Time.realtimeSinceStartup) {
+            var progress = 100 * (Time.realtimeSinceStartup - time) / ConstantManager.REVIVE_TIME;
+            UiObjectReferrer.instance.endgameReviveBar1.sizeDelta = new Vector2((maxBarWidth / 100 * progress), UiObjectReferrer.instance.endgameReviveBar1.sizeDelta.y);
+            UiObjectReferrer.instance.endgameReviveBar2.sizeDelta = new Vector2((maxBarWidth / 100 * progress), UiObjectReferrer.instance.endgameReviveBar2.sizeDelta.y);
+            UiObjectReferrer.instance.endgameReviveBar3.sizeDelta = new Vector2((maxBarWidth / 100 * progress), UiObjectReferrer.instance.endgameReviveBar3.sizeDelta.y);
+            UiObjectReferrer.instance.endgameReviveBar4.sizeDelta = new Vector2((maxBarWidth / 100 * progress), UiObjectReferrer.instance.endgameReviveBar4.sizeDelta.y);
+            yield return null;
+        }
         SetupLevel();
     }
 }

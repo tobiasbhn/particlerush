@@ -115,17 +115,22 @@ public class PlayerScript : MonoBehaviour {
                 SetTargetMass(targetMass + particleMass);
                 RuntimeDataManager.value.normalParticlesCollected++;
                 RuntimeDataManager.value.gainedMass += particleMass;
+                SoundScript.ExplosionLarge();
+                particleScript.Destroy(true, true, false, false);
             } else if (particleType == ParticleType.shrink) {
                 SetTargetMass(targetMass - particleMass);
                 RuntimeDataManager.value.shrinkParticlesCollected++;
                 RuntimeDataManager.value.lossMass += particleMass;
+                SoundScript.Shrink();
+                particleScript.Destroy(true, true, false, true);
             } else if (particleType == ParticleType.gold) {
                 RuntimeDataManager.value.goldParticlesCollected++;
                 RuntimeDataManager.value.goldMassCollected += Mathf.CeilToInt(particleMass);
                 GoldFeedbackSpawn.instance.NewGoldFeedback(pos, Mathf.CeilToInt(particleMass));
+                SoundScript.Gold();
+                particleScript.Destroy(true, true, false, true);
             }
 
-            particleScript.Destroy(true, true, false);
             playerMeshGenerator.NewCollision(pos);
         }
     }

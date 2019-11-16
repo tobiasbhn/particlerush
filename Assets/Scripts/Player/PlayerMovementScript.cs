@@ -39,13 +39,7 @@ public class PlayerMovementScript : MonoBehaviour {
     }
 
     void Update() {
-        // Show or Hide Swipe-Bar 
-        if (allowSwipe && UiObjectReferrer.instance.ingameSlideContainer.gameObject.activeSelf == false)
-            UiObjectReferrer.instance.ingameSlideContainer.gameObject.SetActive(true);
-        else if (!allowSwipe && UiObjectReferrer.instance.ingameSlideContainer.gameObject.activeSelf == true)
-            UiObjectReferrer.instance.ingameSlideContainer.gameObject.SetActive(false);
         UpdateSlideBar();
-
         // Check Inputs and Update Position Regulary
         if (allowSwipe || allowTab) {
             foreach (Touch touch in Input.touches) {
@@ -131,13 +125,23 @@ public class PlayerMovementScript : MonoBehaviour {
         }
     }
 
-    private void UpdateSlideBar() {
-        if (allowSwipe) {
+    private void UpdateSlideBar() {        
+        var timePassedInPercent = 100 * (Time.time - lastSwipeTime) / ConstantManager.PLAYER_MOVEMENT_SLIDE_TIME_COOLDOWN;
+        if (allowSwipe && timePassedInPercent <= 100) {
+            // Set Active if it should be activd but isnt
+            if (UiObjectReferrer.instance.ingameSlideContainer.gameObject.activeSelf == false)
+                UiObjectReferrer.instance.ingameSlideContainer.gameObject.SetActive(true);
             var fullWidth = UiObjectReferrer.instance.ingameSlideContainer.rect.width;
-            var timePassedInPercent = 100 * (Time.time - lastSwipeTime) / ConstantManager.PLAYER_MOVEMENT_SLIDE_TIME_COOLDOWN;
+            // Calculate and set width of Bar
             timePassedInPercent = timePassedInPercent > 100 ? 100 : timePassedInPercent;
             var contentRectTransform = UiObjectReferrer.instance.ingameSlideContent;
             contentRectTransform.sizeDelta = new Vector2((fullWidth / 100 * timePassedInPercent), contentRectTransform.sizeDelta.y);
+            // Position Bar to Player
+            var yOffset = (PlayerScript.instance.currentMass * ConstantManager.PLAYER_AMOUNT_TO_GROW_PER_MASS_IN_WORLD_SPACE * 0.5) - 0.5;
+            var pos = Camera.main.WorldToScreenPoint(playerHolder.transform.position + new Vector3(0, (float)yOffset, 0));
+            UiObjectReferrer.instance.ingameSlideContainer.transform.position = pos;
+        } else if (UiObjectReferrer.instance.ingameSlideContainer.gameObject.activeSelf == true) {
+            UiObjectReferrer.instance.ingameSlideContainer.gameObject.SetActive(false);
         }
     }
 }

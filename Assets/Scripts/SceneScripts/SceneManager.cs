@@ -10,6 +10,7 @@ public class SceneManager : MonoBehaviour {
     public ScenariosDefault ingame;
     public ScenariosDefault menu;
     public ScenariosDefault endgame;
+    public ScenariosDefault tutorial;
     public ScenariosDefault pause;
     public ScenariosDefault resume;
     public ScenariosDefault revive;
@@ -22,10 +23,12 @@ public class SceneManager : MonoBehaviour {
         instance = this;
     }
 
-
     public void startGame() {
         Debug.Log(LogTime.Time() + ": Scene Manager - Going to start Game...");
-        callSceneMenu();
+        if (SaveDataManager.getValue.tutorialFinished)
+            callSceneMenu();
+        else
+            callSceneTutorial();
     }
 
 
@@ -37,6 +40,9 @@ public class SceneManager : MonoBehaviour {
     }
     public void callSceneEndgame() {
         endgame.callScenario();
+    }
+    public void callSceneTutorial() {
+        tutorial.callScenario();
     }
     public void callSceneRevive() {
         revive.callScenario();

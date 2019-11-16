@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OnEngameEnable : MonoBehaviour {
+public class OEEndgame : MonoBehaviour {
 
     void OnEnable() {
         ButtonsNotInteractable();
@@ -14,19 +14,14 @@ public class OnEngameEnable : MonoBehaviour {
         var highscore = "Highscore: " + ((int)RuntimeDataManager.value.highscore).ToString("000000");
         UiObjectReferrer.instance.endgameHighscoreTextDE.text = highscore;
         UiObjectReferrer.instance.endgameHighscoreTextEN.text = highscore;
-        if (score == highscore) {
+        if (ScoreScript.instance.newHighscore) {
             UiObjectReferrer.instance.endgameGameOverTextEN.text = "NEW HIGHSCORE!";
             UiObjectReferrer.instance.endgameGameOverTextDE.text = "NEUER HIGHSCORE!";
         } else {
             UiObjectReferrer.instance.endgameGameOverTextEN.text = "GAME OVER";
             UiObjectReferrer.instance.endgameGameOverTextDE.text = "SPIELENDE";
         }
-
-        if (ReviveScript.instance.alreadyRevived == false) {
-            ReviveScript.instance.SetupRevive();
-        } else {
-            ReviveScript.instance.SetupLevel();
-        }
+        ReviveScript.instance.SetupEndgame();
     }
 
     private IEnumerator activateButtons() {
