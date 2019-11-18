@@ -60,9 +60,6 @@ public class RuntimeDataManager : MonoBehaviour {
         // Projectiles
         SaveDataManager.getValue.statsTotalProjectilesFired += value.projectilesFiredTotal;
         SaveDataManager.getValue.statsTotalProjectilesHit += value.projectilesHitTotal;
-        // Items
-        SaveDataManager.getValue.statsTotalItemsSpawned += value.itemsSpawned;
-        SaveDataManager.getValue.statsTotalItemsUsed += value.itemsUsed;
         // Input
         SaveDataManager.getValue.statsTotalInputSwipe += value.inputSwipeCount;
         SaveDataManager.getValue.statsTotalInputTab += value.inputTabCount;
@@ -81,7 +78,6 @@ public class RuntimeDataManager : MonoBehaviour {
         SaveDataManager.getValue.currentRemainingLevelPoints = lvlCalculation[1];
 
         SaveDataManager.Save();
-        Debug.Log("LVL: " + SaveDataManager.getValue.currentLevel.ToString() + "; Points: " + SaveDataManager.getValue.currentLevelPoints.ToString() + "; Remaining: " + SaveDataManager.getValue.currentRemainingLevelPoints.ToString());
     }
 
     private int[] GetCurrentLevel() {
@@ -121,9 +117,6 @@ public class RuntimeData {
     // Projectiles
     public int projectilesFiredTotal = 0;
     public int projectilesHitTotal = 0;
-    // Items
-    public int itemsSpawned = 0;
-    public int itemsUsed = 0;
     // Input
     public int inputSwipeCount = 0;
     public int inputTabCount = 0;

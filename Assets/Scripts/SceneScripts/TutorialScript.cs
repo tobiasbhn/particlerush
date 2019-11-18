@@ -26,6 +26,12 @@ public class TutorialScript : MonoBehaviour {
         switch (currentTutorialProgress) {
             case 0: // Welcome to PArticle Rush
                 DisableAllStats();
+                UiObjectReferrer.instance.tutorialHeadingDE.gameObject.SetActive(false);
+                UiObjectReferrer.instance.tutorialHeadingEN.gameObject.SetActive(false);
+                UiObjectReferrer.instance.tutorialNextDE.gameObject.SetActive(false);
+                UiObjectReferrer.instance.tutorialNextEN.gameObject.SetActive(false);
+                UiObjectReferrer.instance.tutorialTutorialEN.gameObject.SetActive(true);
+                UiObjectReferrer.instance.tutorialTutorialDE.gameObject.SetActive(true);
                 UiObjectReferrer.instance.tutorialStep1DE.gameObject.SetActive(true);
                 UiObjectReferrer.instance.tutorialStep1EN.gameObject.SetActive(true);
                 break;
@@ -92,6 +98,11 @@ public class TutorialScript : MonoBehaviour {
         UiObjectReferrer.instance.tutorialStep5DE.gameObject.SetActive(false);
         UiObjectReferrer.instance.tutorialStep6DE.gameObject.SetActive(false);
         UiObjectReferrer.instance.tutorialStep7DE.gameObject.SetActive(false);
+        UiObjectReferrer.instance.tutorialHeadingDE.gameObject.SetActive(true);
+        UiObjectReferrer.instance.tutorialSkipDE.gameObject.SetActive(true);
+        UiObjectReferrer.instance.tutorialNextDE.gameObject.SetActive(true);
+        UiObjectReferrer.instance.tutorialTutorialDE.gameObject.SetActive(false);
+
         UiObjectReferrer.instance.tutorialStep1EN.gameObject.SetActive(false);
         UiObjectReferrer.instance.tutorialStep2EN.gameObject.SetActive(false);
         UiObjectReferrer.instance.tutorialStep3EN.gameObject.SetActive(false);
@@ -99,13 +110,15 @@ public class TutorialScript : MonoBehaviour {
         UiObjectReferrer.instance.tutorialStep5EN.gameObject.SetActive(false);
         UiObjectReferrer.instance.tutorialStep6EN.gameObject.SetActive(false);
         UiObjectReferrer.instance.tutorialStep7EN.gameObject.SetActive(false);
+        UiObjectReferrer.instance.tutorialHeadingEN.gameObject.SetActive(true);
+        UiObjectReferrer.instance.tutorialSkipEN.gameObject.SetActive(true);
+        UiObjectReferrer.instance.tutorialNextEN.gameObject.SetActive(true);
+        UiObjectReferrer.instance.tutorialTutorialEN.gameObject.SetActive(false);
     }
     private void EnableOnlySwipeBar() {
         UiObjectReferrer.instance.ingameMain.SetActive(true);
         UiObjectReferrer.instance.ingameGoldText.gameObject.SetActive(false);
         UiObjectReferrer.instance.ingameScoreText.gameObject.SetActive(false);
-        UiObjectReferrer.instance.ingameItemSlotsLeft.SetActive(false);
-        UiObjectReferrer.instance.ingameItemSlotsRight.SetActive(false);
         UiObjectReferrer.instance.ingamePauseButton.SetActive(false);
     }
 }

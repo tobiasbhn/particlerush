@@ -50,11 +50,6 @@ public class OEStatistics : MonoBehaviour {
         _ret += "\n\n\n\n<b>Projektile:</b>";
         _ret += "\nGesamt geschossen: " + SaveDataManager.getValue.statsTotalProjectilesFired;
         _ret += "\nGesamt getroffen: " + SaveDataManager.getValue.statsTotalProjectilesHit;
-
-
-        _ret += "\n\n<b>Items:</b>";
-        _ret += "\nGesamt gespawnt: " + SaveDataManager.getValue.statsTotalItemsSpawned;
-        _ret += "\nGesamt genutzt: " + SaveDataManager.getValue.statsTotalItemsUsed;
         
 
         _ret += "\n\n<b>Steuerung:</b>";
@@ -105,11 +100,6 @@ public class OEStatistics : MonoBehaviour {
         _ret += "\n\n\n\n<b>Projectiles:</b>";
         _ret += "\nTotal fired: " + SaveDataManager.getValue.statsTotalProjectilesFired;
         _ret += "\nTotal hit: " + SaveDataManager.getValue.statsTotalProjectilesHit;
-
-
-        _ret += "\n\n<b>Items:</b>";
-        _ret += "\nItems spawned: " + SaveDataManager.getValue.statsTotalItemsSpawned;
-        _ret += "\nItems used: " + SaveDataManager.getValue.statsTotalItemsUsed;
         
 
         _ret += "\n\n<b>Controls:</b>";

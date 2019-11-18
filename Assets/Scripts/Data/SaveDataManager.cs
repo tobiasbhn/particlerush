@@ -71,9 +71,6 @@ public class SaveData {
     // Projectiles
     public int statsTotalProjectilesFired = 0;
     public int statsTotalProjectilesHit = 0;
-    // Items
-    public int statsTotalItemsSpawned = 0;
-    public int statsTotalItemsUsed = 0;
     // Input
     public int statsTotalInputSwipe = 0;
     public int statsTotalInputTab = 0;
@@ -97,15 +94,14 @@ public class SaveData {
     public SettingsLanguages settingsLanguage = SettingsLanguages.English;
     public SettingsSounds settingsSound = SettingsSounds.All;
     public SettingsVibration settingsVibration = SettingsVibration.Short;
-    public SettingsItemPosition settingsItemPosition = SettingsItemPosition.Right;
     public SettingsDebug settingsDebug = SettingsDebug.off;
 
     //SHOP
     public int statsTotalGoldSpend = 0;
     public int shrinkItemLVL = 0; // 0 = Locked | 1 = LVL1 ...
-    public int shieldItemLVL = 1;
+    public int shieldItemLVL = 0;
     public int forceItemLVL = 0;
-    public int clearItmLVL = 1;
+    public int clearItmLVL = 0;
     public int slowItemLVL = 0;
     public int slideItemLVL = 0;
     public int goldrushItemLVL = 0;

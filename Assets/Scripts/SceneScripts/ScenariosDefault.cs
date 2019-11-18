@@ -12,9 +12,6 @@ public class ScenariosDefault : ScriptableObject {
     [Header("PARTICLES")]
     [SerializeField] private ParticleBehaviourSceneModis particleBehaviourModi;
     [SerializeField] private ParticleSpawnModi particleSpawnModi;
-    [Header("ITEMS")]
-    [SerializeField] private ItemInputSceneModis itemInputModi;
-    [SerializeField] private ItemSpawnSceneModi itemSpawnModi;
     [Header("UI")]
     [SerializeField] private UiSceneModis uiModi;
     [SerializeField] private ShakeSceneModis shakeModi;
@@ -51,13 +48,11 @@ public class ScenariosDefault : ScriptableObject {
         SetupPlayer();
         SetupParticleBehaviour();
         SetupParticleSpawnModi();
-        SetupItemSpawnModi();
         SetupUI();
         SetupAccountInfo();
         SetupLevelInfo();
         SetupShake();
         SetupScore();
-        SetupItemInput();
         SetupPlayerInput();
         SetupLowPassModi();
         SetupSound();
@@ -141,26 +136,6 @@ public class ScenariosDefault : ScriptableObject {
     }
     private void SetupParticleSpawnModi() {
         ParticleSpawnScript.instance.spawnModi = particleSpawnModi;
-    }
-    private void SetupItemSpawnModi() {
-        switch (itemSpawnModi) {
-            case ItemSpawnSceneModi.refuse:
-                ItemSpawnScript.instance.SetupDisabled();
-                break;
-            case ItemSpawnSceneModi.allow:
-                ItemSpawnScript.instance.SetupEnabled();
-                break;
-        }
-    }
-    private void SetupItemInput() {
-        switch (itemInputModi) {
-            case ItemInputSceneModis.refuse:
-                ItemInputScript.instance.SetupDisable();
-                break;
-            case ItemInputSceneModis.allow:
-                ItemInputScript.instance.SetupEnable();
-                break;
-        }
     }
     private void SetupUI() {
         switch (uiModi) {

@@ -20,14 +20,6 @@ public class UiObjectReferrer : MonoBehaviour {
     public Text ingameGoldText;
     public RectTransform ingameSlideContainer;
     public RectTransform ingameSlideContent;
-    public GameObject ingameItemSlotsLeft;
-    public GameObject ingameItemSlotsLeft1;
-    public GameObject ingameItemSlotsLeft2;
-    public GameObject ingameItemSlotsLeft3;
-    public GameObject ingameItemSlotsRight;
-    public GameObject ingameItemSlotsRight1;
-    public GameObject ingameItemSlotsRight2;
-    public GameObject ingameItemSlotsRight3;
     public GameObject ingamePauseButton;
 
     [Header("MAIN MENU")]
@@ -202,6 +194,7 @@ public class UiObjectReferrer : MonoBehaviour {
     [Header("TUTORIAL DE")]
     public GameObject tutorialMainTopDE;
     public GameObject tutorialMainBottomDE;
+    public Text tutorialHeadingDE;
     public Text tutorialStep1DE;
     public Text tutorialStep2DE;
     public Text tutorialStep3DE;
@@ -211,9 +204,12 @@ public class UiObjectReferrer : MonoBehaviour {
     public Text tutorialStep7DE;
     public Button tutorialSkipDE;
     public Button tutorialNextDE;
+    public Button tutorialTutorialDE;
+
     [Header("TUTORIAL EN")]
     public GameObject tutorialMainTopEN;
     public GameObject tutorialMainBottomEN;
+    public Text tutorialHeadingEN;
     public Text tutorialStep1EN;
     public Text tutorialStep2EN;
     public Text tutorialStep3EN;
@@ -223,6 +219,7 @@ public class UiObjectReferrer : MonoBehaviour {
     public Text tutorialStep7EN;
     public Button tutorialSkipEN;
     public Button tutorialNextEN;
+    public Button tutorialTutorialEN;
 
     void Awake() {
         instance = this;

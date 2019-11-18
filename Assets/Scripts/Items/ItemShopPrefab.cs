@@ -47,7 +47,7 @@ public class ItemShopPrefab : MonoBehaviour {
 
     // Setup everything that depends on the LVL, like Price, Locked-State etc.
     void UpdateLvlBasedItemInfos() {
-        itemPriceHolder.text = itemDefinition.getCurrendPrice();
+        itemPriceHolder.text = itemDefinition.getCurrendPrice().ToString();
 
         var LVL = itemDefinition.getCurrendLVL();
         if (LVL == 0)

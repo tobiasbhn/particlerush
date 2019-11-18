@@ -9,7 +9,9 @@ public class OETutorialEN : MonoBehaviour {
         UiObjectReferrer.instance.tutorialStep5EN.gameObject.SetActive(false);
         UiObjectReferrer.instance.tutorialStep6EN.gameObject.SetActive(false);
         UiObjectReferrer.instance.tutorialStep7EN.gameObject.SetActive(false);
-        UiObjectReferrer.instance.tutorialSkipEN.gameObject.SetActive(true);
-        UiObjectReferrer.instance.tutorialNextEN.gameObject.SetActive(true);
+        UiObjectReferrer.instance.tutorialHeadingEN.gameObject.SetActive(false);
+        UiObjectReferrer.instance.tutorialSkipEN.gameObject.SetActive(false);
+        UiObjectReferrer.instance.tutorialNextEN.gameObject.SetActive(false);
+        UiObjectReferrer.instance.tutorialTutorialEN.gameObject.SetActive(false);
     }
 }

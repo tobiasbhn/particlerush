@@ -9,9 +9,8 @@ public abstract class ItemDefinition : ScriptableObject {
     [SerializeField] private Sprite itemIconAsSprite;
     [SerializeField] private Texture itemIconAsTexture;
     [SerializeField] private ScenariosDefault shopScenarioOnActive;
-    [SerializeField] private ItemAnimationType itemAnimation;
-    [SerializeField] private List<float> itemLevels = new List<float>();
-    [SerializeField] private List<int> itemPrices = new List<int>();
+    [SerializeField] private float[] itemEffects = new float[5];
+    [SerializeField] private int[] itemPrices = new int[5];
 
 
     public Texture getIconAsTexture() {
@@ -37,27 +36,19 @@ public abstract class ItemDefinition : ScriptableObject {
         return info;
     }
 
-    public string getCurrendPrice() {
+    public int getCurrendPrice() {
         var LVL = getCurrendLVL();
-        var price = itemPrices[LVL].ToString();
-        if (LVL == 0 && SaveDataManager.getValue.settingsLanguage == SettingsLanguages.English)
-            price = "locked";
-        else if (LVL == 0 && SaveDataManager.getValue.settingsLanguage == SettingsLanguages.German)
-            price = "verschlossen";
-        return price;
+        return itemPrices[LVL];
     }
     public float getCurrendEffect() {
         var LVL = getCurrendLVL();
-        return itemLevels[LVL];
+        return itemEffects[LVL];
     }
     public virtual int getCurrendLVL() {
         return 0;
     }
     public ScenariosDefault GetScenario() {
         return shopScenarioOnActive;
-    }
-    public ItemAnimationType GetAnimationType() {
-        return itemAnimation;
     }
 
 

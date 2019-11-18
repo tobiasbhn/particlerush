@@ -18,8 +18,8 @@ public static class ConstantManager {
 
 
     //DEBUG
-    public static readonly bool useLocalSaveFile = true;
-    public static readonly string localSaveFileName = "particleRush"; //_" + Application.version.ToString();
+    public const bool useLocalSaveFile = false;
+    public const string localSaveFileName = "particleRush"; //_" + Application.version.ToString();
 
     //PLAYER && MESH GENERATION
     //MASS
@@ -98,19 +98,10 @@ public static class ConstantManager {
 
     //PROJECTILE
     public const int PROJECTILE_MIN_DAMAGE_REDUCION_PER_PLAYER_MASS = 20; // In Percent, preserves that a projectiles deals at least x Percent damage
-    public const float PROJECTILE_DAMAGE_FACTOR = 1.8f;
+    public const float PROJECTILE_DAMAGE_FACTOR = 2f;
     public const float PROJECTILE_MAX_LIFE_TIME = 1f; // Time in Seconds
-    public const float PROJECTILE_MAX_WIDTH = 0.3f;
-    public const float PROJECTILE_MIN_WIDTH = 0.03f;
-
-
-    //ITEMS
-    public const float ITEM_SPAWN_DELAY = 60f / 2.5f; // 60 Sconds / Items per Minute
-    public const float ITEM_SPAWN_RANDOM_FACTOR = 10f; // Items could spawn X Seconds befor or after the normal time
-    public const float ITEM_ACTIVE_ANIMATION_SPEED = 2f;
-    public const float ITEM_ACTIVE_ANIMATION_CIRCE_SIZE = 0.3f;
-    public const float ITEM_TIME_SCALE_ON_DRAG_DROP = 0.4f;
-    public const float ITEM_INPUT_DELAY_TO_DRAG = 0.02f;
+    public const float PROJECTILE_MAX_WIDTH = 0.4f;
+    public const float PROJECTILE_MIN_WIDTH = 0.05f;
 
 
     //INPUTS
@@ -134,7 +125,7 @@ public static class ConstantManager {
     //LEVEL
     public const int LEVEL_MAX_LEVEL = 10;
     public static readonly int[] LEVEL_POINTS = new int[LEVEL_MAX_LEVEL] {
-        100, 250, 500, 1000, 2000, 3500, 5000, 7500, 10000, 15000
+        100, 250, 500, 1000, 1500, 2500, 3500, 5000, 7000, 10000
     };
 
 
@@ -147,7 +138,7 @@ public static class ConstantManager {
 
     // AUDIO
     public const int AUDIO_LOW_PASS_MIN_VALUE = 250;
-    public const int AUDIO_LOW_PASS_MAX_VALUE = 5000;
+    public const int AUDIO_LOW_PASS_MAX_VALUE = 3000;
     public const float AUDIO_LOW_PASS_CHANGE_DURATION = .3f;
 }
 

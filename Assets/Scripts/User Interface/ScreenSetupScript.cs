@@ -8,16 +8,12 @@ public class ScreenSetupScript : MonoBehaviour {
     [HideInInspector] public static ScreenSetupScript instance;
 
     //OBJECT-LINKS
-    public Canvas canvasGameObject;
     public RectTransform safeAreaGameObject;
     public RectTransform largeScreenSpaceGameObject; // = Canvas-Child which goes up to maximum Point within the Safe Area
     public RectTransform smallScreenSpaceGameObject; // = Canvas-Child which goes only up to the lowest Point of the Player
 
     void Awake() {
         instance = this;
-    }
-
-    void Start() {
         ApplySaveArea();
         ApplyLargeScreenSpace();
         ApplySmallScreenSpace();

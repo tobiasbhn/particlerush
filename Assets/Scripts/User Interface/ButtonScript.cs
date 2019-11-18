@@ -65,18 +65,6 @@ public class ButtonScript : MonoBehaviour {
         OESettings.instance.UpdateButtonUIVibration();
         VibrationManager.Vibrate();
     }
-    public void ButtonSettingsItemPos() {
-        switch(SaveDataManager.getValue.settingsItemPosition) {
-            case SettingsItemPosition.Left:
-                SaveDataManager.getValue.settingsItemPosition = SettingsItemPosition.Right;
-                break;
-            case SettingsItemPosition.Right:
-                SaveDataManager.getValue.settingsItemPosition = SettingsItemPosition.Left;
-                break;
-        }
-        SaveDataManager.Save();
-        OESettings.instance.UpdateButtonUIItemPos();
-    }
     
     public void ButtonSettingsDebug() {
         switch(SaveDataManager.getValue.settingsDebug) {

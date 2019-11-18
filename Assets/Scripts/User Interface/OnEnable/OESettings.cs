@@ -15,8 +15,6 @@ public class OESettings : MonoBehaviour {
     private string[] settingsSoundDataEN;
     private string[] settingsVibrationDataEN;
     private string[] settingsVibrationDataDE;
-    private string[] settingsItemPosDataDE;
-    private string[] settingsItemPosDataEN;
     private string[] settingsDebugDataDE;
     private string[] settingsDebugDataEN;
 
@@ -39,8 +37,6 @@ public class OESettings : MonoBehaviour {
         settingsSoundDataEN = new string[3] { "Off", "On", "Only Sounds" };
         settingsVibrationDataDE = new string[4] { "Aus", "Kurz", "Mittel", "Lang" };
         settingsVibrationDataEN = new string[4] { "Off", "Short", "Medium", "Long" };
-        settingsItemPosDataDE = new string[2] { "Links", "Rechts" };
-        settingsItemPosDataEN = new string[2] { "Left", "Right" };
         settingsDebugDataDE = new string[3] {"Aus", "Nur im Spiel", "Überall"};
         settingsDebugDataEN = new string[3] {"Off", "Only Ingame", "Everywhere"};
     }
@@ -50,7 +46,6 @@ public class OESettings : MonoBehaviour {
         UiObjectReferrer.instance.settingsScrollcontainer.verticalNormalizedPosition = 1f;
         UpdateButtonUISound();
         UpdateButtonUIVibration();
-        UpdateButtonUIItemPos();
         UpdateButtonUIDebug();
     }
     public void UpdateButtonUISound() {
@@ -71,17 +66,8 @@ public class OESettings : MonoBehaviour {
         UiObjectReferrer.instance.settingsVibrationTextDE.text = vibrationTextDE;
         UiObjectReferrer.instance.settingsVibrationTextEN.text = vibrationTextEN;
     }
-    public void UpdateButtonUIItemPos() {
-        if (settingsItemPosDataDE == null || settingsItemPosDataEN == null)
-            DefineVars();
-        var currendItemPosSetting = (int)SaveDataManager.getValue.settingsItemPosition;
-        var itemPosTextDE = buttonPrefixesDE[2] + settingsItemPosDataDE[currendItemPosSetting];
-        var itemPosTextEN = buttonPrefixesEN[2] + settingsItemPosDataEN[currendItemPosSetting];
-        UiObjectReferrer.instance.settingsItemPosTextDE.text = itemPosTextDE;
-        UiObjectReferrer.instance.settingsItemPosTextEN.text = itemPosTextEN;
-    }
     public void UpdateButtonUIDebug() {
-        if (settingsItemPosDataDE == null || settingsItemPosDataEN == null)
+        if (settingsDebugDataDE == null || settingsDebugDataEN == null)
             DefineVars();
         var currendItemPosSetting = (int)SaveDataManager.getValue.settingsDebug;
         var debugTextDE = buttonPrefixesDE[3] + settingsDebugDataDE[currendItemPosSetting];

@@ -6,14 +6,11 @@ public enum GameStatus {loading, tutorial, menu, ingame, endgame, shop, leaderbo
 //PARTICLES / ITEMS & SPAWN
 public enum ParticleType {grow, shrink, gold};
 public enum ParticleSpawnModi {none, all, onlyNorm, onlyShrink, onlyGold, onlyMassRelative, onlySpecial};
-public enum ItemActionOnDrop {slot1, slot2, slot3, inactive, activate, blocked};
-public enum ItemAnimationType {none, circle, line};
 
 //SETTINGS
 public enum SettingsLanguages {English, German};
 public enum SettingsSounds {Off, All, Sound};
 public enum SettingsVibration {Off, Short, Medium, Long};
-public enum SettingsItemPosition {Left, Right};
 public enum SettingsDebug {off, ingame, everywhere};
 
 //ADS
@@ -23,9 +20,7 @@ public enum AdType {Normal, Rewarded};
 //SCENARIOS
 public enum PlayerSceneModis {keepCurrent, disabled, ingame, menu, pause, resume };
 public enum ParticleBehaviourSceneModis {keepCurrent, disabled, ingame, menu };
-public enum ItemSpawnSceneModi {refuse, allow };
 public enum PlayerInputSceneModis {refuse, allow, onlyShoot, onlyMove };
-public enum ItemInputSceneModis {refuse, allow };
 public enum TimeSceneModis {keepCurrent, normal, stop };
 public enum UiSceneModis {keepCurrent, disabled, ingame, menu, pause, shop, settings, adNotification, endgame, openSource, statistics, tutorial };
 public enum UiShowAccountInfo {disabled, show};
