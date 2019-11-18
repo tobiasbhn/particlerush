@@ -65,7 +65,7 @@ public class ButtonScript : MonoBehaviour {
         OESettings.instance.UpdateButtonUIVibration();
         VibrationManager.Vibrate();
     }
-    
+
     public void ButtonSettingsDebug() {
         switch(SaveDataManager.getValue.settingsDebug) {
             case SettingsDebug.off:
@@ -131,7 +131,11 @@ public class ButtonScript : MonoBehaviour {
             Application.OpenURL(mailto + "?subject=" + subject + "&body=" + bodyEN);
     }
     public void ButtonSpecialGooglePlaySignOff() {
-        //kommt noch
+        if (GoogleLoginScript.instance.currentlyLoggedIn) {
+            SceneManager.instance.callSceneLogoutNotification();
+        } else {
+            SceneManager.instance.callSceneLoginNotification();
+        }
     }
     public void ButtonRedirectImprint() {
         //open Leagal Webpage

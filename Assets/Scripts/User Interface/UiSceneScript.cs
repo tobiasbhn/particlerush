@@ -63,6 +63,14 @@ public class UiSceneScript : MonoBehaviour {
         UiObjectReferrer.instance.tutorialMainTop.SetActive(true);
         UiObjectReferrer.instance.tutorialMainBottom.SetActive(true);
     }
+    public void SetupNotificationLogin() {
+        DisableAllMenus();
+        UiObjectReferrer.instance.notificationLoginMain.SetActive(true);
+    }
+    public void SetupNotificationLogout() {
+        DisableAllMenus();
+        UiObjectReferrer.instance.notificationLogoutMain.SetActive(true);
+    }
 
     public void DisableAllMenus() {
         UiObjectReferrer.instance.ingameMain.SetActive(false);
@@ -77,5 +85,7 @@ public class UiSceneScript : MonoBehaviour {
         UiObjectReferrer.instance.statisticsMain.SetActive(false);
         UiObjectReferrer.instance.tutorialMainTop.SetActive(false);
         UiObjectReferrer.instance.tutorialMainBottom.SetActive(false);
+        UiObjectReferrer.instance.notificationLoginMain.SetActive(false);
+        UiObjectReferrer.instance.notificationLogoutMain.SetActive(false);
     }
 }

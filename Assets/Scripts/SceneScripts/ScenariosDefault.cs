@@ -31,7 +31,7 @@ public class ScenariosDefault : ScriptableObject {
 
     public virtual void callScenario() {
         //Set above Modis and call scripts
-        if (SaveDataManager.getValue.gameStatus != gameStatus) {
+        if (SaveDataManager.getValue.gameStatus != gameStatus || gameStatus == GameStatus.notification) {
             //Show Add?
             if (Time.realtimeSinceStartup - AdsManager.instance.lastAdShown > ConstantManager.AD_TIME_TO_PASS_TO_SHOW_AD && adsModi == AdsSceneModis.allow) {
                 AdsManager.instance.ShowAd(AdType.Normal, callScenarioHelper);
@@ -173,6 +173,12 @@ public class ScenariosDefault : ScriptableObject {
                 break;
             case UiSceneModis.tutorial:
                 UiSceneScript.instance.SetupTutorial();
+                break;
+            case UiSceneModis.login:
+                UiSceneScript.instance.SetupNotificationLogin();
+                break;
+            case UiSceneModis.logout:
+                UiSceneScript.instance.SetupNotificationLogout();
                 break;
         }
     }

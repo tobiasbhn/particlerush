@@ -47,6 +47,7 @@ public class OESettings : MonoBehaviour {
         UpdateButtonUISound();
         UpdateButtonUIVibration();
         UpdateButtonUIDebug();
+        UpdateButtonUIGoogle();
     }
     public void UpdateButtonUISound() {
         if (settingsSoundDataDE == null || settingsSoundDataEN == null)
@@ -74,5 +75,18 @@ public class OESettings : MonoBehaviour {
         var debugTextEN = buttonPrefixesEN[3] + settingsDebugDataEN[currendItemPosSetting];
         UiObjectReferrer.instance.settingsDebugTextDE.text = debugTextDE;
         UiObjectReferrer.instance.settingsDebugTextEN.text = debugTextEN;
+    }
+    public void UpdateButtonUIGoogle() {
+        if (GoogleLoginScript.instance.currentlyLoggedIn) {
+            UiObjectReferrer.instance.settingsGooglePlayHeadingDE.text = "Google Play Abmelden";
+            UiObjectReferrer.instance.settingsGooglePlayTextDE.text = "Angemeldet als: " + GoogleLoginScript.instance.userName;
+            UiObjectReferrer.instance.settingsGooglePlayHeadingEN.text = "Google Play Logout";
+            UiObjectReferrer.instance.settingsGooglePlayTextDE.text = "Logged in as: " + GoogleLoginScript.instance.userName;
+        } else {
+            UiObjectReferrer.instance.settingsGooglePlayHeadingDE.text = "Google Play Anmelden";
+            UiObjectReferrer.instance.settingsGooglePlayTextDE.text = "Nicht angemeldet.";
+            UiObjectReferrer.instance.settingsGooglePlayHeadingEN.text = "Google Play Login";
+            UiObjectReferrer.instance.settingsGooglePlayTextDE.text = "Not logged in.";
+        }
     }
 }

@@ -159,7 +159,7 @@ public class UiObjectReferrer : MonoBehaviour {
     [Space(5)]
     public Text settingsSoundTextEN;
     public Text settingsVibrationTextEN;
-    public Text settingsItemPosTextEN;
+    public Text settingsGooglePlayHeadingEN;
     public Text settingsGooglePlayTextEN;
     public Text settingsDebugTextEN;
 
@@ -169,7 +169,7 @@ public class UiObjectReferrer : MonoBehaviour {
     [Space(5)]
     public Text settingsSoundTextDE;
     public Text settingsVibrationTextDE;
-    public Text settingsItemPosTextDE;
+    public Text settingsGooglePlayHeadingDE;
     public Text settingsGooglePlayTextDE;
     public Text settingsDebugTextDE;
 
@@ -178,6 +178,18 @@ public class UiObjectReferrer : MonoBehaviour {
     public GameObject notificationAdsMain;
     public GameObject notificationAdsDE;
     public GameObject notificationAdsEN;
+
+    [Header("LOGIN NOTIFICATION")]
+    [Space(30)]
+    public GameObject notificationLoginMain;
+    public GameObject notificationLoginDE;
+    public GameObject notificationLoginEN;
+
+    [Header("LOGOUT NOTIFICATION")]
+    [Space(30)]
+    public GameObject notificationLogoutMain;
+    public GameObject notificationLogoutDE;
+    public GameObject notificationLogoutEN;
 
     [Header("STATISTICS")]
     [Space(30)]
@@ -240,7 +252,9 @@ public class UiObjectReferrer : MonoBehaviour {
             shopInterfaceEN,
             staticsInterfaceEN,
             tutorialMainTopEN,
-            tutorialMainBottomEN
+            tutorialMainBottomEN,
+            notificationLoginEN,
+            notificationLogoutEN
         });
         objectsDE.AddRange(new List<GameObject>() {
             //MENU
@@ -253,7 +267,9 @@ public class UiObjectReferrer : MonoBehaviour {
             shopInterfaceDE,
             staticsInterfaceDE,
             tutorialMainTopDE,
-            tutorialMainBottomDE
+            tutorialMainBottomDE,
+            notificationLoginDE,
+            notificationLogoutDE
         });
     }
 }

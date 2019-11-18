@@ -17,6 +17,8 @@ public class SceneManager : MonoBehaviour {
     public ScenariosDefault shop;
     public ScenariosDefault settings;
     public ScenariosDefault adsNotification;
+    public ScenariosDefault loginNotification;
+    public ScenariosDefault logoutNotification;
     public ScenariosDefault openSource;
 
     void Awake() {
@@ -61,6 +63,12 @@ public class SceneManager : MonoBehaviour {
     }
     public void callSceneAdsNotification() {
         adsNotification.callScenario();
+    }
+    public void callSceneLoginNotification() {
+        loginNotification.callScenario();
+    }
+    public void callSceneLogoutNotification() {
+        logoutNotification.callScenario();
     }
     public void callSceneOpenSource() {
         openSource.callScenario();
