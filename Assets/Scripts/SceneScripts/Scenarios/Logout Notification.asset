@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2894aa7127184fc4fab38ecfa68f1b7a, type: 3}
   m_Name: Logout Notification
   m_EditorClassIdentifier: 
-  gameStatus: 0
-  playerModi: 0
+  gameStatus: 9
+  playerModi: 1
   playerInputModi: 0
-  particleBehaviourModi: 0
+  particleBehaviourModi: 1
   particleSpawnModi: 0
-  uiModi: 0
-  shakeModi: 0
+  uiModi: 13
+  shakeModi: 1
   accountInfo: 0
   levelInfo: 0
   reviveModi: 0
   adsModi: 0
-  timeModi: 0
+  timeModi: 1
   runtimeDataModi: 0
-  scoreModi: 0
+  scoreModi: 1
   lowPassModi: 0
   tutorialMode: 0

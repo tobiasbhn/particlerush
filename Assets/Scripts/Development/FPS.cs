@@ -43,7 +43,14 @@ public class FPS : MonoBehaviour {
             if (SaveDataManager.getValue != null)
                 text += "\n Game Status: " + SaveDataManager.getValue.gameStatus;
             text += "\n Already Revived: " + ReviveScript.instance.alreadyRevived.ToString();
-            text += "\n Google Login: False";
+
+            text += "\n\n Google Play Services:";
+            text += "\n Google Login: " + GoogleLoginScript.instance.isAuthenticated();
+            text += "\n Google Login Status: " + GoogleLoginScript.instance.loginStatus;
+            if (GoogleLoginScript.instance.isAuthenticated()) {
+                text += "\n Google Name: " + GoogleLoginScript.instance.getUsername();
+                text += "\n Google ID: " + GoogleLoginScript.instance.getUserID();
+            }
 
             text += "\n\n Device:";
             text += "\n " + SystemInfo.operatingSystem;

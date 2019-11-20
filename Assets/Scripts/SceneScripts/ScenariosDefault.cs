@@ -30,6 +30,10 @@ public class ScenariosDefault : ScriptableObject {
     [SerializeField] private TutorialActionModie tutorialMode;
 
     public virtual void callScenario() {
+        // Set previous Scenario
+        if (SceneManager.instance.currentScenario != null)
+            SceneManager.instance.previousScenario = SceneManager.instance.currentScenario;
+
         //Set above Modis and call scripts
         if (SaveDataManager.getValue.gameStatus != gameStatus || gameStatus == GameStatus.notification) {
             //Show Add?
@@ -39,6 +43,9 @@ public class ScenariosDefault : ScriptableObject {
                 callScenarioHelper();
             }
         }
+        // Set current Scenario
+        if (gameStatus != GameStatus.notification)
+            SceneManager.instance.currentScenario = this;
     }
 
     private void callScenarioHelper() {
@@ -179,6 +186,9 @@ public class ScenariosDefault : ScriptableObject {
                 break;
             case UiSceneModis.logout:
                 UiSceneScript.instance.SetupNotificationLogout();
+                break;
+            case UiSceneModis.googleResult:
+                UiSceneScript.instance.SetupNotificationGoogleResult();
                 break;
         }
     }

@@ -40,6 +40,9 @@ public class GameStarter : MonoBehaviour {
         //Set Vibration
         VibrationManager.Setup();
 
+        //Setup Google Play
+        GoogleLoginScript.instance.CheckAutoSetup();
+
         //Call SceneManager to load whatever needs to be loaded
         Debug.Log(LogTime.Time() + ": Game Starter Script - Calling Scene Manager to load first Scene...");
         SceneManager.instance.startGame();

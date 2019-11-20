@@ -14,7 +14,6 @@
 //  See the License for the specific language governing permissions and
 //    limitations under the License.
 // </copyright>
-
 #if UNITY_ANDROID
 
 namespace GooglePlayGames.BasicApi.Multiplayer
@@ -51,7 +50,10 @@ namespace GooglePlayGames.BasicApi.Multiplayer
         /// Gets the participant's display name.
         public string DisplayName
         {
-            get { return mDisplayName; }
+            get
+            {
+                return mDisplayName;
+            }
         }
 
         /// <summary>
@@ -64,13 +66,19 @@ namespace GooglePlayGames.BasicApi.Multiplayer
         /// <value>The participant identifier.</value>
         public string ParticipantId
         {
-            get { return mParticipantId; }
+            get
+            {
+                return mParticipantId;
+            }
         }
 
         /// Gets the participant's status (invited, joined, declined, left, finished, ...)
         public ParticipantStatus Status
         {
-            get { return mStatus; }
+            get
+            {
+                return mStatus;
+            }
         }
 
         /// <summary>
@@ -80,7 +88,10 @@ namespace GooglePlayGames.BasicApi.Multiplayer
         /// <value>The player, or null if this is an anonymous participant.</value>
         public Player Player
         {
-            get { return mPlayer; }
+            get
+            {
+                return mPlayer;
+            }
         }
 
         /// <summary>
@@ -89,17 +100,23 @@ namespace GooglePlayGames.BasicApi.Multiplayer
         /// </summary>
         public bool IsConnectedToRoom
         {
-            get { return mIsConnectedToRoom; }
+            get
+            {
+                return mIsConnectedToRoom;
+            }
         }
 
         /// Returns whether or not this is an automatch participant.
         public bool IsAutomatch
         {
-            get { return mPlayer == null; }
+            get
+            {
+                return mPlayer == null;
+            }
         }
 
         internal Participant(string displayName, string participantId,
-            ParticipantStatus status, Player player, bool connectedToRoom)
+                             ParticipantStatus status, Player player, bool connectedToRoom)
         {
             mDisplayName = displayName;
             mParticipantId = participantId;
@@ -111,7 +128,7 @@ namespace GooglePlayGames.BasicApi.Multiplayer
         public override string ToString()
         {
             return string.Format("[Participant: '{0}' (id {1}), status={2}, " +
-                                 "player={3}, connected={4}]", mDisplayName, mParticipantId, mStatus.ToString(),
+                "player={3}, connected={4}]", mDisplayName, mParticipantId, mStatus.ToString(),
                 mPlayer == null ? "NULL" : mPlayer.ToString(), mIsConnectedToRoom);
         }
 
@@ -137,7 +154,7 @@ namespace GooglePlayGames.BasicApi.Multiplayer
                 return false;
             }
 
-            Participant other = (Participant) obj;
+            Participant other = (Participant)obj;
             return mParticipantId.Equals(other.mParticipantId);
         }
 

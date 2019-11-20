@@ -11,6 +11,12 @@ public class ButtonScript : MonoBehaviour {
     void Awake() {
         instance = this;
     }
+
+    // GERNERAL
+    public void ButtonLoadPreviousScenario() {
+        if (SceneManager.instance.previousScenario != null)
+            SceneManager.instance.previousScenario.callScenario();
+    }
     
     //SETTINGS
     public void ButtonSettingLanguage() {
@@ -131,7 +137,7 @@ public class ButtonScript : MonoBehaviour {
             Application.OpenURL(mailto + "?subject=" + subject + "&body=" + bodyEN);
     }
     public void ButtonSpecialGooglePlaySignOff() {
-        if (GoogleLoginScript.instance.currentlyLoggedIn) {
+        if (GoogleLoginScript.instance.isAuthenticated()) {
             SceneManager.instance.callSceneLogoutNotification();
         } else {
             SceneManager.instance.callSceneLoginNotification();

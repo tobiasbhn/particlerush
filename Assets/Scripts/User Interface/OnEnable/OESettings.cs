@@ -77,16 +77,16 @@ public class OESettings : MonoBehaviour {
         UiObjectReferrer.instance.settingsDebugTextEN.text = debugTextEN;
     }
     public void UpdateButtonUIGoogle() {
-        if (GoogleLoginScript.instance.currentlyLoggedIn) {
+        if (GoogleLoginScript.instance.isAuthenticated()) {
             UiObjectReferrer.instance.settingsGooglePlayHeadingDE.text = "Google Play Abmelden";
-            UiObjectReferrer.instance.settingsGooglePlayTextDE.text = "Angemeldet als: " + GoogleLoginScript.instance.userName;
+            UiObjectReferrer.instance.settingsGooglePlayTextDE.text = "Angemeldet als: " + GoogleLoginScript.instance.getUsername();
             UiObjectReferrer.instance.settingsGooglePlayHeadingEN.text = "Google Play Logout";
-            UiObjectReferrer.instance.settingsGooglePlayTextDE.text = "Logged in as: " + GoogleLoginScript.instance.userName;
+            UiObjectReferrer.instance.settingsGooglePlayTextEN.text = "Logged in as: " + GoogleLoginScript.instance.getUsername();
         } else {
             UiObjectReferrer.instance.settingsGooglePlayHeadingDE.text = "Google Play Anmelden";
-            UiObjectReferrer.instance.settingsGooglePlayTextDE.text = "Nicht angemeldet.";
+            UiObjectReferrer.instance.settingsGooglePlayTextDE.text = "Zur Zeit nicht angemeldet.";
             UiObjectReferrer.instance.settingsGooglePlayHeadingEN.text = "Google Play Login";
-            UiObjectReferrer.instance.settingsGooglePlayTextDE.text = "Not logged in.";
+            UiObjectReferrer.instance.settingsGooglePlayTextEN.text = "Currently not logged in.";
         }
     }
 }

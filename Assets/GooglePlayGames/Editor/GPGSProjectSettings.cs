@@ -24,7 +24,6 @@ namespace GooglePlayGames.Editor
     using UnityEngine.Networking;
 #else
     using UnityEngine;
-
 #endif
 
     public class GPGSProjectSettings
@@ -56,11 +55,11 @@ namespace GooglePlayGames.Editor
 
             // read the settings file, this list is all the locations it can be in order of precedence.
             string[] fileLocations =
-            {
-                mFile,
-                GPGSUtil.SlashesToPlatformSeparator(Path.Combine(GPGSUtil.RootPath, "Editor/projsettings.txt")),
-                GPGSUtil.SlashesToPlatformSeparator("Assets/Editor/projsettings.txt")
-            };
+                {
+                    mFile,
+                    GPGSUtil.SlashesToPlatformSeparator(Path.Combine(GPGSUtil.RootPath, "Editor/projsettings.txt")),
+                    GPGSUtil.SlashesToPlatformSeparator("Assets/Editor/projsettings.txt")
+                };
 
             foreach (string f in fileLocations)
             {
@@ -83,7 +82,7 @@ namespace GooglePlayGames.Editor
                     }
 
                     line = line.Trim();
-                    string[] p = line.Split(new char[] {'='}, 2);
+                    string[] p = line.Split(new char[] { '=' }, 2);
                     if (p.Length >= 2)
                     {
                         mDict[p[0].Trim()] = p[1].Trim();
@@ -189,7 +188,7 @@ namespace GooglePlayGames.Editor
             mDirty = false;
         }
 
-        public static void Reload()
+        public static void Reload ()
         {
             sInstance = new GPGSProjectSettings();
         }

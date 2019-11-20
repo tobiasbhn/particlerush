@@ -7,6 +7,11 @@ public class SceneManager : MonoBehaviour {
     // INSTANCE
     [HideInInspector] public static SceneManager instance;
 
+    // VARS
+    public ScenariosDefault currentScenario;
+    public ScenariosDefault previousScenario;
+
+    // OBJECT LINKS
     public ScenariosDefault ingame;
     public ScenariosDefault menu;
     public ScenariosDefault endgame;
@@ -19,6 +24,7 @@ public class SceneManager : MonoBehaviour {
     public ScenariosDefault adsNotification;
     public ScenariosDefault loginNotification;
     public ScenariosDefault logoutNotification;
+    public ScenariosDefault googleResult;
     public ScenariosDefault openSource;
 
     void Awake() {
@@ -69,6 +75,9 @@ public class SceneManager : MonoBehaviour {
     }
     public void callSceneLogoutNotification() {
         logoutNotification.callScenario();
+    }
+    public void callSceneGoogleResult() {
+        googleResult.callScenario();
     }
     public void callSceneOpenSource() {
         openSource.callScenario();

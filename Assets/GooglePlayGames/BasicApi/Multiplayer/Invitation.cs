@@ -13,15 +13,10 @@
 //  See the License for the specific language governing permissions and
 //    limitations under the License.
 // </copyright>
-
 #if UNITY_ANDROID
-
-using System;
 
 namespace GooglePlayGames.BasicApi.Multiplayer
 {
-    using System;
-
     /// <summary>
     /// Represents an invitation to a multiplayer game. The invitation may be for
     /// a turn-based or real-time game.
@@ -39,15 +34,13 @@ namespace GooglePlayGames.BasicApi.Multiplayer
         private string mInvitationId;
         private Participant mInviter;
         private int mVariant;
-        private DateTime mCreationTime;
 
-        internal Invitation(InvType invType, string invId, Participant inviter, int variant, DateTime creationTime)
+        internal Invitation(InvType invType, string invId, Participant inviter, int variant)
         {
             mInvitationType = invType;
             mInvitationId = invId;
             mInviter = inviter;
             mVariant = variant;
-            mCreationTime = creationTime;
         }
 
         /// <summary>
@@ -56,7 +49,10 @@ namespace GooglePlayGames.BasicApi.Multiplayer
         /// <value>The type of the invitation (real-time or turn-based).</value>
         public InvType InvitationType
         {
-            get { return mInvitationType; }
+            get
+            {
+                return mInvitationType;
+            }
         }
 
         /// <summary>
@@ -65,7 +61,10 @@ namespace GooglePlayGames.BasicApi.Multiplayer
         /// <value>The invitation id.</value>
         public string InvitationId
         {
-            get { return mInvitationId; }
+            get
+            {
+                return mInvitationId;
+            }
         }
 
         /// <summary>
@@ -74,7 +73,10 @@ namespace GooglePlayGames.BasicApi.Multiplayer
         /// <value>The participant who issued the invitation.</value>
         public Participant Inviter
         {
-            get { return mInviter; }
+            get
+            {
+                return mInviter;
+            }
         }
 
         /// <summary>
@@ -85,23 +87,16 @@ namespace GooglePlayGames.BasicApi.Multiplayer
         /// <value>The match variant. 0 means default (unset).</value>
         public int Variant
         {
-            get { return mVariant; }
-        }
-
-        /// <summary>
-        /// Gets the creation time of the invitation
-        /// </summary>
-        /// <value>The creation timestamp (UTC)</value>
-        public DateTime CreationTime
-        {
-            get { return mCreationTime; }
+            get
+            {
+                return mVariant;
+            }
         }
 
         public override string ToString()
         {
             return string.Format("[Invitation: InvitationType={0}, InvitationId={1}, Inviter={2}, " +
-                                 "Variant={3}, CreationTime={4}]", InvitationType, InvitationId, Inviter, Variant,
-                CreationTime);
+                "Variant={3}]", InvitationType, InvitationId, Inviter, Variant);
         }
     }
 }

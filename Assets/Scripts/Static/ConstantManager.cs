@@ -15,10 +15,11 @@ public static class ConstantManager {
         // - Constant.Manager => Ads check Ad Time
         // - AdsManager => ID's for the Advertisments right?
         // - SaveDataManager => All default Values set correctly? (e.g. Download-Language)
+        // - GooglePlayGamesServices => correct SHA1?
 
 
     //DEBUG
-    public const bool useLocalSaveFile = false;
+    public const bool useLocalSaveFile = true;
     public const string localSaveFileName = "particleRush"; //_" + Application.version.ToString();
 
     //PLAYER && MESH GENERATION

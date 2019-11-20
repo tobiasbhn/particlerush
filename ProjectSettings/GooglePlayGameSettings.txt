@@ -1,5 +1,5 @@
-lastUpgrade=01006
-proj.pluginVersion=0.10.06
+lastUpgrade=00962
+proj.pluginVersion=0.9.62
 proj.AppId=532239297952
 and.BundleId=com.tobiasbohn.particlerush
 proj.classDir=Assets

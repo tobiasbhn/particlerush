@@ -89,6 +89,7 @@ public class SaveData {
     public bool tutorialFinished = false;
     public bool notificationAdsFinished = false;
     public bool languageManualySet = false;
+    public bool playGamesAutomaticAuth = false;
 
     //SETTINGS
     public SettingsLanguages settingsLanguage = SettingsLanguages.English;

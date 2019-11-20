@@ -20,12 +20,13 @@ namespace GooglePlayGames.Android
     using System;
     using BasicApi;
     using OurUtils;
+    using Com.Google.Android.Gms.Common.Api;
     using UnityEngine;
     using System.Collections.Generic;
 
     internal class AndroidTokenClient : TokenClient
     {
-        private const string HelperFragmentClass = "com.google.games.bridge.HelperFragment";
+        private const string TokenFragmentClass = "com.google.games.bridge.TokenFragment";
 
         // These are the configuration values.
         private bool requestEmail;
@@ -38,10 +39,24 @@ namespace GooglePlayGames.Android
         private string accountName;
 
         // These are the results
-        private AndroidJavaObject account;
         private string email;
         private string authCode;
         private string idToken;
+
+        public static AndroidJavaObject CreateInvisibleView() {
+            using (var jc = new AndroidJavaClass(TokenFragmentClass))
+            {
+                return jc.CallStatic<AndroidJavaObject>("createInvisibleView", GetActivity());
+            }
+        }
+
+        public static AndroidJavaObject GetActivity()
+        {
+            using (var jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
+            {
+                return jc.GetStatic<AndroidJavaObject>("currentActivity");
+            }
+        }
 
         public void SetRequestAuthCode(bool flag, bool forceRefresh)
         {
@@ -82,22 +97,19 @@ namespace GooglePlayGames.Android
                 {
                     oauthScopes = new List<string>();
                 }
-
                 oauthScopes.AddRange(scopes);
             }
         }
 
         public void Signout()
         {
-            account = null;
             authCode = null;
             email = null;
             idToken = null;
-            PlayGamesHelperObject.RunOnGameThread(() =>
-            {
+            PlayGamesHelperObject.RunOnGameThread(() => {
                 Debug.Log("Calling Signout in token client");
-                AndroidJavaClass cls = new AndroidJavaClass(HelperFragmentClass);
-                cls.CallStatic("signOut", AndroidHelperFragment.GetActivity());
+                AndroidJavaClass cls = new AndroidJavaClass(TokenFragmentClass);
+                cls.CallStatic("signOut", GetActivity());
             });
         }
 
@@ -136,30 +148,32 @@ namespace GooglePlayGames.Android
         {
             try
             {
-                using (var bridgeClass = new AndroidJavaClass(HelperFragmentClass))
-                using (var currentActivity = AndroidHelperFragment.GetActivity())
-                using (var pendingResult = bridgeClass.CallStatic<AndroidJavaObject>(
-                    "fetchToken",
-                    currentActivity,
-                    silent,
-                    requestAuthCode,
-                    requestEmail,
-                    requestIdToken,
-                    webClientId,
-                    forceRefresh,
-                    oauthScopes.ToArray(),
-                    hidePopups,
-                    accountName))
+                using (var bridgeClass = new AndroidJavaClass(TokenFragmentClass))
                 {
-                    pendingResult.Call("setResultCallback", new ResultCallbackProxy(
-                        tokenResult =>
+                    using (var currentActivity = GetActivity())
+                    {
+                        using (var pendingResult = bridgeClass.CallStatic<AndroidJavaObject>(
+                            "fetchToken",
+                            currentActivity,
+                            silent,
+                            requestAuthCode,
+                            requestEmail,
+                            requestIdToken, 
+                            webClientId,
+                            forceRefresh,
+                            oauthScopes.ToArray(),
+                            hidePopups,
+                            accountName))
                         {
-                            account = tokenResult.Call<AndroidJavaObject>("getAccount");
-                            authCode = tokenResult.Call<string>("getAuthCode");
-                            email = tokenResult.Call<string>("getEmail");
-                            idToken = tokenResult.Call<string>("getIdToken");
-                            callback(tokenResult.Call<int>("getStatusCode"));
-                        }));
+                            pendingResult.Call("setResultCallback", new ResultCallbackProxy(
+                                tokenResult => {
+                                    authCode = tokenResult.Call<string>("getAuthCode");
+                                    email = tokenResult.Call<string>("getEmail");
+                                    idToken = tokenResult.Call<string>("getIdToken");
+                                    callback(tokenResult.Call<int>("getStatusCode"));
+                                }));
+                        }
+                    }
                 }
             }
             catch (Exception e)
@@ -168,12 +182,7 @@ namespace GooglePlayGames.Android
                 OurUtils.Logger.e(e.ToString());
             }
         }
-
-        public AndroidJavaObject GetAccount()
-        {
-            return account;
-        }
-
+        
         /// <summary>
         /// Gets another server auth code.
         /// </summary>
@@ -194,38 +203,44 @@ namespace GooglePlayGames.Android
         {
             try
             {
-                using (var bridgeClass = new AndroidJavaClass(HelperFragmentClass))
-                using (var currentActivity = AndroidHelperFragment.GetActivity())
-                using (var pendingResult = bridgeClass.CallStatic<AndroidJavaObject>(
-                    "fetchToken",
-                    currentActivity,
-                    /* silent= */ reAuthenticateIfNeeded,
-                    /* requestAuthCode= */ true,
-                    /* requestEmail= */ false,
-                    /* requestIdToken= */ false,
-                    webClientId,
-                    /* forceRefresh= */ false,
-                    oauthScopes.ToArray(),
-                    /* hidePopups= */ true,
-                    /* accountName= */ ""))
+                using (var bridgeClass = new AndroidJavaClass(TokenFragmentClass))
                 {
-                    pendingResult.Call("setResultCallback", new ResultCallbackProxy(
-                        tokenResult => { callback(tokenResult.Call<string>("getAuthCode")); }));
+                    using (var currentActivity = GetActivity())
+                    {
+                        using (var pendingResult = bridgeClass.CallStatic<AndroidJavaObject>(
+                            "fetchToken",
+                            currentActivity,
+                            /* silent= */!reAuthenticateIfNeeded,
+                            /* requestAuthCode= */true,
+                            requestEmail,
+                            requestIdToken, 
+                            webClientId,
+                            /* forceRefresh= */false,
+                            oauthScopes.ToArray(),
+                            /* hidePopups= */true,
+                            accountName))
+                        {
+                            pendingResult.Call("setResultCallback", new ResultCallbackProxy(
+                                tokenResult => {
+                                    callback(tokenResult.Call<string>("getAuthCode"));
+                                }));
+                        }
+                    }
                 }
             }
             catch (Exception e)
             {
                 OurUtils.Logger.e("Exception launching token request: " + e.Message);
                 OurUtils.Logger.e(e.ToString());
-            }
+            }              
         }
 
         private class ResultCallbackProxy : AndroidJavaProxy
         {
             private Action<AndroidJavaObject> mCallback;
 
-            public ResultCallbackProxy(Action<AndroidJavaObject> callback)
-                : base("com/google/android/gms/common/api/ResultCallback")
+            public ResultCallbackProxy(Action<AndroidJavaObject> callback) 
+            : base("com/google/android/gms/common/api/ResultCallback")
             {
                 mCallback = callback;
             }
@@ -234,7 +249,16 @@ namespace GooglePlayGames.Android
             {
                 mCallback(tokenResult);
             }
+
+            // To prevent error:
+            // Java interface default methods are only supported since Android Oreo
+            // E Unity   : Exception: No such proxy method: GooglePlayGames.Android.AndroidTokenClient+ResultCallbackProxy.toString()
+            public string toString()
+            {
+                return "ResultCallbackProxy";
+            }
         }
+
     }
 }
 #endif

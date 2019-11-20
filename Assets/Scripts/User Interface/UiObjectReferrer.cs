@@ -184,12 +184,36 @@ public class UiObjectReferrer : MonoBehaviour {
     public GameObject notificationLoginMain;
     public GameObject notificationLoginDE;
     public GameObject notificationLoginEN;
+    public Button notificationLoginContinueBDE;
+    public Button notificationLoginBackBDE;
+    public Button notificationLoginContinueBEN;
+    public Button notificationLoginBackBEN;
+    public Text notificationLoginContinueTDE;
+    public Text notificationLoginBackTDE;
+    public Text notificationLoginContinueTEN;
+    public Text notificationLoginBackTEN;
 
     [Header("LOGOUT NOTIFICATION")]
     [Space(30)]
     public GameObject notificationLogoutMain;
     public GameObject notificationLogoutDE;
     public GameObject notificationLogoutEN;
+    public Button notificationLogoutContinueBDE;
+    public Button notificationLogoutBackBDE;
+    public Button notificationLogoutContinueBEN;
+    public Button notificationLogoutBackBEN;
+    public Text notificationLogoutContinueTDE;
+    public Text notificationLogoutBackTDE;
+    public Text notificationLogoutContinueTEN;
+    public Text notificationLogoutBackTEN;
+
+    [Header("GOOGLE RESULT NOTIFICATION")]
+    [Space(30)]
+    public GameObject notificationGoogleResultMain;
+    public GameObject notificationGoogleResultDE;
+    public GameObject notificationGoogleResultEN;
+    public Text notificationGoogleResultTextDE;
+    public Text notificationGoogleResultTextEN;
 
     [Header("STATISTICS")]
     [Space(30)]
@@ -254,7 +278,8 @@ public class UiObjectReferrer : MonoBehaviour {
             tutorialMainTopEN,
             tutorialMainBottomEN,
             notificationLoginEN,
-            notificationLogoutEN
+            notificationLogoutEN,
+            notificationGoogleResultEN
         });
         objectsDE.AddRange(new List<GameObject>() {
             //MENU
@@ -269,7 +294,8 @@ public class UiObjectReferrer : MonoBehaviour {
             tutorialMainTopDE,
             tutorialMainBottomDE,
             notificationLoginDE,
-            notificationLogoutDE
+            notificationLogoutDE,
+            notificationGoogleResultDE
         });
     }
 }
