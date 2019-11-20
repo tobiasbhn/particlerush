@@ -77,12 +77,19 @@ public class SaveData {
     // Time
     public float totalTimeIngame = 0f;
     // Score
-    public float highscore = 0f;
     public float scoreTotal = 0f;
     public int currentGold = 0;
     public int currentLevel = 0;
     public int currentLevelPoints = 0;
     public int currentRemainingLevelPoints = 0;
+
+    //HIGHSCORE
+    public float highscore = 0f;
+    public int highscoreRoundDataGrow = 0;
+    public int highscoreRoundDataShrink = 0;
+    public int highscoreRoundDataGold = 0;
+    public float highscoreRoundDataTime = 0f;
+
 
 
     //PROCESSES

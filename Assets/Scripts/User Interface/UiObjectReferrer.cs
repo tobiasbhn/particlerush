@@ -117,6 +117,32 @@ public class UiObjectReferrer : MonoBehaviour {
 
 
 
+    [Header("HIGHSCORE")]
+    [Space(30)]
+    public GameObject highscoreMain;
+    // public ScrollRect highscoreScrollRect;
+    // public Text highscoreGlobalNames;
+    // public Text highscoreGlobalScores;
+    
+    [Header("HIGHSCORE EN")]
+    public GameObject highscoreMainEN;
+    public Text highscorePersonalScoreEN;
+    public Text highscorePersonalGrowEN;
+    public Text highscorePersonalShrinkEN;
+    public Text highscorePersonalGoldEN;
+    public Text highscorePersonalTimeEN;
+    
+    [Header("HIGHSCORE DE")]
+    public GameObject highscoreMainDE;
+    public Text highscorePersonalScoreDE;
+    public Text highscorePersonalGrowDE;
+    public Text highscorePersonalShrinkDE;
+    public Text highscorePersonalGoldDE;
+    public Text highscorePersonalTimeDE;
+
+
+
+
     [Header("SHOP")]
     [Space(30)]
     public GameObject shopLowerMain;
@@ -279,7 +305,8 @@ public class UiObjectReferrer : MonoBehaviour {
             tutorialMainBottomEN,
             notificationLoginEN,
             notificationLogoutEN,
-            notificationGoogleResultEN
+            notificationGoogleResultEN,
+            highscoreMainEN
         });
         objectsDE.AddRange(new List<GameObject>() {
             //MENU
@@ -295,7 +322,8 @@ public class UiObjectReferrer : MonoBehaviour {
             tutorialMainBottomDE,
             notificationLoginDE,
             notificationLogoutDE,
-            notificationGoogleResultDE
+            notificationGoogleResultDE,
+            highscoreMainDE
         });
     }
 }

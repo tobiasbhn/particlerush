@@ -67,9 +67,17 @@ public class RuntimeDataManager : MonoBehaviour {
         value.roundTime = Time.realtimeSinceStartup - value.startTime;
         SaveDataManager.getValue.totalTimeIngame += value.roundTime;
         // Score
-        SaveDataManager.getValue.highscore = value.highscore;
         SaveDataManager.getValue.scoreTotal += value.score;
         SaveDataManager.getValue.currentGold += value.goldMassCollected;
+        if (ScoreScript.instance.newHighscore) {
+            GoogleLoginScript.instance.SetNewHighscore((int)value.highscore, GPGSIds.leaderboard_highscore);
+            SaveDataManager.getValue.highscore = value.highscore;
+            SaveDataManager.getValue.highscoreRoundDataGrow = preRevive.normalParticlesDestroyed + postRevive.normalParticlesDestroyed;
+            SaveDataManager.getValue.highscoreRoundDataShrink = preRevive.shrinkParticlesCollected + postRevive.shrinkParticlesCollected;
+            SaveDataManager.getValue.highscoreRoundDataGold = preRevive.goldMassCollected + postRevive.goldMassCollected;
+            SaveDataManager.getValue.highscoreRoundDataTime = preRevive.roundTime + postRevive.roundTime;
+        }
+        // Level
         value.levelPointsForDestroy = value.normalParticlesDestroyed + value.goldParticlesCollected + value.shrinkParticlesCollected;
         value.levelPointsForDistance = (int)value.roundTime;
         SaveDataManager.getValue.currentLevelPoints += value.levelPointsForDestroy + value.levelPointsForDistance;
@@ -89,9 +97,9 @@ public class RuntimeDataManager : MonoBehaviour {
             if (totalPoints >= 0) {
                 level++;
                 remainingPoints = totalPoints;
-            } else {break;}
+            } else { break; }
         }
-        return new int[] {level, remainingPoints};
+        return new int[] { level, remainingPoints };
     }
 }
 

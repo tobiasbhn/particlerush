@@ -46,7 +46,6 @@ public class FPS : MonoBehaviour {
 
             text += "\n\n Google Play Services:";
             text += "\n Google Login: " + GoogleLoginScript.instance.isAuthenticated();
-            text += "\n Google Login Status: " + GoogleLoginScript.instance.loginStatus;
             if (GoogleLoginScript.instance.isAuthenticated()) {
                 text += "\n Google Name: " + GoogleLoginScript.instance.getUsername();
                 text += "\n Google ID: " + GoogleLoginScript.instance.getUserID();

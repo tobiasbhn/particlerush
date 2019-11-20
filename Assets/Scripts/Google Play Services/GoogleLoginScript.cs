@@ -116,4 +116,60 @@ public class GoogleLoginScript : MonoBehaviour {
         UiObjectReferrer.instance.notificationGoogleResultTextEN.text = messageEN;
         SceneManager.instance.callSceneGoogleResult();
     }
+
+
+    // ACHIEVMENTS FUNCTIONS
+    public void SetNewAchievment() {
+
+    }
+    public void ShowAchievments() {
+        if (isAuthenticated())
+            Social.ShowAchievementsUI();
+        else
+            SceneManager.instance.callSceneLoginNotification();
+    }
+
+
+    // LEADERBOARD FUNCIONS
+    public void SetNewHighscore(int score, string leaderboardID) {
+        if (!isAuthenticated())
+            return;
+
+        Social.ReportScore(score, leaderboardID, (bool success) => {
+            if (success)
+                Debug.Log("Reported new Highscore to Leaderboard.");
+            else
+                Debug.LogWarning("Cannot post new Highscore to leaderboard.");
+        });
+    }
+    public void ShowHighscore() {
+        if (isAuthenticated())
+            Social.ShowLeaderboardUI();
+        else
+            SceneManager.instance.callSceneLoginNotification();
+    }
+    // public string[] GetHighscoreString() {
+    //     string[] _ret = new string[2] { "", "" };
+    //     if (isAuthenticated()) {
+    //         PlayGamesPlatform.Instance.LoadScores(GPGSIds.leaderboard_highscore, LeaderboardStart.TopScores, 10, LeaderboardCollection.Public, LeaderboardTimeSpan.AllTime, (data) => {
+    //             if (data.Valid) {
+    //                 List<string> userIds = new List<string>();
+    //                 foreach (IScore score in data.Scores) {
+    //                     userIds.Add(score.userID);
+    //                 }
+    //                 Social.LoadUsers(userIds.ToArray(), (users) => {
+    //                     foreach (IScore score in data.Scores) {
+    //                         foreach (IUserProfile user in users) {
+    //                             if (score.userID == user.id) {
+    //                                 _ret[0] += score.rank + " - \"" + user.userName + "\"\n";
+    //                                 _ret[1] += score.value + "\n";
+    //                             }
+    //                         }
+    //                     }
+    //                 });
+    //             }
+    //         });
+    //     }
+    //     return _ret;
+    // }
 }

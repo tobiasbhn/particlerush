@@ -190,6 +190,9 @@ public class ScenariosDefault : ScriptableObject {
             case UiSceneModis.googleResult:
                 UiSceneScript.instance.SetupNotificationGoogleResult();
                 break;
+            case UiSceneModis.leaderboard:
+                UiSceneScript.instance.SetupLeaderboard();
+                break;
         }
     }
     private void SetupAccountInfo() {

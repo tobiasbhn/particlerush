@@ -22,7 +22,7 @@ public enum PlayerSceneModis {keepCurrent, disabled, ingame, menu, pause, resume
 public enum ParticleBehaviourSceneModis {keepCurrent, disabled, ingame, menu };
 public enum PlayerInputSceneModis {refuse, allow, onlyShoot, onlyMove };
 public enum TimeSceneModis {keepCurrent, normal, stop };
-public enum UiSceneModis {keepCurrent, disabled, ingame, menu, pause, shop, settings, adNotification, endgame, openSource, statistics, tutorial, login, logout, googleResult};
+public enum UiSceneModis {keepCurrent, disabled, ingame, menu, pause, shop, settings, adNotification, endgame, openSource, statistics, tutorial, login, logout, googleResult, leaderboard};
 public enum UiShowAccountInfo {disabled, show};
 public enum UiShowLevelInfo {disabled, show};
 public enum ShakeSceneModis {keepCurrent, disabled, ingame, menu };

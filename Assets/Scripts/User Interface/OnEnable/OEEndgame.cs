@@ -34,14 +34,14 @@ public class OEEndgame : MonoBehaviour {
         UiObjectReferrer.instance.endgameButtonMenuEN.interactable = true;
         UiObjectReferrer.instance.endgameButtonRestartDE.interactable = true;
         UiObjectReferrer.instance.endgameButtonRestartEN.interactable = true;
-        UiObjectReferrer.instance.endgameButtonShopDE.interactable = true;
-        UiObjectReferrer.instance.endgameButtonShopEN.interactable = true;
+        UiObjectReferrer.instance.endgameButtonShopDE.interactable = false;
+        UiObjectReferrer.instance.endgameButtonShopEN.interactable = false;
         UiObjectReferrer.instance.endgameButtonSettingsde.interactable = true;
         UiObjectReferrer.instance.endgameButtonSettingsEN.interactable = true;
         UiObjectReferrer.instance.endgameButtonReviveAdsDE.interactable = true;
         UiObjectReferrer.instance.endgameButtonReviveAdsEN.interactable = true;
-        UiObjectReferrer.instance.endgameButtonReviveGoldDE.interactable = true;
-        UiObjectReferrer.instance.endgameButtonReviveGoldEN.interactable = true;
+        UiObjectReferrer.instance.endgameButtonReviveGoldDE.interactable = false;
+        UiObjectReferrer.instance.endgameButtonReviveGoldEN.interactable = false;
         UiObjectReferrer.instance.endgameButtonReviveSkipDE.interactable = true;
         UiObjectReferrer.instance.endgameButtonReviveSkipEN.interactable = true;
     }

@@ -75,6 +75,10 @@ public class UiSceneScript : MonoBehaviour {
         DisableAllMenus();
         UiObjectReferrer.instance.notificationGoogleResultMain.SetActive(true);
     }
+    public void SetupLeaderboard() {
+        DisableAllMenus();
+        UiObjectReferrer.instance.highscoreMain.SetActive(true);
+    }
 
     public void DisableAllMenus() {
         UiObjectReferrer.instance.ingameMain.SetActive(false);
@@ -92,5 +96,6 @@ public class UiSceneScript : MonoBehaviour {
         UiObjectReferrer.instance.notificationLoginMain.SetActive(false);
         UiObjectReferrer.instance.notificationLogoutMain.SetActive(false);
         UiObjectReferrer.instance.notificationGoogleResultMain.SetActive(false);
+        UiObjectReferrer.instance.highscoreMain.SetActive(false);
     }
 }

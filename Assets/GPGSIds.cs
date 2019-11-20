@@ -24,8 +24,19 @@
 
 public static class GPGSIds
 {
+        public const string achievement_streber = "CgkIoNu8374PEAIQEA"; // <GPGSID>
+        public const string achievement_nicht_jetzt = "CgkIoNu8374PEAIQCA"; // <GPGSID>
+        public const string achievement_willkommen_in_partikel_rush = "CgkIoNu8374PEAIQAQ"; // <GPGSID>
+        public const string achievement_stressig = "CgkIoNu8374PEAIQDA"; // <GPGSID>
         public const string leaderboard_highscore = "CgkIoNu8374PEAIQAg"; // <GPGSID>
-        public const string achievement_test = "CgkIoNu8374PEAIQAQ"; // <GPGSID>
+        public const string achievement_ist_das_berhaupt_mglich = "CgkIoNu8374PEAIQDQ"; // <GPGSID>
+        public const string achievement_shoppingqueen = "CgkIoNu8374PEAIQCQ"; // <GPGSID>
+        public const string achievement_nochmal = "CgkIoNu8374PEAIQDg"; // <GPGSID>
+        public const string achievement_guter_score = "CgkIoNu8374PEAIQCw"; // <GPGSID>
+        public const string achievement_hallo_welt = "CgkIoNu8374PEAIQBw"; // <GPGSID>
+        public const string achievement_ehre = "CgkIoNu8374PEAIQEQ"; // <GPGSID>
+        public const string achievement_level_up = "CgkIoNu8374PEAIQCg"; // <GPGSID>
+        public const string achievement_9000 = "CgkIoNu8374PEAIQDw"; // <GPGSID>
 
 }
 
