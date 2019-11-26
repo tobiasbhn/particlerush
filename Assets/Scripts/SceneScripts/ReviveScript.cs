@@ -10,6 +10,7 @@ public class ReviveScript : MonoBehaviour {
 
     //BEHAVIOUR
     [HideInInspector] public bool alreadyRevived = false;
+    private int revivePrice = 0;
 
     void Awake() {
         instance = this;
@@ -39,9 +40,12 @@ public class ReviveScript : MonoBehaviour {
         });
     }
     public void reviveGold() {
-        alreadyRevived = true;
-        //SUBSTRACT GOLD
-        SceneManager.instance.callSceneRevive();
+        if (GoldScript.instance.SpendGold(revivePrice)) {
+            alreadyRevived = true;
+            SceneManager.instance.callSceneRevive();
+        } else {
+            SetupLevel();
+        }
     }
 
 
@@ -52,6 +56,22 @@ public class ReviveScript : MonoBehaviour {
         UiObjectReferrer.instance.endgameReviveEN.SetActive(true);
         UiObjectReferrer.instance.endgameLevelDE.SetActive(false);
         UiObjectReferrer.instance.endgameLevelEN.SetActive(false);
+
+        revivePrice = (SaveDataManager.getValue.statsTotleCountRevive + 1) * ConstantManager.REVIVE_LINEAR_INCREASE_FACTOR;
+        UiObjectReferrer.instance.endgameTextReviveGoldDE.text = "BELEBEN GOLD (" + revivePrice + ")";
+        UiObjectReferrer.instance.endgameTextReviveGoldEN.text = "REVIVE GOLD (" + revivePrice + ")";
+
+        if (GoldScript.instance.CheckGold(revivePrice)) {
+            UiObjectReferrer.instance.endgameButtonReviveGoldDE.interactable = true;
+            UiObjectReferrer.instance.endgameButtonReviveGoldEN.interactable = true;
+            UiObjectReferrer.instance.endgameTextReviveGoldDE.color = new Color32(255, 255, 255, 255);
+            UiObjectReferrer.instance.endgameTextReviveGoldEN.color = new Color32(255, 255, 255, 255);
+        } else {
+            UiObjectReferrer.instance.endgameButtonReviveGoldDE.interactable = false;
+            UiObjectReferrer.instance.endgameButtonReviveGoldEN.interactable = false;
+            UiObjectReferrer.instance.endgameTextReviveGoldDE.color = new Color32(255, 255, 255, 90);
+            UiObjectReferrer.instance.endgameTextReviveGoldEN.color = new Color32(255, 255, 255, 90);
+        }
     }
     public void SetupLevel() {
         UiObjectReferrer.instance.endgameReviveDE.SetActive(false);

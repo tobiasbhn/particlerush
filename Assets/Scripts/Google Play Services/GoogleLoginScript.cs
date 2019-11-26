@@ -55,11 +55,6 @@ public class GoogleLoginScript : MonoBehaviour {
             UiObjectReferrer.instance.notificationLoginBackTDE.color = new Color32(255, 255, 255, 90);
             UiObjectReferrer.instance.notificationLoginBackTEN.color = new Color32(255, 255, 255, 90);
         }
-        // Save login status
-        if (withUI) {
-            SaveDataManager.getValue.playGamesAutomaticAuth = true;
-            SaveDataManager.Save();
-        }
         // Init if not done jet
         if (!initialized)
             initPlayGamesServices();
@@ -77,6 +72,12 @@ public class GoogleLoginScript : MonoBehaviour {
         } catch (Exception e) {
             Debug.LogError(e);
             SetResult("Die Authentifizierung ist fehlgeschlagen.", "An Error occured during Authentification.");
+        }
+
+        // Save login status
+        if (withUI) {
+            SaveDataManager.getValue.playGamesAutomaticAuth = true;
+            SaveDataManager.Save();
         }
     }
     public void Logout() {
@@ -119,8 +120,58 @@ public class GoogleLoginScript : MonoBehaviour {
 
 
     // ACHIEVMENTS FUNCTIONS
-    public void SetNewAchievment() {
+    public void CheckAchievements() {
+        if (!isAuthenticated())
+            return;
 
+        PlayGamesPlatform.Instance.IncrementAchievement(
+                    GPGSIds.achievement_level_up,
+                    SaveDataManager.getValue.currentLevel >= 10 ? 10: 0,
+                    (success) => { });
+        Social.ReportProgress(
+                    GPGSIds.achievement_willkommen_in_partikel_rush,
+                    100f,
+                    (success) => { });
+        Social.ReportProgress(
+                    GPGSIds.achievement_hallo_welt,
+                    SaveDataManager.getValue.statsTotalGamesPlayed > 0 ? 100f : 0f,
+                    (success) => { });
+        Social.ReportProgress(
+                    GPGSIds.achievement_nicht_jetzt,
+                    SaveDataManager.getValue.statsTotleCountRevive > 0 ? 100f : 0f,
+                    (success) => { });
+        Social.ReportProgress(
+                    GPGSIds.achievement_shoppingqueen,
+                    GetShopingqueenProgress(),
+                    (success) => { });
+        Social.ReportProgress(
+                    GPGSIds.achievement_stressig,
+                    SaveDataManager.getValue.maxReachedDifficulty == 1f ? 100f : 0f,
+                    (success) => { });
+        Social.ReportProgress(
+                    GPGSIds.achievement_guter_score,
+                    SaveDataManager.getValue.highscore >= 200000 ? 100f : 0f,
+                    (success) => { });
+        Social.ReportProgress(
+                    GPGSIds.achievement_ist_das_berhaupt_mglich,
+                    SaveDataManager.getValue.highscore >= 500000 ? 100f : 0f,
+                    (success) => { });
+        Social.ReportProgress(
+                    GPGSIds.achievement_nochmal,
+                    SaveDataManager.getValue.statsTotalGamesPlayed >= 10 ? 100f : 0f,
+                    (success) => { });
+        Social.ReportProgress(
+                    GPGSIds.achievement_9000,
+                    SaveDataManager.getValue.statsTotalProjectilesFired >= 9000 ? 100f : 0f,
+                    (success) => { });
+        Social.ReportProgress(
+                    GPGSIds.achievement_streber,
+                    SaveDataManager.getValue.achieved_streber ? 100f : 0f,
+                    (success) => { });
+        Social.ReportProgress(
+                    GPGSIds.achievement_ehre,
+                    SaveDataManager.getValue.achieved_ehre ? 100f : 0f,
+                    (success) => { });
     }
     public void ShowAchievments() {
         if (isAuthenticated())
@@ -148,28 +199,12 @@ public class GoogleLoginScript : MonoBehaviour {
         else
             SceneManager.instance.callSceneLoginNotification();
     }
-    // public string[] GetHighscoreString() {
-    //     string[] _ret = new string[2] { "", "" };
-    //     if (isAuthenticated()) {
-    //         PlayGamesPlatform.Instance.LoadScores(GPGSIds.leaderboard_highscore, LeaderboardStart.TopScores, 10, LeaderboardCollection.Public, LeaderboardTimeSpan.AllTime, (data) => {
-    //             if (data.Valid) {
-    //                 List<string> userIds = new List<string>();
-    //                 foreach (IScore score in data.Scores) {
-    //                     userIds.Add(score.userID);
-    //                 }
-    //                 Social.LoadUsers(userIds.ToArray(), (users) => {
-    //                     foreach (IScore score in data.Scores) {
-    //                         foreach (IUserProfile user in users) {
-    //                             if (score.userID == user.id) {
-    //                                 _ret[0] += score.rank + " - \"" + user.userName + "\"\n";
-    //                                 _ret[1] += score.value + "\n";
-    //                             }
-    //                         }
-    //                     }
-    //                 });
-    //             }
-    //         });
-    //     }
-    //     return _ret;
-    // }
+
+    // PRIVATE
+    private float GetShopingqueenProgress() {
+        if (SaveDataManager.getValue.shrinkItemLVL > 0) {
+            return 100f;
+        }
+        return 0f;
+    }
 }

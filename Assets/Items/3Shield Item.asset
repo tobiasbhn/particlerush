@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcb77a53a7cb2ea4ba5f1f7a393b9250, type: 3}
+  m_Name: 3Shield Item
+  m_EditorClassIdentifier: 
+  english:
+    itemName: Shield
+    itemDescription: This item generates a shield that blocks a certain number of
+      particles.
+    itemInfos:
+    - Blocks 0 Particles
+    - Blocks 2 Particles
+    - Blocks 4 Particles
+    - Blocks 5 Particles
+  german:
+    itemName: Schild
+    itemDescription: Dieses Item generiert ein Schild, welches eine gewisse Anzahl
+      an Partikeln blockt.
+    itemInfos:
+    - Blockiert 0 Partikel
+    - Blockiert 2 Partikel
+    - Blockiert 4 Partikel
+    - Blockiert 5 Partikel
+  itemIconAsTexture: {fileID: 2800000, guid: 9f5d4dd0727f6f149a86d81712b85331, type: 3}
+  itemEffects:
+  - 0
+  - 2
+  - 4
+  - 5
+  itemPrices: 000000000000000000000000

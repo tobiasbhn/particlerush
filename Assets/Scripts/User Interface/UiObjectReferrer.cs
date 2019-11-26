@@ -50,6 +50,7 @@ public class UiObjectReferrer : MonoBehaviour {
     public Button endgameButtonMenuEN;
     public Button endgameButtonSettingsEN;
     public Button endgameButtonReviveGoldEN;
+    public Text endgameTextReviveGoldEN;
     public Button endgameButtonReviveAdsEN;
     public Button endgameButtonReviveSkipEN;
 
@@ -78,6 +79,7 @@ public class UiObjectReferrer : MonoBehaviour {
     public Button endgameButtonMenuDE;
     public Button endgameButtonSettingsde;
     public Button endgameButtonReviveGoldDE;
+    public Text endgameTextReviveGoldDE;
     public Button endgameButtonReviveAdsDE;
     public Button endgameButtonReviveSkipDE;
 
@@ -120,9 +122,6 @@ public class UiObjectReferrer : MonoBehaviour {
     [Header("HIGHSCORE")]
     [Space(30)]
     public GameObject highscoreMain;
-    // public ScrollRect highscoreScrollRect;
-    // public Text highscoreGlobalNames;
-    // public Text highscoreGlobalScores;
     
     [Header("HIGHSCORE EN")]
     public GameObject highscoreMainEN;
@@ -147,18 +146,17 @@ public class UiObjectReferrer : MonoBehaviour {
     [Space(30)]
     public GameObject shopLowerMain;
     public GameObject shopUpperMain;
+    public ScrollRect shopScrollRect;
+    public Text shopDescription;
+    public Text shopLevelInfo;
     [Header("SHOP EN")]
     public GameObject shopInterfaceEN;
-    public Text shopWelcomeTextEN;
     public Button shopBuyButtonEN;
-    public Button shopUnlockButtonEN;
+    public Text shopBuyTextEN;
     [Header("SHOP DE")]
     public GameObject shopInterfaceDE;
-    public Text shopWelcomeTextDE;
     public Button shopBuyButtonDE;
-    public Button shopUnlockButtonDE;
-    [Header("SHOP ITEMS")]
-    public List<ItemShopPrefab> shopItems;
+    public Text shopBuyTextDE;
 
 
 
@@ -283,6 +281,14 @@ public class UiObjectReferrer : MonoBehaviour {
     public Button tutorialNextEN;
     public Button tutorialTutorialEN;
 
+
+
+    [Header("OWN AD")]
+    [Space(30)]
+    public GameObject ownAdMain;
+    public GameObject ownAdDE;
+    public GameObject ownAdEN;
+
     void Awake() {
         instance = this;
     }
@@ -306,7 +312,8 @@ public class UiObjectReferrer : MonoBehaviour {
             notificationLoginEN,
             notificationLogoutEN,
             notificationGoogleResultEN,
-            highscoreMainEN
+            highscoreMainEN,
+            ownAdEN
         });
         objectsDE.AddRange(new List<GameObject>() {
             //MENU
@@ -323,7 +330,8 @@ public class UiObjectReferrer : MonoBehaviour {
             notificationLoginDE,
             notificationLogoutDE,
             notificationGoogleResultDE,
-            highscoreMainDE
+            highscoreMainDE,
+            ownAdDE
         });
     }
 }

@@ -26,6 +26,9 @@ public static class SaveDataManager {
 
     //Save Manipulated Data to File, or - if not manipulated - the defult Values
     public static void Save() {
+        Save(true);
+    }
+    public static void Save(bool withUpdateAchievements) {
         if (getValue == null)
                 getValue = new SaveData();
         if (ConstantManager.useLocalSaveFile) {
@@ -39,6 +42,8 @@ public static class SaveDataManager {
             OEAccountInfo.instance.UpdateAccountInfo();
         if (OELevelInfo.instance != null)
             OELevelInfo.instance.UpdateInfos();
+        if (GoogleLoginScript.instance != null && withUpdateAchievements)
+            GoogleLoginScript.instance.CheckAchievements();
     }
 }
 
@@ -90,6 +95,10 @@ public class SaveData {
     public int highscoreRoundDataGold = 0;
     public float highscoreRoundDataTime = 0f;
 
+    //ACHIEVEMENTS
+    public float maxReachedDifficulty = 0f;
+    public bool achieved_streber = false;
+    public bool achieved_ehre = false;
 
 
     //PROCESSES
@@ -105,12 +114,10 @@ public class SaveData {
     public SettingsDebug settingsDebug = SettingsDebug.off;
 
     //SHOP
-    public int statsTotalGoldSpend = 0;
-    public int shrinkItemLVL = 0; // 0 = Locked | 1 = LVL1 ...
-    public int shieldItemLVL = 0;
-    public int forceItemLVL = 0;
-    public int clearItmLVL = 0;
-    public int slowItemLVL = 0;
+    public int shootItemLVL = 0;
     public int slideItemLVL = 0;
-    public int goldrushItemLVL = 0;
+    public int shieldItemLVL = 0;
+    public int secondChanceItemLVL = 0;
+    public int coinItemLVL = 0;
+    public int shrinkItemLVL = 0;
 }

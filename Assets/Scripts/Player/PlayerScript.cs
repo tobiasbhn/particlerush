@@ -30,6 +30,7 @@ public class PlayerScript : MonoBehaviour {
     //MASS RELATIVE
     [HideInInspector] public float targetMass = 0f;
     [HideInInspector] public float currentMass = 0f;
+    [HideInInspector] public float shrinkEffectFactor = 0f;
 
 
 
@@ -46,6 +47,10 @@ public class PlayerScript : MonoBehaviour {
         this.transform.Rotate(90, 0, 0);
     }
     void Update() {
+        //SHRINK ITEM
+        if (playerAllowShrink) {
+            SetTargetMass(targetMass - shrinkEffectFactor * Time.deltaTime);
+        }
         //ROTATION
         if (mesh != null && playerAllowRotate) {
             this.transform.Rotate(new Vector3(0, playerRotationSpeed * Time.deltaTime, 0));

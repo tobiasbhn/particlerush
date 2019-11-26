@@ -68,7 +68,7 @@ public class RuntimeDataManager : MonoBehaviour {
         SaveDataManager.getValue.totalTimeIngame += value.roundTime;
         // Score
         SaveDataManager.getValue.scoreTotal += value.score;
-        SaveDataManager.getValue.currentGold += value.goldMassCollected;
+        GoldScript.instance.EarnGold(value.goldMassCollected);
         if (ScoreScript.instance.newHighscore) {
             GoogleLoginScript.instance.SetNewHighscore((int)value.highscore, GPGSIds.leaderboard_highscore);
             SaveDataManager.getValue.highscore = value.highscore;
@@ -77,6 +77,9 @@ public class RuntimeDataManager : MonoBehaviour {
             SaveDataManager.getValue.highscoreRoundDataGold = preRevive.goldMassCollected + postRevive.goldMassCollected;
             SaveDataManager.getValue.highscoreRoundDataTime = preRevive.roundTime + postRevive.roundTime;
         }
+        // Achievements
+        if (ScoreScript.instance.difficultFactor > SaveDataManager.getValue.maxReachedDifficulty)
+            SaveDataManager.getValue.maxReachedDifficulty = ScoreScript.instance.difficultFactor;
         // Level
         value.levelPointsForDestroy = value.normalParticlesDestroyed + value.goldParticlesCollected + value.shrinkParticlesCollected;
         value.levelPointsForDistance = (int)value.roundTime;

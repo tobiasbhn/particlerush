@@ -10,6 +10,8 @@ public class OEStatistics : MonoBehaviour {
             UiObjectReferrer.instance.statisticsTextMain.text = GetTextEN();
         else
             UiObjectReferrer.instance.statisticsTextMain.text = GetTextDE();
+        SaveDataManager.getValue.achieved_streber = true;
+        SaveDataManager.Save();
     }
 
     private string GetTextDE() {
@@ -28,7 +30,7 @@ public class OEStatistics : MonoBehaviour {
         _ret += "\nGesamtes eingesammeltes Gold: " + SaveDataManager.getValue.statsTotalGainedGold;
         
 
-        _ret += "\n\n\n\n<b>Partikel:</b>";
+        _ret += "\n\n\n<b>Partikel:</b>";
         _ret += "\nGesamt gespawnt: " + SaveDataManager.getValue.statsTotalParticles;
         
         _ret += "\n\n<b>Normale Partikel:</b>";
@@ -47,7 +49,7 @@ public class OEStatistics : MonoBehaviour {
         _ret += "\nGold Partikel eingesammelt: " + SaveDataManager.getValue.statsTotalGoldParticlesCollected;
         
 
-        _ret += "\n\n\n\n<b>Projektile:</b>";
+        _ret += "\n\n\n<b>Projektile:</b>";
         _ret += "\nGesamt geschossen: " + SaveDataManager.getValue.statsTotalProjectilesFired;
         _ret += "\nGesamt getroffen: " + SaveDataManager.getValue.statsTotalProjectilesHit;
         
@@ -55,11 +57,6 @@ public class OEStatistics : MonoBehaviour {
         _ret += "\n\n<b>Steuerung:</b>";
         _ret += "\nAnzahl Swipes: " + SaveDataManager.getValue.statsTotalInputSwipe;
         _ret += "\nAnzahl Tabs: " + SaveDataManager.getValue.statsTotalInputTab;
-
-        
-        _ret += "\n\n<b>Shop:</b>";
-        _ret += "\nGold ausgegeben: " + SaveDataManager.getValue.statsTotalGoldSpend;
-        _ret += "\nVerbesserungen gekauft: " + GetTotalLVL();
         return _ret;
     }
     private string GetTextEN() {
@@ -78,7 +75,7 @@ public class OEStatistics : MonoBehaviour {
         _ret += "\nTotal collected gold: " + SaveDataManager.getValue.statsTotalGainedGold;
         
 
-        _ret += "\n\n\n\n<b>Particle:</b>";
+        _ret += "\n\n\n<b>Particle:</b>";
         _ret += "\nSpawned total: " + SaveDataManager.getValue.statsTotalParticles;
         
         _ret += "\n\n<b>Normal Particles:</b>";
@@ -97,7 +94,7 @@ public class OEStatistics : MonoBehaviour {
         _ret += "\nGold Particles collected: " + SaveDataManager.getValue.statsTotalGoldParticlesCollected;
         
 
-        _ret += "\n\n\n\n<b>Projectiles:</b>";
+        _ret += "\n\n\n<b>Projectiles:</b>";
         _ret += "\nTotal fired: " + SaveDataManager.getValue.statsTotalProjectilesFired;
         _ret += "\nTotal hit: " + SaveDataManager.getValue.statsTotalProjectilesHit;
         
@@ -105,11 +102,6 @@ public class OEStatistics : MonoBehaviour {
         _ret += "\n\n<b>Controls:</b>";
         _ret += "\nSwipes Count: " + SaveDataManager.getValue.statsTotalInputSwipe;
         _ret += "\nTab Count: " + SaveDataManager.getValue.statsTotalInputTab;
-
-        
-        _ret += "\n\n<b>Shop:</b>";
-        _ret += "\nGold spend: " + SaveDataManager.getValue.statsTotalGoldSpend;
-        _ret += "\nUpgrades purchased: " + GetTotalLVL();
         return _ret;
     }
 
@@ -121,15 +113,5 @@ public class OEStatistics : MonoBehaviour {
 
         var timeString = hh+":"+mm+":"+ss+"."+ms;
         return timeString;
-    }
-    private string GetTotalLVL() {
-        var sum = SaveDataManager.getValue.forceItemLVL + 
-                SaveDataManager.getValue.clearItmLVL +
-                SaveDataManager.getValue.shrinkItemLVL +
-                SaveDataManager.getValue.shieldItemLVL +
-                SaveDataManager.getValue.slowItemLVL +
-                SaveDataManager.getValue.slideItemLVL +
-                SaveDataManager.getValue.goldrushItemLVL;   
-        return sum.ToString();           
     }
 }

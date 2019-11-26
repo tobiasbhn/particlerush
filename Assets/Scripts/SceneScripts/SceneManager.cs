@@ -20,6 +20,7 @@ public class SceneManager : MonoBehaviour {
     public ScenariosDefault resume;
     public ScenariosDefault revive;
     public ScenariosDefault shop;
+    public ScenariosDefault shopReset;
     public ScenariosDefault settings;
     public ScenariosDefault adsNotification;
     public ScenariosDefault loginNotification;
@@ -63,6 +64,9 @@ public class SceneManager : MonoBehaviour {
     }
     public void callSceneShop() {
         shop.callScenario();
+    }
+    public void callSceneShopReset() {
+        shopReset.callScenario();
     }
     public void callSceneSettings() {
         settings.callScenario();

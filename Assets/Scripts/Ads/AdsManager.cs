@@ -36,7 +36,7 @@ public class AdsManager : MonoBehaviour {
     // PRIVATE HELPER FUNCTIONS
     private IEnumerator ShowAdHelper(AdType type, System.Action callback) {
         StartCoroutine(ShowAdHelper(type, (AdResult res) => {
-            callback.Invoke(); 
+            callback.Invoke();
         }));
         yield return null;
     }
@@ -68,9 +68,11 @@ public class AdsManager : MonoBehaviour {
         } else {
             //Show own Ad
             Debug.Log("Would show own Ad.");
-            AfterAdProcess();
-            _return = AdResult.Private;
-            isReady = true;
+            UiSceneScript.instance.ShowOwnAd(() => {
+                AfterAdProcess();
+                _return = AdResult.Private;
+                isReady = true;
+            });
         }
         while (!isReady)
             yield return null;

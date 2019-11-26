@@ -93,6 +93,9 @@ public class ButtonScript : MonoBehaviour {
         //open Instagram on Device
         Application.OpenURL("https://www.instagram.com/tobias.bhn/");
     }
+    public void ButtonOwnAdClose() {
+        UiSceneScript.instance.ownAdActive = false;
+    }
     public void ButtonRedirectTwitter() {
         // open Twitter on Device
         Application.OpenURL("https://twitter.com/tobias_bhn");
@@ -102,6 +105,10 @@ public class ButtonScript : MonoBehaviour {
         if (SaveDataManager.getValue.notificationAdsFinished)
             AdsManager.instance.ShowAd(AdType.Rewarded, (AdResult result) => {
                 SceneManager.instance.callSceneSettings();
+                if (result == AdResult.Finished) {
+                    SaveDataManager.getValue.achieved_ehre = true;
+                    SaveDataManager.Save();
+                }
             });
         else
             SceneManager.instance.callSceneAdsNotification();

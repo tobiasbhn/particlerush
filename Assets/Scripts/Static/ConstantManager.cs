@@ -77,7 +77,6 @@ public static class ConstantManager {
 
     //PLAYER MOVEMENT
     public const float PLAYER_MOVEMENT_SPEED = 5f;
-    public const float PLAYER_MOVEMENT_SLIDE_TIME_COOLDOWN = 3f;
 
 
     //PARTICLE SETTINGS    
@@ -111,6 +110,7 @@ public static class ConstantManager {
     public const bool INPUT_ALLOW_TAP_INGAME = true;
     public const bool INPUT_ALLOW_TAP_MENU = false;
     public const float REVIVE_TIME = 5f;
+    public const int REVIVE_LINEAR_INCREASE_FACTOR = 10;
 
 
     //ADVERTS

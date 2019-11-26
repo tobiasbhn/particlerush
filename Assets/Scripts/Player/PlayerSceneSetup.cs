@@ -23,6 +23,7 @@ public class PlayerSceneSetup : MonoBehaviour {
         PlayerScript.instance.playerAllowWaves = ConstantManager.PLAYER_INGAME_ALLOW_WAVES;
         PlayerScript.instance.playerRotationSpeed = ConstantManager.PLAYER_INGAME_ROTATION_SPEED;
         PlayerScript.instance.SetTargetMass(ConstantManager.PLAYER_INGAME_START_MASS, true);
+        PlayerScript.instance.shrinkEffectFactor = ItemPool.instance.shrinkItemDefinition.getCurrendEffect();
         PlayerScript.instance.ShowPlayer();
     }
 

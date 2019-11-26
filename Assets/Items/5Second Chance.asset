@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a46b04ee8c117d4eb1ec2388e8ae99f, type: 3}
+  m_Name: 5Second Chance
+  m_EditorClassIdentifier: 
+  english:
+    itemName: 2nd Chance
+    itemDescription: This item gives you a second chance and lets you respawn.
+    itemInfos:
+    - No second Chance
+    - Redurce to 65% Mass
+    - Redurce to 60% Mass
+    - Redurce to 55% Mass
+  german:
+    itemName: 2. Chance
+    itemDescription: "Dieses Item gibt dir eine zweite Chance und l\xE4sst dich respawnen."
+    itemInfos:
+    - Keine zweite Chance
+    - Reduziert Masse auf 65%
+    - Reduziert Masse auf 60%
+    - Reduziert Masse auf 55%
+  itemIconAsTexture: {fileID: 2800000, guid: f56087cc3adc3e643911ccde611de9ad, type: 3}
+  itemEffects:
+  - 0
+  - 65
+  - 60
+  - 55
+  itemPrices: 000000000000000000000000

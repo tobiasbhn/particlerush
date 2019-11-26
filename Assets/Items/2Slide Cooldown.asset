@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1233bdc3490b66e4a8797f72379c37ee, type: 3}
+  m_Name: 2Slide Cooldown
+  m_EditorClassIdentifier: 
+  english:
+    itemName: Swipe
+    itemDescription: Reduce the cooldown time of swiping.
+    itemInfos:
+    - 3.0 Seconds Cooldown
+    - 2.5 Seconds Cooldown
+    - 2.0 Seconds Cooldown
+    - 1.5 Seconds Cooldown
+  german:
+    itemName: Swipe
+    itemDescription: Reduziere die Abklingzeit vom Swipen.
+    itemInfos:
+    - 3,0 Sekunden Abklingzeit
+    - 2,5 Sekunden Abklingzeit
+    - 2,0 Sekunden Abklingzeit
+    - 1,5 Sekunden Abklingzeit
+  itemIconAsTexture: {fileID: 2800000, guid: f922163393e51944a8378efbc0980ba2, type: 3}
+  itemEffects:
+  - 3
+  - 2.5
+  - 2
+  - 1.5
+  itemPrices: 000000000000000000000000

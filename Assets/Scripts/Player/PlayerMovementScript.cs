@@ -54,14 +54,14 @@ public class PlayerMovementScript : MonoBehaviour {
                     if (Mathf.Abs(differece.x) > Mathf.Abs(differece.y) && magnitude >= Screen.width / 4) {
                         RuntimeDataManager.value.inputSwipeCount++;
                         //SWIPE
-                        if (differece.x > 0 && lastSwipeTime + ConstantManager.PLAYER_MOVEMENT_SLIDE_TIME_COOLDOWN < Time.time && allowSwipe) {
+                        if (differece.x > 0 && lastSwipeTime + ItemPool.instance.swipeItemDefinition.getCurrendEffect() < Time.time && allowSwipe) {
                             //swipe to the right
                             if (currendPosIndex < 2) {
                                 currendPosIndex++;
                                 lastSwipeTime = Time.time;
                                 targetPlayerPosition = playerPositions[currendPosIndex];
                             }
-                        } else if (differece.x <= 0 && lastSwipeTime + ConstantManager.PLAYER_MOVEMENT_SLIDE_TIME_COOLDOWN < Time.time && allowSwipe) {
+                        } else if (differece.x <= 0 && lastSwipeTime + ItemPool.instance.swipeItemDefinition.getCurrendEffect() < Time.time && allowSwipe) {
                             //swipe to the left
                             if (currendPosIndex > 0) {
                                 lastSwipeTime = Time.time;
@@ -126,7 +126,7 @@ public class PlayerMovementScript : MonoBehaviour {
     }
 
     private void UpdateSlideBar() {        
-        var timePassedInPercent = 100 * (Time.time - lastSwipeTime) / ConstantManager.PLAYER_MOVEMENT_SLIDE_TIME_COOLDOWN;
+        var timePassedInPercent = 100 * (Time.time - lastSwipeTime) / ItemPool.instance.swipeItemDefinition.getCurrendEffect();
         if (allowSwipe && timePassedInPercent <= 100) {
             // Set Active if it should be activd but isnt
             if (UiObjectReferrer.instance.ingameSlideContainer.gameObject.activeSelf == false)

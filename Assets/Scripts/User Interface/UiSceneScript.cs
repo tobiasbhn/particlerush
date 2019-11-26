@@ -7,6 +7,9 @@ public class UiSceneScript : MonoBehaviour {
     //INSTANCE
     [HideInInspector] public static UiSceneScript instance;
 
+    //VARS
+    [HideInInspector] public bool ownAdActive = false;
+
     void Awake() {
         instance = this;
     }
@@ -97,5 +100,19 @@ public class UiSceneScript : MonoBehaviour {
         UiObjectReferrer.instance.notificationLogoutMain.SetActive(false);
         UiObjectReferrer.instance.notificationGoogleResultMain.SetActive(false);
         UiObjectReferrer.instance.highscoreMain.SetActive(false);
+    }
+
+    public void ShowOwnAd(System.Action callback) {
+        ownAdActive = true;
+        StartCoroutine(ShowOwnAdHelper(callback));
+    }
+    private IEnumerator ShowOwnAdHelper(System.Action callback) {
+        Debug.Log("OWN ADD REAL FUNCTION HELPER");
+        UiObjectReferrer.instance.ownAdMain.SetActive(true);
+        while (ownAdActive)
+            yield return null;
+        Debug.Log("Finished");
+        UiObjectReferrer.instance.ownAdMain.SetActive(false);
+        callback.Invoke();
     }
 }
