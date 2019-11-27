@@ -14,6 +14,7 @@ public class PlayerSceneSetup : MonoBehaviour {
         PlayerMovementScript.instance.allowTab = ConstantManager.INPUT_ALLOW_TAP_INGAME;
         PlayerMovementScript.instance.lastSwipeTime = Time.time;
         PlayerMovementScript.instance.forceCenterPosition = true;
+        PlayerMovementScript.instance.shootItemEffect = ItemPool.instance.shootItemDefinition.getCurrendEffect();
 
         ShootingController.instance.DestroyAllProjectiles();
 
@@ -22,6 +23,7 @@ public class PlayerSceneSetup : MonoBehaviour {
         PlayerScript.instance.playerAllowRotate = ConstantManager.PLAYER_INGAME_ALLOW_ROTATION;
         PlayerScript.instance.playerAllowWaves = ConstantManager.PLAYER_INGAME_ALLOW_WAVES;
         PlayerScript.instance.playerRotationSpeed = ConstantManager.PLAYER_INGAME_ROTATION_SPEED;
+        PlayerScript.instance.usedItemSecondChange = false;
         PlayerScript.instance.SetTargetMass(ConstantManager.PLAYER_INGAME_START_MASS, true);
         PlayerScript.instance.shrinkEffectFactor = ItemPool.instance.shrinkItemDefinition.getCurrendEffect();
         PlayerScript.instance.ShowPlayer();

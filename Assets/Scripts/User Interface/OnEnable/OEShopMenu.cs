@@ -29,7 +29,6 @@ public class OEShopMenu : MonoBehaviour {
             item.HideItemInfos();
         }
         currentItem = null;
-        SceneManager.instance.callSceneShopReset();
         if (updateInfos)
             UpdateGeneralInfos();
     }
@@ -45,6 +44,7 @@ public class OEShopMenu : MonoBehaviour {
         }
     }
     public void UpdateGeneralInfos() {
+        SceneManager.instance.callSceneShopReset();
         if (currentItem == null) {
             var description = SaveDataManager.getValue.settingsLanguage == SettingsLanguages.English ? "Click on an Upgrade to get more Informations." : "Klicke auf ein Upgrade für weitere Informationen.";
             UiObjectReferrer.instance.shopDescription.text = description;
@@ -63,10 +63,12 @@ public class OEShopMenu : MonoBehaviour {
 
     //BUTTON FUNCTIONS
     private void EnableButton() {
-        UiObjectReferrer.instance.shopBuyButtonDE.interactable = true;
-        UiObjectReferrer.instance.shopBuyTextDE.color = new Color32(255, 255, 255, 255);
-        UiObjectReferrer.instance.shopBuyButtonEN.interactable = true;
-        UiObjectReferrer.instance.shopBuyTextEN.color = new Color32(255, 255, 255, 255);
+        if (!ConstantManager.debugMode) {
+            UiObjectReferrer.instance.shopBuyButtonDE.interactable = true;
+            UiObjectReferrer.instance.shopBuyTextDE.color = new Color32(255, 255, 255, 255);
+            UiObjectReferrer.instance.shopBuyButtonEN.interactable = true;
+            UiObjectReferrer.instance.shopBuyTextEN.color = new Color32(255, 255, 255, 255);
+        }
     }
     private void DisableButton() {
         UiObjectReferrer.instance.shopBuyButtonDE.interactable = false;

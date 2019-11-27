@@ -39,8 +39,8 @@ public class GoogleLoginScript : MonoBehaviour {
 
     public void Login(bool withUI) {
         // Check if already Signed in
-        if (isAuthenticated()) {
-            if (withUI)
+        if (isAuthenticated() || ConstantManager.debugMode) {
+            if (withUI && !ConstantManager.debugMode)
                 SetResult("Erfolgreich angemeldet.", "Logged in successfully.");
             return;
         }
@@ -103,7 +103,7 @@ public class GoogleLoginScript : MonoBehaviour {
     }
 
     public bool isAuthenticated() {
-        return Social.localUser.authenticated;
+        return (Social.localUser.authenticated && !ConstantManager.debugMode);
     }
     public string getUsername() {
         return Social.localUser.userName;

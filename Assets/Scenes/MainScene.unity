@@ -120,6 +120,39 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1097020 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2153854769418609321, guid: c9cd3698b882d314a824466449634fcf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1604086338}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1097021 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7605269756313500452, guid: c9cd3698b882d314a824466449634fcf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1604086338}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1097023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aab773eca99f6e41a22f014d6ac96cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonToDisable: {fileID: 1097021}
+  textToDisable: {fileID: 998515391}
+  secondTextToDisable: {fileID: 1310266155}
 --- !u!1 &6373109
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,7 +488,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Umso gr\xF6\xDFer du wirst, umso mehr Schaden machst du.\n\nWenn es mal
+  m_Text: "Desto gr\xF6\xDFer du wirst, umso mehr Schaden machst du.\n\nWenn es mal
     knapp wird, kannst du durch swipen nach links oder rechts ausweichen."
 --- !u!222 &40394015
 CanvasRenderer:
@@ -471,7 +504,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 711879402}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 159578013}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -1065,6 +1098,7 @@ GameObject:
   - component: {fileID: 78400286}
   - component: {fileID: 78400285}
   - component: {fileID: 78400287}
+  - component: {fileID: 78400288}
   m_Layer: 5
   m_Name: Challenges Button DE
   m_TagString: Untagged
@@ -1185,6 +1219,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &78400288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78400283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aab773eca99f6e41a22f014d6ac96cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonToDisable: {fileID: 78400287}
+  textToDisable: {fileID: 78400285}
+  secondTextToDisable: {fileID: 0}
 --- !u!1 &79303181
 GameObject:
   m_ObjectHideFlags: 0
@@ -2238,6 +2287,39 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &149452068 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2153854769418609321, guid: c9cd3698b882d314a824466449634fcf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1582117934}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &149452069 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7605269756313500452, guid: c9cd3698b882d314a824466449634fcf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1582117934}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149452068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &149452071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149452068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aab773eca99f6e41a22f014d6ac96cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonToDisable: {fileID: 149452069}
+  textToDisable: {fileID: 2009952201}
+  secondTextToDisable: {fileID: 1225026265}
 --- !u!1 &149994240
 GameObject:
   m_ObjectHideFlags: 0
@@ -2549,6 +2631,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 159564453}
   m_CullTransparentMesh: 0
+--- !u!1 &159578013 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2153854769418609321, guid: c9cd3698b882d314a824466449634fcf,
+    type: 3}
+  m_PrefabInstance: {fileID: 711879402}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &159578014 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7605269756313500452, guid: c9cd3698b882d314a824466449634fcf,
+    type: 3}
+  m_PrefabInstance: {fileID: 711879402}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159578013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &159578016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159578013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aab773eca99f6e41a22f014d6ac96cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonToDisable: {fileID: 159578014}
+  textToDisable: {fileID: 1556946120}
+  secondTextToDisable: {fileID: 1959143103}
 --- !u!1 &161551816
 GameObject:
   m_ObjectHideFlags: 0
@@ -4379,7 +4494,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Unter den Partikeln befinden sich aber auch besondere, welche dir Helfen.\nDu
+  m_Text: "Unter den Partikeln befinden sich aber auch besondere, welche dir helfen.\nDu
     solltest sie besser nicht zerst\xF6ren."
 --- !u!222 &298450529
 CanvasRenderer:
@@ -5427,6 +5542,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 356187755}
   m_CullTransparentMesh: 0
+--- !u!1 &356880678 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2153854769418609321, guid: c9cd3698b882d314a824466449634fcf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1547297713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &356880680 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7605269756313500452, guid: c9cd3698b882d314a824466449634fcf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1547297713}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356880678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &356880682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356880678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aab773eca99f6e41a22f014d6ac96cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonToDisable: {fileID: 356880680}
+  textToDisable: {fileID: 1520979685}
+  secondTextToDisable: {fileID: 1243198070}
 --- !u!1001 &369588172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11114,6 +11262,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f574e3f13825e44385fee68ad5079af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &755292187 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2153854769418609321, guid: c9cd3698b882d314a824466449634fcf,
+    type: 3}
+  m_PrefabInstance: {fileID: 423260361}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &755292189 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7605269756313500452, guid: c9cd3698b882d314a824466449634fcf,
+    type: 3}
+  m_PrefabInstance: {fileID: 423260361}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755292187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &755292191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755292187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aab773eca99f6e41a22f014d6ac96cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonToDisable: {fileID: 755292189}
+  textToDisable: {fileID: 919119107}
+  secondTextToDisable: {fileID: 1957904691}
 --- !u!1 &761600073
 GameObject:
   m_ObjectHideFlags: 0
@@ -12599,6 +12780,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881933022}
   m_CullTransparentMesh: 0
+--- !u!114 &886446796 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2153854768675285232, guid: c9cd3698b882d314a824466449634fcf,
+    type: 3}
+  m_PrefabInstance: {fileID: 313695059}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &889664751
 GameObject:
   m_ObjectHideFlags: 0
@@ -13910,6 +14103,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9cd3698b882d314a824466449634fcf, type: 3}
+--- !u!114 &998515391 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2153854768675285232, guid: c9cd3698b882d314a824466449634fcf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1604086338}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1000822730
 GameObject:
   m_ObjectHideFlags: 0
@@ -17155,6 +17360,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1221969580}
   m_CullTransparentMesh: 0
+--- !u!114 &1225026265 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2153854770192723409, guid: c9cd3698b882d314a824466449634fcf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1582117934}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1227617085
 GameObject:
   m_ObjectHideFlags: 0
@@ -17411,6 +17628,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1235504303}
   m_CullTransparentMesh: 0
+--- !u!114 &1243198070 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2153854768675285232, guid: c9cd3698b882d314a824466449634fcf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1547297713}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1262133761
 GameObject:
   m_ObjectHideFlags: 0
@@ -18051,6 +18280,7 @@ GameObject:
   - component: {fileID: 1289347639}
   - component: {fileID: 1289347638}
   - component: {fileID: 1289347640}
+  - component: {fileID: 1289347641}
   m_Layer: 5
   m_Name: Challenges Button EN
   m_TagString: Untagged
@@ -18171,6 +18401,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1289347641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289347636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aab773eca99f6e41a22f014d6ac96cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonToDisable: {fileID: 1289347640}
+  textToDisable: {fileID: 1289347638}
+  secondTextToDisable: {fileID: 0}
 --- !u!1 &1290391199
 GameObject:
   m_ObjectHideFlags: 0
@@ -18428,6 +18673,18 @@ MonoBehaviour:
   safeAreaGameObject: {fileID: 1302280934}
   largeScreenSpaceGameObject: {fileID: 2074791242}
   smallScreenSpaceGameObject: {fileID: 2075163203}
+--- !u!114 &1310266155 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2153854770192723409, guid: c9cd3698b882d314a824466449634fcf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1604086338}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1310933514
 GameObject:
   m_ObjectHideFlags: 0
@@ -18724,6 +18981,7 @@ GameObject:
   - component: {fileID: 1324803554}
   - component: {fileID: 1324803553}
   - component: {fileID: 1324803555}
+  - component: {fileID: 1324803556}
   m_Layer: 5
   m_Name: Leaderboard Button DE
   m_TagString: Untagged
@@ -18844,6 +19102,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1324803556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324803551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aab773eca99f6e41a22f014d6ac96cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonToDisable: {fileID: 1324803555}
+  textToDisable: {fileID: 1324803553}
+  secondTextToDisable: {fileID: 0}
 --- !u!1 &1327710858
 GameObject:
   m_ObjectHideFlags: 0
@@ -20579,6 +20852,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1518931134}
   m_CullTransparentMesh: 0
+--- !u!114 &1520979685 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2153854770192723409, guid: c9cd3698b882d314a824466449634fcf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1547297713}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1531287790
 GameObject:
   m_ObjectHideFlags: 0
@@ -20664,6 +20949,7 @@ GameObject:
   - component: {fileID: 1536003974}
   - component: {fileID: 1536003973}
   - component: {fileID: 1536003975}
+  - component: {fileID: 1536003976}
   m_Layer: 5
   m_Name: Leaderboard Button EN
   m_TagString: Untagged
@@ -20784,6 +21070,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1536003976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536003971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aab773eca99f6e41a22f014d6ac96cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonToDisable: {fileID: 1536003975}
+  textToDisable: {fileID: 1536003973}
+  secondTextToDisable: {fileID: 0}
 --- !u!1 &1536033050
 GameObject:
   m_ObjectHideFlags: 0
@@ -21532,7 +21833,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Du bist dieser wundersch\xF6ne Wassertropfen, welcher durch einen schweerelosen
+  m_Text: "Du bist dieser wundersch\xF6ne Wassertropfen, welcher durch einen schwerelosen
     Raum gleitet."
 --- !u!222 &1566101262
 CanvasRenderer:
@@ -21916,7 +22217,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1582117934}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 149452068}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -22276,7 +22577,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1604086338}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1097020}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -29348,6 +29649,39 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1740767863 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2153854769418609321, guid: c9cd3698b882d314a824466449634fcf,
+    type: 3}
+  m_PrefabInstance: {fileID: 313695059}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1740767865 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7605269756313500452, guid: c9cd3698b882d314a824466449634fcf,
+    type: 3}
+  m_PrefabInstance: {fileID: 313695059}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740767863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1740767867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740767863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aab773eca99f6e41a22f014d6ac96cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonToDisable: {fileID: 1740767865}
+  textToDisable: {fileID: 886446796}
+  secondTextToDisable: {fileID: 1814445954}
 --- !u!1 &1746098274
 GameObject:
   m_ObjectHideFlags: 0
@@ -30004,7 +30338,7 @@ PrefabInstance:
     - target: {fileID: 2153854770192723409, guid: c9cd3698b882d314a824466449634fcf,
         type: 3}
       propertyPath: m_Text
-      value: Impresusm und Datenschutz.
+      value: Impressum und Datenschutz.
       objectReference: {fileID: 0}
     - target: {fileID: 7605269756313500452, guid: c9cd3698b882d314a824466449634fcf,
         type: 3}
@@ -30667,6 +31001,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1814445954 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2153854770192723409, guid: c9cd3698b882d314a824466449634fcf,
+    type: 3}
+  m_PrefabInstance: {fileID: 313695059}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1814828345 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6294325108413020248, guid: 126148d15edfd7a47951f3bc9560671f,
@@ -31203,7 +31549,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Aber du musst Vorsichtig sein. Hier fliegen noch andere Partikel rum, welche
+  m_Text: "Aber du musst vorsichtig sein. Hier fliegen noch andere Partikel rum, welche
     dich treffen k\xF6nnten."
 --- !u!222 &1847611283
 CanvasRenderer:
@@ -31281,8 +31627,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Wenn du mit einem Partikel kolidierst, vereint ihr euch.\nWenn du zu gro\xDF
-    wirst, verlierst du deine innere Stabilit\xE4t, und platzt."
+  m_Text: "Wenn du mit einem Partikel kollidierst, vereint ihr euch.\nWenn du zu gro\xDF
+    wirst, verlierst du deine innere Stabilit\xE4t und platzt."
 --- !u!222 &1858612112
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -33575,6 +33921,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1998082559}
   m_CullTransparentMesh: 0
+--- !u!114 &2009952201 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2153854768675285232, guid: c9cd3698b882d314a824466449634fcf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1582117934}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2013368470
 GameObject:
   m_ObjectHideFlags: 0

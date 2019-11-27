@@ -6,6 +6,7 @@ public static class ConstantManager {
 
     //TODO ON PUBLISHING:
         // - ConstantManager.useLocalFile = true;
+        // - ConstantManager.debugMode = ???;
         // - PlayerSettings => Set right Version
         // - PlayerSettings => Check right Game Spelling
         // - PlayerSettings => Game Icons set?
@@ -19,7 +20,8 @@ public static class ConstantManager {
 
 
     //DEBUG
-    public const bool useLocalSaveFile = true;
+    public static readonly bool useLocalSaveFile = true;
+    public static readonly bool debugMode = true;
     public const string localSaveFileName = "particleRush"; //_" + Application.version.ToString();
 
     //PLAYER && MESH GENERATION
@@ -109,6 +111,10 @@ public static class ConstantManager {
     public const bool INPUT_ALLOW_SWIPE_MENU = false;
     public const bool INPUT_ALLOW_TAP_INGAME = true;
     public const bool INPUT_ALLOW_TAP_MENU = false;
+    public const float INPUT_BREAKPOINT_SHOOT_SWIPE = 1f; // if a Input took longer than X, it is not a swipe, but a Auto-Shoot
+    public const float INPUT_BREAKPOINT_TAP_SWIPE = 0.05f; // if a Input took shorter than X, it is definiteley a Tap
+    public const float INPUT_SHOOT_ITEM_TIER_1_DELAY = 1f / 7f;
+    public const float INPUT_SHOOT_ITEM_TIER_2_DELAY = 1f / 10f;
     public const float REVIVE_TIME = 5f;
     public const int REVIVE_LINEAR_INCREASE_FACTOR = 10;
 

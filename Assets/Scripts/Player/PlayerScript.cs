@@ -26,6 +26,7 @@ public class PlayerScript : MonoBehaviour {
     [HideInInspector] public bool playerAllowRotate = false;
     [HideInInspector] public bool playerAllowWaves = false;
     [HideInInspector] public int playerRotationSpeed = 0;
+    [HideInInspector] public bool usedItemSecondChange = false;
 
     //MASS RELATIVE
     [HideInInspector] public float targetMass = 0f;
@@ -98,7 +99,14 @@ public class PlayerScript : MonoBehaviour {
 
             var sizeTrend = targetMass - currentMass;
             if (currentMass >= ConstantManager.PLAYER_MAX_MESH_GENERATION_SIZE && SaveDataManager.getValue.gameStatus == GameStatus.ingame && sizeTrend >= 0) {
-                SceneManager.instance.callSceneEndgame();
+                // WOULD LOOSE
+                var effekt = ItemPool.instance.secondChanceItemDefinition.getCurrendEffect();
+                if (effekt != 0 && !usedItemSecondChange) {
+                    SetTargetMass(effekt);
+                    usedItemSecondChange = true;
+                } else {
+                    SceneManager.instance.callSceneEndgame();
+                }
             }
         }
     }

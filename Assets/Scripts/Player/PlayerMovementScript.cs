@@ -11,15 +11,18 @@ public class PlayerMovementScript : MonoBehaviour {
 
     //MOVEMENT RELATED
     private Vector3 targetPlayerPosition;
-    private Vector2[] newTouch;
+    private Vector2[] touchPositions;
+    private float[] touchStartTime;
     private Vector3[] playerPositions;
     private int currendPosIndex = 1;
     [HideInInspector] public float lastSwipeTime;
+    private float lastTapTime;
 
     // BEHAVIOUR
     [HideInInspector] public bool allowSwipe = false;
     [HideInInspector] public bool allowTab = false;
     [HideInInspector] public bool forceCenterPosition = false;
+    [HideInInspector] public float shootItemEffect = 0f;
 
     void Awake() {
         instance = this;
@@ -27,8 +30,10 @@ public class PlayerMovementScript : MonoBehaviour {
 
     void Start() {
         targetPlayerPosition = ConstantManager.PLAYER_DEFAULT_POSITION_IN_WORLD;
-        newTouch = new Vector2[20];
+        touchPositions = new Vector2[20];
+        touchStartTime = new float[20];
         lastSwipeTime = Time.time;
+        lastTapTime = Time.realtimeSinceStartup;
 
         var quarterOfScreenWidth = ConstantManager.CAMERA_SCREEN_WIDTH_IN_WORD_SPACE / 4;
         playerPositions = new Vector3[3];
@@ -43,41 +48,54 @@ public class PlayerMovementScript : MonoBehaviour {
         // Check Inputs and Update Position Regulary
         if (allowSwipe || allowTab) {
             foreach (Touch touch in Input.touches) {
-                if (touch.fingerId >= newTouch.Length)
+                if (touch.fingerId >= touchPositions.Length)
                     return;
 
                 if (touch.phase == TouchPhase.Began) {
-                    newTouch[touch.fingerId] = touch.position;
+                    touchPositions[touch.fingerId] = touch.position;
+                    touchStartTime[touch.fingerId] = Time.realtimeSinceStartup;
+                } else if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary) {
+                    if (shootItemEffect != 0f) {
+                        TabAndShoot(touch.position, true);
+                    }
                 } else if (touch.phase == TouchPhase.Ended) {
-                    var differece = touch.position - newTouch[touch.fingerId];
-                    var magnitude = differece.magnitude;
-                    if (Mathf.Abs(differece.x) > Mathf.Abs(differece.y) && magnitude >= Screen.width / 4) {
-                        RuntimeDataManager.value.inputSwipeCount++;
-                        //SWIPE
-                        if (differece.x > 0 && lastSwipeTime + ItemPool.instance.swipeItemDefinition.getCurrendEffect() < Time.time && allowSwipe) {
-                            //swipe to the right
-                            if (currendPosIndex < 2) {
-                                currendPosIndex++;
-                                lastSwipeTime = Time.time;
-                                targetPlayerPosition = playerPositions[currendPosIndex];
+                    var duration = Time.realtimeSinceStartup - touchStartTime[touch.fingerId];
+                    if (duration < ConstantManager.INPUT_BREAKPOINT_TAP_SWIPE) {
+                        // Defenitely a Tab
+                        TabAndShoot(touch.position, false);
+                    } else if (duration <= ConstantManager.INPUT_BREAKPOINT_SHOOT_SWIPE) {
+                        // Depends on SwipeAngle and Magnitude
+                        var differece = touch.position - touchPositions[touch.fingerId];
+                        var magnitude = differece.magnitude;
+                        if (Mathf.Abs(differece.x) > Mathf.Abs(differece.y) && magnitude >= Screen.width / 4) {
+                            // Input Movement Long enouth && Angle more Horizontally than Vertically
+                            RuntimeDataManager.value.inputSwipeCount++;
+                            //SWIPE
+                            if (differece.x > 0 && lastSwipeTime + ItemPool.instance.swipeItemDefinition.getCurrendEffect() < Time.time && allowSwipe) {
+                                //swipe to the right
+                                if (currendPosIndex < 2) {
+                                    currendPosIndex++;
+                                    lastSwipeTime = Time.time;
+                                    targetPlayerPosition = playerPositions[currendPosIndex];
+                                }
+                            } else if (differece.x <= 0 && lastSwipeTime + ItemPool.instance.swipeItemDefinition.getCurrendEffect() < Time.time && allowSwipe) {
+                                //swipe to the left
+                                if (currendPosIndex > 0) {
+                                    lastSwipeTime = Time.time;
+                                    currendPosIndex--;
+                                    targetPlayerPosition = playerPositions[currendPosIndex];
+                                }
                             }
-                        } else if (differece.x <= 0 && lastSwipeTime + ItemPool.instance.swipeItemDefinition.getCurrendEffect() < Time.time && allowSwipe) {
-                            //swipe to the left
-                            if (currendPosIndex > 0) {
-                                lastSwipeTime = Time.time;
-                                currendPosIndex--;
-                                targetPlayerPosition = playerPositions[currendPosIndex];
-                            }
+                        } else {
+                            TabAndShoot(touch.position, false);
                         }
-                    } else if (allowTab) {
-                        //NO SWIPE = TAP
-                        RuntimeDataManager.value.inputTabCount++;
-                        ShootingController.instance.NewInput(touch.position);
+                    } else {
+                        TabAndShoot(touch.position, false);
                     }
                 }
             }
         }
-        
+
         // Update Position if forced
         if (forceCenterPosition) {
             currendPosIndex = 1;
@@ -111,6 +129,17 @@ public class PlayerMovementScript : MonoBehaviour {
 
     }
 
+    private void TabAndShoot(Vector2 position, bool auto) {
+        if (allowTab && ((shootItemEffect != 0f && auto) || !auto)) {
+            var delay = shootItemEffect == 1f ? ConstantManager.INPUT_SHOOT_ITEM_TIER_1_DELAY : ConstantManager.INPUT_SHOOT_ITEM_TIER_2_DELAY;
+            if ((Time.realtimeSinceStartup - lastTapTime >= delay && auto) || !auto) {
+                RuntimeDataManager.value.inputTabCount++;
+                ShootingController.instance.NewInput(position);
+                lastTapTime = Time.realtimeSinceStartup;
+            }
+        }
+    }
+
     public void DenyInput(bool denyInput) {
         StartCoroutine(DenyInputHelper(denyInput));
     }
@@ -125,7 +154,7 @@ public class PlayerMovementScript : MonoBehaviour {
         }
     }
 
-    private void UpdateSlideBar() {        
+    private void UpdateSlideBar() {
         var timePassedInPercent = 100 * (Time.time - lastSwipeTime) / ItemPool.instance.swipeItemDefinition.getCurrendEffect();
         if (allowSwipe && timePassedInPercent <= 100) {
             // Set Active if it should be activd but isnt

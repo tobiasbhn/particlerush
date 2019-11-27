@@ -35,7 +35,7 @@ public class ScenariosDefault : ScriptableObject {
             SceneManager.instance.previousScenario = SceneManager.instance.currentScenario;
 
         //Set above Modis and call scripts
-        if (SaveDataManager.getValue.gameStatus != gameStatus || gameStatus == GameStatus.notification) {
+        if (SaveDataManager.getValue.gameStatus != gameStatus || gameStatus == GameStatus.notification || gameStatus == GameStatus.shop) {
             //Show Add?
             if (Time.realtimeSinceStartup - AdsManager.instance.lastAdShown > ConstantManager.AD_TIME_TO_PASS_TO_SHOW_AD && adsModi == AdsSceneModis.allow) {
                 AdsManager.instance.ShowAd(AdType.Normal, callScenarioHelper);

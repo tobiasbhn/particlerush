@@ -41,43 +41,46 @@ public class AdsManager : MonoBehaviour {
         yield return null;
     }
     private IEnumerator ShowAdHelper(AdType type, System.Action<AdResult> callback) {
-        Debug.Log(LogTime.Time() + ": Ads Manager - Ad (Rewarded Video) requestet...");
+        if (!ConstantManager.debugMode) {
+            Debug.Log(LogTime.Time() + ": Ads Manager - Ad (Rewarded Video) requestet...");
+            BeforeAdProcess();
+            bool isReady = false;
+            AdResult _return = AdResult.Failed;
+            string idToUse = type == AdType.Normal ? videoAdID : rewardedAdId;
 
-        BeforeAdProcess();
-        bool isReady = false;
-        AdResult _return = AdResult.Failed;
-        string idToUse = type == AdType.Normal ? videoAdID : rewardedAdId;
-
-        if (Advertisement.isInitialized && Advertisement.IsReady(idToUse)) {
-            //Show Unity Ad
-            ShowOptions showOptions = new ShowOptions();
-            showOptions.resultCallback = (ShowResult result) => {
-                AfterAdProcess();
-                if (result == ShowResult.Finished) {
-                    _return = AdResult.Finished;
+            if (Advertisement.isInitialized && Advertisement.IsReady(idToUse)) {
+                //Show Unity Ad
+                ShowOptions showOptions = new ShowOptions();
+                showOptions.resultCallback = (ShowResult result) => {
+                    AfterAdProcess();
+                    if (result == ShowResult.Finished) {
+                        _return = AdResult.Finished;
+                        isReady = true;
+                    } else if (result == ShowResult.Skipped) {
+                        _return = AdResult.Skipped;
+                        isReady = true;
+                    } else if (result == ShowResult.Failed) {
+                        _return = AdResult.Failed;
+                        isReady = true;
+                    }
+                };
+                Advertisement.Show(idToUse, showOptions);
+            } else {
+                //Show own Ad
+                Debug.Log("Would show own Ad.");
+                UiSceneScript.instance.ShowOwnAd(() => {
+                    AfterAdProcess();
+                    _return = AdResult.Private;
                     isReady = true;
-                } else if (result == ShowResult.Skipped) {
-                    _return = AdResult.Skipped;
-                    isReady = true;
-                } else if (result == ShowResult.Failed) {
-                    _return = AdResult.Failed;
-                    isReady = true;
-                }
-            };
-            Advertisement.Show(idToUse, showOptions);
+                });
+            }
+            while (!isReady)
+                yield return null;
+            Debug.Log(LogTime.Time() + ": Ads Manager - Shown Ad (Rewarded Video) Result: " + _return.ToString() + "...");
+            callback.Invoke(_return);
         } else {
-            //Show own Ad
-            Debug.Log("Would show own Ad.");
-            UiSceneScript.instance.ShowOwnAd(() => {
-                AfterAdProcess();
-                _return = AdResult.Private;
-                isReady = true;
-            });
+            callback.Invoke(AdResult.Failed);
         }
-        while (!isReady)
-            yield return null;
-        Debug.Log(LogTime.Time() + ": Ads Manager - Shown Ad (Rewarded Video) Result: " + _return.ToString() + "...");
-        callback.Invoke(_return);
     }
 
     private void BeforeAdProcess() {

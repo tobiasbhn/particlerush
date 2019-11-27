@@ -12,7 +12,7 @@ public static class SaveDataManager {
 
     //Load Data from File ore create File if no File Exists
     public static void Load() {
-        if (File.Exists(Application.persistentDataPath + ConstantManager.localSaveFileName) && ConstantManager.useLocalSaveFile) {
+        if (File.Exists(Application.persistentDataPath + ConstantManager.localSaveFileName) && ConstantManager.useLocalSaveFile && !ConstantManager.debugMode) {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + ConstantManager.localSaveFileName, FileMode.Open);
             getValue = (SaveData)bf.Deserialize(file);
@@ -31,7 +31,7 @@ public static class SaveDataManager {
     public static void Save(bool withUpdateAchievements) {
         if (getValue == null)
                 getValue = new SaveData();
-        if (ConstantManager.useLocalSaveFile) {
+        if (ConstantManager.useLocalSaveFile && !ConstantManager.debugMode) {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Create(Application.persistentDataPath + ConstantManager.localSaveFileName);
             bf.Serialize(file, getValue);
