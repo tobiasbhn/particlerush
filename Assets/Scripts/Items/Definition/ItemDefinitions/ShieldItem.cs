@@ -12,6 +12,9 @@ public class ShieldItem : ItemDefinition {
         }
     }
     public override void showShopDemo() {
-        
+        PlayerScript.instance.playerShield.ActivateShield(99999);
+        PlayerScript.instance.playerAllowShrink = true;
+        ParticleSceneSetup.instance.SetupIngame();
+        ParticleSpawnScript.instance.spawnModi = ParticleSpawnModi.all;
     }
 }

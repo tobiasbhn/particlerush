@@ -12,6 +12,9 @@ public class CoinMagnet : ItemDefinition {
         }
     }
     public override void showShopDemo() {
-        
+        ParticleSceneSetup.instance.SetupIngame();
+        ParticleSpawnScript.instance.spawnModi = ParticleSpawnModi.onlyGold;
+        PlayerScript.instance.coinMagnetEffectFactor = itemEffects[2];
+        PlayerScript.instance.sphereCollider.radius = 1f + ((float)itemEffects[2] / 100);
     }
 }

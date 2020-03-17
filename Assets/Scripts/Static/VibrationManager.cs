@@ -33,7 +33,7 @@ public static class VibrationManager {
     }
 
     public static void Vibrate() {
-        if (Vibrator != null && duration != 0)
+        if (Vibrator != null && duration != 0 && SaveDataManager.getValue.gameStatus == GameStatus.ingame)
             Vibrator.Call("vibrate", duration);
         else if (duration != 0)
             DebugVibration();

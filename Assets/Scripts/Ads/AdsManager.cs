@@ -41,7 +41,7 @@ public class AdsManager : MonoBehaviour {
         yield return null;
     }
     private IEnumerator ShowAdHelper(AdType type, System.Action<AdResult> callback) {
-        if (!ConstantManager.debugMode) {
+        if (!ConstantManager.demoMode) {
             Debug.Log(LogTime.Time() + ": Ads Manager - Ad (Rewarded Video) requestet...");
             BeforeAdProcess();
             bool isReady = false;
@@ -79,7 +79,7 @@ public class AdsManager : MonoBehaviour {
             Debug.Log(LogTime.Time() + ": Ads Manager - Shown Ad (Rewarded Video) Result: " + _return.ToString() + "...");
             callback.Invoke(_return);
         } else {
-            callback.Invoke(AdResult.Failed);
+            callback.Invoke(AdResult.Finished);
         }
     }
 

@@ -51,8 +51,9 @@ public class OEShopMenu : MonoBehaviour {
             UiObjectReferrer.instance.shopLevelInfo.text = " ";
             DisableButton();
         } else {
-            UiObjectReferrer.instance.shopDescription.text = currentItem.getDescription();
+            UiObjectReferrer.instance.shopDescription.text = currentItem.getDescription().Replace("<br>", "\n");
             UiObjectReferrer.instance.shopLevelInfo.text = currentItem.getInfo();
+            currentItem.showShopDemo();
             var price = currentItem.getCurrentPrice();
             if (price == -1 || !GoldScript.instance.CheckGold(price))
                 DisableButton();
@@ -63,7 +64,7 @@ public class OEShopMenu : MonoBehaviour {
 
     //BUTTON FUNCTIONS
     private void EnableButton() {
-        if (!ConstantManager.debugMode) {
+        if (!ConstantManager.demoMode) {
             UiObjectReferrer.instance.shopBuyButtonDE.interactable = true;
             UiObjectReferrer.instance.shopBuyTextDE.color = new Color32(255, 255, 255, 255);
             UiObjectReferrer.instance.shopBuyButtonEN.interactable = true;

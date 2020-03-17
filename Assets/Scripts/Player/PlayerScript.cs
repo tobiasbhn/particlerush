@@ -12,10 +12,13 @@ public class PlayerScript : MonoBehaviour {
     [HideInInspector] public static PlayerScript instance;
 
     //OBJECT-LINKS
-    [SerializeField] private PlayerMeshGenerator playerMeshGenerator;
+    public PlayerMeshGenerator playerMeshGenerator;
+    public ShieldScript playerShield;
     [SerializeField] private MeshFilter meshFilter;
     [SerializeField] private MeshCollider meshCollider;
+    public SphereCollider sphereCollider;
     [SerializeField] private MeshRenderer meshRenderer;
+
 
     //MESH-RELATED
     private UnityEngine.Mesh mesh;
@@ -26,12 +29,12 @@ public class PlayerScript : MonoBehaviour {
     [HideInInspector] public bool playerAllowRotate = false;
     [HideInInspector] public bool playerAllowWaves = false;
     [HideInInspector] public int playerRotationSpeed = 0;
-    [HideInInspector] public bool usedItemSecondChange = false;
 
     //MASS RELATIVE
     [HideInInspector] public float targetMass = 0f;
     [HideInInspector] public float currentMass = 0f;
     [HideInInspector] public float shrinkEffectFactor = 0f;
+    [HideInInspector] public float coinMagnetEffectFactor = 0f;
 
 
 
@@ -41,6 +44,7 @@ public class PlayerScript : MonoBehaviour {
     }
     void Start() {
         playerMeshGenerator.unityMesh = new UnityEngine.Mesh();
+        playerShield.Setup();
         mesh = playerMeshGenerator.unityMesh;
         meshFilter.mesh = mesh;
         meshCollider.sharedMesh = mesh;
@@ -98,14 +102,20 @@ public class PlayerScript : MonoBehaviour {
             ResizeActualPlayerSizeInWorld();
 
             var sizeTrend = targetMass - currentMass;
-            if (currentMass >= ConstantManager.PLAYER_MAX_MESH_GENERATION_SIZE && SaveDataManager.getValue.gameStatus == GameStatus.ingame && sizeTrend >= 0) {
+            if (currentMass >= ConstantManager.PLAYER_MAX_MESH_GENERATION_SIZE && sizeTrend >= 0) {
                 // WOULD LOOSE
-                var effekt = ItemPool.instance.secondChanceItemDefinition.getCurrendEffect();
-                if (effekt != 0 && !usedItemSecondChange) {
-                    SetTargetMass(effekt);
-                    usedItemSecondChange = true;
-                } else {
-                    SceneManager.instance.callSceneEndgame();
+                if (SaveDataManager.getValue.gameStatus == GameStatus.ingame) {
+                    var effekt = ItemPool.instance.secondChanceItemDefinition.getCurrendEffect();
+                    if (effekt != 0 && !RuntimeDataManager.instance.preRevive.secondChanceUsed && !RuntimeDataManager.instance.postRevive.secondChanceUsed) {
+                        var newMass = (float)ConstantManager.PLAYER_MAX_MESH_GENERATION_SIZE / 100f * effekt;
+                        Debug.Log("2nd Chance: " + newMass.ToString());
+                        SetTargetMass(newMass, true);
+                        RuntimeDataManager.value.secondChanceUsed = true;
+                    } else {
+                        SceneManager.instance.callSceneEndgame();
+                    }
+                } else if (SaveDataManager.getValue.gameStatus == GameStatus.shop) {
+                    SetTargetMass(ConstantManager.PLAYER_MENU_START_MASS, true);
                 }
             }
         }
@@ -145,6 +155,25 @@ public class PlayerScript : MonoBehaviour {
             }
 
             playerMeshGenerator.NewCollision(pos);
+        }
+    }
+
+    //ON TRIGGER (=COIN MAGNET)
+    void OnTriggerEnter(Collider other) {
+        if (other.tag == "Particle" &&
+                    other.GetType() == typeof(SphereCollider) &&
+                    other.GetComponent<ParticleScript>().particleType == ParticleType.gold &&
+                    coinMagnetEffectFactor != 0)
+            StartCoroutine(ParticleInOrbit(other));
+    }
+    private IEnumerator ParticleInOrbit(Collider other) {
+        var rb = other.gameObject.GetComponent<Rigidbody>();
+        while (other != null) {
+            var dist = Vector3.Distance(transform.position, other.gameObject.transform.position);
+            var direction = transform.position - other.gameObject.transform.position;
+            var value = ConstantManager.ITEM_COIN_MAGNET_FACTOR;
+            rb.AddForce(direction * value * rb.mass);
+            yield return new WaitForSeconds(5 * Time.deltaTime);
         }
     }
 }

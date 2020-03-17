@@ -115,4 +115,11 @@ public class UiSceneScript : MonoBehaviour {
         UiObjectReferrer.instance.ownAdMain.SetActive(false);
         callback.Invoke();
     }
+
+    public void EnableOnlySwipeBar() {
+        UiObjectReferrer.instance.ingameMain.SetActive(true);
+        UiObjectReferrer.instance.ingameGoldText.gameObject.SetActive(false);
+        UiObjectReferrer.instance.ingameScoreText.gameObject.SetActive(false);
+        UiObjectReferrer.instance.ingamePauseButton.SetActive(false);
+    }
 }

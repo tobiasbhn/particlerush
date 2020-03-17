@@ -43,8 +43,9 @@ public class ShootingController : MonoBehaviour {
 
         var instantiatedProjectile = Instantiate(projectilePrefab, originPos, Quaternion.Euler(0, 0, AngleDeg));
         instantiatedProjectile.transform.parent = projectileParent.transform;
-        instantiatedProjectile.GetComponent<ProjectileScript>().damageToDeal = massInPercent;
-        instantiatedProjectile.GetComponent<Rigidbody>().AddForce(addForce);
+        var instantiatedScript = instantiatedProjectile.GetComponent<ProjectileScript>();
+        instantiatedScript.damageToDeal = massInPercent;
+        instantiatedScript.rb.AddForce(addForce);
         instantiatedProjectileList.Add(instantiatedProjectile);
     }
 
@@ -53,6 +54,21 @@ public class ShootingController : MonoBehaviour {
             foreach (GameObject projectile in instantiatedProjectileList)
                 GameObject.Destroy(projectile.gameObject);
             instantiatedProjectileList.Clear();
+        }
+    }
+
+    public void DemoShooting() {
+        StartCoroutine(DemoShootingHelper());
+    }
+    private IEnumerator DemoShootingHelper() {
+        var delay = 1 / ItemPool.instance.shootItemDefinition.getCurrendEffect(+1);
+        var lastShoot = Time.realtimeSinceStartup;
+        while (OEShopMenu.instance.currentItem == ItemPool.instance.shootItemDefinition) {
+            if (Time.realtimeSinceStartup - lastShoot > delay) {
+                NewInput(new Vector3(Screen.width / 2, Screen.height / 2));
+                lastShoot = Time.realtimeSinceStartup;
+            }
+            yield return null;
         }
     }
 }

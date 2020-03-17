@@ -43,6 +43,8 @@ public class ReviveScript : MonoBehaviour {
         if (GoldScript.instance.SpendGold(revivePrice)) {
             alreadyRevived = true;
             SceneManager.instance.callSceneRevive();
+            SaveDataManager.getValue.reviveBuyedCount++;
+            SaveDataManager.Save();
         } else {
             SetupLevel();
         }
@@ -57,7 +59,7 @@ public class ReviveScript : MonoBehaviour {
         UiObjectReferrer.instance.endgameLevelDE.SetActive(false);
         UiObjectReferrer.instance.endgameLevelEN.SetActive(false);
 
-        revivePrice = (SaveDataManager.getValue.statsTotleCountRevive + 1) * ConstantManager.REVIVE_LINEAR_INCREASE_FACTOR;
+        revivePrice = (SaveDataManager.getValue.reviveBuyedCount + 1) * ConstantManager.REVIVE_LINEAR_INCREASE_FACTOR;
         UiObjectReferrer.instance.endgameTextReviveGoldDE.text = "BELEBEN GOLD (" + revivePrice + ")";
         UiObjectReferrer.instance.endgameTextReviveGoldEN.text = "REVIVE GOLD (" + revivePrice + ")";
 

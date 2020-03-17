@@ -17,21 +17,21 @@ MonoBehaviour:
     itemDescription: This item lets the player shrink over time.
     itemInfos:
     - -0 Mass / Second
+    - -0.5 Mass / Second
     - -0.8 Mass / Second
-    - -1.2 Mass / Second
-    - -1.4 Mass / Second
+    - -1.0 Mass / Second
   german:
     itemName: Schrumpfen
     itemDescription: "Dieses Item l\xE4sst den Spieler \xFCber die Zeit schrumpfen."
     itemInfos:
     - -0 Masse / Sekunde
+    - -0,5 Masse / Sekunde
     - -0,8 Masse / Sekunde
-    - -1,2 Masse / Sekunde
-    - -1,4 Masse / Sekunde
+    - -1,0 Masse / Sekunde
   itemIconAsTexture: {fileID: 2800000, guid: 5e77efdf8029e9f4e8efbef7795f70a3, type: 3}
   itemEffects:
   - 0
+  - 0.5
   - 0.8
-  - 1.2
-  - 1.4
-  itemPrices: 000000000000000000000000
+  - 1
+  itemPrices: 46000000c80000005e010000

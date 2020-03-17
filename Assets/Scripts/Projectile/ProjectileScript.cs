@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class ProjectileScript : MonoBehaviour {
 
+    //OBJECT LINKS
+    public Rigidbody rb;
+
+    // VARS
     [HideInInspector] public float damageToDeal;
     private float spawnTime;
 
-    void Awake() {
-        SoundScript.Shoot();
-    }
-
     void Start() {
         spawnTime = Time.time;
+        SoundScript.Shoot();
         DefineWidth();
     }
 

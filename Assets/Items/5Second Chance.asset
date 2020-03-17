@@ -17,21 +17,21 @@ MonoBehaviour:
     itemDescription: This item gives you a second chance and lets you respawn.
     itemInfos:
     - No second Chance
+    - Redurce to 80% Mass
     - Redurce to 70% Mass
-    - Redurce to 50% Mass
-    - Redurce to 40% Mass
+    - Redurce to 60% Mass
   german:
     itemName: 2. Chance
     itemDescription: "Dieses Item gibt dir eine zweite Chance und l\xE4sst dich respawnen."
     itemInfos:
     - Keine zweite Chance
+    - Reduziert Masse auf 80%
     - Reduziert Masse auf 70%
-    - Reduziert Masse auf 50%
-    - Reduziert Masse auf 40%
+    - Reduziert Masse auf 60%
   itemIconAsTexture: {fileID: 2800000, guid: f56087cc3adc3e643911ccde611de9ad, type: 3}
   itemEffects:
   - 0
+  - 80
   - 70
-  - 50
-  - 40
-  itemPrices: 000000000000000000000000
+  - 60
+  itemPrices: 3c000000b40000004a010000

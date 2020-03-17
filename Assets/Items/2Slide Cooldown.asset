@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   english:
     itemName: Swipe
-    itemDescription: Reduce the cooldown time of swiping.
+    itemDescription: Reduce the cooldown time of swiping.<br><br>Try it out.
     itemInfos:
     - 3.0 Seconds Cooldown
     - 2.5 Seconds Cooldown
@@ -22,7 +22,7 @@ MonoBehaviour:
     - 1.5 Seconds Cooldown
   german:
     itemName: Swipe
-    itemDescription: Reduziere die Abklingzeit vom Swipen.
+    itemDescription: Reduziere die Abklingzeit vom Swipen.<br><br>Teste gleich hier.
     itemInfos:
     - 3,0 Sekunden Abklingzeit
     - 2,5 Sekunden Abklingzeit
@@ -34,4 +34,4 @@ MonoBehaviour:
   - 2.5
   - 2
   - 1.5
-  itemPrices: 000000000000000000000000
+  itemPrices: 1e000000780000000e010000

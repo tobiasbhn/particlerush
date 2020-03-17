@@ -28,7 +28,8 @@ public class ScoreScript : MonoBehaviour {
         if (countScore) {
             // Calculate Score
             currentScore += ConstantManager.SCORE_PER_SECOND * Time.deltaTime;
-            var factor = 1 + SaveDataManager.getValue.currentLevel * ConstantManager.SCORE_MULTIPLY_PER_LEVEL * difficultFactor;
+            var level = ConstantManager.demoMode ? 0 : SaveDataManager.getValue.currentLevel;
+            var factor = 1 + level * ConstantManager.SCORE_MULTIPLY_PER_LEVEL * difficultFactor;
             currentScore = currentScore * factor;
             RuntimeDataManager.value.score = currentScore;
             // Calculate Highscore
@@ -60,9 +61,10 @@ public class ScoreScript : MonoBehaviour {
         // Some Function From Excel
         // (100 * ((((MAX_LVL + LVL_BUFFER) - CURR_LVL) / DES_TIME * CURR_TIME) + CURR_LVL) / (MAX_LVL + LVL_BUFFER)) / 100
         int absMax = ConstantManager.LEVEL_MAX_LEVEL + ConstantManager.SCORE_DIFFICULTY_LVL_BUFFER;
-        int lvlTillAbsMax = absMax - SaveDataManager.getValue.currentLevel;
+        int level = ConstantManager.demoMode? 0 : SaveDataManager.getValue.currentLevel;
+        int lvlTillAbsMax = absMax - level;
         float dependOnTime = (float)lvlTillAbsMax / (float)ConstantManager.SCORE_DIFFICULTY_DESIRED_ROUND_TIME * (Time.time - startTime);
-        float shiftWithLVL = dependOnTime + SaveDataManager.getValue.currentLevel;
+        float shiftWithLVL = dependOnTime + level;
         float inPercent = 100f * shiftWithLVL / (float)absMax;
 
         RuntimeDataManager.value.difficultyFactor = inPercent / 100f;

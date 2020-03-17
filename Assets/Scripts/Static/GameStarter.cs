@@ -43,6 +43,17 @@ public class GameStarter : MonoBehaviour {
         //Setup Google Play
         GoogleLoginScript.instance.CheckAutoSetup();
 
+        //Debug && FreeShop
+        if (ConstantManager.freeShop) {
+            SaveDataManager.getValue.coinItemLVL = 0;
+            SaveDataManager.getValue.secondChanceItemLVL = 0;
+            SaveDataManager.getValue.shieldItemLVL = 0;
+            SaveDataManager.getValue.shootItemLVL = 0;
+            SaveDataManager.getValue.shrinkItemLVL = 0;
+            SaveDataManager.getValue.slideItemLVL = 0;
+            SaveDataManager.Save();
+        }
+
         //Call SceneManager to load whatever needs to be loaded
         Debug.Log(LogTime.Time() + ": Game Starter Script - Calling Scene Manager to load first Scene...");
         SceneManager.instance.startGame();

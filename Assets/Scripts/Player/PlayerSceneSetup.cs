@@ -14,7 +14,8 @@ public class PlayerSceneSetup : MonoBehaviour {
         PlayerMovementScript.instance.allowTab = ConstantManager.INPUT_ALLOW_TAP_INGAME;
         PlayerMovementScript.instance.lastSwipeTime = Time.time;
         PlayerMovementScript.instance.forceCenterPosition = true;
-        PlayerMovementScript.instance.shootItemEffect = ItemPool.instance.shootItemDefinition.getCurrendEffect();
+        PlayerMovementScript.instance.shootItemEffect = 1f / (float)ItemPool.instance.shootItemDefinition.getCurrendEffect();
+        PlayerMovementScript.instance.swipeItemEffect = ItemPool.instance.swipeItemDefinition.getCurrendEffect();
 
         ShootingController.instance.DestroyAllProjectiles();
 
@@ -23,9 +24,11 @@ public class PlayerSceneSetup : MonoBehaviour {
         PlayerScript.instance.playerAllowRotate = ConstantManager.PLAYER_INGAME_ALLOW_ROTATION;
         PlayerScript.instance.playerAllowWaves = ConstantManager.PLAYER_INGAME_ALLOW_WAVES;
         PlayerScript.instance.playerRotationSpeed = ConstantManager.PLAYER_INGAME_ROTATION_SPEED;
-        PlayerScript.instance.usedItemSecondChange = false;
         PlayerScript.instance.SetTargetMass(ConstantManager.PLAYER_INGAME_START_MASS, true);
         PlayerScript.instance.shrinkEffectFactor = ItemPool.instance.shrinkItemDefinition.getCurrendEffect();
+        PlayerScript.instance.coinMagnetEffectFactor = ItemPool.instance.coinMagnetItemDefinition.getCurrendEffect();
+        PlayerScript.instance.sphereCollider.radius = 1f + ((float)ItemPool.instance.coinMagnetItemDefinition.getCurrendEffect() / 100f);
+        PlayerScript.instance.playerShield.ActivateShield((int)ItemPool.instance.shieldItemDefinition.getCurrendEffect());
         PlayerScript.instance.ShowPlayer();
     }
 
@@ -42,6 +45,7 @@ public class PlayerSceneSetup : MonoBehaviour {
         PlayerScript.instance.playerAllowWaves = ConstantManager.PLAYER_MENU_ALLOW_WAVES;
         PlayerScript.instance.playerRotationSpeed = ConstantManager.PLAYER_MENU_ROTATION_SPEED;
         PlayerScript.instance.SetTargetMass(ConstantManager.PLAYER_MENU_START_MASS, true);
+        PlayerScript.instance.playerShield.DeactivateShield();
         PlayerScript.instance.ShowPlayer();
     }
 
@@ -58,6 +62,7 @@ public class PlayerSceneSetup : MonoBehaviour {
         PlayerScript.instance.playerAllowWaves = false;
         PlayerScript.instance.playerRotationSpeed = 0;
         PlayerScript.instance.SetTargetMass(0, true);
+        PlayerScript.instance.playerShield.DeactivateShield();
         PlayerScript.instance.HidePlayer();
     }
 

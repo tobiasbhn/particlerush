@@ -6,6 +6,7 @@ public static class ConstantManager {
 
     //TODO ON PUBLISHING:
         // - ConstantManager.useLocalFile = true;
+        // - ConstantManager.freeShop = false;
         // - ConstantManager.debugMode = ???;
         // - PlayerSettings => Set right Version
         // - PlayerSettings => Check right Game Spelling
@@ -21,7 +22,8 @@ public static class ConstantManager {
 
     //DEBUG
     public static readonly bool useLocalSaveFile = true;
-    public static readonly bool debugMode = true;
+    public static readonly bool freeShop = false; // Every Item Cost is 0, Items reset at Start
+    public static readonly bool demoMode = false; // No Buying, No Leaderboard, No Achievements
     public const string localSaveFileName = "particleRush"; //_" + Application.version.ToString();
 
     //PLAYER && MESH GENERATION
@@ -113,8 +115,7 @@ public static class ConstantManager {
     public const bool INPUT_ALLOW_TAP_MENU = false;
     public const float INPUT_BREAKPOINT_SHOOT_SWIPE = 1f; // if a Input took longer than X, it is not a swipe, but a Auto-Shoot
     public const float INPUT_BREAKPOINT_TAP_SWIPE = 0.05f; // if a Input took shorter than X, it is definiteley a Tap
-    public const float INPUT_SHOOT_ITEM_TIER_1_DELAY = 1f / 7f;
-    public const float INPUT_SHOOT_ITEM_TIER_2_DELAY = 1f / 10f;
+    public const float ITEM_COIN_MAGNET_FACTOR = 3f;
     public const float REVIVE_TIME = 5f;
     public const int REVIVE_LINEAR_INCREASE_FACTOR = 10;
 
@@ -126,7 +127,7 @@ public static class ConstantManager {
     //SCORE
     public const int SCORE_PER_SECOND = 100;
     public const int SCORE_PER_PARTICLE = 500;
-    public const float SCORE_MULTIPLY_PER_LEVEL = 0.0002f; // score *= 1 + lvl * X (Example X = 1: lvl 1 - multiply 1.1; lvl 2 - multiply 1.2; ....)
+    public const float SCORE_MULTIPLY_PER_LEVEL = 0.0001f; // score *= 1 + lvl * X (Example X = 1: lvl 1 - multiply 1.1; lvl 2 - multiply 1.2; ....)
     // USE ABOVE CAREFULLY BECAUSE THE SCORE GETS MULTIPLYED EACH FRAME EXPONETIALLY
 
     //LEVEL

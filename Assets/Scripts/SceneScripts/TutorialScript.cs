@@ -66,7 +66,7 @@ public class TutorialScript : MonoBehaviour {
                 DisableAllStats();
                 UiObjectReferrer.instance.tutorialStep6DE.gameObject.SetActive(true);
                 UiObjectReferrer.instance.tutorialStep6EN.gameObject.SetActive(true);
-                EnableOnlySwipeBar();
+                UiSceneScript.instance.EnableOnlySwipeBar();
                 PlayerScript.instance.SetTargetMass(ConstantManager.PLAYER_INGAME_START_MASS, true);
                 PlayerMovementScript.instance.allowSwipe = true;
                 PlayerMovementScript.instance.forceCenterPosition = false;
@@ -114,11 +114,5 @@ public class TutorialScript : MonoBehaviour {
         UiObjectReferrer.instance.tutorialSkipEN.gameObject.SetActive(true);
         UiObjectReferrer.instance.tutorialNextEN.gameObject.SetActive(true);
         UiObjectReferrer.instance.tutorialTutorialEN.gameObject.SetActive(false);
-    }
-    private void EnableOnlySwipeBar() {
-        UiObjectReferrer.instance.ingameMain.SetActive(true);
-        UiObjectReferrer.instance.ingameGoldText.gameObject.SetActive(false);
-        UiObjectReferrer.instance.ingameScoreText.gameObject.SetActive(false);
-        UiObjectReferrer.instance.ingamePauseButton.SetActive(false);
     }
 }

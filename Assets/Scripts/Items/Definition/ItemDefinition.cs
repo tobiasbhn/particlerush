@@ -43,10 +43,20 @@ public abstract class ItemDefinition : ScriptableObject {
         var LVL = getCurrentLVL();
         if (LVL >= 3)
             return -1;
-        return itemPrices[LVL];
+        var price = itemPrices[LVL];
+        if (ConstantManager.freeShop && price != -1)
+            return 0;
+        else
+            return price;
+
     }
     public float getCurrendEffect() {
-        var LVL = getCurrentLVL();
+        return getCurrendEffect(0);
+    }
+    public float getCurrendEffect(int lvlAdjustment) {
+        var LVL = getCurrentLVL() + lvlAdjustment;
+        LVL = Mathf.Min(3, LVL);
+        LVL = Mathf.Max(0, LVL);
         return itemEffects[LVL];
     }
     public virtual int getCurrentLVL() {
@@ -62,7 +72,7 @@ public abstract class ItemDefinition : ScriptableObject {
 
 
     [System.Serializable]
-    private class ItemLanguageSet{
+    private class ItemLanguageSet {
         public string itemName = "";
         public string itemDescription = "";
         public string[] itemInfos = new string[4];

@@ -120,7 +120,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.1.061
+  bundleVersion: 1.1.065
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -166,8 +166,8 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.tobiasbohn.particlerush
   buildNumber: {}
-  AndroidBundleVersionCode: 25
-  AndroidMinSdkVersion: 18
+  AndroidBundleVersionCode: 29
+  AndroidMinSdkVersion: 16
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 

@@ -18,22 +18,22 @@ MonoBehaviour:
       particles.
     itemInfos:
     - Blocks 0 Particles
-    - Blocks 2 Particles
-    - Blocks 4 Particles
     - Blocks 5 Particles
+    - Blocks 8 Particles
+    - Blocks 10 Particles
   german:
     itemName: Schild
     itemDescription: Dieses Item generiert ein Schild, welches eine gewisse Anzahl
       an Partikeln blockt.
     itemInfos:
     - Blockiert 0 Partikel
-    - Blockiert 2 Partikel
-    - Blockiert 4 Partikel
     - Blockiert 5 Partikel
+    - Blockiert 8 Partikel
+    - Blockiert 10 Partikel
   itemIconAsTexture: {fileID: 2800000, guid: 9f5d4dd0727f6f149a86d81712b85331, type: 3}
   itemEffects:
   - 0
-  - 2
-  - 4
   - 5
-  itemPrices: ffffffffffffffffffffffff
+  - 8
+  - 10
+  itemPrices: 280000008c00000022010000

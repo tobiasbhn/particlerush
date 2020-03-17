@@ -23,6 +23,7 @@ public class PlayerMovementScript : MonoBehaviour {
     [HideInInspector] public bool allowTab = false;
     [HideInInspector] public bool forceCenterPosition = false;
     [HideInInspector] public float shootItemEffect = 0f;
+    [HideInInspector] public float swipeItemEffect = 0f;
 
     void Awake() {
         instance = this;
@@ -71,14 +72,14 @@ public class PlayerMovementScript : MonoBehaviour {
                             // Input Movement Long enouth && Angle more Horizontally than Vertically
                             RuntimeDataManager.value.inputSwipeCount++;
                             //SWIPE
-                            if (differece.x > 0 && lastSwipeTime + ItemPool.instance.swipeItemDefinition.getCurrendEffect() < Time.time && allowSwipe) {
+                            if (differece.x > 0 && lastSwipeTime + swipeItemEffect < Time.time && allowSwipe) {
                                 //swipe to the right
                                 if (currendPosIndex < 2) {
                                     currendPosIndex++;
                                     lastSwipeTime = Time.time;
                                     targetPlayerPosition = playerPositions[currendPosIndex];
                                 }
-                            } else if (differece.x <= 0 && lastSwipeTime + ItemPool.instance.swipeItemDefinition.getCurrendEffect() < Time.time && allowSwipe) {
+                            } else if (differece.x <= 0 && lastSwipeTime + swipeItemEffect < Time.time && allowSwipe) {
                                 //swipe to the left
                                 if (currendPosIndex > 0) {
                                     lastSwipeTime = Time.time;
@@ -131,7 +132,7 @@ public class PlayerMovementScript : MonoBehaviour {
 
     private void TabAndShoot(Vector2 position, bool auto) {
         if (allowTab && ((shootItemEffect != 0f && auto) || !auto)) {
-            var delay = shootItemEffect == 1f ? ConstantManager.INPUT_SHOOT_ITEM_TIER_1_DELAY : ConstantManager.INPUT_SHOOT_ITEM_TIER_2_DELAY;
+            var delay = shootItemEffect;
             if ((Time.realtimeSinceStartup - lastTapTime >= delay && auto) || !auto) {
                 RuntimeDataManager.value.inputTabCount++;
                 ShootingController.instance.NewInput(position);

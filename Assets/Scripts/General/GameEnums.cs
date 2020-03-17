@@ -1,7 +1,7 @@
 ﻿
 
 //GAME STATUS
-public enum GameStatus {loading, tutorial, menu, ingame, endgame, shop, leaderboard, settings, paused, notification, advert, itemDemoShrink, itemDemoShield, itemDemoForce, itemDemoClear, itemDemoSlow, itemDemoSlide, itemDemoGoldrush};
+public enum GameStatus {loading, tutorial, menu, ingame, endgame, shop, leaderboard, settings, paused, notification, advert};
 
 //PARTICLES / ITEMS & SPAWN
 public enum ParticleType {grow, shrink, gold};

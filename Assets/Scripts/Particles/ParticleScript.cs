@@ -122,9 +122,6 @@ public class ParticleScript : MonoBehaviour {
     }
 
     //DESTROY DEKLARATION
-    public void Destroy(bool _withAnimation) {
-        Destroy(_withAnimation, true, true, true);
-    }
     public void Destroy(bool _withAnimation, bool _deleteFromList, bool _applyPlayerGrow, bool _withSound) {
         if (!alreadyDestroyed) {
             alreadyDestroyed = true;
@@ -154,6 +151,9 @@ public class ParticleScript : MonoBehaviour {
             sphereCollider.enabled = false;
             GameObject.Destroy(this.gameObject, 1f);
         }
+    }
+    public void Destroy(bool _withAnimation) {
+        Destroy(_withAnimation, true, true, true);
     }
 
     private IEnumerator delayedVibration() {

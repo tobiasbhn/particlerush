@@ -131,6 +131,8 @@ public class RuntimeData {
     // Input
     public int inputSwipeCount = 0;
     public int inputTabCount = 0;
+    // Items
+    public bool secondChanceUsed = false;
     // Time
     public float startTime = 0f;
     public float roundTime = 0f;

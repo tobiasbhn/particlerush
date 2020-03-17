@@ -12,6 +12,8 @@ public class SecondChance : ItemDefinition {
         }
     }
     public override void showShopDemo() {
-        
+        ParticleSceneSetup.instance.SetupIngame();
+        ParticleSpawnScript.instance.spawnModi = ParticleSpawnModi.onlyNorm;
+        PlayerScript.instance.playerAllowGrow = true;
     }
 }

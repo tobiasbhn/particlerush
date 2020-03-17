@@ -14,7 +14,7 @@ public class OELevelInfo : MonoBehaviour {
         UpdateInfos();
     }
     public void UpdateInfos() {
-        if (SaveDataManager.getValue.currentLevelPoints > 0) {
+        if (SaveDataManager.getValue.currentLevelPoints > 0 && !ConstantManager.demoMode) {
             var currentLevel = SaveDataManager.getValue.currentLevel;
             var percent = 100;
             if (currentLevel != ConstantManager.LEVEL_MAX_LEVEL) {

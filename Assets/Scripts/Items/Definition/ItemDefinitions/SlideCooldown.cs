@@ -12,6 +12,8 @@ public class SlideCooldown : ItemDefinition {
         }
     }
     public override void showShopDemo() {
-        
+        PlayerMovementScript.instance.swipeItemEffect = getCurrendEffect(+1);
+        PlayerMovementScript.instance.allowSwipe = true;
+        UiSceneScript.instance.EnableOnlySwipeBar();
     }
 }

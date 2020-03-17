@@ -7,7 +7,7 @@ public class OEDisableButtonInDebugMode : MonoBehaviour {
     public Text textToDisable;
     public Text secondTextToDisable;
     void OnEnable() {
-        if (ConstantManager.debugMode) {
+        if (ConstantManager.demoMode) {
             buttonToDisable.interactable = false;
             textToDisable.color = new Color32(255,255,255,90);
             if (secondTextToDisable != null)

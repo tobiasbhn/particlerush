@@ -14,24 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   english:
     itemName: Attack
-    itemDescription: 'This Item improves your attack. '
+    itemDescription: This Item improves your attack.<br><br>Try it out.
     itemInfos:
     - Normal
-    - Automatic (Tier 1)
-    - Automatic (Tier 2)
-    - Target-Seeking
+    - 7 Shots / Second
+    - 10 Shots / Second
+    - 12 Shots / Second
   german:
     itemName: Angriff
-    itemDescription: Dieses Item verbessert deinen Angriff.
+    itemDescription: Dieses Item verbessert deinen Angriff.<br><br>Teste gleich hier.
     itemInfos:
     - Normal
-    - Automatisch (Stufe 1)
-    - Automatisch (Stufe 2)
-    - Zielsuchend
+    - "7 Sch\xFCsse / Sekunde"
+    - "10 Sch\xFCsse / Sekunde"
+    - "12 Sch\xFCsse / Sekunde"
   itemIconAsTexture: {fileID: 2800000, guid: 4f60943fcb8a1a146ad0fe1667cd9534, type: 3}
   itemEffects:
   - 0
-  - 1
-  - 2
-  - 3
-  itemPrices: 0000000000000000ffffffff
+  - 7
+  - 10
+  - 12
+  itemPrices: 1400000064000000fa000000
